@@ -1,0 +1,179 @@
+/* margins */
+.margined-top       { margin-top: 2rem; }
+.margined-top-sm    { margin-top: 1rem; }
+.margined-top-xs    { margin-top: .5rem; }
+.margined-top-lg    { margin-top: 3rem; }
+.margined-for-nav   { margin-top: 7rem; }
+.margined-bottom    { margin-bottom: 2rem; }
+.margined-bottom-sm { margin-bottom: 1rem; }
+.margined-bottom-xs { margin-bottom: .5rem; }
+.margined-bottom-lg { margin-bottom: 3rem; }
+.margined-left      { margin-left: 1rem; }
+.margined-right     { margin-right: 1rem; }
+
+
+/* misc */
+.no-float { float: none; }
+
+.no-wrap { white-space: nowrap; }
+
+.cursor-pointer { cursor: pointer; }
+
+.align-center { text-align: center; }
+
+.no-decoration { text-decoration: none !important; }
+
+.vertical-align-middle { vertical-align: middle !important; }
+
+.hide {
+  position: absolute;
+  clip    : rect(1px, 1px, 1px, 1px);
+}
+
+
+/* navbar image */
+.navbar-brand > img {
+  height: 45px;
+  position: absolute;
+}
+
+
+/* footer styles */
+footer.footer {
+  color:      #aaa;
+  text-align: center;
+  padding:    8px 16px;
+  margin-top: 72px;
+  border-top: 1px solid #E5E5E5;
+}
+
+/* move the image up so the owl is sitting on the border */
+footer.footer > .text-center > img { margin-top: -63px; }
+footer.footer > .text-center > img.big-owl { margin-top: -90px; }
+
+
+/* alert styles - small alerts */
+.alert.alert-sm { padding: .5rem; }
+
+
+/* figure styles */
+/* override removes bottom margin */
+figure.figure {
+  margin  : 0;
+  position: relative;
+}
+
+
+/* button to open image in new tab */
+.open-image {
+  visibility: hidden;
+  position  : absolute;
+  top       : 5px;
+  right     : 5px;
+}
+
+figure.figure:hover > .open-image { visibility: visible; }
+
+.table td {
+  line-height: 1.05;
+}
+
+
+/* button to toggle more downloads */
+.show-more-downloads {
+  font-size : 90%;
+  margin-top: 1rem;
+}
+
+
+/* buttons on the right of the downloads page */
+.downloads-info-btn {
+  width: 160px;
+}
+
+
+/* version time display */
+.time {
+  margin-top: -6px;
+}
+
+
+/* custom select styles */
+.input-group .custom-select {
+  border-radius: 0 .25rem .25rem 0;
+}
+.custom-select {
+  display: inline-block;
+  max-width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem 1.75rem .375rem .75rem;
+  line-height: 1.25;
+  color: #464a4c;
+  vertical-align: middle;
+  background: #fff;
+  -webkit-background-size: 8px 10px;
+  background-size: 8px 10px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+
+/* large labels */
+.label-lg {
+  font-size : 100%;
+  padding   : .25rem .5rem;
+}
+
+
+/* small inputs for numbers */
+.input-group input {
+  max-width: 80px;
+}
+
+
+/* flex styles */
+.d-flex {
+  display: flex !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+.align-items-start {
+  align-items: flex-start !important;
+}
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+
+/* agenda styles */
+.agenda-time {
+  flex: 0 0 160px;
+}
+.agenda-title {
+  flex: 1;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.agenda-title .more-info {
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+
+/* quote styles */
+.quote {
+  border-left: 5px solid;
+  padding-left: 8px;
+}
+.quote-danger {
+  border-left-color: #d9534f;
+}
+.quote-info {
+  border-left-color: #5bc0de;
+}
+.quote-warning {
+  border-left-color: #f0ad4e;
+}
