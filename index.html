@@ -31,12 +31,8 @@
 </head>
 
 <body id="viewport">
-  <div class="container">
+  <div class="container-fluid">
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
-      <div class="navbar-brand">
-        <img src="simple_logo.png" />
-        <div class="ml-5">Moloch</div>
-      </div>
       <button class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -50,28 +46,20 @@
         id="collapsingNavbar">
         <ul class="nav navbar-nav mr-auto" role="tablist">
           <li class="nav-item">
-            <a class="nav-link" href="#home" data-toggle="tab" role="tab">
-              Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#demo" data-toggle="tab" role="tab">
-              Demo
+            <!-- TODO dropdown with demo, downloads, and help -->
+            <a class="nav-link"
+              href="#home"
+              data-toggle="tab"
+              role="tab">
+              <img src="simple_logo.png" />
+              <strong class="ml-5">
+                Moloch
+              </strong>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#estimators" data-toggle="tab" role="tab">
               Estimators
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#downloads" data-toggle="tab" role="tab">
-              Downloads
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#help" data-toggle="tab" role="tab">
-              Help
             </a>
           </li>
         </ul>
@@ -83,7 +71,7 @@
           </a>
           -->
           <a href="https://slackinvite.molo.ch/"
-            class="btn btn-sm btn-outline-info ml-1"
+            class="btn btn-sm btn-outline-secondary ml-1"
             title="Join the conversation on Slack"
             data-toggle="tooltip"
             data-placement="left">
@@ -93,137 +81,302 @@
           <a href="https://github.com/aol/moloch"
             title="View Moloch on GitHub"
             data-toggle="tooltip" data-placement="left"
-            class="btn btn-sm btn-outline-secondary ml-1">
+            class="btn btn-sm btn-outline-info ml-1">
             <span class="fa fa-github fa-2x"></span>
             <span class="hide">Moloch GitHub</span>
           </a>
         </form>
       </div>
     </nav>
-    <div class="tab-content margined-for-nav">
+    <div class="tab-content">
       <!-- home panel -->
       <div class="tab-pane fade in active" id="home" role="tabpanel">
-        <div class="row margined-bottom-lg">
+
+        <!-- lead -->
+        <div class="row mb-5">
           <div class="col-md-12">
-            <div class="media">
-              <span class="media-left">
-                <img src="moloch_2x2.png" height="96px" alt="Moloch Logo" />
+            <h1 class="display-4 align-center">
+              Full packet capture
+            </h1>
+            <p class="lead align-center">
+              <strong>
+                Large scale, open source, packet capturing, indexing, and searching system.
+              </strong>
+            </p>
+            <p class="lead align-center">
+              Augment your current security infrastructure to store and
+              <br>
+              index network traffic in standard PCAP format.
+            </p>
+          </div>
+        </div>
+        <div class="row mb-5 mt-5">
+          <div class="col align-center">
+            <!-- TODO link to download section of the home tab -->
+            <a href class="btn btn-purp btn-lg mr-3">
+              Download
+            </a>
+            <a href="https://github.com/aol/moloch"
+              class="btn btn-outline-info btn-lg mr-3">
+              View Source
+            </a>
+            <a href="https://slackinvite.molo.ch/"
+              class="btn btn-outline-secondary btn-lg">
+              Slack Us
+            </a>
+          </div>
+        </div>
+        <div class="jumbotron mb-5 mt-5 ml-5 mr-5">
+          <p class="lead align-center text-muted">
+            Moloch is not meant to replace Intrusion Detection Systems (IDS),
+            instead it provides more visibility.
+          </p>
+          <div class="row mt-5">
+            <div class="col-lg-3 col-md-6">
+              <span class="fa fa-lock fa-3x">
               </span>
-              <div class="media-body">
-                <p><strong>
-                Moloch is a large scale, open source, full packet
-                capturing, indexing, and database system.
-                </strong></p>
-                Moloch augments your current security
-                infrastructure by storing and indexing network
-                traffic in standard PCAP format, while also
-                providing fast indexed access.
-                Moloch is not meant to replace Intrusion Detection
-                Systems (IDS), instead it provides more visibility.
-                Moloch is built with
-                an intuitive UI/UX which reduces the analysis time
-                of suspected incidents.
-              </div>
+              <h5 class="text-purp mt-1">
+                Security
+              </h5>
+              <p>
+                Access to Moloch is protected by using HTTPS with digest passwords or
+                by using an authentication providing web server proxy. All PCAPs are
+                stored on the installed Moloch sensors and are only through the Moloch
+                web interface or API. Moloch supports encrypting the PCAP files at rest.
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <span class="fa fa-expand fa-3x">
+              </span>
+              <h5 class="text-purp mt-1">
+                Scalability
+              </h5>
+              <p>
+                Moloch is designed to be deployed across multiple clustered
+                systems providing the ability to scale to handle multiple
+                gigabits per second of traffic. PCAP retention is based on
+                available sensor disk space while metadata retention is
+                based on the scale of the Elasticsearch cluster.
+                Both can be increased at anytime.
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <span class="fa fa-hand-pointer-o fa-3x">
+              </span>
+              <h5 class="text-purp mt-1">
+                Interface
+              </h5>
+              <p>
+                A web application is provided for PCAP browsing,
+                searching, analysis, and PCAP carving for exporting. Moloch
+                stores and exports all packets in standard PCAP format
+                allowing you to use your favorite PCAP ingesting tools
+                during your analysis workflow.
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <span class="fa fa-cloud-download fa-3x">
+              </span>
+              <h5 class="text-purp mt-1">
+                APIs
+              </h5>
+              <p>
+                APIs are exposed that allow PCAP data and JSON-formatted
+                session data to be downloaded directly.
+              </p>
+              <p>
+                <!-- TODO faq another tab instead of github wiki-->
+                <a href="https://github.com/aol/moloch/wiki/API"
+                  class="no-decoration mt-2">
+                  View the API documentation
+                </a>
+              </p>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-lock fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">Security</h5>
-                <small>
-                  The owl takes security seriously! Access to Moloch is
-                  protected by using HTTPS with digest passwords or by using an
-                  authentication providing web server proxy. All PCAPs are
-                  stored on the installed Moloch sensors and are only accessed
-                  by utilizing the Moloch interface or API.  Moloch supports
-                  encrypting the PCAP files at rest.
-                </small>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-expand fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">Scalability</h5>
-                <small>
-                  Moloch is designed to be deployed across multiple clustered
-                  systems providing the ability to scale to handle multiple
-                  gigabits/sec of traffic. PCAP retention is based on
-                  available sensor disk space while metadata retention is
-                  based on the scale of the Elasticsearch cluster. Both
-                  rentention sizes can be increased at anytime as they are
-                  under your complete control.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-hand-pointer-o fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">Interface</h5>
-                <small>
-                  An intuitive web interface is provided for PCAP browsing,
-                  searching, analysis, and PCAP carving for exporting. Moloch
-                  stores and exports all packets in standard PCAP format
-                  allowing you to use your favorite PCAP ingesting tools, such
-                  as wireshark, during your analysis workflow.
-                </small>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-cloud-download fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">
-                  <a href="https://github.com/aol/moloch/wiki/API"
-                    class="no-decoration">
-                    APIs
-                  </a>
+        </div> <!-- /lead -->
+
+        <!-- screenshots -->
+        <div class="mt-5">
+          <!-- sessions -->
+          <h1 class="align-center mt-5 mb-3">
+            Sessions Page
+          </h1>
+          <img src="sessions.png"
+            alt="Sessions screenshot"
+            class="background-img"
+          />
+          <div class="jumbotron mb-5 mt-3 ml-2 mr-2">
+            <p class="lead align-center">
+              The Sessions page displays a list of indexed sessions for the selected time period and search expression.
+              It includes a timeline graph and map of the session results.
+            </p>
+            <div class="row mt-5">
+              <div class="col-lg-2 col-md-4">
+                <span class="fa fa-search fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Search
                 </h5>
-                <small>
-                  APIs are exposed that allow PCAP data and JSON-formatted
-                  session data to be downloaded directly.
-                </small>
+                <p>
+                  The search bar allows for powerful search queries to narrow down the data.
+                  Click the owl for available fields.
+                </p>
+              </div>
+              <div class="col-lg-2 col-md-4">
+                <span class="fa fa-plus fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Session detail
+                </h5>
+                <p>
+                  Get more information about any session and view the session's
+                  packet data by clicking the "+" button.
+                </p>
+              </div>
+              <div class="col-lg-2 col-md-4">
+                <span class="fa fa-hand-o-up fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Value actions
+                </h5>
+                <p>
+                  Hover and click any value to view a dropdown menu of actions, like
+                  applying that value as search criteria.
+                </p>
+              </div>
+              <div class="col-lg-2 col-md-4">
+                <span class="fa fa-cloud-download fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Export PCAP
+                </h5>
+                <p>
+                  You can export search results as PCAP or CSV by clicking the "Actions"
+                  (<span class="fa fa-caret-down"></span>) drop down menu on the top right.
+                </p>
+              </div>
+              <div class="col-lg-2 col-md-4">
+                <span class="fa fa-arrows-h fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Timeline search
+                </h5>
+                <p>
+                  Click and drag an area in the timeline to filter sessions by time.
+                </p>
+              </div>
+              <div class="col-lg-2 col-md-4">
+                <span class="fa fa-globe fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Country search
+                </h5>
+                <p>
+                  Click a country on the map to apply it as search criteria.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row margined-top align-center">
-          <div class="col-md-6 margined-bottom">
-            <a href="https://github.com/aol/moloch" class="no-decoration">
-              View Moloch on GitHub
-              <span class="fa fa-lg fa-github"></span>
-            </a>
-          </div>
-          <div class="col-md-6 margined-bottom">
-            <a href="https://slackinvite.molo.ch/" class="no-decoration">
-              Join us on Slack
-              <span class="fa fa-lg fa-slack"></span>
-            </a>
-          </div>
-        </div>
+          </div> <!-- /sessions -->
+          <!-- spiview -->
+          <h1 class="align-center mt-5 mb-3">
+            SPI View Page
+          </h1>
+          <img src="spiview.png"
+            alt="SPI View screenshot"
+            class="background-img"
+          />
+          <div class="jumbotron mb-5 mt-3 ml-2 mr-2">
+            <p class="lead align-center">
+              The SPI (Session Profile Information) View page allows you you to view unique values with session counts for each of the captured fields.
+            </p>
+            <div class="row mt-5">
+              <div class="col-4">
+                <span class="fa fa-plus fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Toggle categories
+                </h5>
+                <p>
+                  Click on any section to open or close any field category.
+                </p>
+              </div>
+              <div class="col-4">
+                <span class="fa fa-search fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Search for fields
+                </h5>
+                <p>
+                  Search for fields within a category by using the input box within a category.
+                </p>
+              </div>
+              <div class="col-4">
+                <span class="fa fa-hand-o-up fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Toggle fields
+                </h5>
+                <p>
+                  Click on a field in the top section of a category to toggle the field's visibility.
+                </p>
+              </div>
+            </div>
+          </div> <!-- /spiview -->
+          <!-- spiview -->
+          <h1 class="align-center mt-5 mb-3">
+            SPI Graph Page
+          </h1>
+          <img src="spigraph.png"
+            alt="SPI Graph screenshot"
+            class="background-img"
+          />
+          <div class="jumbotron mb-5 mt-3 ml-2 mr-2">
+            <p class="lead align-center">
+              The SPI (Session Profile Information) Graph page shows a temporal view for the top unique values of any field.
+            </p>
+            <div class="row mt-5">
+              <div class="col-4">
+                <span class="fa fa-plus fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Total
+                </h5>
+                <p>
+                  The first timeline graph and map shows an aggregation of all the results below.
+                  Click on the "x" button on this map to hide all maps.
+                </p>
+              </div>
+              <div class="col-4">
+                <span class="fa fa-search fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  Search for fields
+                </h5>
+                <p>
+                  Make a selection from the SPI Graph drop down on the top left
+                  to view the unique values for different fields.
+                </p>
+              </div>
+              <div class="col-4">
+                <span class="fa fa-list-ol fa-2x">
+                </span>
+                <h5 class="text-purp mt-1">
+                  More fields
+                </h5>
+                <p>
+                  Change the number of Max Elements to display more results.
+                </p>
+              </div>
+            </div>
+          </div> <!-- /spiview -->
+        </div> <!-- /screenshots -->
+
       </div> <!-- /home panel -->
       <!-- demo panel -->
       <div class="tab-pane fade" id="demo" role="tabpanel">
         <div class="row">
           <div class="col-md-12">
-            <h4 class="margined-bottom-sm">
+            <h4 class="mb-4-sm">
               Moloch Demo
               <a href="https://demo.molo.ch/?date=-1" title="View the Moloch Demo"
                 class="btn btn-outline-primary btn-sm pull-right"
@@ -454,7 +607,7 @@
 
       <!-- estimators panel -->
       <div class="tab-pane fade" id="estimators" role="tabpanel">
-        <div class="row margined-bottom">
+        <div class="row mb-4">
           <div class="col-md-12">
             <h4>
               Moloch Estimators
@@ -483,7 +636,7 @@
 
             <br>
 
-            <div class="card mb-2">
+            <div class="card mb-4">
               <div class="card-body">
                 <h5 class="card-title">
                   Capture Machines
@@ -508,7 +661,7 @@
 
                 <hr>
 
-                <div class="form-inline mb-2">
+                <div class="form-inline mb-4">
                   <label class="sr-only" for="captureDaysInput">
                     PCAP Retention Days
                   </label>
@@ -658,7 +811,7 @@
 
                 <hr>
 
-                <div class="form-inline mb-2">
+                <div class="form-inline mb-4">
                   <label class="sr-only" for="esDaysInput">
                     ES Retention Days
                   </label>
@@ -825,9 +978,9 @@
 
       <!-- downloads panel -->
       <div class="tab-pane fade" id="downloads" role="tabpanel">
-        <div class="row margined-bottom">
+        <div class="row mb-4">
           <div class="col-md-9">
-            <h4 class="margined-bottom">
+            <h4 class="mb-4">
               Downloads
             </h4>
             <p class="quote quote-danger">
@@ -863,17 +1016,17 @@
           <div class="col-md-3">
             <span class="pull-md-right pull-sm-left">
               <a href="https://s3.amazonaws.com/files.molo.ch/NOTICE.txt"
-                class="btn btn-outline-danger btn-sm margined-bottom-xs downloads-info-btn">
+                class="btn btn-outline-danger btn-sm mb-4-xs downloads-info-btn">
                 <span class="fa fa-exclamation-triangle"></span>&nbsp;
                 NOTICE.txt
               </a><br>
               <a href="https://raw.githubusercontent.com/aol/moloch/master/CHANGELOG"
-                class="btn btn-outline-primary btn-sm margined-bottom-xs downloads-info-btn">
+                class="btn btn-outline-primary btn-sm mb-4-xs downloads-info-btn">
                 <span class="fa fa-th-list"></span>&nbsp;
                 Changelog
               </a><br>
               <a href="https://raw.githubusercontent.com/aol/moloch/master/release/README.txt"
-                class="btn btn-outline-info btn-sm margined-bottom-xs downloads-info-btn"
+                class="btn btn-outline-info btn-sm mb-4-xs downloads-info-btn"
                 title="Instructions for using the prebuilt Moloch packages"
                 data-toggle="tooltip">
                 <span class="fa fa-download"></span>&nbsp;
@@ -928,7 +1081,7 @@
 
       <!-- help panel -->
       <div class="tab-pane fade" id="help" role="tabpanel">
-        <div class="row margined-bottom">
+        <div class="row mb-4">
           <div class="col-md-12">
             <h4>Help</h4>
             <p>
@@ -938,7 +1091,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 margined-bottom">
+          <div class="col-md-4 mb-4">
             <div class="media">
               <div class="media-left">
                 <span class="fa fa-question-circle fa-3x fa-fw"></span>
@@ -961,7 +1114,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 margined-bottom">
+          <div class="col-md-4 mb-4">
             <div class="media">
               <div class="media-left">
                 <span class="fa fa-comments-o fa-3x fa-fw"></span>
@@ -979,7 +1132,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 margined-bottom">
+          <div class="col-md-4 mb-4">
             <div class="media">
               <div class="media-left">
                 <span class="fa fa-slack fa-3x fa-fw"></span>
@@ -1011,7 +1164,7 @@
       </a>
     </strong>
     <a href="https://github.com/aol/moloch/issues"
-      class="no-decoration pull-left margined-left"
+      class="no-decoration pull-left ml-3"
       title="Report it!" data-toggle="tooltip">
       Found an Issue?
     </a>
