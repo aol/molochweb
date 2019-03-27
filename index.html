@@ -58,8 +58,17 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#estimators" data-toggle="tab" role="tab">
+            <a class="nav-link main"
+              href="#estimators"
+              data-toggle="tab"
+              role="tab">
               Estimators
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              href="/faq">
+              FAQ
             </a>
           </li>
         </ul>
@@ -641,7 +650,7 @@
                 <h5 class="card-title">
                   Capture Machines
                   <small class="pull-right">
-                    <a href="https://github.com/aol/moloch/wiki/FAQ#what-kind-of-capture-machines-should-we-buy"
+                    <a href="/faq#what-kind-of-capture-machines-should-we-buy"
                       class="card-link">More info in FAQ</a>
                   </small>
                 </h5>
@@ -649,7 +658,7 @@
                 <p class="card-text text-muted">
                   Calculating the number of machines needed for capturing is relatively simple.
                   It is based on the average traffic rate, the number of days of retention, how much space is available on each machine, and the avg amount of traffic each machine can handle.
-                  If more then one machine is required, we highly recommend getting a <a href="https://github.com/aol/moloch/wiki/FAQ#what-kind-of-network-packet-broker-should-we-buy"
+                  If more then one machine is required, we highly recommend getting a <a href="/faq#what-kind-of-network-packet-broker-should-we-buy"
                     class="card-link">NPB</a> to load balance the traffic across the cluster.
                   We suggest RAID 5 or RAID 6 for capture disks.
                 </p>
@@ -787,7 +796,7 @@
                 <h5 class="card-title">
                   Elasticsearch Machines
                   <small class="pull-right">
-                    <a href="https://github.com/aol/moloch/wiki/FAQ#how-many-elasticsearch-nodes-or-machines-do-i-need"
+                    <a href="/faq#how-many-elasticsearch-nodes-or-machines-do-i-need"
                       class="card-link">More info in FAQ</a>
                   </small>
                 </h5>
@@ -985,7 +994,7 @@
             </h4>
             <p class="quote quote-danger">
               <strong>BEFORE</strong> upgrading from <strong>ES 5</strong> to <strong>ES 6</strong> read the
-              <a href="https://github.com/aol/moloch/wiki/FAQ#how-do-i-upgrade-to-es-6-x"
+              <a href="/faq#how-do-i-upgrade-to-es-6-x"
                 class="no-decoration">
                 How do I upgrade to ES 6
               </a>
@@ -996,7 +1005,7 @@
             </p>
             <p class="quote quote-danger">
               <strong>BEFORE</strong> upgrading to <strong>Moloch 1.0 or 1.1</strong> read the
-              <a href="https://github.com/aol/moloch/wiki/FAQ#How_do_I_upgrade_to_Moloch_1"
+              <a href="/faq#How_do_I_upgrade_to_Moloch_1"
                 class="no-decoration">
                 How do I upgrade to Moloch 1.0
               </a>
@@ -1006,7 +1015,7 @@
             </p>
             <p class="quote quote-danger">
               <strong>BEFORE</strong> upgrading from <strong>ES 2</strong> to <strong>ES 5</strong> read the
-              <a href="https://github.com/aol/moloch/wiki/FAQ#How_do_I_upgrade_to_ES_5x"
+              <a href="/faq#How_do_I_upgrade_to_ES_5x"
                 class="no-decoration">
                 How do I upgrade to ES 5
               </a>
@@ -1100,7 +1109,7 @@
                 <h5 class="media-heading">FAQ</h5>
                 <p>
                   We maintain a
-                  <a href="https://github.com/aol/moloch/wiki/FAQ"
+                  <a href="/faq"
                     class="no-decoration">
                     FAQ
                   </a>
@@ -1176,7 +1185,7 @@
         class="no-decoration">Wiki</a>&nbsp;&nbsp;&nbsp;
       <a href="https://github.com/aol/moloch/wiki/API"
         class="no-decoration">API</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://github.com/aol/moloch/wiki/FAQ"
+      <a href="/faq"
         class="no-decoration">FAQ</a>
     </span>
   </footer>
@@ -1250,7 +1259,7 @@
       if (!hash) { hash = '#home'; }
       $('ul.nav li a[href="' + hash + '"]').tab('show');
 
-      $('a.nav-link').click(function (e) {
+      $('a.nav-link.main').click(function (e) {
         window.location.hash = this.hash;
       });
 

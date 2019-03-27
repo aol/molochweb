@@ -195,3 +195,20 @@ figure.figure:hover > .open-image { visibility: visible; }
 .quote-warning {
   border-left-color: #f0ad4e;
 }
+
+
+/* code styles */
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  border-radius: 3px;
+  background-color: #f6f8fa;
+}
+
+
+/* FAQ styles ---------------------- */
+.faq-content {
+  padding-top: 80px;
+}
