@@ -1,19 +1,44 @@
 /* TODO */
-body > .container-fluid {
-  background-color: #ECE8EF;
-}
-.jumbotron {
+.jumbotron-white {
   background-color: #FFFFFF;
 }
-body .tab-content {
-  padding-top: 7rem;
-  padding-bottom: 5rem;
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto
+  margin-right: auto;
+  overflow-x: hidden; /* TODO */
 }
+
 /* TODO */
-.background-img {
-  width: calc(100% + 30px);
-  margin-left: -15px;
-  margin-right: -15px;
+div.img-container {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  background-color: #e7e0ed;
+  clip-path: polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
+}
+div.img-container > .background-img {
+  width: 100%;
+  /* border-top: 2px solid #360540; */
+  /* box-shadow: 0px -4px 5px 0px white; */
+  clip-path: polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
+}
+
+/* TODO */
+div.demo {
+  top: -100px;
+  position: relative;
+}
+div.demo > h1 {
+  margin-bottom: 60px;
+}
+
+/* TODO */
+.p-nav {
+  padding-top: 80px;
+}
+.p-nav-lg {
+  padding-top: 120px;
 }
 
 
@@ -30,8 +55,18 @@ body .tab-content {
 
 .vertical-align-middle { vertical-align: middle !important; }
 
+/* TODO */
+.angle-background {
+  padding-bottom: 7rem;
+  clip-path: polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
+}
+
 /* TODO purp */
-.text-purp { color: #830B9C; }
+.purp-background {
+  background-color: #e7e0ed;
+}
+.purp-text { color: #830B9C; }
+.dark-purp-text { color: #530763; }
 .btn.btn-purp {
   color: #FFFFFF;
   border-color: #830B9C;
@@ -49,7 +84,8 @@ body .tab-content {
 
 
 /* navbar owl image */
-.nav-link > img {
+.nav-link > img,
+.navbar-brand > img {
   top: 4px;
   left: 15px;
   height: 55px;
@@ -211,4 +247,11 @@ pre {
 /* FAQ styles ---------------------- */
 .faq-content {
   padding-top: 80px;
+}
+
+
+/* estimators styles --------------- */
+.estimators-content {
+  padding-top: 80px;
+  padding-bottom: 70px;
 }
