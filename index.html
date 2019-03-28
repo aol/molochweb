@@ -120,15 +120,15 @@
         <div class="row mb-5 mt-3">
           <div class="col align-center">
             <a href="#downloads"
-              class="btn btn-purp btn-lg mr-3">
+              class="btn btn-purp btn-lg mr-3 btn-fw">
               Download
             </a>
             <a href="https://github.com/aol/moloch"
-              class="btn btn-outline-info btn-lg mr-3">
+              class="btn btn-outline-info btn-lg mr-3 btn-fw">
               GitHub
             </a>
             <a href="https://slackinvite.molo.ch/"
-              class="btn btn-outline-secondary btn-lg">
+              class="btn btn-outline-secondary btn-lg btn-fw">
               Slack Us
             </a>
           </div>
@@ -325,7 +325,7 @@
             The SPI (Session Profile Information) View page allows you you to view unique values with session counts for each of the captured fields.
           </p>
           <div class="row mt-5">
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-plus fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -335,7 +335,7 @@
                 Click on any section to open or close any field category.
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-search fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -345,7 +345,7 @@
                 Search for fields within a category by using the input box within a category.
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-hand-o-up fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -353,6 +353,20 @@
               </h5>
               <p>
                 Click on a field in the top section of a category to toggle the field's visibility.
+                You can also click the load/unload all buttons to load/unload all the fields
+                in that category.
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <span class="fa fa-ban fa-2x">
+              </span>
+              <h5 class="purp-text mt-1">
+                Cancel Load
+              </h5>
+              <p>
+                Click the cancel button on the top right of the page if the
+                page is taking a long time load data or you made a mistake when
+                you issued a query.
               </p>
             </div>
           </div>
@@ -373,7 +387,7 @@
             The SPI (Session Profile Information) Graph page shows a temporal view for the top unique values of any field.
           </p>
           <div class="row mt-5">
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-plus fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -384,7 +398,7 @@
                 Click on the "x" button on this map to hide all maps.
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-search fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -395,7 +409,7 @@
                 to view the unique values for different fields.
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-list-ol fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -403,6 +417,19 @@
               </h5>
               <p>
                 Change the number of Max Elements to display more results.
+              </p>
+            </div>
+            <!-- TODO -->
+            <div class="col-lg-3 col-md-6">
+              <span class="fa fa-sort fa-2x">
+              </span>
+              <h5 class="purp-text mt-1">
+                Sorting
+              </h5>
+              <p>
+                Change the sort by dropdown to change how the results are sorted.
+                By default, the results are sorted starting with the highest unique
+                field value.
               </p>
             </div>
           </div>
@@ -423,7 +450,7 @@
             The Connections page shows a network graph of your search results.
           </p>
           <div class="row mt-5">
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-lock fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -433,7 +460,7 @@
                 Click and drag a node to lock it into place in the graph.
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-hand-o-up fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -443,7 +470,18 @@
                 Hover over a node or a link to view more information (or hide it).
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-lg-3 col-md-6">
+              <span class="fa fa-text-width fa-2x">
+              </span>
+              <h5 class="purp-text mt-1">
+                Node/Link Weight
+              </h5>
+              <p>
+                Change the Node/Link Weight dropdown to change how the node and link
+                sizes are calculated.
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6">
               <span class="fa fa-search fa-2x">
               </span>
               <h5 class="purp-text mt-1">
@@ -470,19 +508,19 @@
             </h1>
             <div class="row mb-4 mt-4">
               <div class="col align-center">
-                <a class="btn btn-outline-danger btn-lg mr-3"
+                <a class="btn btn-outline-danger btn-lg mr-3 btn-fw"
                   href="https://s3.amazonaws.com/files.molo.ch/NOTICE.txt">
                   NOTICE
                 </a>
-                <a class="btn btn-outline-primary btn-lg mr-3"
+                <a class="btn btn-outline-primary btn-lg mr-3 btn-fw"
                   href="https://raw.githubusercontent.com/aol/moloch/master/CHANGELOG">
                   CHANGELOG
                 </a>
-                <a class="btn btn-outline-info btn-lg mr-3"
+                <a class="btn btn-outline-info btn-lg mr-3 btn-fw"
                   href="https://raw.githubusercontent.com/aol/moloch/master/release/README.txt">
                   Instructions
                 </a>
-                <a class="btn btn-outline-success btn-lg mr-3"
+                <a class="btn btn-outline-success btn-lg mr-3 btn-fw"
                   href="https://github.com/aol/moloch/issues/new">
                   Open an Issue
                 </a>

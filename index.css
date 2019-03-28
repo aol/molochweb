@@ -41,6 +41,11 @@ div.demo > h1 {
   padding-top: 120px;
 }
 
+/* TODO */
+.btn-fw {
+  width: 160px;
+}
+
 
 /* misc */
 .no-float { float: none; }
