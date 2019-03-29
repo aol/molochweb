@@ -32,7 +32,7 @@
 
 <body id="viewport">
 
-<div class="container">
+<div class="container-fluid">
 
   <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
     <div class="navbar-brand">
@@ -50,199 +50,286 @@
     </form>
   </nav>
 
-  <div class="faq-content">
-    <!-- toc -->
-    <h3>
-      Table of Contents
-    </h3>
-    <ul>
-      <li>
-        <a href="#general">
-          General
-        </a>
-        <ul>
-          <li><a href="#why-should-i-use-moloch">
-            Why should I use Moloch?
-          </a></li>
-          <li><a href="#upgrading-moloch">
-            Upgrading Moloch
-          </a></li>
-          <li><a href="#what-oses-are-supported">
-            What OSes are supported?
-          </a></li>
-          <li><a href="#moloch-is-not-working">
-            Moloch is not working
-          </a></li>
-          <li><a href="#how-do-i-reset-moloch">
-            How do I reset Moloch?
-          </a></li>
-          <li><a href="#self-signed-ssl-tls-certificates">
-            Self-Signed SSL/TLS Certificates
-          </a></li>
-          <li><a href="#how_do_i_upgrade_to_moloch_1">
-            How do I upgrade to Moloch 1.0
-          </a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#elasticsearch">
-          Elasticsearch
-        </a>
-        <ul>
-          <li><a href="#how-many-elasticsearch-nodes-or-machines-do-i-need">
-            How many elasticsearch nodes or machines do I need?
-          </a></li>
-          <li><a href="#data-never-gets-deleted">
-            Data never gets deleted
-          </a></li>
-          <li><a href="#error-dropping-request-_bulk">
-            ERROR - Dropping request /_bulk
-          </a></li>
-          <li><a href="#when-do-i-add-additional-nodes-why-are-queries-slow">
-            When do I add additional nodes? Why are queries slow?
-          </a></li>
-          <li><a href="#removing-nodes">
-            Removing nodes
-          </a></li>
-          <li><a href="#how-to-enable-elasticsearch-replication">
-            How to enable elasticsearch replication
-          </a></li>
-          <li><a href="#how-do-i-upgrade-elasticsearch">
-            How do I upgrade elasticsearch?</a></li>
-          <li><a href="#how-do-i-upgrade-to-es-6-x">
-            How do I upgrade to ES 6.x
-          </a></li>
-          <li><a href="#how_do_i_upgrade_to_es_5x">
-            How do I upgrade to ES 5.x
-          </a></li>
-          <li><a href="#es-2-org-elasticsearch-common-breaker-circuitbreakingexception-fielddata-data-too-large">
-            ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large
-          </a></li>
-          <li><a href="#recommended-elasticsearch-settings">
-            Recommended Elasticsearch Settings
-          </a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#capture">
-          Capture
-        </a>
-        <ul>
-          <li><a href="#what-kind-of-capture-machines-should-we-buy">
-            What kind of capture machines should we buy?
-          </a></li>
-          <li><a href="#what-kind-of-network-packet-broker-should-we-buy">
-            What kind of Network Packet Broker should we buy?
-          </a></li>
-          <li><a href="#what-kind-of-packet-capture-speeds-can-moloch-capture-handle">
-            What kind of packet capture speeds can moloch-capture handle?
-          </a></li>
-          <li><a href="#moloch_requires_full_packet_captures_error">
-            Moloch requires full packet captures error
-          </a></li>
-          <li><a href="#why-am-i-dropping-packets">
-            Why am I dropping packets?
-          </a></li>
-          <li><a href="#how-do-i-import-existing-pcaps">
-            How do I import existing PCAPs?
-          </a></li>
-          <li><a href="#how-do-i-monitor-multiple-interfaces">
-            How do I monitor multiple interfaces?
-          </a></li>
-          <li><a href="#moloch-capture-crashes">
-            Moloch capture crashes
-          </a></li>
-          <li><a href="#error-pcap-open-failed">
-            ERROR - pcap open failed
-          </a></li>
-          <li><a href="#how-to-reduce-amount-of-traffic-pcap">
-            How to reduce amount of traffic/pcap?
-          </a></li>
-          <li><a href="#life-of-a-packet">
-            Life of a packet
-          </a></li>
-          <li><a href="#pcap-deletion">
-            PCAP Deletion
-          </a></li>
-          <li><a href="#dontsavebpfs-doesn-t-work">
-            <code>dontSaveBPFs</code> doesn’t work
-          </a></li>
-          <li><a href="#zero-byte-pcap-files">
-            Zero byte pcap files
-          </a></li>
-          <li><a href="#can-i-virtualize-moloch-with-kvm-using-openvswitch">
-            Can I virtualize Moloch with KVM using OpenVswitch?
-          </a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#viewer">Viewer</a>
-        <ul>
-          <li><a href="#where-do-i-learn-more-about-the-expressions-available">
-            Where do I learn more about the expressions available
-          </a></li>
-          <li><a href="#exported-pcap-files-are-corrupt-sometimes-session-detail-fails">
-            Exported pcap files are corrupt, sometimes session detail fails
-          </a></li>
-          <li><a href="#map-counts-are-wrong">
-            Map counts are wrong
-          </a></li>
-          <li><a href="#what-browsers-are-supported">
-            What browsers are supported?
-          </a></li>
-          <li><a href="#viewer-doesn-t-run-after-upgrading-node-js">
-            Viewer doesn’t run after upgrading Node.js
-          </a></li>
-          <li><a href="#error-getaddrinfo-eaddrinfo">
-            Error: getaddrinfo EADDRINFO
-          </a></li>
-          <li><a href="#how-do-i-proxy-moloch-using-apache">
-            How do I proxy Moloch using Apache
-          </a></li>
-          <li><a href="#i-still-get-prompted-for-password-after-setting-up-apache-auth">
-            I still get prompted for password after setting up apache auth
-          </a></li>
-          <li><a href="#how-do-i-search-multiple-moloch-clusters">
-            How do I search multiple Moloch clusters
-          </a></li>
-          <li><a href="#how-do-i-use-self-signed-ssl-tls-certificates-with-multies">
-            How do I use self-signed SSL/TLS Certificates with MultiES?
-          </a></li>
-          <li><a href="#how-do-i-reset-my-password">
-            How do I reset my password?
-          </a></li>
-          <li><a href="#error-couldn-t-connect-to-remote-viewer-only-displaying-spi-data">
-            Error: Couldn’t connect to remote viewer, only displaying SPI data
-          </a></li>
-          <li><a href="#compiled-against-a-different-node-js-version-error">
-            Compiled against a different Node.js version error
-          </a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#parliament">
-          Parliament
-        </a>
-        <ul>
-          <li><a href="#sample-apache-config">
-            Sample Apache Config
-          </a></li>
-        </ul>
-      </li>
-    </ul> <!-- /toc -->
+  <div class="row mb-5 pl-4 pr-4">
+
+    <!-- toc nav -->
+    <div class="nav nav-pills nav-pills-fixed col-2">
+      <a href="#general"
+        class="nav-link"
+        title="General">
+        General
+      </a>
+      <a class="nav-link nested"
+        href="#why-should-i-use-moloch"
+        title="Why should I use Moloch?">
+        Why should I use Moloch?
+      </a>
+      <a class="nav-link nested"
+        href="#upgrading-moloch"
+        title="Upgrading Moloch">
+        Upgrading Moloch
+      </a>
+      <a class="nav-link nested"
+        href="#what-oses-are-supported"
+        title="What OSes are supported?">
+        What OSes are supported?
+      </a>
+      <a class="nav-link nested"
+        href="#moloch-is-not-working"
+        title="Moloch is not working">
+        Moloch is not working
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-reset-moloch"
+        title="How do I reset Moloch?">
+        How do I reset Moloch?
+      </a>
+      <a class="nav-link nested"
+        href="#self-signed-ssl-tls-certificates"
+        title="Self-Signed SSL/TLS Certificates">
+        Self-Signed SSL/TLS Certificates
+      </a>
+      <a class="nav-link nested"
+        href="#how_do_i_upgrade_to_moloch_1"
+        title="How do I upgrade to Moloch 1.0">
+        How do I upgrade to Moloch 1.0
+      </a>
+      <a href="#elasticsearch"
+        class="nav-link"
+        title="Elasticsearch">
+        Elasticsearch
+      </a>
+      <a class="nav-link nested"
+        href="#how-many-elasticsearch-nodes-or-machines-do-i-need"
+        title="How many Elasticsearch nodes or machines do I need?">
+        How many Elasticsearch nodes or machines do I need?
+      </a>
+      <a class="nav-link nested"
+        href="#data-never-gets-deleted"
+        title="Data never gets deleted">
+        Data never gets deleted
+      </a>
+      <a class="nav-link nested"
+        href="#error-dropping-request-_bulk"
+        title="ERROR - Dropping request /_bulk">
+        ERROR - Dropping request /_bulk
+      </a>
+      <a class="nav-link nested"
+        href="#when-do-i-add-additional-nodes-why-are-queries-slow"
+        title="When do I add additional nodes? Why are queries slow?">
+        When do I add additional nodes? Why are queries slow?
+      </a>
+      <a class="nav-link nested"
+        href="#removing-nodes"
+        title="Removing nodes">
+        Removing nodes
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-enable-elasticsearch-replication"
+        title="How do I enable Elasticsearch replication?">
+        How do I enable Elasticsearch replication?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-upgrade-elasticsearch"
+        title="How do I upgrade Elasticsearch?">
+        How do I upgrade Elasticsearch?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-upgrade-to-es-6-x"
+        title="How do I upgrade to ES 6.x?">
+        How do I upgrade to ES 6.x?
+      </a>
+      <a class="nav-link nested"
+        href="#how_do_i_upgrade_to_es_5x"
+        title="How do I upgrade to ES 5.x?">
+        How do I upgrade to ES 5.x?
+      </a>
+      <a class="nav-link nested"
+        href="#es-2-org-elasticsearch-common-breaker-circuitbreakingexception-fielddata-data-too-large"
+        title="ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large">
+        ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large
+      </a>
+      <a class="nav-link nested"
+        href="#recommended-elasticsearch-settings"
+        title="Recommended Elasticsearch Settings">
+        Recommended Elasticsearch Settings
+      </a>
+      <a href="#capture"
+        class="nav-link"
+        title="Capture">
+        Capture
+      </a>
+      <a class="nav-link nested"
+        href="#what-kind-of-capture-machines-should-we-buy"
+        title="What kind of capture machines should we buy?">
+        What kind of capture machines should we buy?
+      </a>
+      <a class="nav-link nested"
+        href="#what-kind-of-network-packet-broker-should-we-buy"
+        title="What kind of Network Packet Broker should we buy?">
+        What kind of Network Packet Broker should we buy?
+      </a>
+      <a class="nav-link nested"
+        href="#what-kind-of-packet-capture-speeds-can-moloch-capture-handle"
+        title="What kind of packet capture speeds can moloch-capture handle?">
+        What kind of packet capture speeds can moloch-capture handle?
+      </a>
+      <a class="nav-link nested"
+        href="#moloch_requires_full_packet_captures_error"
+        title="Moloch requires full packet captures error">
+        Moloch requires full packet captures error
+      </a>
+      <a class="nav-link nested"
+        href="#why-am-i-dropping-packets"
+        title="Why am I dropping packets?">
+        Why am I dropping packets?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-import-existing-pcaps"
+        title="How do I import existing PCAPs?">
+        How do I import existing PCAPs?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-monitor-multiple-interfaces"
+        title="How do I monitor multiple interfaces?">
+        How do I monitor multiple interfaces?
+      </a>
+      <a class="nav-link nested"
+        href="#moloch-capture-crashes"
+        title="Moloch capture crashes">
+        Moloch capture crashes
+      </a>
+      <a class="nav-link nested"
+        href="#error-pcap-open-failed"
+        title="ERROR - pcap open failed">
+        ERROR - pcap open failed
+      </a>
+      <a class="nav-link nested"
+        href="#how-to-reduce-amount-of-traffic-pcap"
+        title="How to reduce amount of traffic/PCAP?">
+        How to reduce amount of traffic/PCAP?
+      </a>
+      <a class="nav-link nested"
+        href="#life-of-a-packet"
+        title="Life of a packet">
+        Life of a packet
+      </a>
+      <a class="nav-link nested"
+        href="#pcap-deletion"
+        title="PCAP Deletion">
+        PCAP Deletion
+      </a>
+      <a class="nav-link nested"
+        href="#dontsavebpfs-doesn-t-work"
+        title="dontSaveBPFs doesn’t work">
+        dontSaveBPFs doesn’t work
+      </a>
+      <a class="nav-link nested"
+        href="#zero-byte-pcap-files"
+        title="Zero byte PCAP files">
+        Zero byte PCAP files
+      </a>
+      <a class="nav-link nested"
+        href="#can-i-virtualize-moloch-with-kvm-using-openvswitch"
+        title="Can I virtualize Moloch with KVM using OpenVswitch?">
+        Can I virtualize Moloch with KVM using OpenVswitch?
+      </a>
+      <a href="#viewer"
+        class="nav-link"
+        title="Viewer">
+        Viewer
+      </a>
+      <a class="nav-link nested"
+        href="#where-do-i-learn-more-about-the-expressions-available"
+        title="Where do I learn more about the expressions available?">
+        Where do I learn more about the expressions available?
+      </a>
+      <a class="nav-link nested"
+        href="#exported-pcap-files-are-corrupt-sometimes-session-detail-fails"
+        title="Exported PCAP files are corrupt, sometimes session detail fails">
+        Exported PCAP files are corrupt, sometimes session detail fails
+      </a>
+      <a class="nav-link nested"
+        href="#map-counts-are-wrong"
+        title="Map counts are wrong">
+        Map counts are wrong
+      </a>
+      <a class="nav-link nested"
+        href="#what-browsers-are-supported"
+        title="What browsers are supported?">
+        What browsers are supported?
+      </a>
+      <a class="nav-link nested"
+        href="#viewer-doesn-t-run-after-upgrading-node-js"
+        title="Viewer doesn’t run after upgrading Node.js">
+        Viewer doesn’t run after upgrading Node.js
+      </a>
+      <a class="nav-link nested"
+        href="#error-getaddrinfo-eaddrinfo"
+        title="Error: getaddrinfo EADDRINFO">
+        Error: getaddrinfo EADDRINFO
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-proxy-moloch-using-apache"
+        title="How do I proxy Moloch using Apache">
+        How do I proxy Moloch using Apache
+      </a>
+      <a class="nav-link nested"
+        href="#i-still-get-prompted-for-password-after-setting-up-apache-auth"
+        title="I still get prompted for password after setting up Apache auth">
+        I still get prompted for password after setting up Apache auth
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-search-multiple-moloch-clusters"
+        title="How do I search multiple Moloch clusters">
+        How do I search multiple Moloch clusters?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-use-self-signed-ssl-tls-certificates-with-multies"
+        title="How do I use self-signed SSL/TLS Certificates with MultiES?">
+        How do I use self-signed SSL/TLS Certificates with MultiES?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-reset-my-password"
+        title="How do I reset my password?">
+        How do I reset my password?
+      </a>
+      <a class="nav-link nested"
+        href="#error-couldn-t-connect-to-remote-viewer-only-displaying-spi-data"
+        title="Error: Couldn’t connect to remote viewer, only displaying SPI data">
+        Error: Couldn’t connect to remote viewer, only displaying SPI data
+      </a>
+      <a class="nav-link nested"
+        href="#compiled-against-a-different-node-js-version-error"
+        title="Compiled against a different Node.js version error">
+        Compiled against a different Node.js version error
+      </a>
+      <a href="#parliament"
+        class="nav-link"
+        title="Parliament">
+        Parliament
+      </a>
+      <a class="nav-link nested"
+        href="#sample-apache-config"
+        title="Sample Apache Config">
+        Sample Apache Config
+      </a>
+  </div> <!-- /toc nav -->
+
+  <div class="col ml-2 faq-content">
 
     <!-- general -->
-    <br>
-    <h2 id="general">
+    <h1 id="general">
       General
-    </h2>
+    </h1>
     <hr>
+
     <h3 id="why-should-i-use-moloch">
       Why should I use Moloch?
     </h3>
     <p>
       If you want a standalone open source full packet capture (FPC)
-      system with meta data parsing and searching then Moloch may be
+      system with meta data parsing and searching, then Moloch may be
       your answer! Moloch allows you complete control of deployment
       and architecture. There are
       <a href="https://github.com/aol/moloch/wiki/Other-FPC-Systems">
@@ -496,7 +583,7 @@ apt-get install gcc-4.8</code></pre>
           </ol>
         </li>
         <li>
-          Restart moloch-capture after adding a
+          Restart <code>moloch-capture</code> after adding a
           <code>--debug</code> option may print out useful information what is
           wrong if you are having packet capture issues. You can add multiple
           <code>--debug</code> options to get even more information.
@@ -529,7 +616,7 @@ apt-get install gcc-4.8</code></pre>
         recorded.
       </li>
       <li>
-        To delete all the SPI data stored in elasticsearch, use the
+        To delete all the SPI data stored in Elasticsearch, use the
         <code>db.pl</code> script with either the <code>init</code> or
         <code>wipe</code> commands. The only difference between the two
         commands is that <code>wipe</code> leaves the
@@ -537,7 +624,7 @@ apt-get install gcc-4.8</code></pre>
         <pre><code>/data/moloch/db/db.pl ESHOST:ESPORT wipe</code></pre>
       </li>
       <li>
-        Delete the pcap files. The PCAP files are stored on the file system in
+        Delete the PCAP files. The PCAP files are stored on the file system in
         raw format. You need to do this on <strong>all</strong> of the capture
         machines.
         <pre><code>/bin/rm -f /data/moloch/raw/*</code></pre>
@@ -670,12 +757,12 @@ apt-get install gcc-4.8</code></pre>
         Start screen or tmux since this will take several days
       </li>
       <li>
-        In the /data/moloch/viewer directory run
+        In the <code>/data/moloch/viewer</code> directory, run
         <code>/data/moloch/viewer/reindex2.js --slices X</code>
         <ul>
           <li>
             The number of slices should be between 2 and the number of shards
-            each index has, the higher the faster but more elasticsearch CPU
+            each index has, the higher the faster but more Elasticsearch CPU
             that will be used. We recommend 1/2 the number of shards.
           </li>
           <li>
@@ -711,12 +798,12 @@ apt-get install gcc-4.8</code></pre>
 
     <!-- elasticsearch -->
     <br>
-    <h2 id="elasticsearch">
+    <h1 id="elasticsearch">
       Elasticsearch
-    </h2>
+    </h1>
     <hr>
     <h3 id="how-many-elasticsearch-nodes-or-machines-do-i-need">
-      How many elasticsearch nodes or machines do I need?
+      How many Elasticsearch nodes or machines do I need?
     </h3>
     <p>The answer, of course, is "it depends". Factors include:</p>
     <ul>
@@ -756,7 +843,7 @@ apt-get install gcc-4.8</code></pre>
       </li>
       <li>
         SPI data is usually kept longer then PCAP data. For example, you may
-        store pcap for a week but SPI data for a month.
+        store PCAP for a week but SPI data for a month.
       </li>
       <li>
         Have at least 3% of disk space available in memory. For example, if the
@@ -789,7 +876,7 @@ apt-get install gcc-4.8</code></pre>
       The good news is that it is easy to add new nodes in the future, so feel
       free to start with less nodes. As a temporary fix to capacity problems,
       you can reduce the number of days of meta data that are stored. Just use
-      the elasticsearch head interface to delete the oldest
+      the Elasticsearch head interface to delete the oldest
       <code>sessions-*</code> index.
     </p>
 
@@ -871,7 +958,7 @@ apt-get install gcc-4.8</code></pre>
         again
       </li>
       <li>
-        You can increase the size of the write task Q in elasticsearch, see
+        You can increase the size of the write task Q in Elasticsearch, see
         <a href="#recommended-elasticsearch-settings">
           Recommended Elasticsearch Settings</a>.
       </li>
@@ -894,13 +981,13 @@ apt-get install gcc-4.8</code></pre>
     </h3>
     <p>
       If queries are too slow the easiest fix is to add additional
-      elasticsearch nodes. Elasticsearch doesn’t do well if Java hits an
+      Elasticsearch nodes. Elasticsearch doesn’t do well if Java hits an
       OutOfMemory condition. If you ever have one, you should immediately
       delete the oldest
       <code>sessions2-*</code>
       index, update the
       <code>daily.sh</code>
-      script to delete more often, and restart the elasticsearch cluster.
+      script to delete more often, and restart the Elasticsearch cluster.
       Then you should order more machines. :)
     </p>
 
@@ -938,8 +1025,8 @@ apt-get install gcc-4.8</code></pre>
       </li>
     </ul>
 
-    <h3 id="how-to-enable-elasticsearch-replication">
-      How to enable elasticsearch replication
+    <h3 id="how-do-i-enable-elasticsearch-replication">
+      How to enable Elasticsearch replication
     </h3>
     <p>
       Turning on replication will consume twice the disk space on the nodes
@@ -961,7 +1048,7 @@ apt-get install gcc-4.8</code></pre>
     </p>
 
     <h3 id="how-do-i-upgrade-elasticsearch">
-      How do I upgrade elasticsearch?
+      How do I upgrade Elasticsearch?
     </h3>
     <p>
       <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/rolling-upgrades.html"
@@ -974,7 +1061,7 @@ apt-get install gcc-4.8</code></pre>
     </p>
     <ul>
       <li>
-        Download latest elasticsearch from
+        Download latest Elasticsearch from
         <a href="http://www.elasticsearch.org/downloads/"
         rel="nofollow">
         http://www.elasticsearch.org/downloads/
@@ -991,7 +1078,7 @@ apt-get install gcc-4.8</code></pre>
         (if using single hostconfig)
       </li>
       <li>
-        Shutdown current elasticsearch node:
+        Shutdown current Elasticsearch node:
         <pre><code>kill &lt;pid(s)&gt;</code></pre>
       </li>
       <li>
@@ -1181,7 +1268,7 @@ apt-get install gcc-4.8</code></pre>
         using ES 5 (see above)
       </li>
       <li>
-        Shutdown EVERYTHING (elasticsearch, viewer, capture)
+        Shutdown EVERYTHING (Elasticsearch, viewer, capture)
       </li>
       <li>
         Upgrade ES to 5.6.x
@@ -1216,7 +1303,7 @@ apt-get install gcc-4.8</code></pre>
       cache will fix the problem.
     </p>
     <p>
-      Either edit your elasticsearch.yml and add:
+      Either edit your Elasticsearch.yml and add:
       <pre><code>indices.breaker.fielddata.limit: 80%</code></pre>
       or run the command:
       <pre><code>curl -XPUT localhost:9200/_cluster/settings -d '{
@@ -1244,72 +1331,74 @@ apt-get install gcc-4.8</code></pre>
       different per host can be set with variables.
     </p>
 
-    <h4 id="disk-watermark">
-      Disk Watermark
-    </h4>
-    <p>
-      You will probably want to change the watermark settings so you can use
-      more of your disk space. You have the option to use ALL percentages or
-      ALL values, but you can’t mix them. The most common sign of a problem
-      with these settings is an error that has
-      <code>FORBIDDEN/12/index read-only / allow delete</code> in it. You can
-      use <code>
-        ./db.pl
-        <a href="http://localhost:9200"
+    <div class="ml-5 mr-5">
+      <h5 id="disk-watermark">
+        Disk Watermark
+      </h5>
+      <p>
+        You will probably want to change the watermark settings so you can use
+        more of your disk space. You have the option to use ALL percentages or
+        ALL values, but you can’t mix them. The most common sign of a problem
+        with these settings is an error that has
+        <code>FORBIDDEN/12/index read-only / allow delete</code> in it. You can
+        use <code>
+          ./db.pl
+          <a href="http://localhost:9200"
+            rel="nofollow">
+            http://localhost:9200
+          </a>
+          unflood-stage _all
+        </code>
+        to clear the error, once you adjust the settings and/or delete some
+        data.
+        <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html"
           rel="nofollow">
-          http://localhost:9200
+          Elasticsearch Docs
         </a>
-        unflood-stage _all
-      </code>
-      to clear the error, once you adjust the settings and/or delete some
-      data.
-      <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html"
-        rel="nofollow">
-        Elasticsearch Docs
-      </a>
-    </p>
-
-    <pre><code>cluster.routing.allocation.disk.watermark.low: 97%
-cluster.routing.allocation.disk.watermark.high: 98%
-cluster.routing.allocation.disk.watermark.flood_stage: 99%</code></pre>
-    <p>or if you want more control use values instead of percentages.</p>
-    <pre><code>cluster.routing.allocation.disk.watermark.low: 300gb
+        <pre><code>cluster.routing.allocation.disk.watermark.low: 97%
+  cluster.routing.allocation.disk.watermark.high: 98%
+  cluster.routing.allocation.disk.watermark.flood_stage: 99%</code></pre>
+      </p>
+      <p>
+        or if you want more control use values instead of percentages:
+        <pre><code>cluster.routing.allocation.disk.watermark.low: 300gb
 cluster.routing.allocation.disk.watermark.high: 200gb
 cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
+      </p>
 
-    <h4 id="shard-limit">
-      Shard Limit
-    </h4>
-    <p>
-      If you have a lot of shards that you want to be able to search against
-      at once
-      <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html"
-        rel="nofollow">
-        Elasticsearch Docs
-      </a>
-    </p>
-    <pre><code>action.search.shard_count.limit: 100000</code></pre>
-
-    <h4 id="write-queue-limit">
-      Write Queue Limit
-    </h4>
-    <p>
-      If you hit a lot of bulk failures this can help, but Elastic doesn’t
-      recommend raising too much. In older versions of Elasticsearch it is
-      named <code>thread_pool.bulk.queue_size</code> so check the docs for
-      your version.
-      <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-threadpool.html"
-        rel="nofollow">
-        Elasticsearch Docs
-      </a>
-    </p>
-    <pre><code>thread_pool.write.queue_size: 2000</code></pre>
-
-      <h4 id="http-compression">
-        HTTP Compression
-      </h4>
+      <h5 id="shard-limit">
+        Shard Limit
+      </h5>
       <p>
-        On by default in most versions, allows for http compression.
+        If you have a lot of shards that you want to be able to search against
+        at once
+        <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html"
+          rel="nofollow">
+          Elasticsearch Docs
+        </a>
+      </p>
+      <pre><code>action.search.shard_count.limit: 100000</code></pre>
+
+      <h5 id="write-queue-limit">
+        Write Queue Limit
+      </h5>
+      <p>
+        If you hit a lot of bulk failures this can help, but Elastic doesn’t
+        recommend raising too much. In older versions of Elasticsearch it is
+        named <code>thread_pool.bulk.queue_size</code> so check the docs for
+        your version.
+        <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-threadpool.html"
+          rel="nofollow">
+          Elasticsearch Docs
+        </a>
+      </p>
+      <pre><code>thread_pool.write.queue_size: 2000</code></pre>
+
+      <h5 id="http-compression">
+        HTTP Compression
+      </h5>
+      <p>
+        On by default in most versions, allows for HTTP compression.
         <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-http.html"
           rel="nofollow">
           Elasticsearch Docs
@@ -1317,9 +1406,9 @@ cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
       </p>
       <pre><code>http.compression: true</code></pre>
 
-      <h4 id="recovery-time">
+      <h5 id="recovery-time">
         Recovery Time
-      </h4>
+      </h5>
       <p>
         To speed up recovery times and startup times there are a few controls
         to play with. Make sure you test them in your environment, and slowly
@@ -1338,12 +1427,15 @@ cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
 cluster.routing.allocation.node_concurrent_recoveries: 5
 cluster.routing.allocation.node_initial_primaries_recoveries: 5
 indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
+    </div>
 
+    <!-- capture -->
     <br>
-    <h2 id="capture">
+    <h1 id="capture">
       Capture
-    </h2>
+    </h1>
     <hr>
+
     <h3 id="what-kind-of-capture-machines-should-we-buy">
       What kind of capture machines should we buy?
     </h3>
@@ -1370,12 +1462,12 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
       </li>
       <li>
         Don’t overload network links to capture. Monitoring a 10G link with an
-        average of 4Gbps RX AND 4Gbps TX should use two 10G moloch-capture
-        links, since 8Gbps is close to the max.
+        average of 4Gbps RX AND 4Gbps TX should use two 10G
+        <code>moloch-capture</code> links, since 8Gbps is close to the max.
       </li>
       <li>
         Moloch requires all packets from the same 5-tuple to be processed by
-        the same moloch-capture process.
+        the same <code>moloch-capture</code> process.
       </li>
     </ul>
     <p>
@@ -1420,7 +1512,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
     <p>
       We are big fans of using Network Packet Brokers ($6k+). They allow
       multiple taps/mirrors to be aggregated and load balanced across multiple
-      moloch-capture machines. Read more below.
+      <code>moloch-capture</code> machines. Read more below.
     </p>
 
     <h3 id="what-kind-of-network-packet-broker-should-we-buy">
@@ -1438,16 +1530,16 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
     </p>
     <ul>
       <li>
-        Easy horizontal scaling of moloch
+        Easy horizontal scaling of Moloch
       </li>
       <li>
         Load balancing of traffic
       </li>
       <li>
-        Filtering of traffic before they hit the moloch boxes
+        Filtering of traffic before they hit the Moloch boxes
       </li>
       <li>
-        Easier to add more moloch capacity or other security tools
+        Easier to add more Moloch capacity or other security tools
       </li>
       <li>
         Don’t have to worry as much about new links being added by network team
@@ -1517,7 +1609,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
     </ul>
 
     <h3 id="what-kind-of-packet-capture-speeds-can-moloch-capture-handle">
-      What kind of packet capture speeds can moloch-capture handle?
+      What kind of packet capture speeds can <code>moloch-capture</code> handle?
     </h3>
     <p>
       On simple commodity hardware, it is easy to get 3Gbps or more, depending
@@ -1612,232 +1704,235 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
     </h3>
     <p>
       There are several different types of packet drops and reasons for
-      packet drops.
+      packet drops:
     </p>
 
-    <h4 id="moloch-version">
-      Moloch Version
-    </h4>
-    <p>
-      Please make sure you are using a recent version of Moloch. Constant
-      improvements are made and it is hard for us to support older versions.
-    </p>
+    <div class="ml-5 mr-5">
+      <h4 id="moloch-version">
+        Moloch Version
+      </h4>
+      <p>
+        Please make sure you are using a recent version of Moloch. Constant
+        improvements are made and it is hard for us to support older versions.
+      </p>
 
-    <h4 id="kernel-and-tpacket_v3-support">
-      Kernel and TPACKET_V3 support
-    </h4>
-    <p>
-      The most common cause of packet drops with Moloch is leaving the reader
-      default of libpcap instead of switching to tpacketv3, pfring or one of
-      the other high performance packet readers. We strongly recommend
-      tpacketv3, but it does required a newer kernel of 3.2 or later. See
-      plugin
-      <a href="https://github.com/aol/moloch/wiki/Settings#Reader_tpacketv3_Settings">
-        settings</a>
-      for more information.
-    </p>
-    <p>
-      For those stuck on Centos 6 use <code>elrepo</code> and install
-      <code>kernel-ml</code> on the machines that will RUN moloch-capture.
-      Install <code>kernel-ml-headers</code> on the machines that will COMPILE
-      Moloch. Download the packages from
-      <a href="http://elrepo.org/linux/kernel/el6/x86_64/RPMS/"
-        rel="nofollow">
-        http://elrepo.org/linux/kernel/el6/x86_64/RPMS/</a>.
-      The rebuilt Moloch RPMs already have been compiled on a machine with
-      newer kernel.
-    </p>
+      <h4 id="kernel-and-tpacket_v3-support">
+        Kernel and TPACKET_V3 support
+      </h4>
+      <p>
+        The most common cause of packet drops with Moloch is leaving the reader
+        default of libpcap instead of switching to tpacketv3, pfring or one of
+        the other high performance packet readers. We strongly recommend
+        tpacketv3, but it does required a newer kernel of 3.2 or later. See
+        plugin
+        <a href="https://github.com/aol/moloch/wiki/Settings#Reader_tpacketv3_Settings">
+          settings</a>
+        for more information.
+      </p>
+      <p>
+        For those stuck on Centos 6 use <code>elrepo</code> and install
+        <code>kernel-ml</code> on the machines that will RUN
+        <code>moloch-capture.</code> Install <code>kernel-ml-headers</code>
+        on the machines that will COMPILE Moloch. Download the packages from
+        <a href="http://elrepo.org/linux/kernel/el6/x86_64/RPMS/"
+          rel="nofollow">
+          http://elrepo.org/linux/kernel/el6/x86_64/RPMS/</a>.
+        The rebuilt Moloch RPMs already have been compiled on a machine with
+        newer kernel.
+      </p>
 
-    <h4 id="network-card-config">
-      Network Card Config
-    </h4>
-    <p>
-      Make sure the network card is configured correctly by increasing the ring
-      buf to max size and turning off most of the card’s features. The features
-      are not useful anyway, since we want to capture what is on the network
-      instead of what the local OS sees. Example configuration:
-      <pre><code># Set ring buf size, see max with ethool -g eth0
-ethtool -G eth0 rx 4096 tx 4096
-# Turn off feature, see available features with ethtool -k eth0
-ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
-    </p>
-    <p>
-      If Moloch was installed from the deb/rpm and the Configure script was
-      used, this should already be done in
-      <code>/data/moloch/bin/moloch_config_interfaces.sh</code>
-    </p>
+      <h4 id="network-card-config">
+        Network Card Config
+      </h4>
+      <p>
+        Make sure the network card is configured correctly by increasing the ring
+        buf to max size and turning off most of the card’s features. The features
+        are not useful anyway, since we want to capture what is on the network
+        instead of what the local OS sees. Example configuration:
+        <pre><code># Set ring buf size, see max with ethool -g eth0
+  ethtool -G eth0 rx 4096 tx 4096
+  # Turn off feature, see available features with ethtool -k eth0
+  ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
+      </p>
+      <p>
+        If Moloch was installed from the deb/rpm and the Configure script was
+        used, this should already be done in
+        <code>/data/moloch/bin/moloch_config_interfaces.sh</code>
+      </p>
 
-    <h4 id="packetthreads-and-the-packet-q-is-overflowing-error">
-      packetThreads and the PacketQ is overflowing error
-    </h4>
-    <p>
-      The packetThreads config option controls the number of threads processing
-      the packets, not the number of threads reading the packets off the
-      network card. You only need to change the value if you are getting the
-      <code>Packet Q is overflowing</code> error. The packetThreads option is
-      limited to 24 threads, but usually you only need a few.
-    </p>
-    <p>
-      To increase the number of threads the reader uses please see the
-      documentation for the reader you are using on the
-      <a href="https://github.com/aol/moloch/wiki/Settings">
-        settings</a>
-      page.
-    </p>
+      <h4 id="packetthreads-and-the-packet-q-is-overflowing-error">
+        packetThreads and the PacketQ is overflowing error
+      </h4>
+      <p>
+        The packetThreads config option controls the number of threads processing
+        the packets, not the number of threads reading the packets off the
+        network card. You only need to change the value if you are getting the
+        <code>Packet Q is overflowing</code> error. The packetThreads option is
+        limited to 24 threads, but usually you only need a few.
+      </p>
+      <p>
+        To increase the number of threads the reader uses please see the
+        documentation for the reader you are using on the
+        <a href="https://github.com/aol/moloch/wiki/Settings">
+          settings</a>
+        page.
+      </p>
 
-    <h4 id="disk">
-      Disk
-    </h4>
-    <p>
-      Make sure swap has been disabled, or at the very least, isn’t writing to
-      the disk being used for pcap.
-    </p>
-    <p>
-      Make sure the RAID isn’t in the middle of a rebuild or something worse.
-      Most RAID cards will have a status of OPTIMAL when things are all good
-      and DEGRADED or SUBOPTIMAL when things are bad.
-    </p>
-    <p>
-      To test the RAID device use:
-      <pre><code>dd bs=256k count=50000 if=/dev/zero of=/THE_MOLOCH_PCAP_DIR/test oflag=direct</code></pre>
-    </p>
-    <p>
-      If you are using <code>xfs</code> make sure you use mount options
-      <code>defaults,inode64,noatime</code>
-    </p>
-    <ul>
-      <li>
-        Don’t run capture and elasticsearch on the same machine.
-      </li>
-      <li>
-        Make sure you actually have enough disk write thru capacity and disks.
-        For example, for a 1G link with RAID 5 you may need:
-        <ul>
-          <li>
-            At least 4 spindles if using a RAID 5 card with write cache enabled.
-          </li>
-          <li>
-            At least 8 spindles (or more) if using a RAID 5 card with write
-            cache disabled.
-          </li>
-        </ul>
-      </li>
-      <li>
-        Make sure your RAID card can actually handle the write rate. Many
-        onboard RAID 5 controllers can not handle sustained 1G write rates.
-      </li>
-      <li>
-        Switch to RAID 0 from RAID 5 if you can live with the TOTAL data loss
-        on a single disk failure.
-      </li>
-    </ul>
-    <p>
-      If using EMC for disks:
-    </p>
-    <ul>
-      <li>
-        Make sure write cache is enabled for the LUNs.
-      </li>
-      <li>
-        If it is a CX with SATA drives, RAID-3 is optimized for large
-        sequential I/O.
-      </li>
-      <li>
-        Monitor EMC lun queue depth, may be too many hosts sharing it.
-      </li>
-    </ul>
-    <p>
-      To check your disk IO run <code>iostat -xm 5</code> and look at the
-      following:
-    </p>
-    <ul>
-      <li>
-        wMB/s will give you the current write rate, does it match up with what
-        you expect?
-      </li>
-      <li>
-        <code>avgqu-sz</code> should be near or less then 1, otherwise linux is
-        queueing instead of doing
-      </li>
-      <li>
-        await should be near or less then 10, otherwise the IO system is slow,
-        which will slow moloch-capture down.
-      </li>
-    </ul>
-    <p>
-      Other things to do/check:
-    </p>
-    <ul>
-      <li>
-        If using RAID 5 make sure you have write cache enabled on the RAID card.
-        <ul>
-          <li>
-            Adaptec Example: arcconf SETCACHE 1 LOGICALDRIVE 1 WBB<
-          </li>
-          <li>
-            HP Example: hpssacli ctrl slot=0 modify dwc=enable
-          </li>
-        </ul>
-      </li>
-      <li>
-        Maybe taskset to give moloch-capture its own CPU, although with the new
-        pcapWriteMethod thread or thread-direct setting, this isn’t needed, and
-        may hurt.
-      </li>
-    </ul>
+      <h4 id="disk">
+        Disk
+      </h4>
+      <p>
+        Make sure swap has been disabled, or at the very least, isn’t writing to
+        the disk being used for PCAP.
+      </p>
+      <p>
+        Make sure the RAID isn’t in the middle of a rebuild or something worse.
+        Most RAID cards will have a status of OPTIMAL when things are all good
+        and DEGRADED or SUBOPTIMAL when things are bad.
+      </p>
+      <p>
+        To test the RAID device use:
+        <pre><code>dd bs=256k count=50000 if=/dev/zero of=/THE_MOLOCH_PCAP_DIR/test oflag=direct</code></pre>
+      </p>
+      <p>
+        If you are using <code>xfs</code> make sure you use mount options
+        <code>defaults,inode64,noatime</code>
+      </p>
+      <ul>
+        <li>
+          Don’t run capture and Elasticsearch on the same machine.
+        </li>
+        <li>
+          Make sure you actually have enough disk write thru capacity and disks.
+          For example, for a 1G link with RAID 5 you may need:
+          <ul>
+            <li>
+              At least 4 spindles if using a RAID 5 card with write cache enabled.
+            </li>
+            <li>
+              At least 8 spindles (or more) if using a RAID 5 card with write
+              cache disabled.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Make sure your RAID card can actually handle the write rate. Many
+          onboard RAID 5 controllers can not handle sustained 1G write rates.
+        </li>
+        <li>
+          Switch to RAID 0 from RAID 5 if you can live with the TOTAL data loss
+          on a single disk failure.
+        </li>
+      </ul>
+      <p>
+        If using EMC for disks:
+      </p>
+      <ul>
+        <li>
+          Make sure write cache is enabled for the LUNs.
+        </li>
+        <li>
+          If it is a CX with SATA drives, RAID-3 is optimized for large
+          sequential I/O.
+        </li>
+        <li>
+          Monitor EMC lun queue depth, may be too many hosts sharing it.
+        </li>
+      </ul>
+      <p>
+        To check your disk IO run <code>iostat -xm 5</code> and look at the
+        following:
+      </p>
+      <ul>
+        <li>
+          wMB/s will give you the current write rate, does it match up with what
+          you expect?
+        </li>
+        <li>
+          <code>avgqu-sz</code> should be near or less then 1, otherwise linux is
+          queueing instead of doing
+        </li>
+        <li>
+          await should be near or less then 10, otherwise the IO system is slow,
+          which will slow <code>moloch-capture</code> down.
+        </li>
+      </ul>
+      <p>
+        Other things to do/check:
+      </p>
+      <ul>
+        <li>
+          If using RAID 5 make sure you have write cache enabled on the RAID card.
+          <ul>
+            <li>
+              Adaptec Example: arcconf SETCACHE 1 LOGICALDRIVE 1 WBB<
+            </li>
+            <li>
+              HP Example: hpssacli ctrl slot=0 modify dwc=enable
+            </li>
+          </ul>
+        </li>
+        <li>
+          Maybe taskset to give <code>moloch-capture</code> its own CPU, although
+          with the new pcapWriteMethod thread or thread-direct setting, this
+          isn’t needed and may hurt.
+        </li>
+      </ul>
 
-    <h4 id="other">
-      Other
-    </h4>
-    <ul>
-      <li>
-        There are conflicting reports that disabling irqbalancer may help.
-      </li>
-      <li>
-        Check that the CPU you are giving moloch-capture isn’t handling lots of
-        interrupts (<code>cat /proc/interrupts</code>).
-      </li>
-      <li>
-        Make sure other processes aren’t using the same CPU as moloch-capture.
-      </li>
-    </ul>
+      <h4 id="other">
+        Other
+      </h4>
+      <ul>
+        <li>
+          There are conflicting reports that disabling irqbalancer may help.
+        </li>
+        <li>
+          Check that the CPU you are giving <code>moloch-capture</code> isn’t
+          handling lots of interrupts (<code>cat /proc/interrupts</code>).
+        </li>
+        <li>
+          Make sure other processes aren’t using the same CPU as
+          <code>moloch-capture</code>.
+        </li>
+      </ul>
 
-    <h4 id="wise">
-      WISE
-    </h4>
-    <ul>
-      <li>
-        Cyclical packet drops may be caused by bad connectivity to the wise
-        server. Verify that the wiseService responds quickly
-        <code>
-          curl
-          <a href="http://moloch-wise.hostname:8081/views"
-            rel="nofollow">
-            http://moloch-wise.hostname:8081/views
-          </a>
-        </code>
-        on the moloch-capture host that is dropping packets.
-      </li>
-    </ul>
+      <h4 id="wise">
+        WISE
+      </h4>
+      <ul>
+        <li>
+          Cyclical packet drops may be caused by bad connectivity to the wise
+          server. Verify that the wiseService responds quickly
+          <code>
+            curl
+            <a href="http://moloch-wise.hostname:8081/views"
+              rel="nofollow">
+              http://moloch-wise.hostname:8081/views
+            </a>
+          </code>
+          on the <code>moloch-capture</code> host that is dropping packets.
+        </li>
+      </ul>
 
-    <h4 id="high-performance-settings">
-      High Performance Settings
-    </h4>
-    <p>
-      See
-      <a href="https://github.com/aol/moloch/wiki/Settings#high-performance-settings">
-        settings
-      </a>
-    </p>
+      <h4 id="high-performance-settings">
+        High Performance Settings
+      </h4>
+      <p>
+        See
+        <a href="https://github.com/aol/moloch/wiki/Settings#high-performance-settings">
+          settings
+        </a>
+      </p>
+    </div>
 
-    <h4 id="how-do-i-import-existing-pcaps">
+    <h3 id="how-do-i-import-existing-pcaps">
       How do I import existing PCAPs?
-    </h4>
+    </h3>
     <p>
       Think of the <code>moloch-capture</code> binary much like you would
       <code>tcpdump</code>.  <code>moloch-capture</code> can listen to live
       network interface(s), or read from historic packet capture files.
-      Currently Moloch works best with pcap files, not pcapng.
+      Currently Moloch works best with PCAP files, not pcapng.
     </p>
     <p>
       <code>
@@ -1853,14 +1948,14 @@ ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
       for more info
     </p>
     <p>
-      If Moloch is failing to load a pcap file check the following things:
+      If Moloch is failing to load a PCAP file check the following things:
     </p>
     <ul>
       <li>
-        Use pcap formatted files and not pcapng
+        Use PCAP formatted files and not pcapng
       </li>
       <li>
-        Make sure the pcap files contain IP traffic, Moloch currently ignores
+        Make sure the PCAP files contain IP traffic, Moloch currently ignores
         ARP and other traffic.
       </li>
       <li>
@@ -1870,31 +1965,32 @@ ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
       </li>
     </ul>
 
-    <h4 id="how-do-i-monitor-multiple-interfaces">
+    <h3 id="how-do-i-monitor-multiple-interfaces">
       How do I monitor multiple interfaces?
-    </h4>
+    </h3>
     <p>
       Versions since 0.14.2 support a semicolon ';' separated list of
       interfaces to listen on for live traffic.
     </p>
     <p>
-      Versions prior 0.14.2 require multiple moloch-capture processes, since a
-      capture process will only monitor a single interface. To monitor multiple
-      interfaces on a single machine, you will need multiple capture processes.
+      Versions prior 0.14.2 require multiple <code>moloch-capture</code>
+      processes, since a capture process will only monitor a single interface.
+      To monitor multiple interfaces on a single machine, you will need
+      multiple capture processes.
     </p>
     <ul>
       <li>
-        Since, by default, moloch uses the unqualified hostname as the name of
-        the moloch node, you’ll need to come up with a naming scheme. Appending
+        Since, by default, Moloch uses the unqualified hostname as the name of
+        the Moloch node, you’ll need to come up with a naming scheme. Appending
         a, b, c, …​ or the interface number to the hostname are possible methods.
       </li>
       <li>
         Edit <code>/data/moloch/etc/config.ini</code>, and create a section for
-        each of the moloch nodes. Assuming the defaults are correct in the
+        each of the Moloch nodes. Assuming the defaults are correct in the
         <code>[default]</code> section, the only thing thing that
         <strong>MUST</strong> be set is the interface item. It is also common
-        to have each moloch node talk to a different elasticsearch node if
-        running a cluster of elasticsearch nodes.
+        to have each Moloch node talk to a different Elasticsearch node if
+        running a cluster of Elasticsearch nodes.
         <pre><code>[moloch-m01a]
 interface=eth2
 [moloch-m01b]
@@ -1930,352 +2026,410 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       (although default is usually good enough).
     </p>
 
-    <h4 id="moloch-capture-crashes">
+    <h3 id="moloch-capture-crashes">
       Moloch capture crashes
-    </h4>
-    <div>
-      <p>Please file an <a href="https://github.com/aol/moloch/issues/new" rel="nofollow">issue on github</a> with the stack trace.</p>
-    </div>
-    <div>
-      <ul>
-        <li>
-          <p>You’ll need to allow suid or user changing programs to save core dumps. Use <code>sysctl</code> to change until the next reboot. Setting it to 0 will change it back to the default.
+    </h3>
+    <p>
+      Please file an
+      <a href="https://github.com/aol/moloch/issues/new"
+        rel="nofollow">
+        issue on github
+      </a>
+      with the stack trace.
+    </p>
+    <ul>
+      <li>
+        You’ll need to allow suid or user changing programs to save core dumps.
+        Use <code>sysctl</code> to change until the next reboot. Setting it to
+        0 will change it back to the default.
+        <pre><code>sysctl -w fs.suid_dumpable=2</code></pre>
+      </li>
+      <li>
+        The user that Moloch switches to must be able to write to the directory
+        that <code>moloch-capture</code> is running in.
+      </li>
+      <li>
+        Run <code>moloch-capture</code> and get it to crash.
+      </li>
+      <li>
+        Look for the most recent core file.
+      </li>
+      <li>
+        Run <code>gdb</code> (you may need to install the gdb package first)
+        <pre><code>gdb /data/moloch/bin/moloch-capture corefilename</code></pre>
+      </li>
+      <li>
+        Get the back trace using the <code>bt</code> command
+      </li>
+    </ul>
+    <p>
+      If it is easy to reproduce, sometimes it’s easier to just run
+      <code>gdb</code> as root:
+    </p>
+    <ul>
+      <li>
+        Run <code>gdb moloch-capture</code> as root.
+      </li>
+      <li>
+        Start Moloch in <code>gdb</code> with
+        <code>run ALL_THE_ARGS_USED_FOR_MOLOCH-CAPTURE_GO_HERE</code>.
+      </li>
+      <li>
+        Wait for crash.
+      </li>
+      <li>
+        Get the backtrace using <code>bt</code> command.
+      </li>
+      <li>
+        Sometimes, you need to put a break point in <code>g_log</code>
+        <code>b g_log</code>
+      </li>
+    </ul>
 
-          </p>
-          <pre><code>sysctl -w fs.suid_dumpable=2</code></pre>
-
-        </li>
-        <li>
-          <p>The user that moloch switches to must be able to write to the directory that moloch-capture is running in.</p>
-        </li>
-        <li>
-          <p>Run moloch-capture and get it to crash.</p>
-        </li>
-        <li>
-          <p>Look for the most recent core file.</p>
-        </li>
-        <li>
-          <p>Run <code>gdb</code> (you may need to install the gdb package first)
-
-          </p>
-          <pre><code>gdb /data/moloch/bin/moloch-capture corefilename</code></pre>
-
-        </li>
-        <li>
-          <p>Get the back trace using the <code>bt</code> command</p>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <p>If it is easy to reproduce, sometimes it’s easier to just run <code>gdb</code> as root:</p>
-    </div>
-    <div>
-      <ul>
-        <li>
-          <p>Run <code>gdb moloch-capture</code> as root.</p>
-        </li>
-        <li>
-          <p>Start moloch in <code>gdb</code> with <code>run ALL_THE_ARGS_USED_FOR_MOLOCH-CAPTURE_GO_HERE</code>.</p>
-        </li>
-        <li>
-          <p>Wait for crash.</p>
-        </li>
-        <li>
-          <p>Get the backtrace using <code>bt</code> command.</p>
-        </li>
-        <li>
-          <p>Sometimes, you need to put a break point in g_log <code>b g_log</code></p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div>
     <h3 id="error-pcap-open-failed">
       ERROR - pcap open failed
     </h3>
-    <div>
-      <p>Usually moloch-capture is started as root so that it can open the interfaces and then it immediately drops privileges to <code>dropUser</code> and <code>dropGroup</code>, which are by default <code>nobody:daemon</code>. This means that
-        all parent directories need to be either owned or at least executable by <code>nobody:daemon</code> and that the pcapDir itself must be writeable.</p>
-    </div>
-  </div>
-  <div>
+    <p>
+      Usually <code>moloch-capture</code> is started as root so that it can
+      open the interfaces and then it immediately drops privileges to
+      <code>dropUser</code> and <code>dropGroup</code>, which are by default
+      <code>nobody:daemon</code>. This means that all parent directories need
+      to be either owned or at least executable by <code>nobody:daemon</code>
+      and that the pcapDir itself must be writeable.
+    </p>
+
     <h3 id="how-to-reduce-amount-of-traffic-pcap">
       How to reduce amount of traffic/pcap?
     </h3>
-    <div>
-      <p>Listed in order from highest to lowest benefit to Moloch</p>
-    </div>
-    <div>
-      <ol>
-        <li>
-          <p>Setting the <code>bfp=</code> filter will stop Moloch from seeing the traffic.</p>
-        </li>
-        <li>
-          <p>Adding CIDRs to the <code>packet-drop-ips</code> section will stop Moloch from adding packets to the PacketQ</p>
-        </li>
-        <li>
-          <p>Using <a href="https://github.com/aol/moloch/wiki/RulesFormat">Rules</a> it is possible to control if the packets are written to disk or the SPI data is sent to Elasticsearch</p>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <div>
+    <p>
+      Listed in order from highest to lowest benefit to Moloch
+    </p>
+    <ol>
+      <li>
+        Setting the <code>bfp=</code> filter will stop Moloch from seeing the
+        traffic.
+      </li>
+      <li>
+        Adding CIDRs to the <code>packet-drop-ips</code> section will stop
+        Moloch from adding packets to the PacketQ
+      </li>
+      <li>
+        Using
+        <a href="https://github.com/aol/moloch/wiki/RulesFormat">
+          Rules</a>
+        it is possible to control if the packets are written to disk or the
+        SPI data is sent to Elasticsearch
+      </li>
+    </ol>
+
     <h3 id="life-of-a-packet">
       Life of a packet
     </h3>
-    <div>
-      <p>Moloch capture supports many options for controlling which packets are captured, processed, and saved to disk.</p>
-    </div>
-    <div>
-      <ul>
-        <li>
-          <p>The first gatekeeper and most important is the bpf filter, <code>bpf=</code> in the config file. This filter can be implemented in the kernel, the network card, libpcap or network drivers. It is a single filter and it controls what
-            moloch capture "sees" or doesn’t "see". Any packet that is dropped because of the bpf filter is usually not counted in ANY Moloch stats, but some implementation do expose stats.</p>
-        </li>
-        <li>
-          <p>Moloch does a high level decode of the ethernet, ip, ip protocol information and sees if it understands it. If it doesn’t supports it, moloch will discard the packet.</p>
-        </li>
-        <li>
-          <p>Moloch checks the <code>packet-drop-ips</code> config section to see if the ips involved are marked to be discarded. If there are only a few ips to drop then <code>bpf=</code> should be used, otherwise this is much more efficient
-            then a huge bpf.</p>
-        </li>
-        <li>
-          <p>For TCP packets, Moloch checks against previous matched against rules that set a <code>_dropByDst</code> or <code>_dropBySrc</code> timeout, if it matches they will be discarded.</p>
-        </li>
-        <li>
-          <p>Moloch picks a packet queue to send the packet to, if the packet queue is too busy it will drop the packet. Potentially increase increase <code>packetThreads</code> or <code>maxPacketsInQueue</code> if too many packets are being
-            dropped here.</p>
-        </li>
-        <li>
-          <p>A packet queue will start processing a packet and update all the stats and basic information for the session the packet is associated with</p>
-        </li>
-        <li>
-          <p>The sessionSetup rules for first packets in a session are executed, which might set operations that control packet saving</p>
-        </li>
-        <li>
-          <p>If this is the first packet of the session the packet queue will then check all the <code>dontSaveBPFs</code>, and if one matches it will save off the max number of packets to save for the session. This will override the
-            <code>maxPackets</code> config setting.</p>
-        </li>
-        <li>
-          <p>If this is the first packet of the session AND no dontSaveBPFs matched, the packet queue will then check all the <code>minPacketsSaveBPFs</code> and save off a min number of packets that must be received.</p>
-        </li>
-        <li>
-          <p>Finally moloch goes to save the packet, if it has already saved the max number of packets for the session (set by rules or <code>dontSaveBPFs</code>) OR if there was another method (plugin) that said stop saving packets for the
-            session the packet won’t be saved.</p>
-        </li>
-        <li>
-          <p>If the number of packets for the session is greater then <code>maxPackets</code> the session will be saved, a new linked session will be started for future packets. The beforeMiddleSave and beforeBothSave rules will be executed
-            before saving.</p>
-        </li>
-        <li>
-          <p>The packet queue sends the packet off to the various classifiers and parsers to gather more meta data. The afterClassify rules will be executed, and if any fields are set during this processing the fieldSet rules will be executed.
-            Rules may change if future packets are saved.</p>
-        </li>
-        <li>
-          <p>At some point in the future the session will hit one of the timeouts and the session will be saved if there have been enough packets saved to meet the min number of packets received setting per session. (Defaults to 0) The
-            beforeFinalSave and beforeBothSave rules will be executed.</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div>
+    <p>
+      Moloch capture supports many options for controlling which packets are
+      captured, processed, and saved to disk.
+    </p>
+    <ul>
+      <li>
+        The first gatekeeper and most important is the bpf filter,
+        <code>bpf=</code> in the config file. This filter can be implemented in
+        the kernel, the network card, libpcap or network drivers. It is a
+        single filter and it controls what Moloch capture "sees" or doesn’t
+        "see". Any packet that is dropped because of the bpf filter is usually
+        not counted in ANY Moloch stats, but some implementation do expose
+        stats.
+      </li>
+      <li>
+        Moloch does a high level decode of the ethernet, IP, IP protocol
+        information and sees if it understands it. If it doesn’t supports it,
+        Moloch will discard the packet.
+      </li>
+      <li>
+        Moloch checks the <code>packet-drop-ips</code> config section to see if
+        the IPs involved are marked to be discarded. If there are only a few
+        IPs to drop then <code>bpf=</code> should be used, otherwise this is
+        much more efficient then a huge bpf.
+      </li>
+      <li>
+        For TCP packets, Moloch checks against previous matched against rules
+        that set a <code>_dropByDst</code> or <code>_dropBySrc</code> timeout,
+        if it matches they will be discarded.
+      </li>
+      <li>
+        Moloch picks a packet queue to send the packet to, if the packet queue
+        is too busy it will drop the packet. Potentially increase increase
+        <code>packetThreads</code> or <code>maxPacketsInQueue</code> if too
+        many packets are being dropped here.
+      </li>
+      <li>
+        A packet queue will start processing a packet and update all the stats
+        and basic information for the session the packet is associated with.
+      </li>
+      <li>
+        The sessionSetup rules for first packets in a session are executed,
+        which might set operations that control packet saving.
+      </li>
+      <li>
+        If this is the first packet of the session the packet queue will then
+        check all the <code>dontSaveBPFs</code>, and if one matches it will
+        save off the max number of packets to save for the session. This will
+        override the <code>maxPackets</code> config setting.
+      </li>
+      <li>
+        If this is the first packet of the session AND no dontSaveBPFs matched,
+        the packet queue will then check all the
+        <code>minPacketsSaveBPFs</code> and save off a min number of packets
+        that must be received.
+      </li>
+      <li>
+        Finally Moloch goes to save the packet, if it has already saved the max
+        number of packets for the session (set by rules or
+        <code>dontSaveBPFs</code>) OR if there was another method (plugin) that
+        said stop saving packets for the session the packet won’t be saved.
+      </li>
+      <li>
+        If the number of packets for the session is greater then
+        <code>maxPackets</code> the session will be saved, a new linked session
+        will be started for future packets. The beforeMiddleSave and
+        beforeBothSave rules will be executed before saving.
+      </li>
+      <li>
+        The packet queue sends the packet off to the various classifiers and
+        parsers to gather more meta data. The afterClassify rules will be
+        executed, and if any fields are set during this processing the fieldSet
+        rules will be executed. Rules may change if future packets are saved.
+      </li>
+      <li>
+        At some point in the future the session will hit one of the timeouts
+        and the session will be saved if there have been enough packets saved
+        to meet the min number of packets received setting per session.
+        (Defaults to 0) The beforeFinalSave and beforeBothSave rules will be
+        executed.
+      </li>
+    </ul>
+
     <h3 id="pcap-deletion">
       PCAP Deletion
     </h3>
-    <div>
-      <p>PCAP deletion is actually handled by the viewer process, so make sure the viewer process is running on all capture boxes.
-        The viewer process checks on startup and then every minute to see how much space is available, and if it is below <code>freeSpaceG</code>, then it will start deleting the oldest file.
-        Note, <code>freeSpaceG</code> can also be a percentage, newer versions of moloch use <code>freeSpaceG=5%</code> for the default.
-        The viewer process will always leave at least 10 PCAP files on the disk, so make sure there is room for at least <code>maxFileSizeG * 10</code> capture files on disk, or by default 120G.</p>
-    </div>
-    <div>
-      <p>If still having pcap delete issues:</p>
-    </div>
-    <div>
-      <ol>
-        <li>
-          <p>Make sure <code>freeSpaceG</code> is set correctly for the environment</p>
-        </li>
-        <li>
-          <p>Make sure there is free space where viewer is writing its logs</p>
-        </li>
-        <li>
-          <p>Make sure viewer can reach elasticsearch</p>
-        </li>
-        <li>
-          <p>Make sure that <code>dropUser</code> or <code>dropGroup</code> can actually delete files in the pcap directory and has read/execute permissions in all parent directories</p>
-        </li>
-        <li>
-          <p>Make sure the pcap directory is on a filesystem with at least <code>maxFileSizeG * 10</code> space available</p>
-        </li>
-        <li>
-          <p>Make sure the files you think should be deleted show up on the files tab, if not use the <code>db.pl sync-files</code> command.</p>
-        </li>
-        <li>
-          <p>Make sure the files in the file tab don’t have <code>locked</code> set, viewer won’t deleted locked files</p>
-        </li>
-        <li>
-          <p>Try restarting viewer</p>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <div>
+    <p>
+      PCAP deletion is actually handled by the viewer process, so make sure the
+      viewer process is running on all capture boxes. The viewer process checks
+      on startup and then every minute to see how much space is available, and
+      if it is below <code>freeSpaceG</code>, then it will start deleting the
+      oldest file.
+    </p>
+    <p>
+      <strong>Note</strong>: <code>freeSpaceG</code> can also be a percentage,
+      newer versions of Moloch use <code>freeSpaceG=5%</code> for the default.
+      The viewer process will always leave at least 10 PCAP files on the disk,
+      so make sure there is room for at least <code>maxFileSizeG * 10</code>
+      capture files on disk, or by default 120G.
+    </p>
+    <p>
+      If still having pcap delete issues:
+    </p>
+    <ol>
+      <li>
+        Make sure <code>freeSpaceG</code> is set correctly for the environment.
+      </li>
+      <li>
+        Make sure there is free space where viewer is writing its logs.
+      </li>
+      <li>
+        Make sure viewer can reach Elasticsearch
+      </li>
+      <li>
+        Make sure that <code>dropUser</code> or <code>dropGroup</code> can
+        actually delete files in the pcap directory and has read/execute
+        permissions in all parent directories.
+      </li>
+      <li>
+        Make sure the pcap directory is on a filesystem with at least
+        <code>maxFileSizeG * 10</code> space available.
+      </li>
+      <li>
+        Make sure the files you think should be deleted show up on the files
+        tab, if not use the <code>db.pl sync-files</code> command.
+      </li>
+      <li>
+        Make sure the files in the file tab don’t have <code>locked</code> set,
+        viewer won’t deleted locked files
+      </li>
+      <li>
+        Try restarting viewer
+      </li>
+    </ol>
+
     <h3 id="dontsavebpfs-doesn-t-work">
       dontSaveBPFs doesn’t work
     </h3>
-    <div>
-      <p>Turns out BPF filters are tricky. :) When the network is using vlans, then at compile time, BPFs need to know that fact. So instead of a nice simple <code>dontSaveBPFs=tcp port 443:10</code> use something like <code>dontSaveBPFs=tcp port
-          443 or (vlan and tcp port 443):10</code>. Basically <code>FILTER or (vlan and FILTER)</code>. Information from <a href="http://www.christian-rossow.de/articles/tcpdump_filter_mixed_tagged_and_untagged_VLAN_traffic.php"
-          rel="nofollow">here</a>.</p>
-    </div>
-  </div>
-  <div>
+    <p>
+      Turns out BPF filters are tricky. :) When the network is using vlans,
+      then at compile time, BPFs need to know that fact. So instead of a nice
+      simple <code>dontSaveBPFs=tcp port 443:10</code> use something like
+      <code>dontSaveBPFs=tcp port 443 or (vlan and tcp port 443):10</code>.
+      Basically <code>FILTER or (vlan and FILTER)</code>. Information from
+      <a href="http://www.christian-rossow.de/articles/tcpdump_filter_mixed_tagged_and_untagged_VLAN_traffic.php"
+        rel="nofollow">
+        here</a>.
+    </p>
+
     <h3 id="zero-byte-pcap-files">
       Zero byte pcap files
     </h3>
-    <div>
-      <p>Moloch buffers writes to disk, which is great for high bandwidth networks, but bad for low bandwidth networks. How much data is buffered is controlled with <code>pcapWriteSize</code>, which defaults to 262144 bytes. An important thing to
-        remember is the buffer is per thread, so set <code>packetThreads</code> to 1 on low bandwidth networks. There is no time limit on the buffer before Moloch 1.0, so you must wait until the entire buffer is full before data will be written
-        to disk.</p>
-    </div>
-    <div>
-      <p>Starting with Moloch 1.0, we now write a portion of what is buffered after 10 seconds of no writes. However it will still buffer the last pagesize bytes, usually 4096 bytes.</p>
-    </div>
-    <div>
-      <p>You can also end up with many zero byte pcap files if the disk is full, see PCAP Deletion.</p>
-    </div>
-  </div>
-  <div>
+    <p>
+      Moloch buffers writes to disk, which is great for high bandwidth
+      networks, but bad for low bandwidth networks. How much data is buffered
+      is controlled with <code>pcapWriteSize</code>, which defaults to 262144
+      bytes. An important thing to remember is the buffer is per thread, so set
+      <code>packetThreads</code> to 1 on low bandwidth networks. There is no
+      time limit on the buffer before Moloch 1.0, so you must wait until the
+      entire buffer is full before data will be written to disk.
+    </p>
+    <p>
+      Starting with Moloch 1.0, we now write a portion of what is buffered
+      after 10 seconds of no writes. However it will still buffer the last
+      pagesize bytes, usually 4096 bytes.
+    </p>
+    <p>
+      You can also end up with many zero byte pcap files if the disk is full,
+      see
+      <a href="#pcap-deletion">
+        PCAP Deletion</a>.
+    </p>
+
     <h3 id="can-i-virtualize-moloch-with-kvm-using-openvswitch">
       Can I virtualize Moloch with KVM using OpenVswitch?
     </h3>
-    <div>
-      <p>In small environments with low amounts of traffic this is possible. With Openvswitch you can create mirror port from a physical or virtual adapter and send the data to another virtual NIC as the listening interface. In KVM, one issue is
-        that it isn’t possible to increase the buffer size past 256 on the adapter using the Virtio network adapter (mentioned in another part of the FAQ). Without Moloch capture will continuously crash. To solve this in KVM, use the E1000
-        adapter, and configure the buffer size accordingly. Set up the SPAN port on Openvswitch to send traffic to it: <a href="https://www.rivy.org/2013/03/configure-a-mirror-port-on-open-vswitch/"
-          rel="nofollow">https://www.rivy.org/2013/03/configure-a-mirror-port-on-open-vswitch/</a>.</p>
-    </div>
-  </div>
+    <p>
+      In small environments with low amounts of traffic this is possible. With
+      Openvswitch you can create mirror port from a physical or virtual adapter
+      and send the data to another virtual NIC as the listening interface. In
+      KVM, one issue is that it isn’t possible to increase the buffer size past
+      256 on the adapter using the Virtio network adapter (mentioned in another
+      part of the FAQ). Without Moloch capture will continuously crash. To
+      solve this in KVM, use the E1000 adapter, and configure the buffer size
+      accordingly. Set up the SPAN port on Openvswitch to send traffic to it:
+      <a href="https://www.rivy.org/2013/03/configure-a-mirror-port-on-open-vswitch/"
+        rel="nofollow">
+        https://www.rivy.org/2013/03/configure-a-mirror-port-on-open-vswitch/</a>.
+    </p>
+    <!-- /capture -->
 
-
-
-
-
-  <div>
-    <h2 id="viewer">
+    <!-- viewer -->
+    <br>
+    <h1 id="viewer">
       Viewer
-    </h2>
-    <div>
-      <div>
-        <h3 id="where-do-i-learn-more-about-the-expressions-available">
-          Where do I learn more about the expressions available
-        </h3>
-        <div>
-          <p>Click on the owl and read the Search Bar section. The Fields section is also useful for discovering fields you can use in a search expression.</p>
-        </div>
-      </div>
-      <div>
-        <h3 id="exported-pcap-files-are-corrupt-sometimes-session-detail-fails">
-          Exported pcap files are corrupt, sometimes session detail fails
-        </h3>
-        <div>
-          <ul>
-            <li>
-              <p>The most common cause of this problem is that the timestamps between the moloch machines are different. Make sure ntp is running everywhere, or that the time stamps are in sync.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <h3 id="map-counts-are-wrong">
-          Map counts are wrong
-        </h3>
-        <div>
-          <ul>
-            <li>
-              <p>The source and destination ips are each counted, so the map should total twice the number of sessions.</p>
-            </li>
-            <li>
-              <p>Currently elasticsearch only has accurate counts up to 2 billion uniques.</p>
-            </li>
-            <li>
-              <p>Some countries aren’t shown, but can still be searched using their ISO-3 (&lt; 1.0) or ISO-2 (&gt;= 1.0).</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <h3 id="what-browsers-are-supported">
-          What browsers are supported?
-        </h3>
-        <div>
-          <p>Recent versions of Chrome, Firefox, and Safari should all work fairly equally. Below are the <strong>minimum</strong> versions required.
-            We aren’t kidding.</p>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <p>Chrome 53+ (All development is done with Chrome Stable)</p>
-            </li>
-            <li>
-              <p>Firefox 54+</p>
-            </li>
-            <li>
-              <p>Opera 40+</p>
-            </li>
-            <li>
-              <p>Safari 10+</p>
-            </li>
-            <li>
-              <p>Edge 14+</p>
-            </li>
-            <li>
-              <p>IE is <strong>not</strong> supported</p>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <p>Development is done mostly with Chrome on a Mac, so it gets the most attention.</p>
-        </div>
-      </div>
-      <div>
-        <h3 id="viewer-doesn-t-run-after-upgrading-node-js">
-          Viewer doesn’t run after upgrading Node.js
-        </h3>
-        <div>
-          <p>The packages that viewer depends on must be reinstalled after upgrading Node.js on a machine.
+    </h1>
+    <hr>
 
-          </p>
-          <pre><code>cd /data/moloch/viewer
+    <h3 id="where-do-i-learn-more-about-the-expressions-available">
+      Where do I learn more about the expressions available
+    </h3>
+    <p>
+      Click on the owl and read the Search Bar section. The Fields
+      section is also useful for discovering fields you can use in a
+      search expression.
+    </p>
+
+    <h3 id="exported-pcap-files-are-corrupt-sometimes-session-detail-fails">
+      Exported pcap files are corrupt, sometimes session detail fails
+    </h3>
+    <p>
+      The most common cause of this problem is that the timestamps between
+      the Moloch machines are different. Make sure ntp is running
+      everywhere, or that the time stamps are in sync.
+    </p>
+
+    <h3 id="map-counts-are-wrong">
+      Map counts are wrong
+    </h3>
+    <ul>
+      <li>
+        The source and destination IPs are each counted, so the map should
+        total twice the number of sessions.
+      </li>
+      <li>
+        Currently Elasticsearch only has accurate counts up to 2 billion
+        uniques.
+      </li>
+      <li>
+        Some countries aren’t shown, but can still be searched using their
+        ISO-3 (&lt; 1.0) or ISO-2 (&gt;= 1.0).
+      </li>
+    </ul>
+
+    <h3 id="what-browsers-are-supported">
+      What browsers are supported?
+    </h3>
+    <p>
+      Recent versions of Chrome, Firefox, and Safari should all work fairly
+      equally. Below are the <strong>minimum</strong> versions required.
+      We aren’t kidding.
+    </p>
+    <ul>
+      <li>
+        Chrome 53+ (All development is done with Chrome Stable)
+      </li>
+      <li>
+        Firefox 54+
+      </li>
+      <li>
+        Opera 40+
+      </li>
+      <li>
+        Safari 10+
+      </li>
+      <li>
+        Edge 14+
+      </li>
+      <li>
+        IE is <strong>not</strong> supported
+      </li>
+    </ul>
+    <p>
+      Development and testing is done mostly with Chrome on a Mac, so it gets
+      the most attention.
+    </p>
+
+    <h3 id="viewer-doesn-t-run-after-upgrading-node-js">
+      Viewer doesn’t run after upgrading Node.js
+    </h3>
+    <p>
+      The packages that viewer depends on must be reinstalled after upgrading
+      Node.js on a machine.
+      <pre><code>cd /data/moloch/viewer
 mv node_modules node_modules.save
 npm cache clean
 npm install</code></pre>
+    </p>
 
-        </div>
-      </div>
-      <div>
-        <h3 id="error-getaddrinfo-eaddrinfo">
-          Error: getaddrinfo EADDRINFO
-        </h3>
-        <div>
-          <p>This seems to be caused when proxying requests from one viewer node to another and the machines don’t use FQDNs for their hostnames and the short hostnames are not resolvable by DNS. You can check if your machine uses FQDNs by running
-            the <code>hostname</code> command. There are several options to resolve the error:</p>
-        </div>
-        <div>
-          <ol>
-            <li>
-              <p>Use the --host option on capture</p>
-            </li>
-            <li>
-              <p>Configure the OS to use FQDNs.</p>
-            </li>
-            <li>
-              <p>Make it so DNS can resolve the shortnames or add the shortnames to the hosts file.</p>
-            </li>
-            <li>
-              <p>Edit config.ini and add a viewUrl for each node. This part of the config file must be the same on all machines. (We recommend you just use the same config file everywhere). Example:</p>
-              <pre><code>[node1_eth0]
+    <h3 id="error-getaddrinfo-eaddrinfo">
+      Error: getaddrinfo EADDRINFO
+    </h3>
+    <p>
+      This seems to be caused when proxying requests from one viewer node to
+      another and the machines don’t use FQDNs for their hostnames and the
+      short hostnames are not resolvable by DNS. You can check if your
+      machine uses FQDNs by running the <code>hostname</code> command. There
+      are several options to resolve the error:
+    </p>
+    <ol>
+      <li>
+        Use the <code>--host</code> option on capture
+      </li>
+      <li>
+        Configure the OS to use FQDNs.
+      </li>
+      <li>
+        Make it so DNS can resolve the shortnames or add the shortnames to
+        the hosts file.
+      </li>
+      <li>
+        Edit <code>config.ini</code> and add a <code>viewUrl</code> for each
+        node. This part of the config file must be the same on all machines
+        (we recommend you just use the same config file everywhere). Example:
+        <pre><code>[node1_eth0]
 interface=eth0
 viewUrl=http://node1.fqdn
 [node1_eth1]
@@ -2284,116 +2438,127 @@ viewUrl=http://node1.fqdn
 [node2]
 interface=eth1
 viewUrl=http://node2.fqdn</code></pre>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <div>
-        <h3 id="how-do-i-proxy-moloch-using-apache">
-          How do I proxy Moloch using Apache
-        </h3>
-        <div>
-          <p>Apache, and other web servers, can be used to provide authentication or other services for Moloch when setup as a reverse proxy. When a reverse proxy is used for authentication it must be inline, and authentication in moloch will not be
-            used, however moloch will still do the authorization. Moloch will use a username that the reverse proxy passes to moloch as a http header for settings and authorization. See the <a
-              href="https://github.com/aol/moloch/wiki/Architecture">architecture</a> page for diagrams. While operators will use the proxy to reach the moloch viewer, the viewer processes still need direct access to each other.</p>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <p>Install apache, turn on the auth method of your choice. This example also uses https from apache to Moloch, but if on localhost that isn’t required. Configure it to set a special header for Moloch to check. In this example
-                MOLOCH_USER is the header that is being set from a variable, if your auth method already sets a header use that.
+      </li>
+    </ol>
 
-              </p>
-              <pre><code>AuthType your_auth_method
+    <h3 id="how-do-i-proxy-moloch-using-apache">
+      How do I proxy Moloch using Apache
+    </h3>
+    <p>
+      Apache, and other web servers, can be used to provide authentication or
+      other services for Moloch when setup as a reverse proxy. When a reverse
+      proxy is used for authentication it must be inline, and authentication in
+      Moloch will not be used, however Moloch will still do the authorization.
+      Moloch will use a username that the reverse proxy passes to Moloch as a
+      HTTP header for settings and authorization. See the
+      <a href="https://github.com/aol/moloch/wiki/Architecture">
+        architecture</a>
+      page for diagrams. While operators will use the proxy to reach the Moloch
+      viewer, the viewer processes still need direct access to each other.
+    </p>
+    <ul>
+      <li>
+        Install Apache, turn on the auth method of your choice. This example
+        also uses HTTPS from Apache to Moloch, but if on localhost that isn’t
+        required. Configure it to set a special header for Moloch to check.
+        In this example <code>MOLOCH_USER</code> is the header that is being
+        set from a variable, if your auth method already sets a header use
+        that.
+        <pre><code>AuthType your_auth_method
 Require valid-user
 RequestHeader set MOLOCH_USER %{your_auth_method_concept_of_username_variable_probably_REMOTE_USER}e</code></pre>
-
-            </li>
-            <li>
-              <p>Make sure mod_ssl is loaded, and set up a SSL proxy:
-
-              </p>
-              <pre><code>SSLProxyEngine On
+      </li>
+      <li>
+        Make sure mod_ssl is loaded, and set up a SSL proxy:
+        <pre><code>SSLProxyEngine On
 #ProxyRequests On # You probably don't want this line
 ProxyPass        /moloch/ https://localhost:8005/ retry=0
 ProxyPassReverse /moloch/ https://localhost:8005/</code></pre>
-
-            </li>
-            <li>
-              <p>Restart apache.</p>
-            </li>
-            <li>
-              <p>Using the Moloch UI (by going directly to a non proxy moloch) make sure the "Web Auth Header" is checked for the users.</p>
-            </li>
-            <li>
-              <p>Edit Moloch’s <code>config.ini</code></p>
-              <div>
-                <ul>
-                  <li>
-                    <p>Create a new section for the moloch proxy, you will use <code>-n sectionname</code> so viewer uses that section</p>
-                  </li>
-                  <li>
-                    <p>Set <code>userNameHeader</code> to the <strong>lower case</strong> version of the header apache is setting.</p>
-                  </li>
-                  <li>
-                    <p>Set the <code>webBasePath</code> to the ProxyPath location used above. All other sections should <strong>NOT</strong> have a <code>webBasePath</code>.</p>
-                  </li>
-                  <li>
-                    <p>Add a <code>viewHost</code>, so externals can’t just set the <code>userNameHeader</code> and access moloch with no auth:
-
-                    </p>
-                    <pre><code>[moloch-proxy]
+      </li>
+      <li>
+        Restart Apache.
+      </li>
+      <li>
+        Using the Moloch UI (by going directly to a non proxy Moloch) make
+        sure the "Web Auth Header" is checked for the users.
+      </li>
+      <li>
+        Edit Moloch’s <code>config.ini</code>
+        <ul>
+          <li>
+            Create a new section for the Moloch proxy, you will use
+            <code>-n sectionname</code> so viewer uses that section
+          </li>
+          <li>
+            Set <code>userNameHeader</code> to the
+            <strong>lower case</strong> version of the header Apache is
+            setting.
+          </li>
+          <li>
+            Set the <code>webBasePath</code> to the ProxyPath location used
+            above. All other sections should <strong>NOT</strong> have a
+            <code>webBasePath</code>.
+          </li>
+          <li>
+            Add a <code>viewHost</code>, so externals can’t just set the
+            <code>userNameHeader</code> and access Moloch with no auth:
+            <pre><code>[moloch-proxy]
 userNameHeader=moloch_user
 webBasePath = /moloch/
 viewPort = 8005
 viewHost = localhost</code></pre>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Start the <code>moloch-proxy</code> viewer, so for this example you
+        would need <code>-n moloch-proxy</code>
+      </li>
+      <li>
+        To prevent the users from going directly to Moloch in the future,
+        scramble their passwords. You might want to leave an admin user that
+        doesn’t use the Apache auth. Or you can temporarily add one with the
+        <code>addUser.js</code> script.
+      </li>
+    </ul>
 
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <p>Start the moloch-proxy viewer, so for this example you would need <code>-n moloch-proxy</code></p>
-            </li>
-            <li>
-              <p>To prevent the users from going directly to moloch in the future, scramble their passwords. You might want to leave an admin user that doesn’t use the apache auth. Or you can temporarily add one with the <code>addUser.js</code>
-                script.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <h3 id="i-still-get-prompted-for-password-after-setting-up-apache-auth">
-          I still get prompted for password after setting up apache auth
-        </h3>
-        <div>
-          <ol>
-            <li>
-              <p>Make sure the user has the "Web Auth Header" checked</p>
-            </li>
-            <li>
-              <p>Make sure in the viewer config <code>userNameHeader</code> is the <strong>lower case</strong> version of the header apache is using</p>
-            </li>
-            <li>
-              <p>Run viewer.js with a <code>--debug</code> and see if the header is being sent</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <div>
-        <h3 id="how-do-i-search-multiple-moloch-clusters">
-          How do I search multiple Moloch clusters
-        </h3>
-        <div>
-          <p>It is possible to search multiple moloch clusters by setting up a special multiple moloch viewer and a special multies process. Multies is similiar to Elasticsearch tribe nodes, except it was created before tribe nodes and can deal with
-            multiple indexes having the same name. Prior to Moloch 1.5, one big limitation currently is that all the moloch clusters have to use the same <code>rotateIndex</code> setting. Since Moloch 1.5 if using different <code>rotateIndex</code>
-            settings, use the <code>queryAllIndices=true</code> setting in the molochviewer section. Currently one big limitation is that <code>all Moloch clusters must use the same PasswordSecret</code>.</p>
-        </div>
-        <div>
-          <p>To use, create another <code>config.ini</code> file or section in a shared config file. Both <code>multies.js</code> and the special "all" viewer can use the same node name.</p>
-        </div>
-        <div>
-          <pre><code># viewer/multies node name (-n allnode)
+    <h3 id="i-still-get-prompted-for-password-after-setting-up-apache-auth">
+      I still get prompted for password after setting up Apache auth
+    </h3>
+    <ol>
+      <li>
+        Make sure the user has the "Web Auth Header" checked
+      </li>
+      <li>
+        Make sure in the viewer config <code>userNameHeader</code>is the
+        <strong>lower case</strong> version of the header Apache is using.
+      </li>
+      <li>
+        Run <code>viewer.js</code> with a <code>--debug</code> and see if the
+        header is being sent.
+      </li>
+    </ol>
+
+    <h3 id="how-do-i-search-multiple-moloch-clusters">
+      How do I search multiple Moloch clusters
+    </h3>
+    <p>
+      It is possible to search multiple Moloch clusters by setting up a
+      special multiple Moloch viewer and a special MultiES process. MultiES
+      is similiar to Elasticsearch tribe nodes, except it was created before
+      tribe nodes and can deal with multiple indexes having the same name.
+      Prior to Moloch 1.5, one big limitation currently is that all the
+      Moloch clusters have to use the same <code>rotateIndex</code> setting.
+      Since Moloch 1.5 if using different <code>rotateIndex</code> settings,
+      use the <code>queryAllIndices=true</code> setting in the
+      <code>molochviewer</code> section. Currently one big limitation is that
+      <code>all Moloch clusters must use the same PasswordSecret</code>.
+    </p>
+    <p>
+      To use MultiES, create another <code>config.ini</code> file or
+      section in a shared config file. Both <code>multies.js</code> and the
+      special "all" viewer can use the same node name.
+      <pre><code># viewer/multies node name (-n allnode)
 [allnode]
 # The host and port multies is running on, set with multiESHost:multiESPort usually just run on the same host
 elasticsearch=127.0.0.1:8200
@@ -2407,237 +2572,284 @@ multiESHost = localhost
 multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
 # Uncomment if using different rotateIndex settings
 #queryAllIndices=true</code></pre>
-        </div>
-        <div>
-          <p>Now you need to start up both the <code>multies.js</code> program and <code>viewer.js</code> with the config file. All other viewer settings, including <code>webBasePath</code> can still be used.</p>
-        </div>
-        <div>
-          <p>By default, the users table comes from the first cluster listed in <code>multiESNodes</code>. This can be overridden by setting <code>usersElasticsearch</code> and optionally <code>usersPrefix</code> in the multi viewer config file.</p>
-        </div>
-      </div>
-      <div>
-        <h3 id="how-do-i-use-self-signed-ssl-tls-certificates-with-multies">
-          How do I use self-signed SSL/TLS Certificates with MultiES?
-        </h3>
-        <div>
-          <p>Create a file, for example <em>CAcerts.pem</em>, containing one or more trusted certificates in PEM format.</p>
-        </div>
-        <div>
-          <p>Then, you need start MutilES adding <strong>NODE_EXTRA_CA_CERTS</strong> environment variable specifying the path to file you just created, for example:</p>
-        </div>
-        <div>
-          <p><code>NODE_EXTRA_CA_CERTS=./CAcerts.pem /data/moloch/bin/node multies.js -c /data/moloch/etc/config.ini -n allnode</code></p>
-        </div>
-      </div>
-      <div>
-        <h3 id="how-do-i-reset-my-password">
-          How do I reset my password?
-        </h3>
-        <div>
-          <p>An admin can change anyone’s password on the Users tab by clicking the Settings link in the Actions column next to the user.</p>
-        </div>
-        <div>
-          <p>A password can also be changed by using the <code>addUser</code> script, which will replace the entire account if the same userid is used. All preferences and views will be cleared, so creating a secondary admin account may be a better
-            option if you need to change an admin users password. After creating a secondary admin account, change the users password and then delete the secondary admin account.
+    </p>
+    <p>
+      Now you need to start up both the <code>multies.js</code> program and
+      <code>viewer.js</code> with the config file. All other viewer settings,
+      including <code>webBasePath</code> can still be used.
+    </p>
+    <p>By default, the users table comes from the first cluster listed in
+      <code>multiESNodes</code>. This can be overridden by setting
+      <code>usersElasticsearch</code> and optionally <code>usersPrefix</code>
+      in the multi viewer config file.
+    </p>
 
-          </p>
-          <pre><code>node addUser -c &lt;configfilepath&gt; &lt;user id&gt; &lt;user friendly name&gt; &lt;password&gt; [--admin]</code></pre>
+    <h3 id="how-do-i-use-self-signed-ssl-tls-certificates-with-multies">
+      How do I use self-signed SSL/TLS Certificates with MultiES?
+    </h3>
+    <p>
+      Create a file, for example <em>CAcerts.pem</em>, containing one or more
+      trusted certificates in PEM format.
+    </p>
+    <p>
+      Then, you need start MutilES adding <strong>NODE_EXTRA_CA_CERTS</strong>
+      environment variable specifying the path to file you just created, for
+      example:
+      <pre><code>NODE_EXTRA_CA_CERTS=./CAcerts.pem /data/moloch/bin/node multies.js -c /data/moloch/etc/config.ini -n allnode</pre></code>
+    </p>
 
-        </div>
-      </div>
-      <div>
-        <h3 id="error-couldn-t-connect-to-remote-viewer-only-displaying-spi-data">
-          Error: Couldn’t connect to remote viewer, only displaying SPI data
-        </h3>
-        <div>
-          <p>Viewers have the ability to proxy traffic for each other. The ability relies on moloch node names that are mapped to hostnames. Common problems are when systems don’t use FQDNs or certs don’t match.</p>
-        </div>
-        <div>
-          <h4 id="how-do-viewers-find-each-other">
-            How do viewers find each other
-          </h4>
-          <div>
-            <p>First the SPI records are created on the moloch-capture side.</p>
-          </div>
-          <div>
-            <ol>
-              <li>
-                <p>Each moloch-capture gets a nodename, either by the <code>-n</code> command line option or everything in front of the first period of the hostname</p>
-              </li>
-              <li>
-                <p>Each moloch-capture writes a stats record every few seconds that has the mapping from the nodename to the FDQN</p>
-              </li>
-              <li>
-                <p>Each SPI record has a nodename in it.</p>
-              </li>
-            </ol>
-          </div>
-          <div>
-            <p>When pcap is retrieved from the viewer it looks up the nodename associated with the record.</p>
-          </div>
-          <div>
-            <ol>
-              <li>
-                <p>Each moloch-viewer process gets a nodename, either by the <code>-n</code> command line option or evertying in front of the first period of the hostname.</p>
-              </li>
-              <li>
-                <p>If the SPI nodename is the same as the moloch-viewer nodename it can be processed locally, STOP HERE. This is the common case with one capture process per capture node.</p>
-              </li>
-              <li>
-                <p>If the stats[nodename].hostname is the same as the moloch-viewer’s hostname (exact match) then it can be processed locally, STOP HERE. Remember this is written by capture above. This is the common case with multiple capture
-                  processes per capture node.</p>
-              </li>
-              <li>
-                <p>If we make it here, the pcap data isn’t local and it must be proxied</p>
-              </li>
-              <li>
-                <p>If --host was used on the capture node use that</p>
-              </li>
-              <li>
-                <p>If there is a viewUrl set in the [nodename] section use that</p>
-              </li>
-              <li>
-                <p>If there is a viewUrl set in the [default] section use that</p>
-              </li>
-              <li>
-                <p>Use stats[nodename].hostname:[nodename section - viewPort setting]</p>
-              </li>
-              <li>
-                <p>Use stats[nodename].hostname:[default section - viewPort setting]</p>
-              </li>
-              <li>
-                <p>Use stats[nodename].hostname:8005</p>
-              </li>
-            </ol>
-          </div>
-        </div>
-        <div>
-          <h4 id="possible-fixes">
-            Possible fixes
-          </h4>
-          <div>
-            <p>First, look at <code>viewer.log</code> on both the viewer machine and the remote machine and see if there are any obvious errors. The most common problems are:</p>
-          </div>
-          <div>
-            <ol>
-              <li>
-                <p>Not using the same config.ini on all nodes can make things a pain to debug and sometimes not even work. It is best to use the same config with different sections for each node name [nodename]</p>
-              </li>
-              <li>
-                <p>The remote machine doesn’t return a FQDN from the <code>hostname</code> command AND the viewer machine can’t resolve just the hostname. Before version 0.14.1 the <code>domainname</code> command was ignore. To fix this, do ONE of
-                  the following:</p>
-                <div>
-                  <ol type="a">
-                    <li>
-                      <p>Make it so the remote machines returns a FQDN (<code>hostname "fullname"</code> as root and edit <code>/etc/sysconfig/network</code>)</p>
-                    </li>
-                    <li>
-                      <p>Set a <code>viewUrl</code> in each node section of the <code>config.ini</code>. If you don’t have a node section for each host, you’ll need to create one.</p>
-                    </li>
-                    <li>
-                      <p>Edit <code>/etc/resolv.conf</code> and add <code>search foo.example.com</code>, where <code>foo.example.com</code> is the subdomain of the hosts. Basically, you want it so "telnet shortname 8005" works on the viewer machine
-                        to the remote machine.</p>
-                    </li>
-                  </ol>
-                </div>
-              </li>
-              <li>
-                <p>The remote machine’s FQDN doesn’t match the CN or SANs in the cert it is presenting. The fixes are the same as #2 above.</p>
-              </li>
-              <li>
-                <p>The remote machine is using a self signed cert. To fix this, either turn off https or see the certificate answer above.</p>
-              </li>
-              <li>
-                <p>The remote machine can’t open the pcap. Make sure the <code>dropUser</code> user can read the pcap files. Check the directories in the path too.</p>
-              </li>
-              <li>
-                <p>Make sure all viewers are either using https or not using https, if only some are using https then you need to set viewUrl for each node.</p>
-                <div>
-                  <ol type="a">
-                    <li>
-                      <p>When trouble shooting this issue, it is sometimes easier to disable https everywhere</p>
-                    </li>
-                  </ol>
-                </div>
-              </li>
-              <li>
-                <p>If you want to change the hostname of a capture node</p>
-                <div>
-                  <ol type="a">
-                    <li>
-                      <p>Change your mind :)</p>
-                    </li>
-                    <li>
-                      <p>Reuse the same node name as previously with a <code>-n</code> option</p>
-                    </li>
-                    <li>
-                      <p>Use the viewUrl for that old nodename that points to the new host.</p>
-                    </li>
-                  </ol>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 id="compiled-against-a-different-node-js-version-error">
-          Compiled against a different Node.js version error
-        </h3>
-        <div>
-          <p>Moloch uses Node.js for the viewer component, and requires many packages to work fully. These packages must be compiled with and run using the same version of Node.js. An error like <code>…​ was compiled against a different Node.js
-              version using NODE_MODULE_VERSION 48. This version of Node.js requires NODE_MODULE_VERSION 57.</code> means that the version of Node.js used to install the packages and run the packages are different.</p>
-        </div>
-        <div>
-          <p>This shouldn’t happen when using the prebuilt Moloch releases. If it does, then double check that /data/moloch/bin/node is being used to run viewer.</p>
-        </div>
-        <div>
-          <p>If you built Moloch yourself, this usually happens if you have a different version of node in your path. You will need to rebuild moloch and either</p>
-        </div>
-        <div>
-          <ul>
+    <h3 id="how-do-i-reset-my-password">
+      How do I reset my password?
+    </h3>
+    <p>
+      An admin can change anyone’s password on the Users tab by clicking the
+      Settings link in the Actions column next to the user.
+    </p>
+    <p>
+      A password can also be changed by using the <code>addUser</code>
+      script, which will replace the entire account if the same userid is
+      used. All preferences and views will be cleared, so creating a
+      secondary admin account may be a better option if you need to change
+      an admin users password. After creating a secondary admin account,
+      change the users password and then delete the secondary admin account.
+      <pre><code>node addUser -c &lt;configfilepath&gt; &lt;user id&gt; &lt;user friendly name&gt; &lt;password&gt; [--admin]</code></pre>
+    </p>
+
+    <h3 id="error-couldn-t-connect-to-remote-viewer-only-displaying-spi-data">
+      Error: Couldn’t connect to remote viewer, only displaying SPI data
+    </h3>
+    <p>
+      Viewers have the ability to proxy traffic for each other. The ability
+      relies on Moloch node names that are mapped to hostnames. Common
+      problems are when systems don’t use FQDNs or certs don’t match.
+    </p>
+
+    <div class="ml-5 mr-5">
+      <h4 id="how-do-viewers-find-each-other">
+        How do viewers find each other
+      </h4>
+      <p>
+        First the SPI records are created on the <code>moloch-capture</code>
+        side.
+      </p>
+      <ol>
+        <li>
+          Each <code>moloch-capture</code> gets a nodename, either by the
+          <code>-n</code> command line option or everything in front of the
+          first period of the hostname.
+        </li>
+        <li>
+          Each <code>moloch-capture</code> writes a stats record every few
+          seconds that has the mapping from the nodename to the FDQN
+        </li>
+        <li>
+          Each SPI record has a nodename in it.
+        </li>
+      </ol>
+      <p>
+        When pcap is retrieved from the viewer it looks up the nodename
+        associated with the record.
+      </p>
+      <ol>
+        <li>
+          Each <code>moloch-viewer</code> process gets a nodename, either by
+          the <code>-n</code> command line option or evertying in front of the
+          first period of the hostname.
+        </li>
+        <li>
+          If the SPI nodename is the same as the <code>moloch-viewer</code>
+          nodename it can be processed locally, STOP HERE. This is the common
+          case with one capture process per capture node.
+        </li>
+        <li>
+          If the <code>stats[nodename].hostname</code> is the same as the
+          <code>moloch-viewer</code>’s hostname (exact match) then it can be
+          processed locally, STOP HERE. Remember this is written by capture
+          above. This is the common case with multiple capture processes per
+          capture node.
+        </li>
+        <li>
+          If we make it here, the pcap data isn’t local and it must be proxied.
+        </li>
+        <li>
+          If <code>--host</code> was used on the capture node, use that.
+        </li>
+        <li>
+          If there is a <code>viewUrl</code> set in the <code>[nodename]</code>
+          section, use that.
+        </li>
+        <li>
+          If there is a viewUrl set in the <code>[default]</code> section, use
+          that.
+        </li>
+        <li>
+          Use
+          <code>
+            stats[nodename].hostname:[nodename section - viewPort setting]
+          </code>
+        </li>
+        <li>
+          Use
+          <code>
+            stats[nodename].hostname:[default section - viewPort setting]
+          </code>
+        </li>
+        <li>
+          Use <code>stats[nodename].hostname:8005</code>
+        </li>
+      </ol>
+
+      <h4 id="possible-fixes">
+        Possible fixes
+      </h4>
+      <p>
+        First, look at <code>viewer.log</code> on both the viewer machine and
+        the remote machine and see if there are any obvious errors. The most
+        common problems are:
+      </p>
+      <ol>
+        <li>
+          Not using the same <code>config.ini</code> on all nodes can make
+          things a pain to debug and sometimes not even work. It is best to
+          use the same config with different sections for each node name
+          <code>[nodename]</code>
+        </li>
+        <li>
+          The remote machine doesn’t return a FQDN from the
+          <code>hostname</code> command AND the viewer machine can’t resolve
+          just the hostname. Before version 0.14.1 the <code>domainname</code>
+          command was ignore. To fix this, do ONE of the following:
+          <ol type="a">
             <li>
-              <p>Remove the OS version of node</p>
+              Make it so the remote machines returns a FQDN
+              (<code>hostname "fullname"</code> as root and edit
+              <code>/etc/sysconfig/network</code>)
             </li>
             <li>
-              <p>Make sure /data/moloch/bin is in your path before the OS version of node</p>
+              Set a <code>viewUrl</code> in each node section of the
+              <code>config.ini</code>. If you don’t have a node section for
+              each host, you’ll need to create one.
             </li>
             <li>
-              <p>Use the <code>--install</code> option to easybutton which will add to the path for you</p>
+              Edit <code>/etc/resolv.conf</code> and add
+              <code>search foo.example.com</code>, where
+              <code>foo.example.com</code> is the subdomain of the hosts.
+              Basically, you want it so "telnet shortname 8005" works on the
+              viewer machine to the remote machine.
             </li>
-          </ul>
-        </div>
-      </div>
+          </ol>
+        </li>
+        <li>
+          The remote machine’s FQDN doesn’t match the CN or SANs in the cert it
+          is presenting. The fixes are the same as #2 above.
+        </li>
+        <li>
+          The remote machine is using a self signed cert. To fix this, either
+          turn off HTTPS or see the certificate answer above.
+        </li>
+        <li>
+          The remote machine can’t open the PCAP. Make sure the
+          <code>dropUser</code> user can read the pcap files. Check the
+          directories in the path too.
+        </li>
+        <li>
+          Make sure all viewers are either using HTTPS or not using HTTPS, if
+          only some are using HTTPS then you need to set <code>viewUrl</code>
+          for each node.
+          <ol type="a">
+            <li>
+              When troubleshooting this issue, it is sometimes easier to
+              disable HTTPS everywhere
+            </li>
+          </ol>
+        </li>
+        <li>
+          If you want to change the hostname of a capture node:
+          <ol type="a">
+            <li>
+              Change your mind :)
+            </li>
+            <li>
+              Reuse the same node name as previously with a <code>-n</code>
+              option
+            </li>
+            <li>
+              Use the <code>viewUrl</code> for that old nodename that points
+              to the new host.
+            </li>
+          </ol>
+        </li>
+      </ol>
     </div>
-  </div>
-  <div>
-    <h2 id="parliament">
+
+    <h3 id="compiled-against-a-different-node-js-version-error">
+      Compiled against a different Node.js version error
+    </h3>
+    <p>
+      Moloch uses Node.js for the viewer component, and requires many
+      packages to work fully. These packages must be compiled with and run
+      using the same version of Node.js. An error like <code>…​ was compiled
+      against a different Node.js version using NODE_MODULE_VERSION 48. This
+      version of Node.js requires NODE_MODULE_VERSION 57.</code> means that
+      the version of Node.js used to install the packages and run the
+      packages are different.
+    </p>
+    <p>
+      This shouldn’t happen when using the prebuilt Moloch releases. If it
+      does, then double check that <code>/data/moloch/bin/node</code> is
+      being used to run viewer.
+    </p>
+    <p>
+      If you built Moloch yourself, this usually happens if you have a
+      different version of node in your path. You will need to rebuild Moloch
+      and either:
+    </p>
+    <ul>
+      <li>
+        Remove the OS version of node
+      </li>
+      <li>
+        Make sure <code>/data/moloch/bin</code> is in your path before the OS
+        version of node
+      </li>
+      <li>
+        Use the <code>--install</code> option to easybutton which will add to
+        the path for you
+      </li>
+    </ul>
+    <!-- /viewer -->
+
+    <!-- parliament -->
+    <br>
+    <h1 id="parliament">
       Parliament
-    </h2>
-    <div>
-      <div>
-        <h3 id="sample-apache-config">
-          Sample Apache Config
-        </h3>
-        <div>
-          <p>Parliament is designed to run behind a reverse proxy such as apache. Basically you just need to tell apache to send all root requests and any /parliament requests to the parliament server.</p>
-        </div>
-        <div>
+    </h1>
+    <hr>
 
-          <pre><code>ProxyPassMatch   ^/$ http://localhost:8008/parliament retry=0
+    <h3 id="sample-apache-config">
+      Sample Apache Config
+    </h3>
+    <p>
+      Parliament is designed to run behind a reverse proxy such as Apache.
+      Basically, you just need to tell Apache to send all root requests and any
+      <code>/parliament</code> requests to the Parliament server.
+      <pre><code>ProxyPassMatch   ^/$ http://localhost:8008/parliament retry=0
 ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></pre>
+    </p>
+    <!-- /parliament -->
 
-        </div>
-      </div>
-    </div>
   </div>
 
 </div>
 
-<!-- TODO add links in footer -->
+<!-- TODO make the footer the same everwhere -->
 <footer class="footer small">
   <span class="text-center">
-    <img class="big-owl" src="simple_logo.png" height="58px" alt="Moloch Logo" />
+    <img class="big-owl"
+      src="simple_logo.png"
+      alt="Moloch Logo"
+      height="58px"
+    />
   </span>
 </footer>
 

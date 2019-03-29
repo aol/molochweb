@@ -1,16 +1,13 @@
-/* TODO */
-.jumbotron-white {
-  background-color: #FFFFFF;
-}
-.container-fluid {
+/* main page styles ---------------- */
+.container-fluid.index-page {
   padding-left: 0;
   padding-right: 0;
   margin-left: auto
   margin-right: auto;
-  overflow-x: hidden; /* TODO */
+  overflow-x: hidden;
 }
 
-/* TODO */
+/* full width images with pretty angle */
 div.img-container {
   padding-top: 1.5rem;
   padding-bottom: 2rem;
@@ -19,12 +16,9 @@ div.img-container {
 }
 div.img-container > .background-img {
   width: 100%;
-  /* border-top: 2px solid #360540; */
-  /* box-shadow: 0px -4px 5px 0px white; */
   clip-path: polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
 }
 
-/* TODO */
 div.demo {
   top: -100px;
   position: relative;
@@ -33,129 +27,49 @@ div.demo > h1 {
   margin-bottom: 60px;
 }
 
-/* TODO */
-.p-nav {
+
+/* FAQ page styles ----------------- */
+.faq-content {
   padding-top: 80px;
 }
-.p-nav-lg {
-  padding-top: 120px;
+
+/* faq navigation */
+div.nav-pills.nav-pills-fixed {
+  border: 1px solid gray;
+  border-radius: 4px;
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 100px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-box-shadow: 0 0 16px -2px black;
+     -moz-box-shadow: 0 0 16px -2px black;
+          box-shadow: 0 0 16px -2px black;
 }
 
-/* TODO */
-.btn-fw {
-  width: 160px;
+div.nav-pills.nav-pills-fixed .nav-link {
+  width: 100%;
 }
 
-
-/* misc */
-.no-float { float: none; }
-
-.no-wrap { white-space: nowrap; }
-
-.cursor-pointer { cursor: pointer; }
-
-.align-center { text-align: center; }
-
-.no-decoration { text-decoration: none !important; }
-
-.vertical-align-middle { vertical-align: middle !important; }
-
-/* TODO */
-.angle-background {
-  padding-bottom: 7rem;
-  clip-path: polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
+div.nav-pills.nav-pills-fixed a {
+  padding: 5px 8px !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-/* TODO purp */
-.purp-background {
-  background-color: #e7e0ed;
-}
-.purp-text { color: #830B9C; }
-.dark-purp-text { color: #530763; }
-.btn.btn-purp {
-  color: #FFFFFF;
-  border-color: #830B9C;
-  background-color: #830B9C;
-}
-.btn.btn-purp:hover {
-  border-color: #711D77;
-  background-color: #76207D;
-}
-
-.hide {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
+div.nav-pills.nav-pills-fixed a.nested {
+  margin-left: 1.2rem;
+  font-size: 0.85rem;
+  padding: 2px 5px !important;
 }
 
 
-/* navbar owl image */
-.nav-link > img,
-.navbar-brand > img {
-  top: 4px;
-  left: 15px;
-  height: 55px;
-  position: absolute;
+/* estimators page styles ---------- */
+.estimators-content {
+  padding-top: 80px;
+  padding-bottom: 70px;
 }
-
-
-/* footer styles */
-footer.footer {
-  color: #aaa;
-  padding: 8px 16px;
-  text-align: center;
-  border-top: 1px solid #E5E5E5;
-}
-
-/* move the image up so the owl is sitting on the border */
-footer.footer > .text-center > img { margin-top: -63px; }
-footer.footer > .text-center > img.big-owl { margin-top: -90px; }
-
-
-/* alert styles - small alerts */
-.alert.alert-sm { padding: .5rem; }
-
-
-/* figure styles */
-/* override removes bottom margin */
-figure.figure {
-  margin  : 0;
-  position: relative;
-}
-
-
-/* button to open image in new tab */
-.open-image {
-  visibility: hidden;
-  position  : absolute;
-  top       : 5px;
-  right     : 5px;
-}
-
-figure.figure:hover > .open-image { visibility: visible; }
-
-.table td {
-  line-height: 1.05;
-}
-
-
-/* button to toggle more downloads */
-.show-more-downloads {
-  font-size : 90%;
-  margin-top: 1rem;
-}
-
-
-/* buttons on the right of the downloads page */
-.downloads-info-btn {
-  width: 160px;
-}
-
-
-/* version time display */
-.time {
-  margin-top: -6px;
-}
-
 
 /* custom select styles */
 .input-group .custom-select {
@@ -178,13 +92,11 @@ figure.figure:hover > .open-image { visibility: visible; }
   -webkit-appearance: none;
 }
 
-
 /* large labels */
 .label-lg {
-  font-size : 100%;
-  padding   : .25rem .5rem;
+  font-size: 100%;
+  padding: .25rem .5rem;
 }
-
 
 /* small inputs for numbers */
 .input-group input {
@@ -192,6 +104,20 @@ figure.figure:hover > .open-image { visibility: visible; }
 }
 
 
+/* downloads page styles ----------- */
+/* button to toggle more downloads */
+.show-more-downloads {
+  font-size : 90%;
+  margin-top: 1rem;
+}
+
+/* version time display */
+.time {
+  margin-top: -6px;
+}
+
+
+/* on page styles ------------------ */
 /* flex styles */
 .d-flex {
   display: flex !important;
@@ -206,7 +132,6 @@ figure.figure:hover > .open-image { visibility: visible; }
   justify-content: space-between !important;
 }
 
-
 /* agenda styles */
 .agenda-time {
   flex: 0 0 160px;
@@ -220,7 +145,6 @@ figure.figure:hover > .open-image { visibility: visible; }
   font-size: 1rem;
   font-weight: lighter;
 }
-
 
 /* quote styles */
 .quote {
@@ -238,6 +162,101 @@ figure.figure:hover > .open-image { visibility: visible; }
 }
 
 
+/* all page styles ----------------- */
+/* white jumbotrons for custom backgrounds */
+.jumbotron-white {
+  background-color: #FFFFFF;
+}
+
+/* custom button styles */
+.btn {
+  border-radius: 0 !important;
+}
+.btn-fw {
+  width: 160px;
+}
+.btn.btn-purp {
+  color: #FFFFFF;
+  border-color: #830B9C;
+  background-color: #830B9C;
+}
+.btn.btn-purp:hover {
+  border-color: #711D77;
+  background-color: #76207D;
+}
+
+/* padding for navbar */
+.p-nav {
+  padding-top: 80px;
+}
+.p-nav-lg {
+  padding-top: 120px;
+}
+
+/* misc */
+.no-float { float: none; }
+
+.no-wrap { white-space: nowrap; }
+
+.cursor-pointer { cursor: pointer; }
+
+.align-center { text-align: center; }
+
+.no-decoration { text-decoration: none !important; }
+
+.hide {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* pretty angled backgrounds */
+.angle-background {
+  padding-bottom: 7rem;
+  clip-path: polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
+}
+
+/* purple background */
+.purp-background {
+  background-color: #e7e0ed;
+}
+
+/* purple text */
+.purp-text { color: #830B9C; }
+.dark-purp-text { color: #530763; }
+
+
+/* navbar owl image */
+.nav-link > img,
+.navbar-brand > img {
+  top: 4px;
+  left: 15px;
+  height: 55px;
+  position: absolute;
+}
+
+/* footer styles */
+footer.footer {
+  color: #aaa;
+  padding: 8px 16px;
+  text-align: center;
+  border-top: 1px solid #E5E5E5;
+}
+
+/* move the image up so the owl is sitting on the border */
+footer.footer > img {
+  margin-top: -63px;
+  margin-right: 14px;
+}
+footer.footer > span > img.big-owl {
+  margin-top: -90px;
+  margin-right: 29px;
+}
+
+/* condense the tables */
+.table td {
+  line-height: 1.05;
+}
+
 /* code styles */
 pre {
   padding: 16px;
@@ -246,17 +265,4 @@ pre {
   line-height: 1.45;
   border-radius: 3px;
   background-color: #f6f8fa;
-}
-
-
-/* FAQ styles ---------------------- */
-.faq-content {
-  padding-top: 80px;
-}
-
-
-/* estimators styles --------------- */
-.estimators-content {
-  padding-top: 80px;
-  padding-bottom: 70px;
 }
