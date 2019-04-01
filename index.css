@@ -1,5 +1,5 @@
 /* main page styles ---------------- */
-.container-fluid.index-page {
+.container-fluid.full-width-page {
   padding-left: 0;
   padding-right: 0;
   margin-left: auto
@@ -105,6 +105,10 @@ div.nav-pills.nav-pills-fixed a.nested {
 
 
 /* downloads page styles ----------- */
+.downloads-content {
+  padding-top: 80px;
+}
+
 /* button to toggle more downloads */
 .show-more-downloads {
   font-size : 90%;
@@ -118,6 +122,10 @@ div.nav-pills.nav-pills-fixed a.nested {
 
 
 /* on page styles ------------------ */
+.on-content > .angle-background {
+  padding-top: 120px;
+}
+
 /* flex styles */
 .d-flex {
   display: flex !important;
@@ -224,7 +232,6 @@ div.nav-pills.nav-pills-fixed a.nested {
 .purp-text { color: #830B9C; }
 .dark-purp-text { color: #530763; }
 
-
 /* navbar owl image */
 .nav-link > img,
 .navbar-brand > img {
@@ -238,18 +245,12 @@ div.nav-pills.nav-pills-fixed a.nested {
 footer.footer {
   color: #aaa;
   padding: 8px 16px;
-  text-align: center;
   border-top: 1px solid #E5E5E5;
 }
 
 /* move the image up so the owl is sitting on the border */
-footer.footer > img {
-  margin-top: -63px;
-  margin-right: 14px;
-}
-footer.footer > span > img.big-owl {
-  margin-top: -90px;
-  margin-right: 29px;
+img.footer-owl {
+  margin-bottom: -2px;
 }
 
 /* condense the tables */

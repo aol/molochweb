@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>Molo.ch/on</title>
+  <title>MolochON</title>
 
   <!-- Required meta tags always come first -->
   <meta charset="utf-8" />
@@ -22,9 +22,9 @@
   <meta name="twitter:url" value="http://molo.ch/on" />
 
   <!-- fontawesome http://fontawesome.io/ -->
-  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-  <!-- Bootstrap CSS http://v4-alpha.getbootstrap.com/ -->
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS https://getbootstrap.com/ -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <!-- custom index page styles -->
   <link rel="stylesheet" type="text/css" href="index.css">
 
@@ -32,231 +32,339 @@
 
 <body id="viewport">
 
-<div class="container">
+<div class="container-fluid full-width-page">
 
   <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
-    <div class="navbar-brand">
-      <img src="simple_logo.png" />
-      <div class="ml-5">Molo.ch/on</div>
+    <button class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsingNavbar"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"
+      id="collapsingNavbar">
+      <ul class="nav navbar-nav mr-auto" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link"
+            href="/index#home">
+            <img src="simple_logo.png" />
+          </a>
+        </li>
+        <li class="nav-item dropdown ml-4">
+          <a class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false">
+            <strong>Moloch</strong>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/index#demo">Demo</a>
+            <a class="dropdown-item" href="/index#screenshots">Screenshots</a>
+            <a class="dropdown-item" href="/index#downloads">Downloads</a>
+            <a class="dropdown-item" href="/index#help">Help</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+            href="/downloads">
+            Downloads
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+            href="/estimators">
+            Estimators
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+            href="/faq">
+            FAQ
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"
+            href="/on">
+            MolochON 2019
+          </a>
+        </li>
+        <!-- TODO wiki dropdown with api/settings/architectures -->
+      </ul>
+      <form class="form-inline">
+        <a href="https://slackinvite.molo.ch/"
+          class="btn btn-sm btn-outline-secondary ml-1"
+          title="Join the conversation on Slack"
+          data-toggle="tooltip"
+          data-placement="left">
+          <span class="fa fa-slack fa-2x"></span>
+          <span class="hide">Slack Channel</span>
+        </a>
+        <a href="https://github.com/aol/moloch"
+          title="View Moloch on GitHub"
+          data-toggle="tooltip" data-placement="left"
+          class="btn btn-sm btn-outline-info ml-1">
+          <span class="fa fa-github fa-2x"></span>
+          <span class="hide">Moloch GitHub</span>
+        </a>
+      </form>
     </div>
-    <ul class="nav navbar-nav mr-auto"></ul>
-    <form class="form-inline text-right">
-      <a href="https://goo.gl/forms/TfXaiiPKkY43WMB93"
-        class="btn btn-sm btn-outline-info mr-1">
-        Register
-      </a>
-      <a href="https://molo.ch"
-        class="btn btn-sm btn-outline-success">
-        molo.ch homepage
-      </a>
-    </form>
   </nav>
 
-  <div class="margined-for-nav margined-bottom">
+  <div class="on-content">
 
-    <div class="row margined-bottom-lg" id="main">
-      <div class="col-md-12">
-        <h2>Oath: Dulles Virginia campus</h2>
-        <p class="lead" style="font-size:1.5rem;">November 1, 2018</p>
-        <p>
-          <a href="https://goo.gl/forms/TfXaiiPKkY43WMB93"
-            class="btn btn-lg btn-outline-primary">
-            Register
-          </a>
-        </p>
-        <p class="lead margined-top">
-          The 2nd Molo.ch/on will be held on November 1, 2018.
-          This event will allow you to learn more about Moloch and meet other community members.
-          Participants please propose potential papers, projects, or playbooks!
-          We welcome you to Molo.ch/on 2018.
-        </p>
-        <p class="lead margined-top" style="font-weight:400">
-          <span class="fa fa-lightbulb-o fa-lg text-warning"></span>&nbsp;
-          Join us in #moloch-on channel on the <a href="https://slackinvite.molo.ch/">moloch-fpc</a> workspace.
-        </p>
+    <div class="purp-background angle-background pr-5 pl-5">
+
+      <div id="main"
+        class="row mb-5 mr-5 ml-5 ">
+        <div class="col-md-12 text-center">
+          <h1 class="display-3">
+            2019 MolochON
+          </h1>
+          <h1 class="display-4">
+            Verizon Media: Yahoo Sunnyvale Campus
+          </h1>
+          <p class="lead purp-text"
+            style="font-size:2.5rem;">
+            October 1, 2019
+          </p>
+          <p class="mt-5">
+            <!-- TODO register link -->
+            <!-- <a href="https://goo.gl/forms/TfXaiiPKkY43WMB93"
+              class="btn btn-lg btn-purp btn-fw">
+              Register
+            </a> -->
+            <!-- TODO submit a talk -->
+            <!-- <a href="https://goo.gl/forms/TfXaiiPKkY43WMB93"
+              class="btn btn-lg btn-outline-primary btn-fw">
+              Submit a Talk
+            </a> -->
+            <span class="fa fa-wrench fa-lg">
+            </span>&nbsp;
+            Working on registration page...
+            <br>
+            Come back later!
+          </p>
+          <p class="lead mt-5">
+            The 3rd MolochON will be held on October 1, 2019.
+            This event will allow you to learn more about Moloch and meet other community members.
+            Participants please propose potential papers, projects, or playbooks!
+            <br>
+            <strong>We welcome you to MolochON 2019.</strong>
+          </p>
+          <p class="lead mt-5" style="font-weight:400">
+            <span class="fa fa-lightbulb-o fa-lg text-warning">
+            </span>&nbsp;
+            Join us in
+            <strong>#moloch-on</strong>
+            channel on the
+            <a class="no-decoration"
+              href="https://slackinvite.molo.ch/">
+              moloch-fpc
+            </a>
+            workspace.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <hr>
+      <hr>
 
-    <div class="row margined-top-lg margined-bottom-lg" id="agenda">
-      <div class="col-md-12">
-        <h3>Agenda</h3>
-        <p class="lead text-muted">
-          9:00 AM – 5:00 PM EST
-        </p>
-        <ul class="list-group">
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info text-info">9:00</div>
-              <div class="agenda-title">Breakfast</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">9:30</div>
-              <div class="agenda-title">Introductions</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">9:45</div>
-              <div class="agenda-title">Recent Changes &amp Upcoming Features</div>
-              <div>Andy &amp; Elyse</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">10:45</div>
-              <div class="agenda-title">Forensicating with Moloch</div>
-              <div>Art</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">11:00</div>
-              <div class="agenda-title">Automated Threat Intel Investigation Pipeline</div>
-              <div>Matt</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">11:15</div>
-              <div class="agenda-title">Break</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">11:30</div>
-              <div class="agenda-title">Enhancing Encrypted Traffic Analysis</div>
-              <div>Jeff Atkinson</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">12:00</div>
-              <div class="agenda-title">WISE is Awesome!</div>
-              <div>Andy</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">12:30</div>
-              <div class="agenda-title">Lunch</div>
-              <div>
-                <strong>
-                  Sponsored by
-                  <a href="https://digital-forensics.sans.org">
-                    The SANS Institute, DFIR Curriculum
-                  </a>
-                </strong>
+      <div id="agenda"
+        class="row mt-5 mb-5 pb-5 mr-5 ml-5">
+        <div class="col-md-12">
+          <div>
+            <span class="lead text-muted pull-right pt-2">
+              9:00 AM – 5:00 PM PST
+            </span>
+            <h2>
+              Agenda
+            </h2>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">9:00</div>
+                <div class="agenda-title">Breakfast</div>
               </div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">13:30</div>
-              <div class="agenda-title">Elastalert and Moloch integration</div>
-              <div>Ernie</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">13:45</div>
-              <div class="agenda-title">Centralized Management and Deployment with Docker and Ansible</div>
-              <div>Taylor</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">14:00</div>
-              <div class="agenda-title">Moloch Deployments on Virtualized and Cloud(AWS) Environments</div>
-              <div>Srinath</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">14:15</div>
-              <div class="agenda-title">Small Scale at Large Scale: Putting Moloch on the Analyst’s Desk</div>
-              <div>Phil</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">14:30</div>
-              <div class="agenda-title">Moloch @ MyNetWatchman</div>
-              <div>MyNetWatchman Developers</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">15:00</div>
-              <div class="agenda-title">Break</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">15:15</div>
-              <div class="agenda-title">Elasticsearch for Time-series Data at Scale</div>
-              <div>Andrew</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">15:45</div>
-              <div class="agenda-title">Oath Deployment - Review Moloch deployment at Oath</div>
-              <div>Andy</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">16:15</div>
-              <div class="agenda-title">Fire talks &amp; Brainstorming Future Features</div>
-              <div>All</div>
-            </div>
-          </li>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">17:00</div>
-              <div class="agenda-title">Goodbye!</div>
-            </div>
-          </li>
-          <li class="list-group-item flex-column">
-            <div class="d-flex align-items-start justify-content-between">
-              <div class="agenda-time text-info">18:00-22:00</div>
-              <div class="agenda-title">
-                Happy Hour at
-                <a href="https://www.bungalowlakehouse.com/">Bungalow Lakehouse</a>
-                <div class="more-info">
-                  46116 Lake Center Plaza<br>
-                  Sterling, VA 20165<br>
-                  703-430-7625<br>
-
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">9:30</div>
+                <div class="agenda-title">Introductions</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">9:45</div>
+                <div class="agenda-title">Recent Changes &amp Upcoming Features</div>
+                <div>Andy &amp; Elyse</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">10:45</div>
+                <div class="agenda-title">Something Awesome</div>
+                <div>Art</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">11:00</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">11:15</div>
+                <div class="agenda-title">Break</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">11:30</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">12:00</div>
+                <div class="agenda-title">TBD</div>
+                <div>Andy</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">12:30</div>
+                <div class="agenda-title">Lunch</div>
+                <div>
+                  <strong>
+                    Sponsored by
+                    <!-- TODO is lunch sponsored? -->
+                    ???
+                    <!-- <a href="https://digital-forensics.sans.org">
+                      The SANS Institute, DFIR Curriculum
+                    </a> -->
+                  </strong>
                 </div>
               </div>
-              <strong>
-                Sponsored by <a href="http://www.arista.com">Arista</a>
-              </strong>
-            </div>
-          </li>
-        </ul>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">13:30</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">13:45</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">14:00</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">14:15</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">14:30</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">15:00</div>
+                <div class="agenda-title">Break</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">15:15</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">15:45</div>
+                <div class="agenda-title">TBD</div>
+                <div>TBD</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">16:15</div>
+                <div class="agenda-title">Fire talks &amp; Brainstorming Future Features</div>
+                <div>All</div>
+              </div>
+            </li>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">17:00</div>
+                <div class="agenda-title">Goodbye!</div>
+              </div>
+            </li>
+            <li class="list-group-item flex-column">
+              <div class="d-flex align-items-start justify-content-between">
+                <div class="agenda-time purp-text">18:00-22:00</div>
+                <div class="agenda-title">
+                  Happy Hour at
+                  ???
+                  <!-- TODO where's HH? -->
+                  <!-- <a href="https://www.bungalowlakehouse.com/">Bungalow Lakehouse</a>
+                  <div class="more-info">
+                    46116 Lake Center Plaza<br>
+                    Sterling, VA 20165<br>
+                    703-430-7625<br>
+                  </div> -->
+                </div>
+                <strong>
+                  <!-- TODO sponsor? -->
+                  Sponsored by
+                  ???
+                  <!-- <a href="http://www.arista.com">Arista</a> -->
+                </strong>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
+
     </div>
 
-    <hr>
-
-    <div class="row margined-top-lg margined-bottom-lg" id="venue">
+    <div id="venue"
+      class="row mt-5 mb-5 text-center">
       <div class="col-md-12">
-        <h3>Venue</h3>
+        <h3 class="purp-text">
+          Venue
+        </h3>
         <p class="lead">
-          Oath: Dulles Virginia campus<br>
-          22000 AOL Way<br>
-          Sterling, VA 20166<br>
-          5th floor, AOL conference area<br>
+          Verizon Media: Yahoo Sunnyvale Campus<br>
+          701 1st Avenue Building C<br>
+          2nd Floor, Classrooms 4 & 5<br>
+          Sunnyvale, CA 94089
         </p>
         <p>
-          Park in front of the buiding, check in at the front desk, look for Moloch shirts to escort you to the 5th floor
+          <!-- TODO directions where to park and to classrooms -->
         </p>
       </div>
     </div>
@@ -264,18 +372,42 @@
 
 </div>
 
-<footer class="footer small">
-  <span class="text-center">
-    <img class="big-owl" src="simple_logo.png" height="58px" alt="Moloch Logo" />
+<!-- footer -->
+<div class="text-center">
+  <img height="28px"
+    class="footer-owl"
+    alt="Moloch Logo"
+    src="simple_logo.png"
+  />
+</div>
+
+<footer class="footer small text-center">
+  <strong class="pull-left">
+    <span>Moloch</span>&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/aol/moloch" class="no-decoration">
+      <span class="fa fa-lg fa-github"></span>
+      <span class="hide">Moloch GitHub</span>
+    </a>
+  </strong>
+  <a href="https://github.com/aol/moloch/issues"
+    class="no-decoration pull-left ml-3"
+    title="Report it!" data-toggle="tooltip">
+    Found an Issue?
+  </a>
+  <span class="pull-right">
+    <a href="https://github.com/aol/moloch/wiki"
+      class="no-decoration">Wiki</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/aol/moloch/wiki/API"
+      class="no-decoration">API</a>&nbsp;&nbsp;&nbsp;
+    <a href="/faq"
+      class="no-decoration">FAQ</a>
   </span>
-</footer>
+</footer> <!-- /footer -->
 
 <!-- jQuery first, then Bootstrap JS. -->
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<!-- Tether for Bootstrap https://github.com/HubSpot/tether -->
-<script src="node_modules/tether/dist/js/tether.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
 <script>
   $(function () {

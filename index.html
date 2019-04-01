@@ -31,7 +31,7 @@
 </head>
 
 <body id="viewport">
-  <div class="container-fluid index-page">
+  <div class="container-fluid full-width-page">
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
       <button class="navbar-toggler"
         type="button"
@@ -45,9 +45,9 @@
       <div class="collapse navbar-collapse"
         id="collapsingNavbar">
         <ul class="nav navbar-nav mr-auto" role="tablist">
-          <li class="nav-item">
+          <li class="nav-item d-none d-sm-none d-md-block">
             <a class="nav-link"
-                href="#home">
+              href="#home">
               <img src="simple_logo.png" />
             </a>
           </li>
@@ -68,13 +68,13 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link main"
+            <a class="nav-link"
               href="/downloads">
               Downloads
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link main"
+            <a class="nav-link"
               href="/estimators">
               Estimators
             </a>
@@ -85,15 +85,15 @@
               FAQ
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              href="/on">
+              MolochON 2019
+            </a>
+          </li>
           <!-- TODO wiki dropdown with api/settings/architectures -->
         </ul>
         <form class="form-inline">
-          <!--
-          <a href="/on"
-            class="btn btn-outline-success">
-            MolochOn 2018
-          </a>
-          -->
           <a href="https://slackinvite.molo.ch/"
             class="btn btn-sm btn-outline-secondary ml-1"
             title="Join the conversation on Slack"
@@ -525,25 +525,25 @@
           </h1>
           <div class="row mb-4 mt-4">
             <div class="col align-center">
-              <a class="btn btn-outline-danger btn-lg mr-3 btn-fw"
+              <a class="btn btn-outline-danger btn-lg mr-3 btn-fw mb-2"
                 href="https://s3.amazonaws.com/files.molo.ch/NOTICE.txt">
                 NOTICE
               </a>
-              <a class="btn btn-outline-primary btn-lg mr-3 btn-fw"
+              <a class="btn btn-outline-primary btn-lg mr-3 btn-fw mb-2"
                 href="https://raw.githubusercontent.com/aol/moloch/master/CHANGELOG">
                 CHANGELOG
               </a>
-              <a class="btn btn-outline-info btn-lg mr-3 btn-fw"
+              <a class="btn btn-outline-info btn-lg mr-3 btn-fw mb-2"
                 href="https://raw.githubusercontent.com/aol/moloch/master/release/README.txt">
                 Instructions
               </a>
-              <a class="btn btn-outline-success btn-lg mr-3 btn-fw"
+              <a class="btn btn-outline-success btn-lg mr-3 btn-fw mb-2"
                 href="https://github.com/aol/moloch/issues/new">
                 Open an Issue
               </a>
             </div>
           </div>
-          <div class="row mb-5 mr-5 ml-5">
+          <div class="row mb-2 mr-5 ml-5">
             <div class="col">
               <div class="jumbotron jumbotron-white pb-2 pt-4">
                 <h3 class="purp-text pb-3 text-center">
@@ -561,13 +561,6 @@
                       Upgrade to Moloch 1.0 or 1.1 and finish any reindexing.
                     </p>
                   </div>
-                    <div class="col-lg-3 col-md-6">
-                      <p>
-                        <strong>From ES 5 to ES 6</strong>
-                        <br>
-                        Read the How do I upgrade to ES 6 answer in the FAQ.
-                      </p>
-                    </div>
                   <div class="col-lg-3 col-md-6">
                     <p>
                       <strong>To Moloch 1.0 or 1.1</strong>
@@ -581,6 +574,13 @@
                   </div>
                   <div class="col-lg-3 col-md-6">
                     <p>
+                      <strong>From ES 5 to ES 6</strong>
+                      <br>
+                      Read the How do I upgrade to ES 6 answer in the FAQ.
+                    </p>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <p>
                       <strong>From ES 2 to ES 5</strong>
                       <br>
                       Read the How do I upgrade to ES 5 answer in the FAQ.
@@ -590,31 +590,21 @@
               </div>
             </div>
           </div>
-          <!-- TODO only show most recent release with link to downloads page -->
-          <div class="downloads">
+          <div class="downloads mr-5 ml-5">
             <h4 class="loading-downloads text-sm-center">
               <span class="fa fa-spinner fa-spin"></span>&nbsp;
               Loading Moloch downloads...
             </h4>
             <div class="main-downloads"></div>
-            <div class="row show-more-downloads">
-              <div class="col-md-12">
-                <a href="#" onclick="toggleMoreDownloads(event)"
-                  class="cursor-pointer no-decoration show-more-downloads-btn">
-                  <span class="fa fa-chevron-down"></span>&nbsp;
-                  show more downloads
-                </a>
-              </div>
-            </div>
-            <div class="more-downloads" style="display:none;">
-              <hr>
-            </div>
-            <div class="commit-downloads"><hr></div>
-            <div class="row downloads-error" style="display:none;">
+            <div class="row downloads-error mt-4" style="display:none;">
               <div class="col-12 text-center">
                 <h5 class="purp-text">
-                  <span class="fa fa-exclamation-triangle"></span>&nbsp;
-                  Sorry, we couldn't retrieve Moloch downloads.<br>
+                  <span class="fa fa-frown-o fa-lg">
+                  </span>&nbsp;
+                  Sorry, we couldn't retrieve Moloch downloads.
+                  &nbsp;<span class="fa fa-frown-o fa-lg">
+                  </span>
+                  <br>
                   Please try again later.
                 </h5>
                 <p>
@@ -623,6 +613,14 @@
                     GitHub
                   </a>
                 </p>
+              </div>
+            </div>
+            <div class="row text-center mt-4">
+              <div class="col">
+                <a href="/downloads"
+                  class="btn btn-lg btn-purp">
+                  More Downloads
+                </a>
               </div>
             </div>
           </div>
@@ -690,7 +688,16 @@
 
   </div> <!-- /container -->
 
-  <footer class="footer small">
+  <!-- footer -->
+  <div class="text-center">
+    <img height="28px"
+      class="footer-owl"
+      alt="Moloch Logo"
+      src="simple_logo.png"
+    />
+  </div>
+
+  <footer class="footer small text-center">
     <strong class="pull-left">
       <span>Moloch</span>&nbsp;&nbsp;&nbsp;
       <a href="https://github.com/aol/moloch" class="no-decoration">
@@ -711,13 +718,7 @@
       <a href="/faq"
         class="no-decoration">FAQ</a>
     </span>
-    <!-- <div class="text-center"> -->
-    <img height="28px"
-      alt="Moloch Logo"
-      src="simple_logo.png"
-    />
-    <!-- </div> -->
-  </footer>
+  </footer> <!-- /footer -->
 
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -746,6 +747,52 @@
       // navigate to hash on page load
       // timeout waits for wait for id of element to load
       window.setTimeout(offsetAnchor);
+
+      function setupDownloadBtns (versions, sortedVersions) {
+        let version = versions[sortedVersions[0]]; // get the latest version
+
+        let html = `<div class="row text-center">
+                     <div class="col">
+                       <h2>${version.title}</h2>
+                       <p class="lead">Latest Release ${version.modified}</p>
+                     </div>
+                    </div>`;
+
+        let downloads = version.downloads;
+
+        html += '<div class="row text-center"><div class="col">';
+
+        for (let i = 0, len = downloads.length; i < len; ++i) {
+          let download = downloads[i];
+          html += `<a href="${download.url}" class="btn btn-purp mr-3">
+                     ${download.title}
+                   </a>`;
+        }
+
+        html += '</div></div>';
+
+        $('.main-downloads').append(html);
+      }
+
+      function setupError() {
+        $('.downloads-error').show();
+        $('.loading-downloads').hide();
+      }
+
+      $.ajax({
+        url: 'https://s3.amazonaws.com/files.molo.ch',
+        type: 'GET',
+        crossDomain: true,
+        dataType: 'xml',
+        success: function (xml) {
+          let downloads = parseXML(xml);
+          setupDownloadBtns(downloads.downloads, downloads.sortedVersions);
+          $('.loading-downloads').hide();
+        },
+        error: function(xhr, textStatus, errorThrown) {
+          setupError();
+        }
+      });
     });
   </script>
 
