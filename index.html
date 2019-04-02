@@ -31,102 +31,26 @@
 </head>
 
 <body id="viewport">
-  <div class="container-fluid full-width-page">
-    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
-      <button class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsingNavbar"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse"
-        id="collapsingNavbar">
-        <ul class="nav navbar-nav mr-auto" role="tablist">
-          <li class="nav-item d-none d-sm-none d-md-block">
-            <a class="nav-link"
-              href="#home">
-              <img src="simple_logo.png" />
-            </a>
-          </li>
-          <li class="nav-item dropdown ml-4">
-            <a class="nav-link dropdown-toggle active"
-              data-toggle="dropdown"
-              href="#"
-              role="button"
-              aria-haspopup="true"
-              aria-expanded="false">
-              <strong>Moloch</strong>
-            </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#demo">Demo</a>
-              <a class="dropdown-item" href="#screenshots">Screenshots</a>
-              <a class="dropdown-item" href="#downloads">Downloads</a>
-              <a class="dropdown-item" href="#help">Help</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"
-              href="/downloads">
-              Downloads
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"
-              href="/estimators">
-              Estimators
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"
-              href="/faq">
-              FAQ
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"
-              href="/on">
-              MolochON 2019
-            </a>
-          </li>
-          <!-- TODO wiki dropdown with api/settings/architectures -->
-        </ul>
-        <form class="form-inline">
-          <a href="https://slackinvite.molo.ch/"
-            class="btn btn-sm btn-outline-secondary ml-1"
-            title="Join the conversation on Slack"
-            data-toggle="tooltip"
-            data-placement="left">
-            <span class="fa fa-slack fa-2x"></span>
-            <span class="hide">Slack Channel</span>
-          </a>
-          <a href="https://github.com/aol/moloch"
-            title="View Moloch on GitHub"
-            data-toggle="tooltip" data-placement="left"
-            class="btn btn-sm btn-outline-info ml-1">
-            <span class="fa fa-github fa-2x"></span>
-            <span class="hide">Moloch GitHub</span>
-          </a>
-        </form>
-      </div>
-    </nav>
 
+  <div class="container-fluid full-width-page">
+    <!-- navbar -->
+    <span id="navbar">
+    </span>
+
+    <!-- home -->
     <div id="home"
-      class="purp-background p-nav-lg angle-background">
-      <!-- lead -->
+      class="purp-background p-nav-lg angle-background angle-background-long">
       <div class="row mb-4">
         <div class="col-md-12">
-          <h1 class="display-3 align-center">
+          <h1 class="display-3 text-center">
             Moloch Full Packet Capture
           </h1>
-          <p class="lead align-center">
+          <p class="lead text-center">
             <strong>
               Large scale, open source, packet capturing, indexing, and searching system.
             </strong>
           </p>
-          <p class="lead align-center">
+          <p class="lead text-center">
             Augment your current security infrastructure to store and
             <br>
             index network traffic in standard PCAP format.
@@ -134,7 +58,7 @@
         </div>
       </div>
       <div class="row mb-5 mt-3">
-        <div class="col align-center">
+        <div class="col text-center">
           <a href="#downloads"
             class="btn btn-purp btn-lg mr-3 btn-fw">
             Download
@@ -150,7 +74,7 @@
         </div>
       </div>
       <div class="jumbotron jumbotron-white mb-5 mt-5 ml-5 mr-5">
-        <p class="lead align-center text-muted">
+        <p class="lead text-center text-muted">
           Moloch is not meant to replace Intrusion Detection Systems (IDS),
           instead it provides more visibility.
         </p>
@@ -215,30 +139,37 @@
             </p>
           </div>
         </div>
-      </div> <!-- /lead -->
+      </div>
       <div class="mb-5">&nbsp;</div>
-    </div>
+    </div> <!-- /home -->
 
     <!-- demo -->
     <div id="demo"
       class="demo">
-      <h1 class="display-4 align-center">
+      <h1 class="display-4 text-center">
         Moloch Demo
       </h1>
-      <p class="align-center">
+      <p class="text-center">
         <a class="btn btn-purp btn-lg"
           href="https://demo.molo.ch/?date=-1">
           Check it out!
         </a>
       </p>
-      <p class="lead align-center mb-0">
+      <p class="lead text-center mb-0">
         Username and password are both <code>moloch</code>
       </p>
-      <p class="lead text-muted align-center">
+      <p class="lead text-muted text-center">
         <strong class="purp-text">Warning:</strong>
         Anyone can see anything you upload
       </p>
-    </div>
+      <p class="mt-3 text-center">
+        Also, check out our
+        <a href="https://www.youtube.com/playlist?list=PLXXo-3b5ZQ1jk2wk9IyoxoGygZq5cT6Hq"
+          rel="nofollow"
+          class="no-decoration">
+          recorded talks and feature demos</a>.
+      </p>
+    </div> <!-- /demo -->
 
     <hr>
 
@@ -247,7 +178,7 @@
       class="mt-5">
       <!-- sessions -->
       <div class="img-container">
-        <h1 class="display-4 align-center mb-3 dark-purp-text">
+        <h1 class="display-4 text-center mb-3 dark-purp-text">
           Sessions Page
         </h1>
         <img src="sessions.png"
@@ -256,7 +187,7 @@
         />
       </div>
       <div class="mb-5 mt-2 ml-5 mr-5">
-        <p class="lead align-center">
+        <p class="lead text-center">
           The Sessions page displays a list of indexed sessions for the selected time period and search expression.
           It includes a timeline graph and map of the session results.
         </p>
@@ -330,7 +261,7 @@
       <!-- spiview -->
       <hr>
       <div class="img-container mt-5">
-        <h1 class="display-4 align-center mb-3 dark-purp-text">
+        <h1 class="display-4 text-center mb-3 dark-purp-text">
           SPI View Page
         </h1>
         <img src="spiview.png"
@@ -339,7 +270,7 @@
         />
       </div>
       <div class="mb-5 mt-2 ml-5 mr-5">
-        <p class="lead align-center">
+        <p class="lead text-center">
           The SPI (Session Profile Information) View page allows you you to view unique values with session counts for each of the captured fields.
         </p>
         <div class="row mt-5">
@@ -392,7 +323,7 @@
       <!-- spigraph -->
       <hr>
       <div class="img-container mt-5">
-        <h1 class="display-4 align-center mb-3 dark-purp-text">
+        <h1 class="display-4 text-center mb-3 dark-purp-text">
           SPI Graph Page
         </h1>
         <img src="spigraph.png"
@@ -401,7 +332,7 @@
         />
       </div>
       <div class="mb-5 mt-2 ml-5 mr-5">
-        <p class="lead align-center">
+        <p class="lead text-center">
           The SPI (Session Profile Information) Graph page shows a temporal view for the top unique values of any field.
         </p>
         <div class="row mt-5">
@@ -454,7 +385,7 @@
       <!-- connections -->
       <hr>
       <div class="img-container mt-5">
-        <h1 class="display-4 align-center mb-3 dark-purp-text">
+        <h1 class="display-4 text-center mb-3 dark-purp-text">
           Connections Page
         </h1>
         <img src="connections.png"
@@ -463,7 +394,7 @@
         />
       </div>
       <div class="mb-5 mt-2 ml-5 mr-5">
-        <p class="lead align-center">
+        <p class="lead text-center">
           The Connections page shows a network graph of your search results.
         </p>
         <div class="row mt-5">
@@ -520,11 +451,11 @@
       class="purp-background pt-5 angle-background">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-4 align-center mb-4">
+          <h1 class="display-4 text-center mb-4">
             Download Moloch
           </h1>
           <div class="row mb-4 mt-4">
-            <div class="col align-center">
+            <div class="col text-center">
               <a class="btn btn-outline-danger btn-lg mr-3 btn-fw mb-2"
                 href="https://s3.amazonaws.com/files.molo.ch/NOTICE.txt">
                 NOTICE
@@ -609,7 +540,8 @@
                 </h5>
                 <p>
                   Meanwhile, view Moloch on
-                  <a href="https://github.com/aol/moloch" class="no-decoration">
+                  <a href="https://github.com/aol/moloch"
+                    class="no-decoration">
                     GitHub
                   </a>
                 </p>
@@ -633,7 +565,7 @@
       class="pt-5 mr-5 ml-5 pb-5">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-4 align-center mb-4">
+          <h1 class="display-4 text-center mb-4">
             Help!
           </h1>
         </div>
@@ -686,39 +618,33 @@
       </div>
     </div> <!-- /help -->
 
+    <!-- contribute -->
+    <div class="row text-center mb-5">
+      <div class="col">
+        <p class="mb-0">
+          Want to add to our FAQ?
+          Found an issue in this site?
+        </p>
+        <p>
+          <span class="fa fa-github-alt fa-lg">
+          </span>&nbsp;
+          This site's code is open source.
+          <a href="https://github.com/aol/molochweb/blob/master/CONTRIBUTING.md"
+            class="no-decoration"
+            rel="nofollow">
+            Please contribute!
+          </a>
+          &nbsp;<span class="fa fa-github-alt fa-lg">
+          </span>
+        </p>
+      </div>
+    </div> <!-- /contribute -->
+
   </div> <!-- /container -->
 
   <!-- footer -->
-  <div class="text-center">
-    <img height="28px"
-      class="footer-owl"
-      alt="Moloch Logo"
-      src="simple_logo.png"
-    />
-  </div>
-
-  <footer class="footer small text-center">
-    <strong class="pull-left">
-      <span>Moloch</span>&nbsp;&nbsp;&nbsp;
-      <a href="https://github.com/aol/moloch" class="no-decoration">
-        <span class="fa fa-lg fa-github"></span>
-        <span class="hide">Moloch GitHub</span>
-      </a>
-    </strong>
-    <a href="https://github.com/aol/moloch/issues"
-      class="no-decoration pull-left ml-3"
-      title="Report it!" data-toggle="tooltip">
-      Found an Issue?
-    </a>
-    <span class="pull-right">
-      <a href="https://github.com/aol/moloch/wiki"
-        class="no-decoration">Wiki</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://github.com/aol/moloch/wiki/API"
-        class="no-decoration">API</a>&nbsp;&nbsp;&nbsp;
-      <a href="/faq"
-        class="no-decoration">FAQ</a>
-    </span>
-  </footer> <!-- /footer -->
+  <span id="footer">
+  </span>
 
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -728,7 +654,15 @@
   <script src="downloads.js"></script>
 
   <script>
+    // page loaded
     $(function () {
+      // load navbar and make home link active
+      $('#navbar').load('navbar.html', () => {
+        $('#homeLink').addClass('active');
+      });
+      // load footer
+      $('#footer').load('footer.html');
+
       $('[data-toggle="tooltip"]').tooltip();
 
       function offsetAnchor() {
@@ -764,7 +698,7 @@
 
         for (let i = 0, len = downloads.length; i < len; ++i) {
           let download = downloads[i];
-          html += `<a href="${download.url}" class="btn btn-purp mr-3">
+          html += `<a href="${download.url}" class="btn btn-primary btn-lg mr-3 mb-2">
                      ${download.title}
                    </a>`;
         }

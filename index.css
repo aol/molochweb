@@ -20,11 +20,11 @@ div.img-container > .background-img {
 }
 
 div.demo {
-  top: -100px;
+  top: -160px;
   position: relative;
 }
 div.demo > h1 {
-  margin-bottom: 60px;
+  margin-bottom: 120px;
 }
 
 
@@ -141,11 +141,7 @@ div.nav-pills.nav-pills-fixed a.nested {
 }
 
 /* agenda styles */
-.agenda-time {
-  flex: 0 0 160px;
-}
 .agenda-title {
-  flex: 1;
   font-size: 1.125rem;
   font-weight: bold;
 }
@@ -208,9 +204,10 @@ div.nav-pills.nav-pills-fixed a.nested {
 
 .cursor-pointer { cursor: pointer; }
 
-.align-center { text-align: center; }
-
 .no-decoration { text-decoration: none !important; }
+
+.lead-lg { font-size: 1.5rem; }
+.lead-xl { font-size: 2.5rem; }
 
 .hide {
   position: absolute;
@@ -220,7 +217,19 @@ div.nav-pills.nav-pills-fixed a.nested {
 /* pretty angled backgrounds */
 .angle-background {
   padding-bottom: 7rem;
-  clip-path: polygon(0 0,100% 0,100% 90%,50% 100%,0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+.angle-background-long {
+  padding-bottom: 9rem !important;
+}
+.top-angle-background {
+  padding-top: 7rem;
+  clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.double-angle-background {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  clip-path: polygon(50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
 }
 
 /* purple background */
@@ -266,4 +275,25 @@ pre {
   line-height: 1.45;
   border-radius: 3px;
   background-color: #f6f8fa;
+}
+
+/* dark dropdown menu */
+.dropdown-menu {
+  border-color: #242426;
+  background-color: #343a40;
+}
+.dropdown-menu a.dropdown-item {
+  color: #FFF;
+}
+.dropdown-menu a.dropdown-item:hover,
+.dropdown-menu a.dropdown-item:focus {
+  color: #FFF;
+  background-color: #323235;
+}
+.dropdown-menu li.active a,
+.dropdown-menu > li.active > a,
+.dropdown-menu div li.active a,
+.dropdown-menu > .active > div a,
+.dropdown-menu > .active > div:focus a {
+  color: #FFF !important;
 }
