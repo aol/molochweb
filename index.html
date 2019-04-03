@@ -42,18 +42,14 @@
       class="purp-background p-nav-lg angle-background angle-background-long">
       <div class="row mb-4">
         <div class="col-md-12">
-          <h1 class="display-3 text-center">
-            Moloch Full Packet Capture
+          <h1 class="display-1 text-center">
+            Moloch
           </h1>
-          <p class="lead text-center">
-            <strong>
-              Large scale, open source, packet capturing, indexing, and searching system.
-            </strong>
-          </p>
-          <p class="lead text-center">
-            Augment your current security infrastructure to store and
-            <br>
-            index network traffic in standard PCAP format.
+          <h1 class="display-3 text-center">
+            Full Packet Capture
+          </h1>
+          <p class="lead lead-lg text-thin text-center">
+            Large scale, open source, indexed packet capture and search.
           </p>
         </div>
       </div>
@@ -73,8 +69,21 @@
           </a>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          <p class="lead text-center purp-text">
+            <img src="simple_logo.png" height="25px" style="margin-top:-4px;" />&nbsp;
+            <a href="on" class="no-decoration">
+              Join us for MolochON 2019!</a>
+            &nbsp;<img src="simple_logo.png" height="25px" style="margin-top:-4px;" />
+          </p>
+        </div>
+      </div>
       <div class="jumbotron jumbotron-white mb-5 mt-5 ml-5 mr-5">
         <p class="lead text-center text-muted">
+          Augment your current security infrastructure to store and
+          index network traffic in standard PCAP format.
+          <br>
           Moloch is not meant to replace Intrusion Detection Systems (IDS),
           instead it provides more visibility.
         </p>
@@ -181,17 +190,17 @@
         <h1 class="display-4 text-center mb-3 dark-purp-text">
           Sessions Page
         </h1>
+        <p class="lead text-center mr-5 ml-5">
+          The Sessions page displays a list of indexed sessions for the selected time period and search expression.
+          It includes a timeline graph and map of the session results.
+        </p>
         <img src="sessions.png"
           alt="Sessions screenshot"
           class="background-img"
         />
       </div>
-      <div class="mb-5 mt-2 ml-5 mr-5">
-        <p class="lead text-center">
-          The Sessions page displays a list of indexed sessions for the selected time period and search expression.
-          It includes a timeline graph and map of the session results.
-        </p>
-        <div class="row mt-5">
+      <div class="mt-3 mb-5 ml-5 mr-5">
+        <div class="row">
           <div class="col-lg-2 col-md-4">
             <span class="fa fa-search fa-2x">
             </span>
@@ -264,16 +273,16 @@
         <h1 class="display-4 text-center mb-3 dark-purp-text">
           SPI View Page
         </h1>
+        <p class="lead text-center ml-5 mr-5">
+          The SPI (Session Profile Information) View page allows you you to view unique values with session counts for each of the captured fields.
+        </p>
         <img src="spiview.png"
           class="background-img"
           alt="SPI View screenshot"
         />
       </div>
-      <div class="mb-5 mt-2 ml-5 mr-5">
-        <p class="lead text-center">
-          The SPI (Session Profile Information) View page allows you you to view unique values with session counts for each of the captured fields.
-        </p>
-        <div class="row mt-5">
+      <div class="mt-3 mb-5 ml-5 mr-5">
+        <div class="row">
           <div class="col-lg-3 col-md-6">
             <span class="fa fa-plus fa-2x">
             </span>
@@ -326,16 +335,16 @@
         <h1 class="display-4 text-center mb-3 dark-purp-text">
           SPI Graph Page
         </h1>
+        <p class="lead text-center ml-5 mr-5">
+          The SPI (Session Profile Information) Graph page shows a temporal view for the top unique values of any field.
+        </p>
         <img src="spigraph.png"
           alt="SPI Graph screenshot"
           class="background-img"
         />
       </div>
-      <div class="mb-5 mt-2 ml-5 mr-5">
-        <p class="lead text-center">
-          The SPI (Session Profile Information) Graph page shows a temporal view for the top unique values of any field.
-        </p>
-        <div class="row mt-5">
+      <div class="mt-3 mb-5 ml-5 mr-5">
+        <div class="row">
           <div class="col-lg-3 col-md-6">
             <span class="fa fa-plus fa-2x">
             </span>
@@ -388,16 +397,16 @@
         <h1 class="display-4 text-center mb-3 dark-purp-text">
           Connections Page
         </h1>
+        <p class="lead text-center ml-5 mr-5">
+          The Connections page shows a network graph of your search results.
+        </p>
         <img src="connections.png"
           alt="Connections screenshot"
           class="background-img"
         />
       </div>
-      <div class="mb-5 mt-2 ml-5 mr-5">
-        <p class="lead text-center">
-          The Connections page shows a network graph of your search results.
-        </p>
-        <div class="row mt-5">
+      <div class="mt-3 mb-5 ml-5 mr-5">
+        <div class="row">
           <div class="col-lg-3 col-md-6">
             <span class="fa fa-lock fa-2x">
             </span>
@@ -695,7 +704,7 @@
 
       // navigate to hash on page load
       // timeout waits for wait for id of element to load
-      window.setTimeout(offsetAnchor);
+      window.setTimeout(offsetAnchor, 500);
 
       function setupDownloadBtns (versions, sortedVersions) {
         let version = versions[sortedVersions[0]]; // get the latest version

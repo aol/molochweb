@@ -22,6 +22,7 @@ div.img-container > .background-img {
 div.demo {
   top: -160px;
   position: relative;
+  margin-bottom: -100px;
 }
 div.demo > h1 {
   margin-bottom: 120px;
@@ -29,36 +30,38 @@ div.demo > h1 {
 
 
 /* FAQ page styles ----------------- */
-.faq-content {
-  padding-top: 80px;
-}
-
-/* faq navigation */
-div.nav-pills.nav-pills-fixed {
-  border: 1px solid gray;
-  border-radius: 4px;
-  position: sticky;
-  top: 80px;
-  height: calc(100vh - 100px);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-box-shadow: 0 0 16px -2px black;
-     -moz-box-shadow: 0 0 16px -2px black;
-          box-shadow: 0 0 16px -2px black;
-}
-
-div.nav-pills.nav-pills-fixed .nav-link {
-  width: 100%;
-}
-
-div.nav-pills.nav-pills-fixed a {
-  padding: 5px 8px !important;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.faq-container {
+  margin: 0;
+  height: 100%;
+  display: flex;
   overflow: hidden;
+  padding-top: 60px;
+  box-sizing: border-box;
 }
 
-div.nav-pills.nav-pills-fixed a.nested {
+.faq-content {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+.fac-toc {
+  width: 20rem;
+  height: 100%;
+  display: flex;
+  flex: 0 0 20rem;
+  overflow-y: auto;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+div.nav-pills.nav-pills-sm a {
+  padding: 5px 8px !important;
+  word-break: break-word;
+}
+div.nav-pills.nav-pills-sm a.nested {
   margin-left: 1.2rem;
   font-size: 0.85rem;
   padding: 2px 5px !important;
@@ -205,6 +208,8 @@ div.nav-pills.nav-pills-fixed a.nested {
 .cursor-pointer { cursor: pointer; }
 
 .no-decoration { text-decoration: none !important; }
+
+.text-thin { font-weight: 200; }
 
 .lead-lg { font-size: 1.5rem; }
 .lead-xl { font-size: 2.5rem; }
