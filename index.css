@@ -30,43 +30,56 @@ div.demo > h1 {
 
 
 /* FAQ page styles ----------------- */
-.faq-container {
-  margin: 0;
+body.faq-body {
   height: 100%;
-  display: flex;
   overflow: hidden;
-  padding-top: 60px;
-  box-sizing: border-box;
 }
 
-.faq-content {
-  height: 100%;
-  flex-grow: 1;
-  display: flex;
+.faq-container {
+  right: 0;
+  bottom: 0;
   overflow-y: auto;
-  flex-direction: column;
+  position: absolute;
+  width: calc(100% - 20rem);
+  height: calc(100% - 56px);
 }
 
-.fac-toc {
+.faq-toc {
+  left: 0;
+  bottom: 0;
   width: 20rem;
-  height: 100%;
-  display: flex;
-  flex: 0 0 20rem;
-  overflow-y: auto;
-  flex-wrap: nowrap;
-  flex-direction: column;
-}
-
-div.nav-pills.nav-pills-sm a {
-  padding: 5px 8px !important;
+  overflow-y:auto;
+  position: absolute;
   word-break: break-word;
-}
-div.nav-pills.nav-pills-sm a.nested {
-  margin-left: 1.2rem;
-  font-size: 0.85rem;
-  padding: 2px 5px !important;
+  height: calc(100% - 56px);
 }
 
+@media (max-width: 575.98px) {
+  .faq-container {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-y: auto;
+    position: absolute;
+    height: calc(100% - 56px);
+  }
+}
+
+.faq-toc div.nav-pills.nav-pills-nested a.nav-link {
+  width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+  padding: 4px 8px !important;
+}
+.faq-toc div.nav-pills.nav-pills-nested a.nav-link.nested {
+  line-height: 1.2;
+  font-size: 0.85rem;
+  padding: 4px 10px 4px 20px !important;
+}
+.faq-toc div.nav-pills.nav-pills-nested a.nav-link:not(.nested) {
+  font-weight: bold;
+}
 
 /* estimators page styles ---------- */
 .estimators-content {

@@ -30,286 +30,294 @@
 
 </head>
 
-<body id="viewport" style="overflow:hidden;height:100%;">
+<body id="viewport"
+  class="faq-body">
 
-    <span id="navbar">
-    </span>
+  <!-- navbar -->
+  <span id="navbar">
+  </span>
 
-    <div class="faq-container">
-      <div class="fac-toc nav nav-pills nav-pills-sm pr-2 pl-2 pb-3">
-        <a href="#general"
-          class="nav-link"
-          title="General">
-          General
-        </a>
-        <a class="nav-link nested"
-          href="#why-should-i-use-moloch"
-          title="Why should I use Moloch?">
-          Why should I use Moloch?
-        </a>
-        <a class="nav-link nested"
-          href="#upgrading-moloch"
-          title="Upgrading Moloch">
-          Upgrading Moloch
-        </a>
-        <a class="nav-link nested"
-          href="#what-oses-are-supported"
-          title="What OSes are supported?">
-          What OSes are supported?
-        </a>
-        <a class="nav-link nested"
-          href="#moloch-is-not-working"
-          title="Moloch is not working">
-          Moloch is not working
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-reset-moloch"
-          title="How do I reset Moloch?">
-          How do I reset Moloch?
-        </a>
-        <a class="nav-link nested"
-          href="#self-signed-ssl-tls-certificates"
-          title="Self-Signed SSL/TLS Certificates">
-          Self-Signed SSL/TLS Certificates
-        </a>
-        <a class="nav-link nested"
-          href="#how_do_i_upgrade_to_moloch_1"
-          title="How do I upgrade to Moloch 1.0">
-          How do I upgrade to Moloch 1.0
-        </a>
-        <a href="#elasticsearch"
-          class="nav-link"
-          title="Elasticsearch">
-          Elasticsearch
-        </a>
-        <a class="nav-link nested"
-          href="#how-many-elasticsearch-nodes-or-machines-do-i-need"
-          title="How many Elasticsearch nodes or machines do I need?">
-          How many Elasticsearch nodes or machines do I need?
-        </a>
-        <a class="nav-link nested"
-          href="#data-never-gets-deleted"
-          title="Data never gets deleted">
-          Data never gets deleted
-        </a>
-        <a class="nav-link nested"
-          href="#error-dropping-request-_bulk"
-          title="ERROR - Dropping request /_bulk">
-          ERROR - Dropping request /_bulk
-        </a>
-        <a class="nav-link nested"
-          href="#when-do-i-add-additional-nodes-why-are-queries-slow"
-          title="When do I add additional nodes? Why are queries slow?">
-          When do I add additional nodes? Why are queries slow?
-        </a>
-        <a class="nav-link nested"
-          href="#removing-nodes"
-          title="Removing nodes">
-          Removing nodes
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-enable-elasticsearch-replication"
-          title="How do I enable Elasticsearch replication?">
-          How do I enable Elasticsearch replication?
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-upgrade-elasticsearch"
-          title="How do I upgrade Elasticsearch?">
-          How do I upgrade Elasticsearch?
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-upgrade-to-es-6-x"
-          title="How do I upgrade to ES 6.x?">
-          How do I upgrade to ES 6.x?
-        </a>
-        <a class="nav-link nested"
-          href="#how_do_i_upgrade_to_es_5x"
-          title="How do I upgrade to ES 5.x?">
-          How do I upgrade to ES 5.x?
-        </a>
-        <a class="nav-link nested"
-          href="#es-2-org-elasticsearch-common-breaker-circuitbreakingexception-fielddata-data-too-large"
-          title="ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large">
-          ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large
-        </a>
-        <a class="nav-link nested"
-          href="#recommended-elasticsearch-settings"
-          title="Recommended Elasticsearch Settings">
-          Recommended Elasticsearch Settings
-        </a>
-        <a href="#capture"
-          class="nav-link"
-          title="Capture">
-          Capture
-        </a>
-        <a class="nav-link nested"
-          href="#what-kind-of-capture-machines-should-we-buy"
-          title="What kind of capture machines should we buy?">
-          What kind of capture machines should we buy?
-        </a>
-        <a class="nav-link nested"
-          href="#what-kind-of-network-packet-broker-should-we-buy"
-          title="What kind of Network Packet Broker should we buy?">
-          What kind of Network Packet Broker should we buy?
-        </a>
-        <a class="nav-link nested"
-          href="#what-kind-of-packet-capture-speeds-can-moloch-capture-handle"
-          title="What kind of packet capture speeds can moloch-capture handle?">
-          What kind of packet capture speeds can moloch-capture handle?
-        </a>
-        <a class="nav-link nested"
-          href="#moloch_requires_full_packet_captures_error"
-          title="Moloch requires full packet captures error">
-          Moloch requires full packet captures error
-        </a>
-        <a class="nav-link nested"
-          href="#why-am-i-dropping-packets"
-          title="Why am I dropping packets?">
-          Why am I dropping packets?
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-import-existing-pcaps"
-          title="How do I import existing PCAPs?">
-          How do I import existing PCAPs?
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-monitor-multiple-interfaces"
-          title="How do I monitor multiple interfaces?">
-          How do I monitor multiple interfaces?
-        </a>
-        <a class="nav-link nested"
-          href="#moloch-capture-crashes"
-          title="Moloch capture crashes">
-          Moloch capture crashes
-        </a>
-        <a class="nav-link nested"
-          href="#error-pcap-open-failed"
-          title="ERROR - pcap open failed">
-          ERROR - pcap open failed
-        </a>
-        <a class="nav-link nested"
-          href="#how-to-reduce-amount-of-traffic-pcap"
-          title="How to reduce amount of traffic/PCAP?">
-          How to reduce amount of traffic/PCAP?
-        </a>
-        <a class="nav-link nested"
-          href="#life-of-a-packet"
-          title="Life of a packet">
-          Life of a packet
-        </a>
-        <a class="nav-link nested"
-          href="#pcap-deletion"
-          title="PCAP Deletion">
-          PCAP Deletion
-        </a>
-        <a class="nav-link nested"
-          href="#dontsavebpfs-doesn-t-work"
-          title="dontSaveBPFs doesn’t work">
-          dontSaveBPFs doesn’t work
-        </a>
-        <a class="nav-link nested"
-          href="#zero-byte-pcap-files"
-          title="Zero byte PCAP files">
-          Zero byte PCAP files
-        </a>
-        <a class="nav-link nested"
-          href="#can-i-virtualize-moloch-with-kvm-using-openvswitch"
-          title="Can I virtualize Moloch with KVM using OpenVswitch?">
-          Can I virtualize Moloch with KVM using OpenVswitch?
-        </a>
-        <a href="#viewer"
-          class="nav-link"
-          title="Viewer">
-          Viewer
-        </a>
-        <a class="nav-link nested"
-          href="#where-do-i-learn-more-about-the-expressions-available"
-          title="Where do I learn more about the expressions available?">
-          Where do I learn more about the expressions available?
-        </a>
-        <a class="nav-link nested"
-          href="#exported-pcap-files-are-corrupt-sometimes-session-detail-fails"
-          title="Exported PCAP files are corrupt, sometimes session detail fails">
-          Exported PCAP files are corrupt, sometimes session detail fails
-        </a>
-        <a class="nav-link nested"
-          href="#map-counts-are-wrong"
-          title="Map counts are wrong">
-          Map counts are wrong
-        </a>
-        <a class="nav-link nested"
-          href="#what-browsers-are-supported"
-          title="What browsers are supported?">
-          What browsers are supported?
-        </a>
-        <a class="nav-link nested"
-          href="#viewer-doesn-t-run-after-upgrading-node-js"
-          title="Viewer doesn’t run after upgrading Node.js">
-          Viewer doesn’t run after upgrading Node.js
-        </a>
-        <a class="nav-link nested"
-          href="#error-getaddrinfo-eaddrinfo"
-          title="Error: getaddrinfo EADDRINFO">
-          Error: getaddrinfo EADDRINFO
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-proxy-moloch-using-apache"
-          title="How do I proxy Moloch using Apache">
-          How do I proxy Moloch using Apache
-        </a>
-        <a class="nav-link nested"
-          href="#i-still-get-prompted-for-password-after-setting-up-apache-auth"
-          title="I still get prompted for password after setting up Apache auth">
-          I still get prompted for password after setting up Apache auth
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-search-multiple-moloch-clusters"
-          title="How do I search multiple Moloch clusters">
-          How do I search multiple Moloch clusters?
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-use-self-signed-ssl-tls-certificates-with-multies"
-          title="How do I use self-signed SSL/TLS Certificates with MultiES?">
-          How do I use self-signed SSL/TLS Certificates with MultiES?
-        </a>
-        <a class="nav-link nested"
-          href="#how-do-i-reset-my-password"
-          title="How do I reset my password?">
-          How do I reset my password?
-        </a>
-        <a class="nav-link nested"
-          href="#error-couldn-t-connect-to-remote-viewer-only-displaying-spi-data"
-          title="Error: Couldn’t connect to remote viewer, only displaying SPI data">
-          Error: Couldn’t connect to remote viewer, only displaying SPI data
-        </a>
-        <a class="nav-link nested"
-          href="#compiled-against-a-different-node-js-version-error"
-          title="Compiled against a different Node.js version error">
-          Compiled against a different Node.js version error
-        </a>
-        <a href="#parliament"
-          class="nav-link"
-          title="Parliament">
-          Parliament
-        </a>
-        <a class="nav-link nested"
-          href="#sample-apache-config"
-          title="Sample Apache Config">
-          Sample Apache Config
-        </a>
-        <a href="#molochweb"
-          class="nav-link"
-          title="Molo.ch">
-          Molo.ch
-        </a>
-        <a class="nav-link nested"
-          href="#how-can-i-contribute"
-          title="How can I contribute">
-          How can I contribute
-        </a>
-      </div> <!-- /toc nav -->
+  <!-- toc nav -->
+  <div class="faq-toc d-none d-sm-block">
+    <div class="nav nav-pills nav-pills-nested pb-3">
+      <a href="#general"
+        class="nav-link"
+        title="General">
+        General
+      </a>
+      <a class="nav-link nested"
+        href="#why-should-i-use-moloch"
+        title="Why should I use Moloch?">
+        Why should I use Moloch?
+      </a>
+      <a class="nav-link nested"
+        href="#upgrading-moloch"
+        title="Upgrading Moloch">
+        Upgrading Moloch
+      </a>
+      <a class="nav-link nested"
+        href="#what-oses-are-supported"
+        title="What OSes are supported?">
+        What OSes are supported?
+      </a>
+      <a class="nav-link nested"
+        href="#moloch-is-not-working"
+        title="Moloch is not working">
+        Moloch is not working
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-reset-moloch"
+        title="How do I reset Moloch?">
+        How do I reset Moloch?
+      </a>
+      <a class="nav-link nested"
+        href="#self-signed-ssl-tls-certificates"
+        title="Self-Signed SSL/TLS Certificates">
+        Self-Signed SSL/TLS Certificates
+      </a>
+      <a class="nav-link nested"
+        href="#how_do_i_upgrade_to_moloch_1"
+        title="How do I upgrade to Moloch 1.0">
+        How do I upgrade to Moloch 1.0
+      </a>
+      <a href="#elasticsearch"
+        class="nav-link"
+        title="Elasticsearch">
+        Elasticsearch
+      </a>
+      <a class="nav-link nested"
+        href="#how-many-elasticsearch-nodes-or-machines-do-i-need"
+        title="How many Elasticsearch nodes or machines do I need?">
+        How many Elasticsearch nodes or machines do I need?
+      </a>
+      <a class="nav-link nested"
+        href="#data-never-gets-deleted"
+        title="Data never gets deleted">
+        Data never gets deleted
+      </a>
+      <a class="nav-link nested"
+        href="#error-dropping-request-_bulk"
+        title="ERROR - Dropping request /_bulk">
+        ERROR - Dropping request /_bulk
+      </a>
+      <a class="nav-link nested"
+        href="#when-do-i-add-additional-nodes-why-are-queries-slow"
+        title="When do I add additional nodes? Why are queries slow?">
+        When do I add additional nodes? Why are queries slow?
+      </a>
+      <a class="nav-link nested"
+        href="#removing-nodes"
+        title="Removing nodes">
+        Removing nodes
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-enable-elasticsearch-replication"
+        title="How do I enable Elasticsearch replication?">
+        How do I enable Elasticsearch replication?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-upgrade-elasticsearch"
+        title="How do I upgrade Elasticsearch?">
+        How do I upgrade Elasticsearch?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-upgrade-to-es-6-x"
+        title="How do I upgrade to ES 6.x?">
+        How do I upgrade to ES 6.x?
+      </a>
+      <a class="nav-link nested"
+        href="#how_do_i_upgrade_to_es_5x"
+        title="How do I upgrade to ES 5.x?">
+        How do I upgrade to ES 5.x?
+      </a>
+      <a class="nav-link nested"
+        href="#es-2-org-elasticsearch-common-breaker-circuitbreakingexception-fielddata-data-too-large"
+        title="ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large">
+        ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large
+      </a>
+      <a class="nav-link nested"
+        href="#recommended-elasticsearch-settings"
+        title="Recommended Elasticsearch Settings">
+        Recommended Elasticsearch Settings
+      </a>
+      <a href="#capture"
+        class="nav-link"
+        title="Capture">
+        Capture
+      </a>
+      <a class="nav-link nested"
+        href="#what-kind-of-capture-machines-should-we-buy"
+        title="What kind of capture machines should we buy?">
+        What kind of capture machines should we buy?
+      </a>
+      <a class="nav-link nested"
+        href="#what-kind-of-network-packet-broker-should-we-buy"
+        title="What kind of Network Packet Broker should we buy?">
+        What kind of Network Packet Broker should we buy?
+      </a>
+      <a class="nav-link nested"
+        href="#what-kind-of-packet-capture-speeds-can-moloch-capture-handle"
+        title="What kind of packet capture speeds can moloch-capture handle?">
+        What kind of packet capture speeds can moloch-capture handle?
+      </a>
+      <a class="nav-link nested"
+        href="#moloch_requires_full_packet_captures_error"
+        title="Moloch requires full packet captures error">
+        Moloch requires full packet captures error
+      </a>
+      <a class="nav-link nested"
+        href="#why-am-i-dropping-packets"
+        title="Why am I dropping packets?">
+        Why am I dropping packets?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-import-existing-pcaps"
+        title="How do I import existing PCAPs?">
+        How do I import existing PCAPs?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-monitor-multiple-interfaces"
+        title="How do I monitor multiple interfaces?">
+        How do I monitor multiple interfaces?
+      </a>
+      <a class="nav-link nested"
+        href="#moloch-capture-crashes"
+        title="Moloch capture crashes">
+        Moloch capture crashes
+      </a>
+      <a class="nav-link nested"
+        href="#error-pcap-open-failed"
+        title="ERROR - pcap open failed">
+        ERROR - pcap open failed
+      </a>
+      <a class="nav-link nested"
+        href="#how-to-reduce-amount-of-traffic-pcap"
+        title="How to reduce amount of traffic/PCAP?">
+        How to reduce amount of traffic/PCAP?
+      </a>
+      <a class="nav-link nested"
+        href="#life-of-a-packet"
+        title="Life of a packet">
+        Life of a packet
+      </a>
+      <a class="nav-link nested"
+        href="#pcap-deletion"
+        title="PCAP Deletion">
+        PCAP Deletion
+      </a>
+      <a class="nav-link nested"
+        href="#dontsavebpfs-doesn-t-work"
+        title="dontSaveBPFs doesn’t work">
+        dontSaveBPFs doesn’t work
+      </a>
+      <a class="nav-link nested"
+        href="#zero-byte-pcap-files"
+        title="Zero byte PCAP files">
+        Zero byte PCAP files
+      </a>
+      <a class="nav-link nested"
+        href="#can-i-virtualize-moloch-with-kvm-using-openvswitch"
+        title="Can I virtualize Moloch with KVM using OpenVswitch?">
+        Can I virtualize Moloch with KVM using OpenVswitch?
+      </a>
+      <a href="#viewer"
+        class="nav-link"
+        title="Viewer">
+        Viewer
+      </a>
+      <a class="nav-link nested"
+        href="#where-do-i-learn-more-about-the-expressions-available"
+        title="Where do I learn more about the expressions available?">
+        Where do I learn more about the expressions available?
+      </a>
+      <a class="nav-link nested"
+        href="#exported-pcap-files-are-corrupt-sometimes-session-detail-fails"
+        title="Exported PCAP files are corrupt, sometimes session detail fails">
+        Exported PCAP files are corrupt, sometimes session detail fails
+      </a>
+      <a class="nav-link nested"
+        href="#map-counts-are-wrong"
+        title="Map counts are wrong">
+        Map counts are wrong
+      </a>
+      <a class="nav-link nested"
+        href="#what-browsers-are-supported"
+        title="What browsers are supported?">
+        What browsers are supported?
+      </a>
+      <a class="nav-link nested"
+        href="#viewer-doesn-t-run-after-upgrading-node-js"
+        title="Viewer doesn’t run after upgrading Node.js">
+        Viewer doesn’t run after upgrading Node.js
+      </a>
+      <a class="nav-link nested"
+        href="#error-getaddrinfo-eaddrinfo"
+        title="Error: getaddrinfo EADDRINFO">
+        Error: getaddrinfo EADDRINFO
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-proxy-moloch-using-apache"
+        title="How do I proxy Moloch using Apache">
+        How do I proxy Moloch using Apache
+      </a>
+      <a class="nav-link nested"
+        href="#i-still-get-prompted-for-password-after-setting-up-apache-auth"
+        title="I still get prompted for password after setting up Apache auth">
+        I still get prompted for password after setting up Apache auth
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-search-multiple-moloch-clusters"
+        title="How do I search multiple Moloch clusters">
+        How do I search multiple Moloch clusters?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-use-self-signed-ssl-tls-certificates-with-multies"
+        title="How do I use self-signed SSL/TLS Certificates with MultiES?">
+        How do I use self-signed SSL/TLS Certificates with MultiES?
+      </a>
+      <a class="nav-link nested"
+        href="#how-do-i-reset-my-password"
+        title="How do I reset my password?">
+        How do I reset my password?
+      </a>
+      <a class="nav-link nested"
+        href="#error-couldn-t-connect-to-remote-viewer-only-displaying-spi-data"
+        title="Error: Couldn’t connect to remote viewer, only displaying SPI data">
+        Error: Couldn’t connect to remote viewer, only displaying SPI data
+      </a>
+      <a class="nav-link nested"
+        href="#compiled-against-a-different-node-js-version-error"
+        title="Compiled against a different Node.js version error">
+        Compiled against a different Node.js version error
+      </a>
+      <a href="#parliament"
+        class="nav-link"
+        title="Parliament">
+        Parliament
+      </a>
+      <a class="nav-link nested"
+        href="#sample-apache-config"
+        title="Sample Apache Config">
+        Sample Apache Config
+      </a>
+      <a href="#molochweb"
+        class="nav-link"
+        title="Molo.ch">
+        Molo.ch
+      </a>
+      <a class="nav-link nested"
+        href="#how-can-i-contribute"
+        title="How can I contribute">
+        How can I contribute
+      </a>
+    </div>
+  </div> <!-- /toc nav -->
 
-    <div class="faq-content pl-3 pr-3 pb-2">
+  <!-- faq container -->
+  <div class="faq-container">
+
+    <!-- faq content -->
+    <div class="pl-3 pr-3">
 
       <!-- general -->
       <h1 id="general"
@@ -1625,9 +1633,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
       </p>
       <p>
         To test the RAID device use:
-        <li style="list-style:none;">
-          <pre><code>dd bs=256k count=50000 if=/dev/zero of=/THE_MOLOCH_PCAP_DIR/test oflag=direct</code></pre>
-        </li>
+        <pre><code>dd bs=256k count=50000 if=/dev/zero of=/THE_MOLOCH_PCAP_DIR/test oflag=direct</code></pre>
       </p>
       <p>
         This is the MAX disk performance. Run several times if desired and take
@@ -2399,12 +2405,10 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <p>
         The packages that viewer depends on must be reinstalled after upgrading
         Node.js on a machine.
-        <li style="list-style:none;">
-          <pre><code>cd /data/moloch/viewer
+        <pre><code>cd /data/moloch/viewer
 mv node_modules node_modules.save
 npm cache clean
 npm install</code></pre>
-        </li>
       </p>
 
       <h3 id="error-getaddrinfo-eaddrinfo">
@@ -2561,8 +2565,7 @@ viewHost = localhost</code></pre>
         To use MultiES, create another <code>config.ini</code> file or
         section in a shared config file. Both <code>multies.js</code> and the
         special "all" viewer can use the same node name.
-        <li style="list-style:none;">
-          <pre><code># viewer/multies node name (-n allnode)
+        <pre><code># viewer/multies node name (-n allnode)
 [allnode]
 # The host and port multies is running on, set with multiESHost:multiESPort usually just run on the same host
 elasticsearch=127.0.0.1:8200
@@ -2576,7 +2579,6 @@ multiESHost = localhost
 multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
 # Uncomment if using different rotateIndex settings
 #queryAllIndices=true</code></pre>
-        </li>
       </p>
       <p>
         Now you need to start up both the <code>multies.js</code> program and
@@ -2600,9 +2602,7 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
         Then, you need start MutilES adding <strong>NODE_EXTRA_CA_CERTS</strong>
         environment variable specifying the path to file you just created, for
         example:
-        <li style="list-style:none;">
-          <pre><code>NODE_EXTRA_CA_CERTS=./CAcerts.pem /data/moloch/bin/node multies.js -c /data/moloch/etc/config.ini -n allnode</pre></code>
-        </li>
+        <pre><code>NODE_EXTRA_CA_CERTS=./CAcerts.pem /data/moloch/bin/node multies.js -c /data/moloch/etc/config.ini -n allnode</pre></code>
       </p>
 
       <h3 id="how-do-i-reset-my-password">
@@ -2619,9 +2619,7 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
         secondary admin account may be a better option if you need to change
         an admin users password. After creating a secondary admin account,
         change the users password and then delete the secondary admin account.
-        <li style="list-style:none;">
-          <pre><code>node addUser -c &lt;configfilepath&gt; &lt;user id&gt; &lt;user friendly name&gt; &lt;password&gt; [--admin]</code></pre>
-        </li>
+        <pre><code>node addUser -c &lt;configfilepath&gt; &lt;user id&gt; &lt;user friendly name&gt; &lt;password&gt; [--admin]</code></pre>
       </p>
 
       <h3 id="error-couldn-t-connect-to-remote-viewer-only-displaying-spi-data">
@@ -2842,10 +2840,8 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
         Parliament is designed to run behind a reverse proxy such as Apache.
         Basically, you just need to tell Apache to send all root requests and any
         <code>/parliament</code> requests to the Parliament server.
-        <li style="list-style:none;">
-          <pre><code>ProxyPassMatch   ^/$ http://localhost:8008/parliament retry=0
+        <pre><code>ProxyPassMatch   ^/$ http://localhost:8008/parliament retry=0
 ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></pre>
-        </li>
       </p>
       <!-- /parliament -->
 
@@ -2871,12 +2867,13 @@ ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></
       </p>
       <!-- /molo.ch -->
 
-      <!-- footer -->
-      <div id="footer"
-        style="margin-right:-1rem;margin-left:-1rem;">
-      </div>
+    </div> <!-- /faq content -->
+
+    <!-- footer -->
+    <div id="footer">
     </div>
-  </div>
+
+  </div> <!-- /faq container -->
 
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -2892,23 +2889,6 @@ ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></
       });
       // load footer
       $('#footer').load('footer.html');
-
-      function offsetAnchor() {
-        if (location.hash.length !== 0) {
-          $('.faq-content').scrollTo(0, $(location.hash).offset().top - 60);
-        }
-      }
-
-      // navigate to hash on click events of all <a> elements with href starting with #
-      $(document).on('click', 'a[href^="#"]', function (event) {
-        // click events are captured before hashchanges
-        // timeout causes offsetAnchor to be called after the page jump
-        window.setTimeout(offsetAnchor);
-      });
-
-      // navigate to hash on page load
-      // timeout waits for wait for id of element to load
-      window.setTimeout(offsetAnchor, 500);
     });
   </script>
 
