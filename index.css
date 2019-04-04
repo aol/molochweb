@@ -326,3 +326,8 @@ a.anchor {
 a.anchor.anchor-offset-more {
   top: -260px;
 }
+
+/* zebra stripey list groups */
+ul.list-group.list-group-striped > li.list-group-item:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
