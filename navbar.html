@@ -19,9 +19,8 @@
       </li>
       <li class="nav-item dropdown ml-4 d-none d-sm-none d-md-block">
         <a id="homeLink"
-          class="nav-link dropdown-toggle"
+          class="nav-link dropdown-toggle cursor-pointer"
           data-toggle="dropdown"
-          href="index#home"
           role="button"
           aria-haspopup="true"
           aria-expanded="false">
@@ -131,3 +130,10 @@
     </form>
   </div>
 </nav>
+
+<script>
+  // content loaded
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>

@@ -315,3 +315,14 @@ pre {
 .dropdown-menu > .active > div:focus a {
   color: #FFF !important;
 }
+
+/* anchor offset for navbar */
+a.anchor {
+  top: -60px;
+  display: block;
+  position: relative;
+  visibility: hidden;
+}
+a.anchor.anchor-offset-more {
+  top: -260px;
+}
