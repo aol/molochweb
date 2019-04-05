@@ -7,7 +7,7 @@ This is the web site for https://molo.ch
 
 ## Contribute
 
-Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for information about how to get involved. We welcome issues, feature requests, pull requests, and documentation updates in GitHub.  For questions about using and troubleshooting Moloch please use the Slack channels.
+Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for information about how to get involved. We welcome issues, feature requests, pull requests, and documentation updates.  For questions about using and contributing to the molo.ch website please Slack us (see below).
 
 ## Maintainers
 
