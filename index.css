@@ -74,6 +74,16 @@ body.faq-body {
   font-weight: bold;
 }
 
+/* hide/show copy link for faq anchors */
+.faq-container h1[id] > span.copy-link,
+.faq-container h3[id] > span.copy-link {
+  visibility: hidden;
+}
+.faq-container h1[id]:hover > span.copy-link,
+.faq-container h3[id]:hover > span.copy-link {
+  visibility: visible;
+}
+
 /* estimators page styles ---------- */
 .estimators-content {
   padding-top: 80px;
@@ -211,6 +221,7 @@ body.faq-body {
 
 .no-wrap { white-space: nowrap; }
 
+.cursor-copy { cursor: copy; }
 .cursor-pointer { cursor: pointer; }
 
 .no-decoration { text-decoration: none !important; }
