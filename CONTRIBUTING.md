@@ -104,6 +104,9 @@ And the corresponding section in the main content should look like this:
 ```
 <h3 id="case-sensitive-id">
   Example TOC Link
+  <span class="fa fa-link small copy-link cursor-copy"
+    onclick="copyLink(this)">
+  </span>
 </h3>
 <p>
   Answer goes here...
@@ -112,11 +115,16 @@ And the corresponding section in the main content should look like this:
 
 > **Note:** the `href="#id"` link in the table of contents MUST match the `id` of the section within the main content (case sensitive).
 
+> **Note:** make sure to include the copy link span.
+
 If a question has multiple sections, wrap the additonal sections in another div that has additional margins:
 
 ```
 <h3 id="main-question">
   Main Question
+  <span class="fa fa-link small copy-link cursor-copy"
+    onclick="copyLink(this)">
+  </span>
 </h3>
 <p>
   Main question text that tells the reader to read the other sections:
