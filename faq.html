@@ -1403,9 +1403,9 @@ apt-get install gcc-4.8</code></pre>
       </p>
 
       <div class="ml-5 mr-5">
-        <h5 id="disk-watermark">
+        <h4 id="disk-watermark">
           Disk Watermark
-        </h5>
+        </h4>
         <p>
           You will probably want to change the watermark settings so you can use
           more of your disk space. You have the option to use ALL percentages or
@@ -1438,9 +1438,9 @@ cluster.routing.allocation.disk.watermark.high: 200gb
 cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
         </p>
 
-        <h5 id="shard-limit">
+        <h4 id="shard-limit">
           Shard Limit
-        </h5>
+        </h4>
         <p>
           If you have a lot of shards that you want to be able to search against
           at once
@@ -1451,9 +1451,9 @@ cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
         </p>
         <pre><code>action.search.shard_count.limit: 100000</code></pre>
 
-        <h5 id="write-queue-limit">
+        <h4 id="write-queue-limit">
           Write Queue Limit
-        </h5>
+        </h4>
         <p>
           If you hit a lot of bulk failures this can help, but Elastic doesn’t
           recommend raising too much. In older versions of Elasticsearch it is
@@ -1466,9 +1466,9 @@ cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
         </p>
         <pre><code>thread_pool.write.queue_size: 2000</code></pre>
 
-        <h5 id="http-compression">
+        <h4 id="http-compression">
           HTTP Compression
-        </h5>
+        </h4>
         <p>
           On by default in most versions, allows for HTTP compression.
           <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-http.html"
@@ -1478,9 +1478,9 @@ cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
         </p>
         <pre><code>http.compression: true</code></pre>
 
-        <h5 id="recovery-time">
+        <h4 id="recovery-time">
           Recovery Time
-        </h5>
+        </h4>
         <p>
           To speed up recovery times and startup times there are a few controls
           to play with. Make sure you test them in your environment, and slowly
