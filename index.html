@@ -3,6 +3,15 @@
 
 <head>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137788272-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag () { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-137788272-1');
+  </script>
+
   <title>Moloch</title>
 
   <!-- Required meta tags always come first -->
@@ -31,1007 +40,633 @@
 </head>
 
 <body id="viewport">
-  <div class="container">
-    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
-      <div class="navbar-brand">
-        <img src="simple_logo.png" />
-        <div class="ml-5">Moloch</div>
+
+  <div class="container-fluid full-width-page">
+    <!-- navbar -->
+    <span id="navbar">
+    </span>
+
+    <!-- home -->
+    <div id="home"
+      class="purp-background p-nav-lg angle-background angle-background-long">
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <h1 class="display-1 text-center">
+            Moloch
+          </h1>
+          <h1 class="display-3 text-center">
+            Full Packet Capture
+          </h1>
+          <p class="lead lead-lg text-thin text-center">
+            Large scale, open source, indexed packet capture and search.
+          </p>
+        </div>
       </div>
-      <button class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsingNavbar"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse"
-        id="collapsingNavbar">
-        <ul class="nav navbar-nav mr-auto" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link main" href="#home" data-toggle="tab" role="tab">
-              Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link main" href="#demo" data-toggle="tab" role="tab">
-              Demo
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link main" href="#estimators" data-toggle="tab" role="tab">
-              Estimators
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link main" href="#downloads" data-toggle="tab" role="tab">
-              Downloads
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link main" href="#help" data-toggle="tab" role="tab">
-              Help
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/faq">
-              FAQ
-            </a>
-          </li>
-        </ul>
-        <form class="form-inline">
-          <!--
-          <a href="/on"
-            class="btn btn-outline-success">
-            MolochOn 2018
-          </a>
-          -->
-          <a href="https://slackinvite.molo.ch/"
-            class="btn btn-sm btn-outline-info ml-1"
-            title="Join the conversation on Slack"
-            data-toggle="tooltip"
-            data-placement="left">
-            <span class="fa fa-slack fa-2x"></span>
-            <span class="hide">Slack Channel</span>
+      <div class="row mb-5 mt-3">
+        <div class="col text-center">
+          <a href="#downloads"
+            class="btn btn-purp btn-lg mr-3 btn-fw">
+            Download
           </a>
           <a href="https://github.com/aol/moloch"
-            title="View Moloch on GitHub"
-            data-toggle="tooltip" data-placement="left"
-            class="btn btn-sm btn-outline-secondary ml-1">
-            <span class="fa fa-github fa-2x"></span>
-            <span class="hide">Moloch GitHub</span>
+            class="btn btn-outline-info btn-lg mr-3 btn-fw">
+            GitHub
           </a>
-        </form>
+          <a href="https://slackinvite.molo.ch/"
+            class="btn btn-outline-secondary btn-lg btn-fw">
+            Slack Us
+          </a>
+        </div>
       </div>
-    </nav>
-    <div class="tab-content margined-for-nav">
-      <!-- home panel -->
-      <div class="tab-pane fade in active" id="home" role="tabpanel">
-        <div class="row margined-bottom-lg">
-          <div class="col-md-12">
-            <div class="media">
-              <span class="media-left">
-                <img src="moloch_2x2.png" height="96px" alt="Moloch Logo" />
-              </span>
-              <div class="media-body">
-                <p><strong>
-                Moloch is a large scale, open source, full packet
-                capturing, indexing, and database system.
-                </strong></p>
-                Moloch augments your current security
-                infrastructure by storing and indexing network
-                traffic in standard PCAP format, while also
-                providing fast indexed access.
-                Moloch is not meant to replace Intrusion Detection
-                Systems (IDS), instead it provides more visibility.
-                Moloch is built with
-                an intuitive UI/UX which reduces the analysis time
-                of suspected incidents.
-              </div>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col">
+          <p class="lead text-center purp-text">
+            <img src="simple_logo.png" height="25px" style="margin-top:-4px;" />&nbsp;
+            <a href="on" class="no-decoration">
+              Join us for MolochON 2019!</a>
+            &nbsp;<img src="simple_logo.png" height="25px" style="margin-top:-4px;" />
+          </p>
         </div>
-        <div class="row">
-          <div class="col-md-6 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-lock fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">Security</h5>
-                <small>
-                  The owl takes security seriously! Access to Moloch is
-                  protected by using HTTPS with digest passwords or by using an
-                  authentication providing web server proxy. All PCAPs are
-                  stored on the installed Moloch sensors and are only accessed
-                  by utilizing the Moloch interface or API.  Moloch supports
-                  encrypting the PCAP files at rest.
-                </small>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-expand fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">Scalability</h5>
-                <small>
-                  Moloch is designed to be deployed across multiple clustered
-                  systems providing the ability to scale to handle multiple
-                  gigabits/sec of traffic. PCAP retention is based on
-                  available sensor disk space while metadata retention is
-                  based on the scale of the Elasticsearch cluster. Both
-                  rentention sizes can be increased at anytime as they are
-                  under your complete control.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-hand-pointer-o fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">Interface</h5>
-                <small>
-                  An intuitive web interface is provided for PCAP browsing,
-                  searching, analysis, and PCAP carving for exporting. Moloch
-                  stores and exports all packets in standard PCAP format
-                  allowing you to use your favorite PCAP ingesting tools, such
-                  as wireshark, during your analysis workflow.
-                </small>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-cloud-download fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">
-                  <a href="https://github.com/aol/moloch/wiki/API"
-                    class="no-decoration">
-                    APIs
-                  </a>
-                </h5>
-                <small>
-                  APIs are exposed that allow PCAP data and JSON-formatted
-                  session data to be downloaded directly.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row margined-top align-center">
-          <div class="col-md-6 margined-bottom">
-            <a href="https://github.com/aol/moloch" class="no-decoration">
-              View Moloch on GitHub
-              <span class="fa fa-lg fa-github"></span>
-            </a>
-          </div>
-          <div class="col-md-6 margined-bottom">
-            <a href="https://slackinvite.molo.ch/" class="no-decoration">
-              Join us on Slack
-              <span class="fa fa-lg fa-slack"></span>
-            </a>
-          </div>
-        </div>
-      </div> <!-- /home panel -->
-      <!-- demo panel -->
-      <div class="tab-pane fade" id="demo" role="tabpanel">
-        <div class="row">
-          <div class="col-md-12">
-            <h4 class="margined-bottom-sm">
-              Moloch Demo
-              <a href="https://demo.molo.ch/?date=-1" title="View the Moloch Demo"
-                class="btn btn-outline-primary btn-sm pull-right"
-                data-toggle="tooltip" data-placement="left">
-                View
-              </a>
-            </h4>
+      </div>
+      <div class="jumbotron jumbotron-white mb-5 mt-5 ml-5 mr-5">
+        <p class="lead text-center text-muted">
+          Augment your current security infrastructure to store and
+          index network traffic in standard PCAP format.
+          <br>
+          Moloch is not meant to replace Intrusion Detection Systems (IDS),
+          instead it provides more visibility.
+        </p>
+        <div class="row mt-5">
+          <div class="col-lg-3 col-md-6">
+            <span class="fa fa-lock fa-3x">
+            </span>
+            <h5 class="purp-text mt-1">
+              Security
+            </h5>
             <p>
-              We have a
-              <a href="https://demo.molo.ch/?date=-1" class="no-decoration">
-                demo instance of Moloch
-              </a>
-              running for you to explore and upload sample capture files
-              to interact with. Wet your beak and give Moloch a try!
-            </p>
-            <p class="quote quote-info">
-              Username and password are both "<strong>moloch</strong>".
-            </p>
-            <p class="quote quote-warning">
-              <em>
-                <strong>Warning</strong>: Anyone can see anything you upload.
-              </em>
+              Access to Moloch is protected by using HTTPS with digest passwords or
+              by using an authentication providing web server proxy. All PCAPs are
+              stored on the installed Moloch sensors and are only through the Moloch
+              web interface or API. Moloch supports encrypting the PCAP files at rest.
             </p>
           </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-7">
-            <h5 class="hidden-md-up" id="sessions">Sessions</h5>
-            <figure class="figure">
-              <a href="sessions.html" target="_blank" aria-labelledby="sessions"
-                class="open-image btn btn-lg btn-secondary">
-                <span class="fa fa-search-plus"></span>
-                <span class="hide">View larger Sessions screenshot</span>
-              </a>
-              <img src="sessions.png" alt="Session tab screenshot"
-                class="figure-img img-fluid img-rounded" />
-            </figure>
-          </div>
-          <div class="col-md-5">
-            <h5 class="hidden-sm-down" id="sessions">Sessions</h5>
-            <small>
-              <p>
-                <strong>
-                  On the Sessions tab you can view indexed sessions for the
-                  selected time period.
-                </strong>
-              </p>
-              <p>
-                <span class="fa fa-search"></span>&nbsp;
-                The search bar allows for powerful search queries to narrow
-                down the data.  Click the owl for available fields.
-              <p>
-                <span class="fa fa-hand-pointer-o"></span>&nbsp;
-                Get more information about any session and view the session's
-                packet data by clicking the green "+" button.
-              </p>
-              <p>
-                <span class="fa fa-search"></span>&nbsp;
-                Click any of the links in the session information to apply
-                search criteria.
-              </p>
-              <p>
-                <span class="fa fa-arrows-h"></span>&nbsp;
-                Click and drag an area in the timeline to filter sessions by time.
-              </p>
-              <p>
-                <span class="fa fa-download"></span>&nbsp;
-                You can export search results as PCAP or CSV by clicking the
-                "Actions" drop down menu on the top right.
-              </p>
-              <p class="quote quote-info">
-                <strong>Tip:</strong> right click for more options.
-              </p>
-            </small>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-7">
-            <h5 class="hidden-md-up" id="spiview">SPI View</h5>
-            <figure class="figure">
-              <a href="spiview.html" target="_blank" aria-labelledby="spiview"
-                class="open-image btn btn-lg btn-secondary">
-                <span class="fa fa-search-plus"></span>
-                <span class="hide">View larger SPI View screenshot</span>
-              </a>
-              <img src="spiview.png" class="figure-img img-fluid img-rounded"
-                alt="SPI View tab screenshot" />
-            </figure>
-          </div>
-          <div class="col-md-5">
-            <h5 class="hidden-sm-down" id="spiview">SPI View</h5>
-            <small>
-              <p>
-                <strong>
-                  The SPI View tab allows you you to view unique values with
-                  session counts for each of the captured fields. Change your
-                  search query or selected time period to limit results.
-                </strong>
-              </p>
-              <p>
-                <span class="fa fa-hand-pointer-o"></span>&nbsp;
-                Click any row to expand its contents.
-              </p>
-              <p>
-                <span class="fa fa-search"></span>&nbsp;
-                Click any of the links in the expanded section to apply search
-                criteria. Right click for more options!
-              </p>
-              <p class="quote quote-info">
-                <strong>Tip:</strong> Right click to change which fields
-                automatically loaded.
-              </p>
-            </small>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-7">
-            <h5 class="hidden-md-up" id="spigraph">SPI Graph</h5>
-            <figure class="figure">
-              <a href="spigraph.html" target="_blank" aria-labelledby="spigraph"
-                class="open-image btn btn-lg btn-secondary">
-                <span class="fa fa-search-plus"></span>
-                <span class="hide">View larger SPI Graph screenshot</span>
-              </a>
-              <img src="spigraph.png" alt="SPI Graph tab screenshot"
-                class="figure-img img-fluid img-rounded" />
-            </figure>
-          </div>
-          <div class="col-md-5">
-            <h5 class="hidden-sm-down" id="spigraph">SPI Graph</h5>
-            <small>
-              <p>
-                <strong>
-                  The SPI Graph tab shows a temporal view for the top unique
-                  values of any field.
-                </strong>
-              </p>
-              <p>
-                <span class="fa fa-arrows-h"></span>&nbsp;
-                Click and drag an area in the timeline to filter statistics by time.
-              </p>
-              <p>
-                <span class="fa fa-search"></span>&nbsp;
-                Make a selection from the SPI Graph drop down to view the unique
-                values for different fields.
-              </p>
-            </small>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-7">
-            <h5 class="hidden-md-up" id="connections">Connections</h5>
-            <figure class="figure">
-              <a href="connections.html" target="_blank"
-                aria-labelledby="connections"
-                class="open-image btn btn-lg btn-secondary">
-                <span class="fa fa-search-plus"></span>
-                <span class="hide">View larger Connections screenshot</span>
-              </a>
-              <img src="connections.png" alt="Connections tab screenshot"
-                class="figure-img img-fluid img-rounded" />
-            </figure>
-          </div>
-          <div class="col-md-5">
-            <h5 class="hidden-sm-down" id="connections">Connections</h5>
-            <small>
-              <p>
-                <strong>
-                  On the Connections tab you can view a network graph of your
-                  search results.
-                </strong>
-              </p>
-              <p>
-                <span class="fa fa-arrows-h"></span>&nbsp;
-                Click and drag a node to lock it into place in the graph.
-              </p>
-              <p>
-                <span class="fa fa-hand-pointer-o"></span>&nbsp;
-                Click on a node to view more information or hide it.
-              </p>
-              <p>
-                <span class="fa fa-search"></span>&nbsp;
-                Make a selection from the Src and Dst drop downs to visualize
-                your data based upon different captured field relationships.
-              </p>
-            </small>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-7">
-            <h5 class="hidden-md-up" id="stats">Stats</h5>
-            <figure class="figure">
-              <a href="stats.html" target="_blank" aria-labelledby="stats"
-                class="open-image btn btn-lg btn-secondary">
-                <span class="fa fa-search-plus"></span>
-                <span class="hide">View larger Stats screenshot</span>
-              </a>
-              <img src="stats.png" alt="Stats tab screenshot"
-                class="figure-img img-fluid img-rounded" />
-            </figure>
-          </div>
-          <div class="col-md-5">
-            <h5 class="hidden-sm-down" id="stats">Stats</h5>
-            <small>
-              <p>
-                <strong>
-                  On the Stats tab you can view statistics about each Molcoh
-                  capture node and Elasticsearch node.
-                </strong>
-              </p>
-              <p>
-                <span class="fa fa-sort-amount-asc"></span>&nbsp;
-                Click on a table header to sort the table.
-              </p>
-              <p>
-                <span class="fa fa-filter"></span>&nbsp;
-                Enter text into the node filter input box to search the results.
-              </p>
-            </small>
-          </div>
-        </div>
-      </div> <!-- /demo panel -->
-
-      <!-- estimators panel -->
-      <div class="tab-pane fade" id="estimators" role="tabpanel">
-        <div class="row margined-bottom">
-          <div class="col-md-12">
-            <h4>
-              Moloch Estimators
-            </h4>
+          <div class="col-lg-3 col-md-6">
+            <span class="fa fa-expand fa-3x">
+            </span>
+            <h5 class="purp-text mt-1">
+              Scalability
+            </h5>
             <p>
-              Use these estimators as a starting point for deciding on the
-              number of machines needed for capture and ES nodes.
+              Moloch is designed to be deployed across multiple clustered
+              systems providing the ability to scale to handle multiple
+              gigabits per second of traffic. PCAP retention is based on
+              available sensor disk space while metadata retention is
+              based on the scale of the Elasticsearch cluster.
+              Both can be increased at anytime.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <span class="fa fa-hand-pointer-o fa-3x cursor-pointer">
+            </span>
+            <h5 class="purp-text mt-1">
+              Interface
+            </h5>
+            <p>
+              A web application is provided for PCAP browsing,
+              searching, analysis, and PCAP carving for exporting. Moloch
+              stores and exports all packets in standard PCAP format
+              allowing you to use your favorite PCAP ingesting tools
+              during your analysis workflow.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <span class="fa fa-cloud-download fa-3x">
+            </span>
+            <h5 class="purp-text mt-1">
+              APIs
+            </h5>
+            <p>
+              APIs are exposed that allow PCAP data and JSON-formatted
+              session data to be downloaded directly.
             </p>
             <p>
-            <div class="form-inline">
-              <div class="form-group">
-                <label for="gbpsInput" class="sr-only">
-                  Average gigabits per second
-                </label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      Average gigabits per second
-                    </span>
-                  </div>
-                  <input type="number" id="gbpsInput" value=1 min=0 step=0.01
-                    class="form-control">
-                </div>
-              </div>
-            </div>
-
-            <br>
-
-            <div class="card mb-2">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Capture Machines
-                  <small class="pull-right">
-                    <a href="/faq#what-kind-of-capture-machines-should-we-buy"
-                      class="card-link">More info in FAQ</a>
-                  </small>
-                </h5>
-
-                <p class="card-text text-muted">
-                  Calculating the number of machines needed for capturing is relatively simple.
-                  It is based on the average traffic rate, the number of days of retention, how much space is available on each machine, and the avg amount of traffic each machine can handle.
-                  If more then one machine is required, we highly recommend getting a <a href="/faq#what-kind-of-network-packet-broker-should-we-buy"
-                    class="card-link">NPB</a> to load balance the traffic across the cluster.
-                  We suggest RAID 5 or RAID 6 for capture disks.
-                </p>
-                <p class="card-text text-muted">
-                  Moloch makes it possible to not save encrypted packets, other then the session negotiation.
-                  If you plan on using this feature select the percentage of TLS/QUIC traffic on the network.
-                  Most networks will see 10-40% of TLS traffic, resulting in huge disk space savings.
-                </p>
-
-                <hr>
-
-                <div class="form-inline mb-2">
-                  <label class="sr-only" for="captureDaysInput">
-                    PCAP Retention Days
-                  </label>
-                  <div class="input-group input-group-sm mb-1 mr-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        PCAP RetentionDays
-                      </span>
-                    </div>
-                    <input type="number" id="captureDaysInput" value=14 min=1
-                      class="form-control">
-                  </div>
-                  <label for="captureDiskInput" class="sr-only">
-                    Disk Size
-                  </label>
-                  <div class="input-group input-group-sm mb-1 mr-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        Disk Size
-                      </span>
-                    </div>
-                    <select id="captureDiskInput" class="form-control custom-select">
-                      <option value=1000>1 TB</option>
-                      <option value=2000>2 TB</option>
-                      <option value=3000>3 TB</option>
-                      <option value=4000 selected>4 TB</option>
-                      <option value=6000>6 TB</option>
-                      <option value=8000>8 TB</option>
-                      <option value=10000>10 TB</option>
-                      <option value=12000>12 TB</option>
-                      <option value=14000>14 TB</option>
-                      <option value=16000>16 TB</option>
-                    </select>
-                  </div>
-                  <label for="captureNumDisksInput" class="sr-only">
-                    Disks per machine
-                  </label>
-                  <div class="input-group input-group-sm mb-1 mr-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        Disks per machine
-                      </span>
-                    </div>
-                    <input type="number" id="captureNumDisksInput" value=20 min=1
-                      class="form-control">
-                  </div>
-                  <label for="captureTLSInput" class="sr-only">
-                    TLS Percentage
-                  </label>
-                  <div class="input-group input-group-sm mb-1 mr-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        TLS Percentage
-                      </span>
-                    </div>
-                    <select id="captureTLSInput" class="form-control custom-select">
-                      <option value=1.00 selected>0%</option>
-                      <option value=0.90>10%</option>
-                      <option value=0.80>20%</option>
-                      <option value=0.75>25%</option>
-                      <option value=0.75>30%</option>
-                      <option value=0.65>40%</option>
-                      <option value=0.55>50%</option>
-                    </select>
-                  </div>
-                  <label for="maxGbps" class="sr-only">
-                    Max per host
-                  </label>
-                  <div class="input-group input-group-sm mb-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        Avg per machine
-                      </span>
-                    </div>
-                    <select id="maxGbps" class="form-control custom-select">
-                      <option value=1> 1 Gbps</option>
-                      <option value=2> 2 Gbps</option>
-                      <option value=3 selected>3 Gbps</option>
-                      <option value=4>4 Gbps</option>
-                      <option value=5>5 Gbps</option>
-                      <option value=6>6 Gbps</option>
-                      <option value=7>7 Gbps</option>
-                      <option value=8>8 Gbps</option>
-                      <option value=9>9 Gbps</option>
-                    </select>
-                  </div>
-                </div>
-                <table class="table table-sm">
-                  <thead>
-                  <tr>
-                    <th>Space Required</th>
-                    <th>All disks for data<br>RAID 0</th>
-                    <th>One disk extra<br>RAID 5</th>
-                    <th>Two disks extra<br>RAID 6 or RAID 5 + Hot Spare</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="captureMachinesTB"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="captureMachines0"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="captureMachines1"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="captureMachines2"></label>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Elasticsearch Machines
-                  <small class="pull-right">
-                    <a href="/faq#how-many-elasticsearch-nodes-or-machines-do-i-need"
-                      class="card-link">More info in FAQ</a>
-                  </small>
-                </h5>
-
-                <p class="card-text text-muted">
-                  Calculating the number of machines needed for Elasticsearch is a fine art.
-                  It heavily depends on the type of traffic that Moloch will be seeing plus of course the traffic rate and number of days of retention.
-                  Each node requires 64GB - 128GB of memory: 30GB for ES, and 34-96GB for OS disk cache.
-                  For large machines plan on running multiple nodes per host.
-                  You may want to read more recomendations from Elastic's <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/heap-size.html">Reference</a>
-                  and <a href="https://www.elastic.co/blog/a-heap-of-trouble">Blog</a>.
-                </p>
-                <p class="card-text text-muted">
-                  Many scaling guides will recommend you do NOT use RAID 5, assuming you will use Elasticsearch replication.
-                  However by default Moloch does NOT enable replication, so it is strongly recommended that you <strong>DO</strong> use RAID 5 or RAID 6.
-                  If you decide to use Elasticsearch replication you will need more machines, but don't need RAID 5 in theory.
-                </p>
-                <p class="card-text text-muted">
-                  The calculated host counts are just estimates.
-                </p>
-
-                <hr>
-
-                <div class="form-inline mb-2">
-                  <label class="sr-only" for="esDaysInput">
-                    ES Retention Days
-                  </label>
-                  <div class="input-group input-group-sm mb-1 mr-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        ES Retention Days
-                      </span>
-                    </div>
-                    <input type="number" id="esDaysInput" value=30 min=1
-                      class="form-control">
-                  </div>
-                  <label for="esDiskInput" class="sr-only">
-                    Disk Size
-                  </label>
-                  <div class="input-group input-group-sm mb-1 mr-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        Disk Size
-                      </span>
-                    </div>
-                    <select id="esDiskInput" class="form-control custom-select">
-                      <option value=200>200 GB</option>
-                      <option value=400>400 GB</option>
-                      <option value=800>800 GB</option>
-                      <option value=1000>1 TB</option>
-                      <option value=2000>2 TB</option>
-                      <option value=2000>3 TB</option>
-                      <option value=4000 selected>4 TB</option>
-                      <option value=6000>6 TB</option>
-                      <option value=8000>8 TB</option>
-                      <option value=10000>10 TB</option>
-                      <option value=12000>12 TB</option>
-                      <option value=14000>14 TB</option>
-                      <option value=16000>16 TB</option>
-                    </select>
-                  </div>
-
-                  <label for="esNumDisksInput" class="sr-only">
-                    Disks per machine
-                  </label>
-                  <div class="input-group input-group-sm mb-1 mr-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        Disks per machine
-                      </span>
-                    </div>
-                    <input type="number" id="esNumDisksInput" value=4 min=1
-                      class="form-control">
-                  </div>
-
-                  <label for="esNumNodesInput" class="sr-only">
-                    ES Nodes per machine
-                  </label>
-                  <div class="input-group input-group-sm mb-1 mr-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        Nodes per machine
-                      </span>
-                    </div>
-                    <input type="number" id="esNumNodesInput" value=1 min=1
-                      class="form-control">
-                  </div>
-
-                  <label for="esReplication" class="sr-only">
-                    ES Replication
-                  </label>
-                  <div class="input-group input-group-sm mb-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        Replication
-                      </span>
-                    </div>
-                    <select id="esReplication" class="form-control custom-select">
-                      <option value=1>0 Replicas</option>
-                      <option value=2>1 Replica</option>
-                      <option value=3>2 Replicas</option>
-                    </select>
-                  </div>
-
-                </div>
-                <table class="table table-sm">
-                  <thead>
-                  <tr>
-                    <th class="text-xs-center">&nbsp;</th>
-                    <th class="text-xs-center">Total Space Required</th>
-                    <th class="text-xs-center">All disks for data<br>RAID 0</th>
-                    <th class="text-xs-center">One disk extra<br> RAID 5</th>
-                    <th class="text-xs-center">Two disks extra<br>RAID 6 or RAID 5 + Hot Spare</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="text-xs-center">
-                      Average traffic mix
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachinesTB"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines0"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines1"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines2"></label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="text-xs-center">
-                      High DNS/HTTP traffic
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachinesTB-dns"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines0-dns"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines1-dns"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines2-dns"></label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="text-xs-center">
-                      Pathological traffic mix
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachinesTB-worst"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines0-worst"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines1-worst"></label>
-                    </td>
-                    <td class="text-xs-center">
-                      <label class="label label-lg label-default"
-                        id="esMachines2-worst"></label>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
+              <a href="https://github.com/aol/moloch/wiki/API"
+                class="no-decoration mt-2">
+                View the API documentation
+              </a>
+            </p>
           </div>
         </div>
-      </div> <!-- /estimators panel -->
+      </div>
+      <div class="mb-5">&nbsp;</div>
+    </div> <!-- /home -->
 
-      <!-- downloads panel -->
-      <div class="tab-pane fade" id="downloads" role="tabpanel">
-        <div class="row margined-bottom">
-          <div class="col-md-9">
-            <h4 class="margined-bottom">
-              Downloads
-            </h4>
-            <p class="quote quote-danger">
-              <strong>BEFORE</strong> upgrading from <strong>ES 5</strong> to <strong>ES 6</strong> read the
-              <a href="/faq#how-do-i-upgrade-to-es-6-x"
-                class="no-decoration">
-                How do I upgrade to ES 6
-              </a>
-              FAQ entry.
+    <!-- demo -->
+    <a id="demo"
+      class="anchor anchor-offset-more">
+    </a>
+    <div class="demo">
+      <h1 class="display-4 text-center">
+        Moloch Demo
+      </h1>
+      <p class="text-center">
+        <a class="btn btn-purp btn-lg"
+          href="https://demo.molo.ch/?date=-1">
+          Check it out!
+        </a>
+      </p>
+      <p class="lead text-center mb-0">
+        Username and password are both <code>moloch</code>
+      </p>
+      <p class="lead text-muted text-center">
+        <strong class="purp-text">Warning:</strong>
+        Anyone can see anything you upload
+      </p>
+      <p class="mt-3 text-center">
+        Also, check out our
+        <a href="https://www.youtube.com/playlist?list=PLXXo-3b5ZQ1jk2wk9IyoxoGygZq5cT6Hq"
+          rel="nofollow"
+          class="no-decoration">
+          recorded talks and feature demos</a>.
+      </p>
+    </div> <!-- /demo -->
+
+    <hr>
+
+    <!-- screenshots -->
+    <a id="screenshots"
+      class="anchor">
+    </a>
+    <div class="mt-5">
+      <!-- sessions -->
+      <div class="container-fluid mb-5">
+        <div class="row d-flex align-items-end">
+          <div class="col-lg-8 col-md-7 align-self-start">
+            <h1 class="display-4 mb-3 dark-purp-text">
+              Sessions Page
+            </h1>
+            <p class="lead mb-3">
+              The Sessions page displays a list of indexed sessions for the selected time period and search expression.
+              It includes a timeline graph and map of the session results.
             </p>
-            <p class="quote quote-danger">
-              <strong>BEFORE</strong> upgrading to <strong>Moloch 1.5</strong> you must be on <strong>Moloch 1.0 or 1.1</strong> and finished any reindexing.
+            <img src="sessions.png"
+              alt="Sessions screenshot"
+              class="screenshot-img"
+            />
+          </div>
+          <div class="col-lg-4 col-md-5 small mt-3">
+            <h5>
+              <span class="purp-text fa fa-search fa-fw fa-lg">
+              </span>&nbsp;
+              Search
+            </h5>
+            <p>
+              The search bar allows for powerful search queries to narrow down the data.
+              Click the owl for available fields.
             </p>
-            <p class="quote quote-danger">
-              <strong>BEFORE</strong> upgrading to <strong>Moloch 1.0 or 1.1</strong> read the
-              <a href="/faq#How_do_I_upgrade_to_Moloch_1"
-                class="no-decoration">
-                How do I upgrade to Moloch 1.0
-              </a>
-              FAQ entry.
-              <br>
-              <em>Upgrading to 1.0 takes some time, work, and requires ES 5.x.</em>
+            <h5>
+              <span class="purp-text fa fa-plus fa-fw fa-lg">
+              </span>&nbsp;
+              Session detail
+            </h5>
+            <p>
+              Get more information about any session and view the session's
+              packet data by clicking the "+" button.
             </p>
-            <p class="quote quote-danger">
-              <strong>BEFORE</strong> upgrading from <strong>ES 2</strong> to <strong>ES 5</strong> read the
-              <a href="/faq#How_do_I_upgrade_to_ES_5x"
-                class="no-decoration">
-                How do I upgrade to ES 5
-              </a>
-              FAQ entry.
+            <h5>
+              <span class="purp-text fa fa-hand-o-up fa-fw fa-lg">
+              </span>&nbsp;
+              Value actions
+            </h5>
+            <p>
+              Hover and click any value to view a dropdown menu of actions, like
+              applying that value as search criteria.
+            </p>
+            <h5>
+              <span class="purp-text fa fa-cloud-download fa-fw fa-lg">
+              </span>&nbsp;
+              Export PCAP
+            </h5>
+            <p>
+              You can export search results as PCAP or CSV by clicking the "Actions"
+              (<span class="fa fa-caret-down"></span>) drop down menu on the top right.
+            </p>
+            <h5>
+              <span class="purp-text fa fa-arrows-h fa-fw fa-lg">
+              </span>&nbsp;
+              Timeline search
+            </h5>
+            <p>
+              Click and drag an area in the timeline to filter sessions by time.
+            </p>
+            <h5>
+              <span class="purp-text fa fa-globe fa-fw fa-lg">
+              </span>&nbsp;
+              Country search
+            </h5>
+            <p class="mb-0">
+              Click a country on the map to apply it as search criteria.
             </p>
           </div>
-          <div class="col-md-3">
-            <span class="pull-md-right pull-sm-left">
-              <a href="https://s3.amazonaws.com/files.molo.ch/NOTICE.txt"
-                class="btn btn-outline-danger btn-sm margined-bottom-xs downloads-info-btn">
-                <span class="fa fa-exclamation-triangle"></span>&nbsp;
-                NOTICE.txt
-              </a><br>
-              <a href="https://raw.githubusercontent.com/aol/moloch/master/CHANGELOG"
-                class="btn btn-outline-primary btn-sm margined-bottom-xs downloads-info-btn">
-                <span class="fa fa-th-list"></span>&nbsp;
-                Changelog
-              </a><br>
-              <a href="https://raw.githubusercontent.com/aol/moloch/master/release/README.txt"
-                class="btn btn-outline-info btn-sm margined-bottom-xs downloads-info-btn"
-                title="Instructions for using the prebuilt Moloch packages"
-                data-toggle="tooltip">
-                <span class="fa fa-download"></span>&nbsp;
+        </div>
+      </div> <!-- /sessions -->
+      <!-- spiview -->
+      <hr>
+      <div class="container-fluid mt-5 mb-5">
+        <div class="row d-flex align-items-end">
+          <div class="col-lg-8 col-md-7 align-self-start">
+            <h1 class="display-4 mb-3 dark-purp-text">
+              SPI View Page
+            </h1>
+            <p class="lead mb-3">
+              The SPI (Session Profile Information) View page allows you you to view unique values with session counts for each of the captured fields.
+            </p>
+            <img src="spiview.png"
+              class="screenshot-img"
+              alt="SPI View screenshot"
+            />
+          </div>
+          <div class="col-lg-4 col-md-5 small mt-3">
+            <h5>
+              <span class="purp-text fa fa-plus fa-lg">
+              </span>&nbsp;
+              Toggle categories
+            </h5>
+            <p>
+              Click on any section to open or close any field category.
+            </p>
+            <h5 class="mt-4">
+              <span class="purp-text fa fa-search fa-lg">
+              </span>&nbsp;
+              Search for fields
+            </h5>
+            <p>
+              Search for fields within a category by using the input box within a category.
+            </p>
+            <h5 class="mt-4">
+              <span class="purp-text fa fa-hand-o-up fa-lg">
+              </span>&nbsp;
+              Toggle fields
+            </h5>
+            <p>
+              Click on a field in the top section of a category to toggle the field's visibility.
+              You can also click the load/unload all buttons to load/unload all the fields
+              in that category.
+            </p>
+            <h5 class="mt-4">
+              <span class="purp-text fa fa-ban fa-lg">
+              </span>&nbsp;
+              Cancel Load
+            </h5>
+            <p class="mb-0">
+              Click the cancel button on the top right of the page if the
+              page is taking a long time load data or you made a mistake when
+              you issued a query.
+            </p>
+          </div>
+        </div>
+      </div> <!-- /spiview -->
+      <!-- spigraph -->
+      <hr>
+      <div class="container-fluid mb-5">
+        <div class="row d-flex align-items-end">
+          <div class="col-lg-8 col-md-7 align-self-start">
+            <h1 class="display-4 mb-3 dark-purp-text">
+              SPI Graph Page
+            </h1>
+            <p class="lead mb-3">
+              The SPI (Session Profile Information) Graph page shows a temporal view for the top unique values of any field.
+            </p>
+            <img src="spigraph.png"
+              alt="SPI Graph screenshot"
+              class="screenshot-img"
+            />
+          </div>
+          <div class="col-lg-4 col-md-5 small mt-3">
+            <h5>
+              <span class="purp-text fa fa-plus fa-lg">
+              </span>&nbsp;
+              Total
+            </h5>
+            <p>
+              The first timeline graph and map shows an aggregation of all the results below.
+              Click on the "x" button on this map to hide all maps.
+            </p>
+            <h5>
+              <span class="purp-text fa fa-search fa-lg">
+              </span>&nbsp;
+              Search for fields
+            </h5>
+            <p>
+              Make a selection from the SPI Graph drop down on the top left
+              to view the unique values for different fields.
+            </p>
+            <h5>
+              <span class="purp-text fa fa-list-ol fa-lg">
+              </span>&nbsp;
+              More fields
+            </h5>
+            <p>
+              Change the number of Max Elements to display more results.
+            </p>
+            <h5>
+              <span class="purp-text fa fa-sort fa-lg">
+              </span>&nbsp;
+              Sorting
+            </h5>
+            <p class="mb-0">
+              Change the sort by dropdown to change how the results are sorted.
+              By default, the results are sorted starting with the highest unique
+              field value.
+            </p>
+          </div>
+        </div>
+      </div> <!-- /spigraph -->
+      <!-- connections -->
+      <hr>
+      <div class="container-fluid mb-4">
+        <div class="row d-flex align-items-end">
+          <div class="col-lg-8 col-md-7 align-self-start">
+            <h1 class="display-4 mb-3 dark-purp-text">
+              Connections Page
+            </h1>
+            <p class="lead mb-3">
+              The Connections page shows a network graph of your search results.
+            </p>
+            <img src="connections.png"
+              alt="Connections screenshot"
+              class="screenshot-img"
+            />
+          </div>
+          <div class="col-lg-4 col-md-5 small mt-3">
+            <h5>
+              <span class="purp-text fa fa-lock fa-lg">
+              </span>&nbsp;
+              Lock
+            </h5>
+            <p>
+              Click and drag a node to lock it into place in the graph.
+            </p>
+            <h5>
+              <span class="purp-text fa fa-hand-o-up fa-lg">
+              </span>&nbsp;
+              Node Info
+            </h5>
+            <p>
+              Hover over a node or a link to view more information (or hide it).
+            </p>
+            <h5>
+              <span class="purp-text fa fa-text-width fa-lg">
+              </span>&nbsp;
+              Node/Link Weight
+            </h5>
+            <p>
+              Change the Node/Link Weight dropdown to change how the node and link
+              sizes are calculated.
+            </p>
+            <h5>
+              <span class="purp-text fa fa-search fa-lg">
+              </span>&nbsp;
+              Change Source/Destination Nodes
+            </h5>
+            <p class="mb-0">
+              Make a selection from the Src and Dst drop downs to visualize your data based
+              upon different captured field relationships.
+            </p>
+          </div>
+        </div>
+      </div> <!-- /connections -->
+    </div> <!-- /screenshots -->
+
+    <!-- downloads -->
+    <a id="downloads"
+      class="anchor">
+    </a>
+    <div class="purp-background pt-5 angle-background">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-4 text-center mb-4 mt-4">
+            Download Moloch
+          </h1>
+          <div class="row mb-4 mt-4">
+            <div class="col text-center">
+              <a class="btn btn-outline-danger btn-lg mr-3 btn-fw mb-2"
+                href="https://s3.amazonaws.com/files.molo.ch/NOTICE.txt">
+                NOTICE
+              </a>
+              <a class="btn btn-outline-primary btn-lg mr-3 btn-fw mb-2"
+                href="https://raw.githubusercontent.com/aol/moloch/master/CHANGELOG">
+                CHANGELOG
+              </a>
+              <a class="btn btn-outline-info btn-lg mr-3 btn-fw mb-2"
+                href="https://raw.githubusercontent.com/aol/moloch/master/release/README.txt">
                 Instructions
-              </a><br>
-              <a href="https://github.com/aol/moloch/issues"
-                class="btn btn-outline-warning btn-sm downloads-info-btn"
-                title="Open a Github Issue for any suggestions or problems"
-                data-toggle="tooltip">
-                <span class="fa fa-github"></span>&nbsp;
+              </a>
+              <a class="btn btn-outline-success btn-lg mr-3 btn-fw mb-2"
+                href="https://github.com/aol/moloch/issues/new">
                 Open an Issue
               </a>
-            </span>
-          </div>
-        </div>
-        <div class="downloads">
-          <h4 class="loading-downloads text-sm-center">
-            <span class="fa fa-spinner fa-spin"></span>&nbsp;
-            Loading Moloch downloads...
-          </h4>
-          <div class="main-downloads"></div>
-          <div class="row show-more-downloads">
-            <div class="col-md-12">
-              <a href="#" onclick="toggleMoreDownloads(event)"
-                class="cursor-pointer no-decoration show-more-downloads-btn">
-                <span class="fa fa-chevron-down"></span>&nbsp;
-                show more downloads
-              </a>
             </div>
           </div>
-          <div class="more-downloads" style="display:none;">
-            <hr>
+          <div class="row mb-2 mr-5 ml-5">
+            <div class="col">
+              <div class="jumbotron jumbotron-white pb-2 pt-4">
+                <h3 class="purp-text pb-3 text-center">
+                  <span class="fa fa-exclamation-triangle">
+                  </span>&nbsp;
+                  Before upgrading
+                  &nbsp;<span class="fa fa-exclamation-triangle">
+                  </span>
+                </h3>
+                <div class="row pb-2">
+                  <div class="col-lg-3 col-md-6">
+                    <p>
+                      <strong>To Moloch 1.5</strong>
+                      <br>
+                      Upgrade to Moloch 1.0 or 1.1 and finish any reindexing.
+                    </p>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <p>
+                      <strong>To Moloch 1.0 or 1.1</strong>
+                      <br>
+                      Read the
+                      <a class="no-decoration"
+                        href="faq#how_do_i_upgrade_to_moloch_1">
+                        How do I upgrade to Moloch 1.0
+                      </a>
+                      answer in the FAQ.
+                      <br>
+                      <em>
+                        Upgrading to 1.0 takes some time, work, and requires ES 5.x.
+                      </em>
+                    </p>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <p>
+                      <strong>From ES 5 to ES 6</strong>
+                      <br>
+                      Read the
+                      <a class="no-decoration"
+                        href="faq#how-do-i-upgrade-to-es-6-x">
+                        How do I upgrade to ES 6
+                      </a>
+                      answer in the FAQ.
+                    </p>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <p>
+                      <strong>From ES 2 to ES 5</strong>
+                      <br>
+                      Read the
+                      <a class="no-decoration"
+                        href="faq#how_do_i_upgrade_to_es_5x">
+                        How do I upgrade to ES 5
+                      </a>
+                      answer in the FAQ.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="commit-downloads"><hr></div>
-          <div class="row downloads-error" style="display:none;">
-            <div class="col-12 text-center">
-              <h5 class="text-danger">
-                <span class="fa fa-exclamation-triangle"></span>&nbsp;
-                Sorry, we couldn't retrieve Moloch downloads.<br>
-                Please try again later.
-              </h5>
-              <p>
-                Meanwhile, view Moloch on
-                <a href="https://github.com/aol/moloch" class="no-decoration">
-                  GitHub
+          <div class="downloads mr-5 ml-5">
+            <h4 class="loading-downloads text-sm-center">
+              <span class="fa fa-spinner fa-spin"></span>&nbsp;
+              Loading Moloch downloads...
+            </h4>
+            <div class="main-downloads"></div>
+            <div class="row downloads-error mt-4" style="display:none;">
+              <div class="col-12 text-center">
+                <h5 class="purp-text">
+                  <span class="fa fa-frown-o fa-lg">
+                  </span>&nbsp;
+                  Sorry, we couldn't retrieve Moloch downloads.
+                  &nbsp;<span class="fa fa-frown-o fa-lg">
+                  </span>
+                  <br>
+                  Please try again later.
+                </h5>
+                <p>
+                  Meanwhile, view Moloch on
+                  <a href="https://github.com/aol/moloch"
+                    class="no-decoration">
+                    GitHub
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="row text-center mt-4">
+              <div class="col">
+                <a href="downloads"
+                  class="btn btn-lg btn-purp">
+                  More Downloads
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </div>
-      </div> <!-- /downloads panel -->
+      </div>
+    </div> <!-- /downloads -->
 
-      <!-- help panel -->
-      <div class="tab-pane fade" id="help" role="tabpanel">
-        <div class="row margined-bottom">
-          <div class="col-md-12">
-            <h4>Help</h4>
-            <p>
-              Find help by reading the FAQs at Github or ask a question in the
-              Moloch Google Group.
-            </p>
-          </div>
+    <!-- help -->
+    <a id="help"
+      class="anchor">
+    </a>
+    <div class="pt-5 mr-5 ml-5 pb-5">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-4 text-center mb-4">
+            Help!
+          </h1>
         </div>
-        <div class="row">
-          <div class="col-md-4 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-question-circle fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">FAQ</h5>
-                <p>
-                  We maintain a
-                  <a href="/faq"
-                    class="no-decoration">
-                    FAQ
-                  </a>
-                  on our
-                  <a href="https://github.com/aol/moloch/wiki"
-                    class="no-decoration">
-                    Wiki
-                  </a>
-                  at GitHub.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-comments-o fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">Questions</h5>
-                <p>
-                  Join the
-                  <a href="https://groups.google.com/forum/?fromgroups#!forum/moloch-fpc"
-                    class="no-decoration no-wrap">
-                    moloch-fpc
-                  </a>
-                  Google Group.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 margined-bottom">
-            <div class="media">
-              <div class="media-left">
-                <span class="fa fa-slack fa-3x fa-fw"></span>
-              </div>
-              <div class="media-body">
-                <h5 class="media-heading">Slack</h5>
-                <p>
-                  Join our
-                  <a href="https://slackinvite.molo.ch/"
-                    class="no-decoration">
-                    Slack
-                  </a>
-                  server to discuss Moloch.
-                </p>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="jumbotron row">
+        <div class="col-lg-3 col-md-6">
+          <span class="fa fa-question-circle fa-2x">
+          </span>
+          <h5 class="purp-text mt-1">
+            FAQ
+          </h5>
+          <p>
+            Read our
+            <a href="faq"
+              class="no-decoration">
+              FAQ
+            </a>
+            first!
+          </p>
         </div>
-      </div> <!-- /help panel -->
-    </div> <!-- /tab-content -->
+        <div class="col-lg-3 col-md-6">
+          <span class="fa fa-slack fa-2x">
+          </span>
+          <h5 class="purp-text mt-1">
+            Slack
+          </h5>
+          <p>
+            Join our
+            <a class="no-decoration"
+              href="https://slackinvite.molo.ch/">
+              Slack
+            </a>
+            workspace to discuss Moloch and ask questions.
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="fa fa-github fa-2x">
+          </span>
+          <h5 class="purp-text mt-1">
+            Issues
+          </h5>
+          <p>
+            Find a bug? Want a new feature?
+            Open an
+            <a class="no-decoration no-wrap"
+              href="https://github.com/aol/moloch/issues/new">
+              issue on GitHub</a>.
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="fa fa-microphone fa-2x">
+          </span>
+          <h5 class="purp-text mt-1">
+            Community Feedback
+          </h5>
+          Have feedback about the Moloch community? Tell us what you think
+          <a class="no-decoration"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfwAYhog3enJhJP0fEIpFFYKxymIA8g5wVJWOlUQgiA090FBg/viewform">
+            here</a>.
+        </div>
+      </div>
+    </div> <!-- /help -->
+
+    <!-- contribute -->
+    <div class="row text-center mb-5">
+      <div class="col">
+        <p class="mb-0">
+          Want to add to our FAQ?
+          Found an issue in this site?
+        </p>
+        <p>
+          <span class="fa fa-github-alt fa-lg">
+          </span>&nbsp;
+          This site's code is open source.
+          <a href="https://github.com/aol/molochweb/blob/master/CONTRIBUTING.md"
+            class="no-decoration"
+            rel="nofollow">
+            Please contribute!
+          </a>
+          &nbsp;<span class="fa fa-github-alt fa-lg">
+          </span>
+        </p>
+      </div>
+    </div> <!-- /contribute -->
+
   </div> <!-- /container -->
 
-  <footer class="footer small">
-    <strong class="pull-left">
-      <span>Moloch</span>&nbsp;&nbsp;&nbsp;
-      <a href="https://github.com/aol/moloch" class="no-decoration">
-        <span class="fa fa-lg fa-github"></span>
-        <span class="hide">Moloch GitHub</span>
-      </a>
-    </strong>
-    <a href="https://github.com/aol/moloch/issues"
-      class="no-decoration pull-left margined-left"
-      title="Report it!" data-toggle="tooltip">
-      Found an Issue?
-    </a>
-    <span class="text-center">
-      <img src="simple_logo.png" height="28px" alt="Moloch Logo" />
-    </span>
-    <span class="pull-right">
-      <a href="https://github.com/aol/moloch/wiki"
-        class="no-decoration">Wiki</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://github.com/aol/moloch/wiki/API"
-        class="no-decoration">API</a>&nbsp;&nbsp;&nbsp;
-      <a href="/faq"
-        class="no-decoration">FAQ</a>
-    </span>
-  </footer>
+  <!-- footer -->
+  <span id="footer">
+  </span>
 
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -1041,75 +676,62 @@
   <script src="downloads.js"></script>
 
   <script>
-    function sStr(str, size) {
-      if (size <= 1) {
-        return "1 " + str;
-      } else {
-        return Math.ceil(size) + " " + str + "s";
-      }
-    }
-
-    function setCaptureValue(id, raid, min, hosts) {
-      let value = Math.max(min, hosts);
-      $(id).text(sStr("host", value) + " / " + Math.ceil((Math.ceil(value) * +$("#captureDiskInput").val() * 0.90 * (+$("#captureNumDisksInput").val() - raid))/1000) + " TB");
-    }
-
-    // Asumptions
-    // * 0.90 of disk because of disk match (0.9313%) and reserved free space
-    // * 0.035 as an average for PCAP to ES
-    // * 0.05 as a max for PCAP to ES
-    function recalculate() {
-      let captureDay = +$("#captureTLSInput").val() * +$("#gbpsInput").val() * +$("#captureDaysInput").val() * 24 * 60 * 60/8;
-      let captureDiskInput = +$("#captureDiskInput").val() * 0.90;
-      let captureDisks = +$("#captureNumDisksInput").val();
-      let captureMin = +$("#gbpsInput").val()/+$("#maxGbps").val();
-
-      $("#captureMachinesTB").text(Math.ceil(captureDay/1000) + " TB");
-      setCaptureValue("#captureMachines0", 0, captureMin, captureDay/(captureDiskInput*captureDisks));
-      setCaptureValue("#captureMachines1", 1, captureMin, captureDay/(captureDiskInput*(captureDisks-1)));
-      setCaptureValue("#captureMachines2", 2, captureMin, captureDay/(captureDiskInput*(captureDisks-2)));
-
-      let esReplication = +$("#esReplication").val();
-      let esDay = esReplication * 0.035 * +$("#gbpsInput").val() * 24 * 60 * 60/8;
-      let esDays = esDay * +$("#esDaysInput").val();
-      let esDiskInput = +$("#esDiskInput").val() * 0.90;
-      let esDisks = +$("#esNumDisksInput").val();
-
-      let esDayDns = esReplication * 0.05 * +$("#gbpsInput").val() * 24 * 60 * 60/8;
-      let esDaysDns = esDayDns * +$("#esDaysInput").val();
-
-      let esDayWorst = esReplication * 0.08 * +$("#gbpsInput").val() * 24 * 60 * 60/8;
-      let esDaysWorst = esDayWorst * +$("#esDaysInput").val();
-
-      $("#esMachinesTB").text(Math.ceil(esDays/1000) + " TB");
-      $("#esMachines0").text(sStr("host", esDays/(esDiskInput*esDisks)));
-      $("#esMachines1").text(sStr("host", esDays/(esDiskInput*(esDisks-1))));
-      $("#esMachines2").text(sStr("host", esDays/(esDiskInput*(esDisks-2))));
-
-      $("#esMachinesTB-dns").text(Math.ceil(esDaysDns/1000) + " TB");
-      $("#esMachines0-dns").text(sStr("host", esDaysDns/(esDiskInput*esDisks)));
-      $("#esMachines1-dns").text(sStr("host", esDaysDns/(esDiskInput*(esDisks-1))));
-      $("#esMachines2-dns").text(sStr("host", esDaysDns/(esDiskInput*(esDisks-2))));
-
-      $("#esMachinesTB-worst").text(Math.ceil(esDaysWorst/1000) + " TB");
-      $("#esMachines0-worst").text(sStr("host", esDaysWorst/(esDiskInput*esDisks)));
-      $("#esMachines1-worst").text(sStr("host", esDaysWorst/(esDiskInput*(esDisks-1))));
-      $("#esMachines2-worst").text(sStr("host", esDaysWorst/(esDiskInput*(esDisks-2))));
-    }
-
+    // page loaded
     $(function () {
-      var hash = window.location.hash;
-      if (!hash) { hash = '#home'; }
-      $('ul.nav li a[href="' + hash + '"]').tab('show');
-
-      $('a.nav-link.main').click(function (e) {
-        window.location.hash = this.hash;
+      // load navbar and make home link active
+      $('#navbar').load('navbar.html', () => {
+        $('#homeLink').addClass('active');
       });
+      // load footer
+      $('#footer').load('footer.html');
 
       $('[data-toggle="tooltip"]').tooltip();
 
-      $('#estimators input,select').change(recalculate);
-      recalculate();
+      function setupDownloadBtns (versions, sortedVersions) {
+        let version = versions[sortedVersions[0]]; // get the latest version
+
+        let html = `<div class="row text-center">
+                     <div class="col">
+                       <h2>${version.title}</h2>
+                       <p class="lead">Latest Release ${version.modified}</p>
+                     </div>
+                    </div>`;
+
+        let downloads = version.downloads;
+
+        html += '<div class="row text-center"><div class="col">';
+
+        for (let i = 0, len = downloads.length; i < len; ++i) {
+          let download = downloads[i];
+          html += `<a href="${download.url}" class="btn btn-primary btn-lg mr-3 mb-2">
+                     ${download.title}
+                   </a>`;
+        }
+
+        html += '</div></div>';
+
+        $('.main-downloads').append(html);
+      }
+
+      function setupError() {
+        $('.downloads-error').show();
+        $('.loading-downloads').hide();
+      }
+
+      $.ajax({
+        url: 'https://s3.amazonaws.com/files.molo.ch',
+        type: 'GET',
+        crossDomain: true,
+        dataType: 'xml',
+        success: function (xml) {
+          let downloads = parseXML(xml);
+          setupDownloadBtns(downloads.downloads, downloads.sortedVersions);
+          $('.loading-downloads').hide();
+        },
+        error: function(xhr, textStatus, errorThrown) {
+          setupError();
+        }
+      });
     });
   </script>
 
