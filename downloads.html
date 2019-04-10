@@ -50,19 +50,19 @@
     <!-- info btns -->
     <div class="row mb-4 mt-4">
       <div class="col text-center">
-        <a class="btn btn-outline-danger btn-lg mr-3 btn-fw mb-2"
+        <a class="btn btn-outline-danger btn-lg mr-2 btn-fw mb-2"
           href="https://s3.amazonaws.com/files.molo.ch/NOTICE.txt">
           NOTICE
         </a>
-        <a class="btn btn-outline-primary btn-lg mr-3 btn-fw mb-2"
+        <a class="btn btn-outline-primary btn-lg mr-2 btn-fw mb-2"
           href="https://raw.githubusercontent.com/aol/moloch/master/CHANGELOG">
           CHANGELOG
         </a>
-        <a class="btn btn-outline-info btn-lg mr-3 btn-fw mb-2"
+        <a class="btn btn-outline-info btn-lg mr-2 btn-fw mb-2"
           href="https://raw.githubusercontent.com/aol/moloch/master/release/README.txt">
           Instructions
         </a>
-        <a class="btn btn-outline-success btn-lg mr-3 btn-fw mb-2"
+        <a class="btn btn-outline-success btn-lg mr-2 btn-fw mb-2"
           href="https://github.com/aol/moloch/issues/new">
           Open an Issue
         </a>
@@ -70,7 +70,7 @@
     </div> <!-- /info btns -->
 
     <!-- upgrade warnings -->
-    <div class="row mb-2 mr-5 ml-5">
+    <div class="row mb-2">
       <div class="col">
         <div class="jumbotron pb-2 pt-4">
           <h3 class="purp-text pb-3 text-center">
@@ -249,7 +249,7 @@
       $('#footer').load('footer.html');
 
       function buildDownloadVersionRow (version, btnType) {
-        let html = `<div class="row text-center">
+        let html = `<div class="row text-center mt-3">
                      <div class="col-lg-2 mb-2">
                        <div><strong>${version.title}</strong></div>
                        <div class="time"><small>${version.modified}</small></div>

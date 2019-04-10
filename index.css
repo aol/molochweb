@@ -13,12 +13,16 @@
 }
 
 div.demo {
-  top: -160px;
+  top: -190px;
   position: relative;
   margin-bottom: -100px;
 }
 div.demo > h1 {
-  margin-bottom: 120px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+div.demo > h1.demo-small-screen {
+  margin-top: -20px;
 }
 
 
