@@ -225,11 +225,6 @@ img.footer-owl {
   margin-bottom: -2px;
 }
 
-/* condense the tables */
-.table td {
-  line-height: 1.05;
-}
-
 /* code styles */
 pre {
   padding: 16px;
