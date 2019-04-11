@@ -331,11 +331,13 @@ body.full-height-body {
 /* hide/show copy link for faq anchors */
 .full-height-container h1[id] > span.copy-link,
 .full-height-container h2[id] > span.copy-link,
-.full-height-container h3[id] > span.copy-link {
+.full-height-container h3[id] > span.copy-link,
+.full-height-container td[id] > span.copy-link {
   visibility: hidden;
 }
 .full-height-container h1[id]:hover > span.copy-link,
 .full-height-container h2[id]:hover > span.copy-link,
-.full-height-container h3[id]:hover > span.copy-link {
+.full-height-container h3[id]:hover > span.copy-link,
+.full-height-container td[id]:hover > span.copy-link {
   visibility: visible;
 }
