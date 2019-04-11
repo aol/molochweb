@@ -387,7 +387,20 @@
         <tbody>
           <tr>
             <td>
-              1.7
+              2.0
+            </td>
+            <td>
+              6.x
+            </td>
+            <td>
+            </td>
+            <td>
+              Must already be on ES 6 before upgrading.  Suggest upgrading to 1.7 or 1.8 first.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              1.8
             </td>
             <td>
               5.x or 6.x
@@ -446,15 +459,11 @@
         <a href="downloads">
           downloads page
         </a>
-        Our deployment is on Centos 6 and Centos 7 with the elrepo 4.x kernel
-        installed for packet performance increases and afpacket support.
-        A large amount of development is done on Mac OS X 10.13 using MacPorts,
+        Our deployment is on Centos 7 with the elrepo 4.x kernel
+        installed for packet performance increases and better afpacket support.
+        A large amount of development is done on Mac OS X 10.14 using MacPorts,
         however, it has never been tested in a production setting. :)
         Moloch is no longer supported on 32 bit machines.
-      </p>
-      <p>
-        Moloch requires gcc/g++ 4.8.4 or later to compile fully.
-        This is because some nodejs packages require it.
       </p>
       <p>
         The following OSes should work out of the box:
@@ -464,7 +473,7 @@
           CentOS 7
         </li>
         <li>
-          Ubuntu 14.04, 16.04
+          Ubuntu 14.04, 16.04, 18.04
         </li>
         <li>
           FreeBSD 9
@@ -485,17 +494,7 @@
             https://wiki.centos.org/AdditionalResources/Repositories/SCL
           </a>
           <pre><code>yum install centos-release-scl
-yum install devtoolset-3-toolchain</code></pre>
-        </li>
-        <li>
-          Ubuntu 12.04 -
-          <a href="https://wiki.ubuntu.com/ToolChain"
-            rel="nofollow">
-            https://wiki.ubuntu.com/ToolChain
-          </a>
-          <pre><code>add-apt-repository ppa:ubuntu-toolchain-r/test
-apt-get update
-apt-get install gcc-4.8</code></pre>
+yum install devtoolset-7-toolchain</code></pre>
         </li>
       </ul>
 
