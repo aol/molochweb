@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137788272-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-137788272-1');
+  </script>
+
+  <title>Moloch Settings</title>
+
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="Moloch settings" />
+  <!-- facebook open graph tags -->
+  <meta property="og:url" content="http://molo.ch/settings" />
+  <meta property="og:description" content="Moloch settings" />
+  <meta property="og:image" content="http://molo.ch/moloch_2x2.png" />
+  <!-- twitter card tags additive with the og: tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:domain" value="molo.ch" />
+  <meta name="twitter:description" value="Frequently asked Moloch questions" />
+  <meta name="twitter:image" content="http://molo.ch/moloch_2x2.png" />
+  <meta name="twitter:url" value="http://molo.ch/settings" />
+
+  <!-- fontawesome http://fontawesome.io/ -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS https://getbootstrap.com/ -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <!-- custom index page styles -->
+  <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body id="viewport"
+  class="full-height-body">
+
+  <!-- navbar -->
+  <span id="navbar">
+  </span>
+
+  <!-- toc nav -->
+  <div class="left-nav d-none d-sm-block">
+    <div class="nav nav-pills nav-pills-nested pb-3">
+      <a href="#ini-settings"
+        class="nav-link"
+        title="General">
+        INI Settings
+      </a>
+      <a class="nav-link nested"
+        href="#basic-settings"
+        title="Basic Settings">
+        Basic Settings
+      </a>
+      <a class="nav-link nested"
+        href="#advanced-settings"
+        title="Advanced Settings">
+        Advanced Settings
+      </a>
+      <a class="nav-link nested nested-more"
+        href="#reader-tpacketv3-settings"
+        title="Reader tpacketv3 Settings">
+        Reader tpacketv3 Settings
+      </a>
+      <a class="nav-link nested nested-more"
+        href="#reader-daq-settings"
+        title="Reader daq Settings">
+        Reader daq Settings
+      </a>
+      <a class="nav-link nested nested-more"
+        href="#reader-pfring-settings"
+        title="Reader pfring Settings">
+        Reader pfring Settings
+      </a>
+      <a class="nav-link nested nested-more"
+        href="#reader-snf-settings"
+        title="Reader snf Settings">
+        Reader snf Settings
+      </a>
+      <a class="nav-link nested nested-more"
+        href="#writer-s3-settings"
+        title="Writer S3 Settings">
+        Writer S3 Settings
+      </a>
+      <a class="nav-link nested"
+        href="#debug-settings"
+        title="Debug Settings">
+        Debug Settings
+      </a>
+      <a class="nav-link nested"
+        href="#custom-fields"
+        title="custom-fields">
+        custom-fields
+      </a>
+      <a class="nav-link nested"
+        href="#custom-views"
+        title="custom-views">
+        custom-views
+      </a>
+      <a class="nav-link nested"
+        href="#moloch-clusters"
+        title="moloch-clusters">
+        moloch-clusters
+      </a>
+      <a class="nav-link nested"
+        href="#multi-viewer-settings"
+        title="Multi Viewer Settings">
+        Multi Viewer Settings
+      </a>
+      <a class="nav-link nested"
+        href="#override-ips"
+        title="override-ips">
+        override-ips
+      </a>
+      <a class="nav-link nested"
+        href="#headers-http-request"
+        title="headers-http-request">
+        headers-http-request
+      </a>
+      <a class="nav-link nested"
+        href="#headers-http-response"
+        title="headers-http-response">
+        headers-http-response
+      </a>
+      <a class="nav-link nested"
+        href="#headers-email"
+        title="headers-email">
+        headers-email
+      </a>
+      <a class="nav-link nested"
+        href="#right-click"
+        title="right-click">
+        right-click
+      </a>
+      <a class="nav-link nested"
+        href="#packet-drop-ips"
+        title="packet-drop-ips">
+        packet-drop-ips
+      </a>
+      <a class="nav-link nested"
+        href="#pcap-at-rest-encryption"
+        title="PCAP at Rest Encryptions">
+        PCAP at Rest Encryption
+      </a>
+      <a href="#plugins"
+        class="nav-link"
+        title="Plugins">
+        Plugins
+      </a>
+      <a class="nav-link nested"
+        href="#wise"
+        title="WISE">
+        WISE
+      </a>
+      <a class="nav-link nested"
+        href="#netflow"
+        title="Netflow">
+        Netflow
+      </a>
+      <a class="nav-link nested"
+        href="#suricata"
+        title="Suricata">
+        Suricata
+      </a>
+      <a class="nav-link nested"
+        href="#tagger"
+        title="Tagger">
+        Tagger
+      </a>
+      <a href="#high-performance-settings"
+        class="nav-link"
+        title="High Performance Settings">
+        High Performance Settings
+      </a>
+    </div>
+  </div> <!-- /toc nav -->
+
+  <!-- settings container -->
+  <div class="full-height-container">
+
+    <!-- settings content -->
+    <div class="pl-3 pr-3">
+
+      <!-- ini settings -->
+      <h1 id="ini-settings">
+        INI Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h1>
+      <p>
+        Moloch uses a tiered system for configuration variables. A tiered
+        system allows Moloch to share one config file for many machines. The
+        ordering of sections within the config file doesn't matter.
+      </p>
+      <p class="mb-0">
+        Order of config variables:
+      </p>
+      <ol>
+        <li>
+          [optional] The section titled with the node name is used first.
+          Moloch will always tag sessions with node: &lt;node name&gt;
+        </li>
+        <li>
+          [optional] If a node has a nodeClass variable, the section titled
+          with the nodeClass name is used next. Sessions will be tagged with
+          node:&lt;node class name&gt; which is useful if watching different
+          network classes.
+        </li>
+        <li>
+          The section titled "default" is used last.
+        </li>
+      </ol>
+      <!-- /ini settings -->
+
+      <!-- basic settings -->
+      <h2 id="basic-settings">
+        Basic Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              bpf
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              The bpf filter used to reduce traffic. Used both on live and file
+              traffic.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              certFile
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Public certificate to use for https, if not set then http will be
+              used. keyFile must also be set.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              dontSaveBPFs
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon ';' separated list of bpf filters which when matched
+              for a session causes the remaining pcap from being saved for the
+              session. It is possible to specify the number of packets to save
+              per filter by ending with a :num. For example
+              dontSaveBPFs = port 22:5 will only save 5 packets for port
+              22 sessions. Currently only the initial packet is matched against
+              the bpfs.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              dontSaveTags
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon ';' separated list of tags which once capture sets for
+              a session causes the remaining pcap from being saved for the
+              session. It is likely that the initial packets WILL be
+              saved for the session since tags usually aren't set until after
+              several packets. It is possible to specify the number of packets
+              to save per filter by ending with a :num.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              dropGroup
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Group to drop privileges to. The pcapDir must be writable by this
+              group or to the user specified by dropUser
+            </td>
+          </tr>
+          <tr>
+            <td>
+              dropUser
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              User to drop privileges to. The pcapDir must be writable by this
+              user or to the group specified by dropGroup
+            </td>
+          </tr>
+          <tr>
+            <td>
+              espTimeout
+            </td>
+            <td>
+              600
+            </td>
+            <td>
+              For ESP sessions, Moloch writes a session record after this many
+              seconds of inactivity since the last session save.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              elasticsearch
+            </td>
+            <td>
+              http://localhost:9200
+            </td>
+            <td>
+              A comma separated list of urls to use to connect to the
+              Elasticsearch cluster. If not using a VIP, a different
+              Elasticsearch node can be specified for each Moloch node. If
+              Elasticsearch requires a user/password those can be placed in the
+              url also, http://user:pass@hostname:port
+            </td>
+          </tr>
+          <tr>
+            <td>
+              freeSpaceG
+            </td>
+            <td>
+              5% (&gt;= v0.12)<br>100 (&lt; v0.12)
+            </td>
+            <td>
+              Delete pcap files when free space is lower then this. This does
+              NOT delete the session records in the database. It is recommended
+              this value is between 5% and 10% of the disk. Database deletes
+              are done by the db.pl expire. Can also be specified using a
+              percentage.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              geoipASNFile
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Pre 1.0) Path to the maxmind geoip ASN file.
+              <a class="no-decoration"
+                href="http://www.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz"
+                rel="nofollow">Download free version</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              geoipFile
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Pre 1.0) Path to the maxmind geoip country file.
+              <a class="no-decoration"
+                href="http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz"
+                rel="nofollow">Download free version</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              geoLite2ASN
+            </td>
+            <td>
+              /data/moloch/etc/GeoLite2-ASN.mmdb
+            </td>
+            <td>
+              (&gt;= 1.0) Path to the maxmind geoip ASN file.
+              <a class="no-decoration"
+                href="https://updates.maxmind.com/app/update_secure?edition_id=GeoLite2-ASN"
+                rel="nofollow">Download free version</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              geoLite2Country
+            </td>
+            <td>
+              /data/moloch/etc/GeoLite2-Country.mmdb
+            </td>
+            <td>
+              (&gt;= 1.0) Path to the maxmind geoip country file.
+              <a class="no-decoration"
+                href="https://updates.maxmind.com/app/update_secure?edition_id=GeoLite2-Country"
+                rel="nofollow">Download free version</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              httpRealm
+            </td>
+            <td>
+              Moloch
+            </td>
+            <td>
+              HTTP Digest Realm - Must be in the default section of
+              configuration file. Changing the value will cause all previous
+              stored passwords to no longer work.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              icmpTimeout
+            </td>
+            <td>
+              10
+            </td>
+            <td>
+              For ICMP sessions, Moloch writes a session record after this
+              many seconds of inactivity since the last session save.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              interface
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon ';' separated list of interfaces to listen on for live
+              traffic. (Prior to 0.14 only 1 interface is allowed)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              keyFile
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Private certificate to use for https, if not set then http will
+              be used. certFile must also be set.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              magicMode
+            </td>
+            <td>
+              both (since 1.5.0) libmagic (0.16.1)
+            </td>
+            <td>
+              (since 0.16.1) libfile can be VERY slow. Less accurate "magicing"
+              is available for http/smtp bodies:
+              <ul class="mb-0">
+                <li>libmagic - normal libmagic</li>
+                <li>libmagicnotext - libmagic, but turns off text checks</li>
+                <li>molochmagic - (removed in 1.5.0) subset of libmagic input files, and less accurate</li>
+                <li>both - (since 1.5.0) try basic and then libmagic</li>
+                <li>basic - 50+ of most common headers</li>
+                <li>none - no libmagic or basic calls</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              maxFileSizeG
+            </td>
+            <td>
+              4
+            </td>
+            <td>
+              The max raw pcap file size in gigabytes. The disk should have
+              room for at least 10*maxFileSizeG files.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              maxFileTimeM
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              The max time in minutes between rotating pcap files. Useful if
+              there is an external utility that needs to look for closed files
+              every so many minutes. Setting to 0 means only use
+              maxFileSizeG
+            </td>
+          </tr>
+          <tr>
+            <td>
+              maxPackets
+            </td>
+            <td>
+              10000
+            </td>
+            <td>
+              Moloch writes a session record after this many packets since the
+              last save. Moloch is only tested at 10k, anything above is not
+              recommended.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              maxStreams
+            </td>
+            <td>
+              1500000
+            </td>
+            <td>
+              An aproximiate maximum number of active sessions Moloch/libnids
+              will try and monitor
+            </td>
+          </tr>
+          <tr>
+            <td>
+              minPacketsSaveBPFs
+            </td>
+            <td>
+
+            </td>
+            <td>
+              (since 0.14.2) Semicolon ';' separated list of bpf filters which
+              when matched for a session have their SPI data NOT saved to
+              Elasticsearch. PCAP data is still saved however. It is possible
+              to specify the number of min packets required for SPI to be saved
+              by ending with a :num. A use case is a scanning host inside the
+              network that you only want to capture if their is a conversation
+              "tcp and host 10.10.10.10:1".
+            </td>
+          </tr>
+          <tr>
+            <td>
+              ouiFile
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              The mac address lookup for manufactures file
+              <a class="no-decoration"
+                href="https://raw.githubusercontent.com/wireshark/wireshark/master/manuf"
+                rel="nofollow">Download free version</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              packetThreads
+            </td>
+            <td>
+              1
+            </td>
+            <td>
+              Number of threads to use to process packets AFTER the reader has
+              received the packets. This also controls how many packet queues
+              there are, since each thread has its own queue. Basically how
+              much CPU to dedicate to parsing the packets. Increase this if you
+              get errors about dropping packets or the packetQ is over flowing.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              serverSecret
+            </td>
+            <td>
+              Value of password secret
+            </td>
+            <td>
+              The server-to-server shared key. It must be set in the [default]
+              section of the config file, and all viewers in the moloch cluster
+              must have the same value. It can be, and should be changed
+              periodically. Since 0.18.3.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              passwordSecret
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Server-to-server and password hash secret - Must be in [default]
+              section of the config file, and all viewers in the moloch cluster
+              must have the same value. Since elasticsearch is wide open by
+              default, we encrypt the stored password hashes with this so a
+              malicious person can't insert a working new account. It is also
+              used for secure server-to-server communication if serverSecret is
+              not set, if using 0.18.3 or later please set serverSecret also to
+              a different value. Don't set if you do not want user
+              authentication. Changing the value will make all previously
+              stored passwords no longer work.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parseCookieValue
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              Parse HTTP request cookie values, cookie keys are always parsed.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parseQSValue
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              Parse HTTP query string values, query string keys are always
+              parsed.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parseSMB
+            </td>
+            <td>
+              true
+            </td>
+            <td>
+              Parse extra SMB traffic info
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parseDNSRecordAll
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 1.6) Parse a full DNS record (query, answer,
+              authoritative, and additional) and store various DNS information
+              (look up hostname, name server IPs, mail exchange server IPs, and
+              so on) into multiple ES fields
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parseSMTP
+            </td>
+            <td>
+              true
+            </td>
+            <td>
+              Parse extra SMTP traffic info
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parseSMTPHeaderAll
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 1.6) Parse ALL SMTP request headers not already parsed
+              using the [headers-email] section
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parseHTTPRequestHeaderAll
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 1.6) Parse ALL HTTP request headers not already parsed
+              using the [headers-http-request] section
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parseHTTPResponseHeaderAll
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 1.6) Parse ALL HTTP request headers not already parsed
+              using the [headers-http-response] section
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pcapDir
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon separated list of directories to save pcap files
+              to. The directory to save to is currently picked using round
+              robin, need to add a smarter algorithm eventually.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pcapDirTemplate
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Since 0.14.2) When set, this strftime template is appended to
+              pcapDir and allows multiple directories to be created based on
+              time.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pcapDirAlgorithm
+            </td>
+            <td>
+              round-robin
+            </td>
+            <td>
+              When pcapDir is a list of directories, this determines how Moloch
+              chooses which directory to use for each new pcap file.
+              <br>
+              Possible values: round-robin (rotate sequentially),
+              max-free-percent (choose the directory on the filesystem
+              with the highest percentage of available space),
+              max-free-bytes (choose the directory on the filesystem
+              with the highest number of available bytes).
+            </td>
+          </tr>
+          <tr>
+            <td>
+              parsersDir
+            </td>
+            <td>
+              /data/moloch/parsers ; ./parsers
+            </td>
+            <td>
+              Semicolon separated list of directories to load parsers
+              from
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pluginsDir
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon separated list of directories to load plugins
+              from
+            </td>
+          </tr>
+          <tr>
+            <td>
+              plugins
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon separated list of plugins to load and the order
+              to load them in. Must include the trailing .so
+            </td>
+          </tr>
+          <tr>
+            <td>
+              rootPlugins
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon separated list of plugins to load as root and
+              the order to load them in. Must include the trailing .so
+            </td>
+          </tr>
+          <tr>
+            <td>
+              rirFile
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Path of the RIR assignments file.
+              <a class="no-decoration"
+                href="https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.csv"
+                rel="nofollow">Download</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              rotateIndex
+            </td>
+            <td>
+              daily
+            </td>
+            <td>
+              Specifies how often to create a new index in Elasticsearch. Use
+              daily or a form of hourly for busy live instances, use weekly or
+              monthly for research instances. When choosing a value, the goal
+              is to have the avg shard be around 30G. Prior to 1.5.0 changing
+              the value will cause previous sessions to be unreachable through
+              the interface, since 1.5.0 you can set queryAllIndices if you
+              need to change the value. Prior to 1.5.0 if using the multi
+              viewer then all Moloch clusters must have the same value.
+              <br>
+              Possible values are: hourly, daily, weekly,
+              monthly.
+              <br>
+              1.5.0 added hourly2, hourly3, hourly4,
+              hourly6, hourly8, hourly12 which will bucket
+              N number of hours together. So hourly3 for example will
+              make it so each shard has 3 hours of data. hourly1 would
+              be the same as hourly and hourly24 would be the
+              same as daily.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              rulesFiles
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Since 0.19) A semicolon separated list of files that contain
+              rules. These rules match against fields set and can set other
+              fields or meta data about the sessions. See
+              <a class="no-decoration"
+                href="https://github.com/aol/moloch/wiki/RulesFormat">
+                RulesFormat</a>
+              for the format of the files.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              sctpTimeout
+            </td>
+            <td>
+              60
+            </td>
+            <td>
+              For SCTP sessions, Moloch writes a session record after this many
+              seconds of inactivity since the last session save.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              smtpIpHeaders
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon separated list of SMTP Headers that have ips,
+              need to have the terminating colon ':'
+            </td>
+          </tr>
+          <tr>
+            <td>
+              spiDataMaxIndices
+            </td>
+            <td>
+              1
+            </td>
+            <td>
+              Specify the max number of indices we calculate spidata for.
+              Elasticsearch will blow up if we allow the spiData to search too
+              many indices.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              tcpSaveTimeout
+            </td>
+            <td>
+              480
+            </td>
+            <td>
+              For TCP sessions, Moloch writes a session record after this many
+              seconds since the last session save, no matter if active or
+              inactive.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              tcpTimeout
+            </td>
+            <td>
+              480
+            </td>
+            <td>
+              For TCP sessions, Moloch writes a session record after this many
+              seconds of inactivity since the last session save.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              titleTemplate
+            </td>
+            <td>
+              _cluster_ - _page_ _-view_ _-expression_
+            </td>
+            <td>
+              <ul class="mb-0">
+                <li>
+                  _cluster_ = ES cluster name
+                </li>
+                <li>
+                  _userId_ = logged in User Id
+                </li>
+                <li>
+                  _userName_ = logged in User Name
+                </li>
+                <li>
+                  _page_ = internal page name
+                </li>
+                <li>
+                  _expression_ = current search expression if set, otherwise
+                  blank
+                </li>
+                <li>
+                  _-expression_ = " - " + current search expression if set,
+                  otherwise blank, prior spaces removed
+                </li>
+                <li>
+                  _view_ = current view if set, otherwise blank
+                </li>
+                <li>
+                  _-view_ = " - " + current view if set, otherwise blank, prior
+                  spaces removed
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              udpTimeout
+            </td>
+            <td>
+              60
+            </td>
+            <td>
+              For UDP sessions, Moloch writes a session record after this many
+              seconds of inactivity since the last session save.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              userNameHeader
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Header to use for determining the username to check in the
+              database for instead of using http digest. Use this if you have
+              apache or something else doing the auth. The
+              Web Auth Header checkbox must be set for user. The
+              userNameHeader m should be the lower case version of the header
+              apache is setting
+            </td>
+          </tr>
+          <tr>
+            <td>
+              viewerPlugins
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon separated list of viewer plugins to load and the
+              order to load them in. Must include the trailing .js
+            </td>
+          </tr>
+          <tr>
+            <td>
+              viewHost
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              The ip used to listen. See the `host` section of
+              <a class="no-decoration"
+                href="https://nodejs.org/docs/latest-v8.x/api/net.html#net_server_listen_port_host_backlog_callback"
+                rel="nofollow">https://nodejs.org/docs/latest-v8.x/api/net.html#net_server_listen_port_host_backlog_callback</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              viewPort
+            </td>
+            <td>
+              8005
+            </td>
+            <td>
+              Port for viewer to listen on
+            </td>
+          </tr>
+          <tr>
+            <td>
+              viewUrl
+            </td>
+            <td>
+              http[s]://hostname:[viewport]
+            </td>
+            <td>
+              The URL used to accecss this viewer instance
+            </td>
+          </tr>
+          <tr>
+            <td>
+              webBasePath
+            </td>
+            <td>
+              /
+            </td>
+            <td>
+              The base url for Moloch web requests. Must end with a / or bad
+              things will happen.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              yara
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Where to load Yara rules from.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              yaraEveryPacket
+            </td>
+            <td>
+              TRUE
+            </td>
+            <td>
+              (Since 1.5.0) Apply yara to every packet or just the packets
+              that are classified.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              yaraFastMode
+            </td>
+            <td>
+              TRUE
+            </td>
+            <td>
+              (Since 1.5.0) Set the Yara Fast Mode flag.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /basic settings -->
+
+      <!-- advanced settings -->
+      <h2 id="advanced-settings">
+        Advanced Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <tr>
+            <td>
+              autoGenerateId
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 1.6) Use Elasticsearch auto generated ids
+            </td>
+          </tr>
+          <tr>
+            <td>
+              compressES
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              Compress requests to ES, reduces ES bandwidth by ~80% at the cost
+              of increased CPU. MUST have "http.compression: true" in
+              elasticsearch.yml file
+            </td>
+          </tr>
+          <tr>
+            <td>
+              dbBulkSize
+            </td>
+            <td>
+              20000
+            </td>
+            <td>
+              Size of indexing request to send to Elasticsearch. Increase if
+              monitoring a high bandwidth network.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              dbFlushTimeout
+            </td>
+            <td>
+              5
+            </td>
+            <td>
+              Number of seconds before we force a flush to Elasticsearch
+            </td>
+          </tr>
+          <tr>
+            <td>
+              filenameOps
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Since 1.5.0) A semicolon separated list of operations that use
+              the filename. Format is `fieldexpr=match%value` so if you wanted
+              to set a tag based on part of filenames that start with gre use
+              `tags=/gre-(.*)\\.pcap%gretest-\\1`. Notice two backslashes are
+              required everywhere you want one because of ini formating.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              huntWarn
+            </td>
+            <td>
+              100000
+            </td>
+            <td>
+              (Since 1.6.0) Warn users when creating a hunt if more then this
+              many sessions will be searched
+            </td>
+          </tr>
+          <tr>
+            <td>
+              huntLimit
+            </td>
+            <td>
+              1000000
+            </td>
+            <td>
+              (Since 1.6.0) Do not create hunts for non admin users if more
+              then this many sessions will be searched
+            </td>
+          </tr>
+          <tr>
+            <td>
+              huntAdminLimit
+            </td>
+            <td>
+              10000000
+            </td>
+            <td>
+              (Since 1.6.0) Do not create hunts for admin users if more then
+              this many sessions will be searched
+            </td>
+          </tr>
+          <tr>
+            <td>
+              includes
+            </td>
+            <td>
+
+            </td>
+            <td>
+              Semicolon ';' separated list of files to load for config values.
+              Files are loaded in order and can replace values set in this file
+              or previous files. Setting includes is only supported in the top
+              level config file.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              interfaceOps
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Since 1.5.0) A semicolon separated list of a comma separted list
+              of operations to set for each interface. The semicolon list must
+              have the same number of elements as the interface setting. The
+              format is `fieldexp=value`.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              isLocalViewRegExp
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Since 1.6.1) If the node matches the supplied regexp, then the
+              node is considered local.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              maxESConns
+            </td>
+            <td>
+              20
+            </td>
+            <td>
+              Max number of connections to Elasticsearch from capture process
+            </td>
+          </tr>
+          <tr>
+            <td>
+              maxESRequests
+            </td>
+            <td>
+              500
+            </td>
+            <td>
+              Max number of Elasticsearch requests outstanding in queue
+            </td>
+          </tr>
+          <tr>
+            <td>
+              maxMemPercentage
+            </td>
+            <td>
+              100
+            </td>
+            <td>
+              If moloch exceeds this amount of memory it will log an error and
+              send itself a SIGSEGV that should produce a core file.
+              Since 0.20.0
+            </td>
+          </tr>
+          <tr>
+            <td>
+              maxTcpOutOfOrderPackets
+            </td>
+            <td>
+              256
+            </td>
+            <td>
+              (Since 1.5.0) Max number of tcp packets to track while trying to
+              reassemble the TCP stream
+            </td>
+          </tr>
+          <tr>
+            <td>
+              offlineFilenameRegex
+            </td>
+            <td>
+              (?i)\.(pcap|cap)$
+            </td>
+            <td>
+              Regexp to control which filenames are processed when using the -R
+              option to moloch-capture. Since 0.11.3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pcapBufferSize
+            </td>
+            <td>
+              100000
+            </td>
+            <td>
+              pcap library buffer size, see man pcap_set_buffer_size
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pcapReadMethod
+            </td>
+            <td>
+              libpcap
+            </td>
+            <td>
+              Specify how packets are read from network cards (since 0.14.0):
+              <ul class="mb-0">
+                <li>
+                  libpcap = Use libpcap
+                </li>
+                <li>
+                  pfring = Use pfring directly, requires
+                  rootPlugins=reader-pfring.so
+                </li>
+                <li>
+                  daq = Use daq, requires rootPlugins=reader-daq.so
+                </li>
+                <li>
+                  snf = Use Myricom snf, requires rootPlugins=reader-snf.so,
+                  Since 0.15.1
+                </li>
+                <li>
+                  tpacketv3 = Use linux tpacketv3 (afpacket) interface,
+                  Since 0.16.1
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pcapWriteMethod
+            </td>
+            <td>
+              normal
+            </td>
+            <td>
+              Specify how packets are written to disk:
+              <ul class="mb-0">
+                <li>
+                  simple = what you should probably use
+                </li>
+                <li>
+                  simple-nodirect = use this with zfs/nfs
+                </li>
+                <li>
+                  s3 = write packets into s3
+                </li>
+                <li>
+                  null = don't write to disk at all
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              pcapWriteSize
+            </td>
+            <td>
+              262144
+            </td>
+            <td>
+              Buffer size when writing pcap files. Should be a multiple of the
+              raid 5/xfs stripe size and multiple of 4096 if using
+              direct/thread-direct pcapWriteMethod
+            </td>
+          </tr>
+          <tr>
+            <td>
+              prefix
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              It is possible for multiple Moloch clusters to live inside the
+              same Elasticsearch cluster by giving each Moloch cluster a
+              different prefix value. (Added 0.11.3)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              saveUnknownPackets
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Since 1.5.2) Save unknown ether, ip, or corrupt packets into
+              separate files. This variable takes a semicolon separated list of
+              the following values (applied in order):
+              <ul class="mb-0">
+                <li>
+                  all = save all unknown ip and ether packets
+                </li>
+                <li>
+                  ip:all = save all unknown ip packets
+                </li>
+                <li>
+                  ether:all = save all unknown ether packets
+                </li>
+                <li>
+                  ip:N = save all unknown ip packets with type of N
+                </li>
+                <li>
+                  -ip:N = don't save all unknown ip packets with type of N
+                </li>
+                <li>
+                  ether:N = save all unknown ether packets with type of N
+                </li>
+                <li>
+                  -ether:N = don't save all unknown ether packets with type of
+                  N
+                </li>
+                <li>
+                  corrupt = save all corrupt packets (Since 1.5.3)
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              snapLen
+            </td>
+            <td>
+              16384
+            </td>
+            <td>
+              (Since 0.18.2) The maximum size of a packet Moloch will read off
+              the interface. This can be changed to fix the "Moloch requires
+              full packet captures" error. It is recommend that instead of
+              changing this value that all the card "offline" features are
+              turned off so that moloch gets a picture of whats on the network
+              instead of what the capture card has reassembled. For VMs, those
+              features must be turned off on the physical interface and not the
+              virtual interface. This setting can be used when changing the
+              settings isn't possible or desired.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              trackESP
+            </td>
+            <td>
+              FALSE
+            </td>
+            <td>
+              (Since 1.5.0) Add ESP sessions to Moloch, no decoding
+            </td>
+          </tr>
+          <tr>
+            <td>
+              usersElasticsearch
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              It is possible for multiple Moloch clusters to share the same
+              users table, so that the same accounts and settings work across
+              all clusters. (Added 0.11.3)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              usersPrefix
+            </td>
+            <td>
+              [PREFIX] if set otherwise EMPTY
+            </td>
+            <td>
+              Like prefix but only for the users table.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              valueAutoComplete
+            </td>
+            <td>
+              ![multiES] otherwise true
+            </td>
+            <td>
+              Autocomplete field values in the search expression.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              queryAllIndices
+            </td>
+            <td>
+              FALSE for viewer, TRUE for multiviewer
+            </td>
+            <td>
+              (Since 1.5.0) Always query all indices instead of trying to
+              calculate which ones. Use this if searching across that use
+              different rotateIndex values.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- reader tpacketv3 settings -->
+      <h3 id="reader-tpacketv3-settings">
+        Reader tpacketv3 Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h3>
+      <p>
+        Tpacketv3 is the preferred reader for moloch and can be used on most
+        3.x kernels. Configure moloch-capture to use tpacketv3 as the reader
+        method with <code>pcapReadMethod=tpacketv3</code> in your configuration
+        file. This is also know as afpacket.
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              tpacketv3BlockSize
+            </td>
+            <td>
+              2097152
+            </td>
+            <td>
+              The block size in bytes used for reads from each interface. There are 120 blocks per interface.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              tpacketv3NumThreads
+            </td>
+            <td>
+              2
+            </td>
+            <td>
+              The number of threads used to read packets from each interface. These threads take the packets from the AF packet interface and place them into the packet queues.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mb-0">
+        Example:
+      </p>
+      <pre>[default]
+pcapReadMethod=tpacketv3
+tpacketv3BlockSize=2097152
+interface=eth0
+tpacketv3NumThreads=2</pre>
+      <!-- /reader tpacketv3 settings -->
+
+      <!-- reader daq settings -->
+      <h3 id="reader-daq-settings">
+        Reader daq Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h3>
+      <p class="mb-0">
+        To use daq:
+      </p>
+      <ul class="mb-0">
+        <li>
+          load the daq plugin by changing configuration file so it has
+          reader-daq.so as a rootPlugins
+          <code>rootPlugins=reader-daq.so</code>
+        </li>
+        <li>
+          tell moloch-capture to use daq as the reader method with
+          <code>pcapReadMethod=daq</code> in your configuration file
+        </li>
+        <li>
+          optinally change <code>interface</code> to any special daq interface
+          value
+        </li>
+      </ul>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              daqModuleDirs
+            </td>
+            <td>
+              /usr/local/lib/daq
+            </td>
+            <td>
+              Directories where the daq modules live
+            </td>
+          </tr>
+          <tr>
+            <td>
+              daqModule
+            </td>
+            <td>
+              pcap
+            </td>
+            <td>
+              The daq module to use
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /reader daq settings -->
+
+      <!-- reader pfring settings -->
+      <h3 id="reader-pfring-settings">
+        Reader pfring Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h3>
+      <ul>
+        <li>
+          We suggest you try tpacketv3 (afpacket) first if available on the
+          host
+        </li>
+        <li>
+          install the pfring package on all hosts that will run moloch-capture
+          from
+          <a class="no-decoration"
+            href="http://packages.ntop.org/"
+            rel="nofollow">http://packages.ntop.org/</a>
+        </li>
+        <li>
+          load the pfring plugin by changing configuration file so it has
+          reader-pfring.so as a rootPlugins
+          <code>rootPlugins=reader-pfring.so</code>
+        </li>
+        <li>
+          Configure moloch-capture to use pfring as the reader method with
+          <code>pcapReadMethod=pfring</code> in your configuration file
+        </li>
+        <li>
+          optionally change <code>interface</code> to any special pfring
+          interface value
+        </li>
+      </ul>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              pfringClusterId
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              The pfring cluster id
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /reader pfring settings -->
+
+      <!-- reader snf settings -->
+      <h3 id="reader-snf-settings">
+        Reader snf Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h3>
+      <ul>
+        <li>
+          install the snf package on all hosts that will run moloch-capture
+        </li>
+        <li>
+          load the snf plugin by changing configuration file so it has
+          reader-snf.so as a rootPlugins <code>rootPlugins=reader-snf.so</code>
+        </li>
+        <li>
+          Configure moloch-capture to use snf as the reader method with
+          <code>pcapReadMethod=snf</code> in your configuration file
+        </li>
+        <li>
+          optionally change <code>interface</code> to any special snf
+          interface value
+        </li>
+      </ul>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              snfNumRings
+            </td>
+            <td>
+              1
+            </td>
+            <td>
+              Number of rings per interface
+            </td>
+          </tr>
+          <tr>
+            <td>
+              snfDataRingSize
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              The data ring size to use, 0 means use the SNF default
+            </td>
+          </tr>
+          <tr>
+            <td>
+              snfFlags
+            </td>
+            <td>
+              -1
+            </td>
+            <td>
+              Controls process-sharing (1), port aggregation (2), and packet duplication (3). (Default value uses SNF_FLAGS environment variable)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /reader snf settings -->
+
+      <!-- writer s3 settings -->
+      <h3 id="writer-s3-settings">
+        Writer S3 Settings
+      </h3>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              s3Region
+            </td>
+            <td>
+              us-east-1
+            </td>
+            <td>
+              S3 Region to send data to
+            </td>
+            <td>
+              &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              s3Bucket
+            </td>
+            <td>
+              none
+            </td>
+            <td>
+              S3 Bucket to store pcap info
+            </td>
+          </tr>
+          <tr>
+            <td>
+              s3AccessKeyId
+            </td>
+            <td>
+              none
+            </td>
+            <td>
+              &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              s3SecretAccessKey
+            </td>
+            <td>
+              none
+            </td>
+            <td>
+              &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              s3Compress
+            </td>
+            <td>
+              FALSE
+            </td>
+            <td>
+              Should traffic be compressed before sending
+            </td>
+          </tr>
+          <tr>
+            <td>
+              s3MaxConns
+            </td>
+            <td>
+              20
+            </td>
+            <td>
+              Max connections to S3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              s3MaxRequests
+            </td>
+            <td>
+              500
+            </td>
+            <td>
+              Max number of outstanding S3 requests
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /writer s3 settings -->
+      <!-- /advanced settings -->
+
+      <!-- debug settings -->
+      <h2 id="debug-settings">
+        Debug Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              logESRequests
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              Write to stdout Elasticsearch requests
+            </td>
+          </tr>
+          <tr>
+            <td>
+              logEventXPackets
+            </td>
+            <td>
+              50000
+            </td>
+            <td>
+              Write to stdout info every X packets. Set to -1 to never log
+              status.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              logFileCreation
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              Write to stdout file creation information
+            </td>
+          </tr>
+          <tr>
+            <td>
+              logUnknownProtocols
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              Write to stdout unknown IP protocols
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /debug settings -->
+
+      <!-- custom-fields -->
+      <h2 id="custom-fields">
+        custom-fields
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        You can add custom fields to Moloch several ways, including the wise
+        and tagger plugins. Since Moloch 1.5.2 the easiest way is to use a
+        [custom-fields] section in the ini file. At capture startup it will
+        check to make sure all those fields exist in the database. The format
+        of the line is the similar as used in wise and tagger, except you use
+        `expression=definition`. You will need to also create a
+        [custom-views] section to display the data on the Sessions tab.
+      </p>
+      <p class="mb-0">
+        Field definition:
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              field
+            </td>
+            <td>
+              The field expression, overrides the key in the ini file
+            </td>
+          </tr>
+          <tr>
+            <td>
+              kind
+            </td>
+            <td>
+              REQUIRED
+            </td>
+            <td>
+              <ul class="mb-0">
+                <li>integer</li>
+                <li>ip</li>
+                <li>lotermfield - lowercased string</li>
+                <li>termfield - string</li>
+                <li>uptermfield - uppercased string</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              count
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              Track number of items with a .cnt field auto created
+            </td>
+          </tr>
+          <tr>
+            <td>
+              friendly
+            </td>
+            <td>
+              fieldname
+            </td>
+            <td>
+              A SHORT description, used in SPI View
+            </td>
+          </tr>
+          <tr>
+            <td>
+              db
+            </td>
+            <td>
+              REQUIRED
+            </td>
+            <td>
+              The DB field name
+            </td>
+          </tr>
+          <tr>
+            <td>
+              group
+            </td>
+            <td>
+              Before first dot in field or general
+            </td>
+            <td>
+              Category for SPI view
+            </td>
+          </tr>
+          <tr>
+            <td>
+              help
+            </td>
+            <td>
+              fieldname
+            </td>
+            <td>
+              Help to display in about box or help page
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pre><code>[custom-fields]
+# Format is FieldExpr=text format
+theexpression=db:theexpression
+
+sample.md5=db:sample.md5;kind:lotermfield;friendly:Sample MD5;count:true;help:MD5 of the sample</code></pre>
+      <!-- /custom-fields -->
+
+      <!-- custom-views -->
+      <h2 id="custom-views">
+        custom-views
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        With Moloch "views" are how the SPI data is displayed in the Sessions
+        tab. Usually there is a unique "view" for each category of data. You
+        can add custom views to Moloch several ways, including the wise and
+        tagger plugins. Since Moloch 1.5.2 the easiest way is to use a
+        [custom-views] section in the ini file. At viewer startup, a new
+        section will be created for each entry. The format of the line is
+        `name=definition`. Viewer will sort all views by name when choosing
+        the order to display in.
+      </p>
+      <p class="mb-0">
+        Field definition:
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              fields
+            </td>
+            <td>
+              REQUIRED
+            </td>
+            <td>
+              A comma separated list of field expression to display. They will
+              be displayed in order listed.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              title
+            </td>
+            <td>
+              Defaults to name
+            </td>
+            <td>
+              The title to get the section on Sessions tab
+            </td>
+          </tr>
+          <tr>
+            <td>
+              require
+            </td>
+            <td>
+              REQUIRED
+            </td>
+            <td>
+              The db session name to require be set to show the section.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pre><code>[custom-views]
+sample=title:Samples;require:sample;fields:sample.md5,sample.house
+
+[custom-fields]
+sample.md5=db:sample.md5;kind:lotermfield;friendly:Sample MD5;count:true;help:MD5 of the sample
+sample.house=db:sample.house;kind:termfield;friendly:Sample House;count:true;help:House the sample lives in</code></pre>
+      <!-- /custom-views -->
+
+      <!-- moloch-clusters -->
+      <h2 id="moloch-clusters">
+        moloch-clusters
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        The moloch-clusters section is used to describe the various
+        moloch-clusters that are available to forward traffic to either
+        manually or through the CRON functionality. Each line represents a
+        single cluster, with the name just being any unique string.
+      </p>
+      <pre><code>[moloch-clusters]
+cluster1=url:https://moloch.example.com:8005;passwordSecret:password;name:Cluster
+cluster2=url:https://cluster2.example.com:8005;passwordSecret:foo;name:Test Cluster</code></pre>
+      <table class="table table-bordered table-sm table-striped">
+        <tbody>
+          <tr>
+            <td>
+              url
+            </td>
+            <td>
+              The base url to use to contact cluster
+            </td>
+          </tr>
+          <tr>
+            <td>
+              passwordSecret
+            </td>
+            <td>
+              The passwordSecret for the remote cluster, if it is different
+              from current cluster
+            </td>
+          </tr>
+          <tr>
+            <td>
+              name
+            </td>
+            <td>
+              Friendly name to display in UI
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /moloch-clusters -->
+
+      <!-- multi viewer settings -->
+      <h2 id="multi-viewer-settings">
+        Multi Viewer Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        The multi viewer is useful when you have multiple Moloch clusters that
+        you want to search across. To use the multi viewer, an extra viewer
+        process and a multies process must be started. The viewer process works
+        like a normal viewer process, except instead of talking to a
+        elasticsearch server, it talks to a multies server that proxies the
+        queries to all the real elasticsearch servers. These two processes can
+        share the same config file and node name section. The viewer part uses
+        the SAME configuration values as above if you need to set anything.
+      </p>
+      <p class="mb-0">
+        A sample configuration for multi viewer (the elasticsearch variable
+        points to the multies.js process):
+      </p>
+      <pre><code>[multi-viewer]
+elasticsearch=127.0.0.1:8200
+viewPort = 8009
+viewHost = localhost
+multiES = true
+multiESPort = 8200
+multiESHost = localhost
+multiESNodes = escluster1.example.com:9200,prefix:PREFIX;escluster2.example.com:9200</code></pre>
+      <p class="mb-0">
+        Which you would then use by starting both the multiviewer and multies.
+        This is a sample for running manually (but you should setup startup
+        scripts to run for real):
+      </p>
+      <pre><code>cd /data/moloch/viewer
+/data/moloch/bin/node multies.js -n multi-viewer
+/data/moloch/bin/node viewer.js -n multi-viewer</code></pre>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              multiES
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              This is the multiES node
+            </td>
+          </tr>
+          <tr>
+            <td>
+              multiESPort
+            </td>
+            <td>
+              8200
+            </td>
+            <td>
+              Port that multies.js should listen on
+            </td>
+          </tr>
+          <tr>
+            <td>
+              multiESHost
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Host interface that multies.js should listen on
+            </td>
+          </tr>
+          <tr>
+            <td>
+              multiESNodes
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon separated list of Elasticsearch nodes that MultiES should connect to. The first node listed will be considered the primary node and is used for users/views/queries. An optional "prefix:" element can follow each host
+              if that cluster was setup with an Elasticsearch prefix.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /multi viewer settings -->
+
+      <!-- override-ips -->
+      <h2 id="override-ips">
+        override-ips
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        override-ips is a special section that overrides the MaxMind databases
+        for the fields set, but fields not set will still use MaxMind (example
+        if you set tags but not country it will use MaxMind for the country)
+        Spaces and capitalization are very important.
+      </p>
+      <pre><code>[override-ips]
+10.1.0.0/16=tag:ny-office;country:USA;asn:AS0000 This is neat</code></pre>
+      <table class="table table-bordered table-sm table-striped">
+        <tbody>
+          <tr>
+            <td>
+              tag
+            </td>
+            <td>
+              A single tag to set for matches
+            </td>
+          </tr>
+          <tr>
+            <td>
+              country
+            </td>
+            <td>
+              A 3 character country code to set for matches
+            </td>
+          </tr>
+          <tr>
+            <td>
+              asn
+            </td>
+            <td>
+              An ASN value to set for matches
+            </td>
+          </tr>
+          <tr>
+            <td>
+              rir
+            </td>
+            <td>
+              A RIR value to set for matches
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /override-ips -->
+
+      <!-- headers-http-request -->
+      <h2 id="headers-http-request">
+        headers-http-request
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        This section makes it easy to specify HTTP Request headers to index.
+        They will be searchable in the UI using http.[HEADERNAME]
+      </p>
+      <pre><code>[headers-http-request]
+referer=type:string;count:true;unique:true</code></pre>
+      <table class="table table-bordered table-sm table-striped">
+        <tbody>
+          <tr>
+            <td>
+              type
+            </td>
+            <td>
+              <ul class="mb-0">
+                <li>string - index as a string</li>
+                <li>integer - index as an integer</li>
+                <li>ip - index as an IP</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              unique
+            </td>
+            <td>
+              true by default, only index unique values
+            </td>
+          </tr>
+          <tr>
+            <td>
+              count
+            </td>
+            <td>
+              false by default, create a second field http.[HEADERNAME].cnt
+              with the number items found
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /headers-http-request -->
+
+      <!-- headers-http-response -->
+      <h2 id="headers-http-response">
+        headers-http-response
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        This section makes it easy to specify HTTP Request headers to index.
+        They will be searchable in the UI using http.[HEADERNAME]
+      </p>
+      <pre><code>[headers-http-response]
+location=type:string
+server=type:string</code></pre>
+      <!-- /headers-http-response -->
+
+      <!-- headers-email -->
+      <h2 id="headers-email">
+        headers-email
+      </h2>
+      <p>
+        This section makes it easy to specify email headers to index. They will
+        be searchable in the UI using email.[HEADERNAME]
+      </p>
+      <pre><code>[headers-email]
+x-priority=type:integer</code></pre>
+      <!-- /headers-email -->
+
+      <!-- right-click -->
+      <h2 id="right-click">
+        right-click
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        Starting with Moloch 0.11.4 it is possible to configure right click
+        actions on any SPI data fields. Currently the only actions supported
+        are url opening actions, but other action types will be added in the
+        future. Right click actions can be added based on either the field name
+        or the category of the data. They can be added either in the
+        configuration file or by enabled WISE data sources.
+      </p>
+      <p class="mb-0">
+        Configuration File Sample:
+      </p>
+      <pre><code>[right-click]
+VTIP=url:https://www.virustotal.com/en/ip-address/%TEXT%/information/;name:Virus Total IP;category:ip
+VTHOST=url:https://www.virustotal.com/en/domain/%HOST%/information/;name:Virus Total Host;category:host
+VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;category:url</code></pre>
+      <p class="mb-0">
+        Each line in the right-click section contains possible actions:
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Piece
+            </th>
+            <th>
+              Notes
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              [key]=
+            </td>
+            <td>
+              The key must be unique and is also used as the right click menu
+              name if the name field is missing
+            </td>
+          </tr>
+          <tr>
+            <td>
+              url
+            </td>
+            <td>
+              The url to open if selected. There are some basic URL
+              substitutions defined below.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              name
+            </td>
+            <td>
+              The menu text to display
+            </td>
+          </tr>
+          <tr>
+            <td>
+              category
+            </td>
+            <td>
+              If the field that is right clicked on has this category then
+              display this menu item. All right click entries must have either
+              a category or fields variable defined.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              fields
+            </td>
+            <td>
+              A comma separated list of field names. If the field that is right
+              clicked on has one the field expressions in the list then display
+              this menu item. All right click entries must have either a
+              category or fields variable defined.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              regex
+            </td>
+            <td>
+              A regex to use on the right clicked text to extract a piece for
+              the URL. The first matching group is substituted for %REGEX% in
+              the url. If the regex doesn't match at all then the menu isn't
+              displayed.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              users
+            </td>
+            <td>
+              A comma separated list of user names that can see the right click
+              item. If not set then all users can see the right click item.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mb-0">
+        The possible URL Substitutions are:
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              URL Substitutions
+            </th>
+            <th>
+              Notes
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              %TEXT%
+            </td>
+            <td>
+              The text clicked on in raw form
+            </td>
+          </tr>
+          <tr>
+            <td>
+              %URL%
+            </td>
+            <td>
+              An URL extracted from the text clicked on
+            </td>
+          </tr>
+          <tr>
+            <td>
+              %HOST%
+            </td>
+            <td>
+              A hostname extracted from the text clicked on. Sometimes the same as %TEXT% sometimes a subset.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              %REGEX%
+            </td>
+            <td>
+              The first regex group match
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mb-0">
+        The categories that Moloch uses are:
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Category
+            </th>
+            <th>
+              Notes
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              asn
+            </td>
+            <td>
+              An ASN field
+            </td>
+          </tr>
+          <tr>
+            <td>
+              country
+            </td>
+            <td>
+              A three letter country code
+            </td>
+          </tr>
+          <tr>
+            <td>
+              host
+            </td>
+            <td>
+              A domain or host name
+            </td>
+          </tr>
+          <tr>
+            <td>
+              ip
+            </td>
+            <td>
+              An ip address
+            </td>
+          </tr>
+          <tr>
+            <td>
+              md5
+            </td>
+            <td>
+              A md5 of a payload, such as for http body or smtp attachment
+            </td>
+          </tr>
+          <tr>
+            <td>
+              port
+            </td>
+            <td>
+              The TCP/UDP port
+            </td>
+          </tr>
+          <tr>
+            <td>
+              rir
+            </td>
+            <td>
+              The Regional Internet Registry
+            </td>
+          </tr>
+          <tr>
+            <td>
+              url
+            </td>
+            <td>
+              A URL
+            </td>
+          </tr>
+          <tr>
+            <td>
+              user
+            </td>
+            <td>
+              A user name or email address
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /right-click -->
+
+      <!-- packet-drop-ips -->
+      <h2 id="packet-drop-ips">
+        packet-drop-ips
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>(Since 0.16.1) This section allows you to specify ips or cidrs to drop
+        from being processed. This is different from a bpf filter since the
+        packets will actually reach moloch-capture (and counted) but won't be
+        fully processed. However if you have many ranges/ips to drop it can be
+        more efficient then bpfs. It is possible to also allow ranges inside of
+        dropped ranges using the "allow" keyword. Order added doesn't matter,
+        searching always finds the best match.
+      </p>
+      <pre><code>[packet-drop-ips]
+10.0.0.0/8=drop
+10.10.0.0/16=allow
+10.10.10.0/24=drop
+10.10.10.10=allow</code></pre>
+      <!-- /packet-drop-ips -->
+
+      <!-- PCAP at Rest Encryption -->
+      <h2 id="pcap-at-rest-encryption">
+        PCAP at Rest Encryption
+      </h2>
+      <p>
+        (Since version 0.17.0, 1.5.3 recommended) Moloch provides support for
+        PCAP at rest encodings. Two forms of encodings are presently
+        supported: "aes-256-ctr" and "xor-2048". Please note that xor-2048
+        does not provide the same level of protection as aes-256-ctr.
+      </p>
+      <p>
+        The current implementation is based around openssl. The encoding that
+        you wish to use is configured in the config file by setting the
+        <code>simpleEncoding</code> variable. The simpleEncoding may be set
+        either globally or per node.
+      </p>
+      <p>
+        Each file on disk is encoded by a unique data encryption key (dek).
+        The dek is encrypted using a key encryption key (kek) when stored.
+        The encrypted dek, the id of the kek, and the initialization vector
+        (IV) are all stored per file in Elasticsearch. Which kek is used when
+        creating files, is selected with the <code>simpleKEKId</code>
+        variable. The simpleKEKId may be set either globally or per node.
+      </p>
+      <p>
+        The kek passwords that may be used should be placed in a
+        <code>[keks]</code> section of the config file. There is one line for
+        each kekid to kek mapping. An easy way to create kek passwords is
+        <code>openssl rand -base64 30</code>. Remember a kek is password used
+        to encrypt the dek and NOT the password used to encrypt the files.
+        The dek is what is used to encrypt the files, and is unique per file.
+      </p>
+      <p>
+        You MUST secure your config file.
+      </p>
+      <p>
+        You are not required to use the same keks on all nodes, however, you
+        can if you wish. It is recommended that you rotate your keks
+        occasionally (timing dependent on your risk tolerance) and create new
+        keks to be used. Do NOT delete the old keks until all pcaps which have
+        been encoded with those keks have been expired.
+      </p>
+      <p>
+        Currently it is not possible to re-encrypt a data encryption key,
+        however, this should be possible in the future with a db.pl command.
+      </p>
+      <p class="mb-0">
+        Example:
+      </p>
+      <pre><code>[default]
+pcapWriteMethod=simple
+simpleEncoding=aes-256-ctr
+simpleKEKId=kekid1
+
+[keks]
+kekid1=Randomkekpassword1
+kekid2=Randomkekpassword2
+</code></pre>
+      <p class="mb-0">
+        Advantages:
+      </p>
+      <ul>
+        <li>
+          Don't need to mess with disk encryption
+        </li>
+        <li>
+          Access to just the host doesn't give you access to the pcap file
+        </li>
+      </ul>
+      <p class="mb-0">
+        Disadvantages:
+      </p>
+      <ul>
+        <li>
+          Normal pcap tools will no longer work
+        </li>
+        <li>
+          If the files index in elasticsearch gets corrupt, you can not
+          reingest the files
+        </li>
+      </ul>
+      <!-- /PCAP at Rest Encryption -->
+
+      <!-- Plugins -->
+      <h1 id="plugins">
+        Plugins
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h1>
+
+      <!-- WISE -->
+      <h2 id="wise">
+        WISE
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        See
+        <a class="no-decoration"
+          href="https://github.com/aol/moloch/wiki/WISE">
+          https://github.com/aol/moloch/wiki/WISE</a>
+      </p>
+      <!-- /WISE -->
+
+      <!-- Netflow -->
+      <h2 id="netflow">
+        Netflow
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        Moloch can generate netflow for all sessions it saves SPI data for. Add
+        `netflow.so` to the `plugins=` line in the config file.
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              netflowSNMPInput
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              What to fill in the input field
+            </td>
+          </tr>
+          <tr>
+            <td>
+              netflowSNMPOutput
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              What to fill in the output field
+            </td>
+          </tr>
+          <tr>
+            <td>
+              netflowVersion
+            </td>
+            <td>
+              5
+            </td>
+            <td>
+              Version of netflow to send: 1, 5, 7
+            </td>
+          </tr>
+          <tr>
+            <td>
+              netflowDestinations
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Semicolon ';' separated list of host:port destinations to send the netflow
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /Netflow -->
+
+      <!-- Suricata -->
+      <h2 id="suricata">
+        Suricata
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        Since 1.5 Moloch can enrich sessions with Suricata alerts. Suricata and
+        Moloch must be running on the same machine and looking at the same
+        traffic for the plugin to work. Sessions that have been enriched will
+        have several new fields, all starting with suricata, and will be
+        displayed in a Suricata section of the standard Moloch session UI.
+        Moloch matches sessions based on the 5 tuple from the alert.json or
+        eve.json file, only using items with event_type of alert. A very simple
+        query to find all sessions that have Suricata data is
+        <code>suricata.signature == EXISTS!</code>.
+      </p>
+      <p>
+        <strong>Note:</strong> there isn't a special Suricata UI inside Moloch,
+        this is just adding new fields to Moloch sessions like wise or tagger
+        do. The Suricata enrichment is done by moloch-capture, so
+        moloch-capture must see the traffic.
+      </p>
+      <p>
+        Add <code>suricata.so</code> to the <code>plugins=</code> line in the
+        config file.
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              suricataAlertFile
+            </td>
+            <td>
+              REQUIRED
+            </td>
+            <td>
+              The full path to either the alert.json or eve.json file, make sure the `dropUser` or `dropGroup` can open the file
+            </td>
+          </tr>
+          <tr>
+            <td>
+              suricataExpireMinutes
+            </td>
+            <td>
+              60
+            </td>
+            <td>
+              (Since 1.5.1) The number of minutes to keep Suricata alerts in memory before expiring them based on the Suricata alert timestamp. For example if a Suricata alert has a timestamp of 1am, the default is to keep looking for matching
+              traffic until 2am (60 minutes).
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mb-0">
+        Sample Config:
+      </p>
+      <pre><code># Add suricata.so to your plugins line, or add a new plugins line
+plugins=suricata.so
+
+# suricataAlertFile should be the full path to your alert.json or eve.json file
+suricataAlertFile=/nids/suricata/eve.json</code></pre>
+      <!-- /Suricata -->
+
+      <!-- Tagger -->
+      <h2 id="tagger">
+        Tagger
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        See
+        <a class="no-decoration"
+          href="https://github.com/aol/moloch/wiki/plugins:Tagger">
+          https://github.com/aol/moloch/wiki/plugins:Tagger</a>
+        and
+        <a class="no-decoration"
+          href="https://github.com/aol/moloch/wiki/TaggerFormat">
+          https://github.com/aol/moloch/wiki/TaggerFormat</a>
+      </p>
+      <!-- /Tagger -->
+      <!-- /Plugins -->
+
+      <!-- High Performance Settings -->
+      <h1 id="high-performance-settings">
+        High Performance Settings
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h1>
+      <p>
+        Sample config items for max performance with 0.16.1 or higher. Most of
+        the defaults are fine. Reading
+        <a class="no-decoration"
+          href="faq#why-am-i-dropping-packets">
+          Moloch FAQ - Why am I dropping packets</a>
+        and
+        <a class="no-decoration"
+          href="https://github.com/pevma/SEPTun">
+          https://github.com/pevma/SEPTun</a>
+        or
+        <a class="no-decoration"
+          href="https://github.com/pevma/SEPTun-Mark-II">
+          https://github.com/pevma/SEPTun-Mark-II</a>
+        may be helpful.
+      </p>
+      <pre><code># MOST IMPORTANT, use basic magicMode, libfile kills performance
+magicMode=basic
+
+pcapReadMethod=tpacketv3
+tpacketv3BlockSize=8388608
+
+# Increase by 1 if still getting Input Drops
+tpacketv3NumThreads=2
+
+# Defaults
+pcapWriteMethod=simple
+pcapWriteSize = 2560000
+
+# Start with 5 packet threads, increase by 1 if getting thread drops.  Should be about 1.5 x # Gbps that need to be captured
+packetThreads=5
+
+# Increase the size of ES messages and compress them for lower traffic rates
+dbBulkSize=4000000
+compressES=true
+
+# Set to number of packets a second, if still overflowing try 400k
+maxPacketsInQueue = 300000
+
+# Uncomment to disable features you don't need
+# parseQSValue=false
+# parseCookieValue=false</code></pre>
+      <p class="mb-0">
+        The following rules can help greatly reduce the number of SPI sessions
+        being written to disk:
+      </p>
+      <pre><code>---
+version: 1
+rules:
+- name: "Dont write tls packets or check yara after 10 packets, still save SPI"
+  when: "fieldSet"
+  fields:
+    protocols:
+    - tls
+  ops:
+    _stopYara: 1
+    _maxPacketsToSave: 10
+
+- name: "Dont save SPI sessions to ES with only 1 src packet"
+  when: "beforeFinalSave"
+  fields:
+    packets.src: 1
+    packets.dst: 0
+    tcpflags.syn: 1
+  ops:
+    _dontSaveSPI: 1
+
+- name: "Dont save SPI data for listed hostnames tracked by dst ip:port, use on cloud destinations"
+  when: "fieldSet"
+  fields:
+    host.http:
+    - ad.doubleclick.net
+    protocols:
+    - tls
+  ops:
+    _dontSaveSPI: 1
+    _maxPacketsToSave: 1
+    _dropByDst: 10</code></pre>
+      <!-- /High Performance Settings -->
+
+    </div> <!-- /settings content -->
+
+    <!-- footer -->
+    <div id="footer">
+    </div>
+
+  </div> <!-- /settings container -->
+
+  <!-- jQuery first, then Bootstrap JS. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <!-- copy link function -->
+  <script src="copyLink.js"></script>
+
+  <script>
+    // page loaded
+    $(function() {
+      // load navbar and make settings link active
+      $('#navbar').load('navbar.html', () => {
+        $('#settingsLink').addClass('active');
+      });
+      // load footer
+      $('#footer').load('footer.html');
+    });
+  </script>
+
+</body>
+
+</html>

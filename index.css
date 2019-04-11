@@ -25,69 +25,6 @@ div.demo > h1.demo-small-screen {
   margin-top: -20px;
 }
 
-
-/* FAQ page styles ----------------- */
-body.faq-body {
-  height: 100%;
-  overflow: hidden;
-}
-
-.faq-container {
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-  position: absolute;
-  width: calc(100% - 20rem);
-  height: calc(100% - 56px);
-}
-
-.faq-toc {
-  left: 0;
-  bottom: 0;
-  width: 20rem;
-  overflow-y:auto;
-  position: absolute;
-  word-break: break-word;
-  height: calc(100% - 56px);
-}
-
-@media (max-width: 575.98px) {
-  .faq-container {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    overflow-y: auto;
-    position: absolute;
-    height: calc(100% - 56px);
-  }
-}
-
-.faq-toc div.nav-pills.nav-pills-nested a.nav-link {
-  width: 100%;
-  overflow: hidden;
-  word-break: break-word;
-  padding: 4px 8px !important;
-}
-.faq-toc div.nav-pills.nav-pills-nested a.nav-link.nested {
-  line-height: 1.2;
-  font-size: 0.85rem;
-  padding: 4px 10px 4px 20px !important;
-}
-.faq-toc div.nav-pills.nav-pills-nested a.nav-link:not(.nested) {
-  font-weight: bold;
-}
-
-/* hide/show copy link for faq anchors */
-.faq-container h1[id] > span.copy-link,
-.faq-container h3[id] > span.copy-link {
-  visibility: hidden;
-}
-.faq-container h1[id]:hover > span.copy-link,
-.faq-container h3[id]:hover > span.copy-link {
-  visibility: visible;
-}
-
 /* estimators page styles ---------- */
 .estimators-content {
   padding-top: 80px;
@@ -338,4 +275,72 @@ a.anchor.anchor-offset-more {
 /* zebra stripey list groups */
 ul.list-group.list-group-striped > li.list-group-item:nth-of-type(even) {
   background-color: #f8f9fa;
+}
+
+/* full height body with scrollable nav and content */
+body.full-height-body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.full-height-container {
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  position: absolute;
+  width: calc(100% - 20rem);
+  height: calc(100% - 56px);
+}
+
+.left-nav {
+  left: 0;
+  bottom: 0;
+  width: 20rem;
+  overflow-y: auto;
+  position: absolute;
+  word-break: break-word;
+  height: calc(100% - 56px);
+  border-right: 1px solid #E5E5E5;
+}
+
+@media (max-width: 575.98px) {
+  .full-height-container {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-y: auto;
+    position: absolute;
+    height: calc(100% - 56px);
+  }
+}
+
+.left-nav div.nav-pills.nav-pills-nested a.nav-link {
+  width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+  padding: 4px 8px !important;
+}
+.left-nav div.nav-pills.nav-pills-nested a.nav-link.nested {
+  line-height: 1.2;
+  font-size: 0.85rem;
+  padding: 4px 10px 4px 20px !important;
+}
+.left-nav div.nav-pills.nav-pills-nested a.nav-link.nested-more {
+  padding: 4px 10px 4px 30px !important;
+}
+.left-nav div.nav-pills.nav-pills-nested a.nav-link:not(.nested) {
+  font-weight: bold;
+}
+
+/* hide/show copy link for faq anchors */
+.full-height-container h1[id] > span.copy-link,
+.full-height-container h2[id] > span.copy-link,
+.full-height-container h3[id] > span.copy-link {
+  visibility: hidden;
+}
+.full-height-container h1[id]:hover > span.copy-link,
+.full-height-container h2[id]:hover > span.copy-link,
+.full-height-container h3[id]:hover > span.copy-link {
+  visibility: visible;
 }

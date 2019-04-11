@@ -40,14 +40,14 @@
 </head>
 
 <body id="viewport"
-  class="faq-body">
+  class="full-height-body">
 
   <!-- navbar -->
   <span id="navbar">
   </span>
 
   <!-- toc nav -->
-  <div class="faq-toc d-none d-sm-block">
+  <div class="left-nav d-none d-sm-block">
     <div class="nav nav-pills nav-pills-nested pb-3">
       <a href="#general"
         class="nav-link"
@@ -323,7 +323,7 @@
   </div> <!-- /toc nav -->
 
   <!-- faq container -->
-  <div class="faq-container">
+  <div class="full-height-container">
 
     <!-- faq content -->
     <div class="pl-3 pr-3">
@@ -333,14 +333,14 @@
         class="border-bottom">
         General
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h1>
 
       <h3 id="why-should-i-use-moloch">
         Why should I use Moloch?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -357,7 +357,7 @@
       <h3 id="upgrading-moloch">
         Upgrading Moloch
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -438,7 +438,7 @@
       <h3 id="what-oses-are-supported">
         What OSes are supported?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -502,7 +502,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="moloch-is-not-working">
         Moloch is not working
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -631,7 +631,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="how-do-i-reset-moloch">
         How do I reset Moloch?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <ol>
@@ -661,7 +661,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="self-signed-ssl-tls-certificates">
         Self-Signed SSL/TLS Certificates
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -699,7 +699,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="how_do_i_upgrade_to_moloch_1">
         How do I upgrade to Moloch 1.0
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -834,13 +834,13 @@ apt-get install gcc-4.8</code></pre>
         class="border-bottom">
         Elasticsearch
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h1>
       <h3 id="how-many-elasticsearch-nodes-or-machines-do-i-need">
         How many Elasticsearch nodes or machines do I need?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>The answer, of course, is "it depends". Factors include:</p>
@@ -920,7 +920,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="data-never-gets-deleted">
         Data never gets deleted
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -948,7 +948,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="error-dropping-request-_bulk">
         ERROR - Dropping request /_bulk
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1022,7 +1022,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="when-do-i-add-additional-nodes-why-are-queries-slow">
         When do I add additional nodes? Why are queries slow?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1040,7 +1040,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="removing-nodes">
         Removing nodes
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <ul>
@@ -1077,7 +1077,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="how-do-i-enable-elasticsearch-replication">
         How to enable Elasticsearch replication
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1102,7 +1102,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="how-do-i-upgrade-elasticsearch">
         How do I upgrade Elasticsearch?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1145,7 +1145,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="how-do-i-upgrade-to-es-6-x">
         How do I upgrade to ES 6.x
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1245,7 +1245,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="how_do_i_upgrade_to_es_5x">
         How do I upgrade to ES 5.x
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1357,7 +1357,7 @@ apt-get install gcc-4.8</code></pre>
         ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException:
         [FIELDDATA] Data too large
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1391,7 +1391,7 @@ apt-get install gcc-4.8</code></pre>
       <h3 id="recommended-elasticsearch-settings">
         Recommended Elasticsearch Settings
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1508,14 +1508,14 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
         class="border-bottom">
         Capture
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h1>
 
       <h3 id="what-kind-of-capture-machines-should-we-buy">
         What kind of capture machines should we buy?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1597,7 +1597,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
       <h3 id="what-kind-of-network-packet-broker-should-we-buy">
         What kind of Network Packet Broker should we buy?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1693,7 +1693,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
       <h3 id="what-kind-of-packet-capture-speeds-can-moloch-capture-handle">
         What kind of packet capture speeds can <code>moloch-capture</code> handle?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1728,7 +1728,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
       <h3 id="moloch_requires_full_packet_captures_error">
         Moloch requires full packet captures error
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -1790,7 +1790,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
       <h3 id="why-am-i-dropping-packets">
         Why am I dropping packets?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2019,7 +2019,7 @@ ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
       <h3 id="how-do-i-import-existing-pcaps">
         How do I import existing PCAPs?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2062,7 +2062,7 @@ ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
       <h3 id="how-do-i-monitor-multiple-interfaces">
         How do I monitor multiple interfaces?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2126,7 +2126,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="moloch-capture-crashes">
         Moloch capture crashes
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2189,7 +2189,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="error-pcap-open-failed">
         ERROR - pcap open failed
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2204,7 +2204,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="how-to-reduce-amount-of-traffic-pcap">
         How to reduce amount of traffic/pcap?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2231,7 +2231,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="life-of-a-packet">
         Life of a packet
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2320,7 +2320,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="pcap-deletion">
         PCAP Deletion
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2375,7 +2375,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="dontsavebpfs-doesn-t-work">
         dontSaveBPFs doesn’t work
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2392,7 +2392,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="zero-byte-pcap-files">
         Zero byte PCAP files
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2419,7 +2419,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="can-i-virtualize-moloch-with-kvm-using-openvswitch">
         Can I virtualize Moloch with KVM using OpenVswitch?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2443,14 +2443,14 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
         class="border-bottom">
         Viewer
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h1>
 
       <h3 id="where-do-i-learn-more-about-the-expressions-available">
         Where do I learn more about the expressions available
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2462,7 +2462,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="exported-pcap-files-are-corrupt-sometimes-session-detail-fails">
         Exported pcap files are corrupt, sometimes session detail fails
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2474,7 +2474,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="map-counts-are-wrong">
         Map counts are wrong
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <ul>
@@ -2495,7 +2495,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="what-browsers-are-supported">
         What browsers are supported?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2531,7 +2531,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <h3 id="viewer-doesn-t-run-after-upgrading-node-js">
         Viewer doesn’t run after upgrading Node.js
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2546,7 +2546,7 @@ npm install</code></pre>
       <h3 id="error-getaddrinfo-eaddrinfo">
         Error: getaddrinfo EADDRINFO
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2586,7 +2586,7 @@ viewUrl=http://node2.fqdn</code></pre>
       <h3 id="how-do-i-proxy-moloch-using-apache">
         How do I proxy Moloch using Apache
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2670,7 +2670,7 @@ viewHost = localhost</code></pre>
       <h3 id="i-still-get-prompted-for-password-after-setting-up-apache-auth">
         I still get prompted for password after setting up Apache auth
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <ol>
@@ -2690,7 +2690,7 @@ viewHost = localhost</code></pre>
       <h3 id="how-do-i-search-multiple-moloch-clusters">
         How do I search multiple Moloch clusters
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2738,7 +2738,7 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
       <h3 id="how-do-i-use-self-signed-ssl-tls-certificates-with-multies">
         How do I use self-signed SSL/TLS Certificates with MultiES?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2755,7 +2755,7 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
       <h3 id="how-do-i-reset-my-password">
         How do I reset my password?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2775,7 +2775,7 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
       <h3 id="error-couldn-t-connect-to-remote-viewer-only-displaying-spi-data">
         Error: Couldn’t connect to remote viewer, only displaying SPI data
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2945,7 +2945,7 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
       <h3 id="compiled-against-a-different-node-js-version-error">
         Compiled against a different Node.js version error
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -2988,14 +2988,14 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
         class="border-bottom">
         Parliament
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h1>
 
       <h3 id="sample-apache-config">
         Sample Apache Config
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -3013,14 +3013,14 @@ ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></
         class="border-bottom">
         Molo.ch
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h1>
 
       <h3 id="how-can-i-contribute">
         How can I contribute?
         <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this)">
+          onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
@@ -3047,20 +3047,10 @@ ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <!-- copy link function -->
+  <script src="copyLink.js"></script>
 
   <script>
-    // page functions
-    function copyLink (event) {
-      let copyText = `https://molo.ch/faq#${event.parentNode.id}`;
-      // create an input to copy from
-      let input = document.createElement('input');
-      document.body.appendChild(input);
-      input.value = copyText;
-      input.select();
-      document.execCommand('copy', false);
-      input.remove();
-    }
-
     // page loaded
     $(function () {
       // load navbar and make faq link active
