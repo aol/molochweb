@@ -1185,7 +1185,7 @@
               EMPTY
             </td>
             <td>
-              The ip used to listen. See the `host` section of
+              The ip used to listen. See the <code>host</code> section of
               <a class="no-decoration"
                 href="https://nodejs.org/docs/latest-v8.x/api/net.html#net_server_listen_port_host_backlog_callback"
                 rel="nofollow">https://nodejs.org/docs/latest-v8.x/api/net.html#net_server_listen_port_host_backlog_callback</a>
@@ -1374,10 +1374,11 @@
             </td>
             <td>
               (Since 1.5.0) A semicolon separated list of operations that use
-              the filename. Format is `fieldexpr=match%value` so if you wanted
-              to set a tag based on part of filenames that start with gre use
-              `tags=/gre-(.*)\\.pcap%gretest-\\1`. Notice two backslashes are
-              required everywhere you want one because of ini formating.
+              the filename. Format is <code>fieldexpr=match%value</code> so if
+              you wanted to set a tag based on part of filenames that start
+              with gre use <code>tags=/gre-(.*)\\.pcap%gretest-\\1</code>.
+              Notice two backslashes are required everywhere you want one
+              because of ini formating.
             </td>
           </tr>
           <tr>
@@ -1426,6 +1427,22 @@
             </td>
           </tr>
           <tr>
+            <td id="basic-iframe">
+              iframe
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              deny
+            </td>
+            <td>
+              Used to set the <code>X-Frame-Options</code> header for putting
+              Moloch in an iFrame. Options include "deny", "notallowed", or a
+              URL to allow from.
+            </td>
+          </tr>
+          <tr>
             <td id="advanced-includes">
               includes
               <span class="fa fa-link small copy-link cursor-copy"
@@ -1456,7 +1473,7 @@
               (Since 1.5.0) A semicolon separated list of a comma separted list
               of operations to set for each interface. The semicolon list must
               have the same number of elements as the interface setting. The
-              format is `fieldexp=value`.
+              format is <code>fieldexp=value</code>.
             </td>
           </tr>
           <tr>
@@ -2310,7 +2327,7 @@ tpacketv3NumThreads=2</pre>
         [custom-fields] section in the ini file. At capture startup it will
         check to make sure all those fields exist in the database. The format
         of the line is the similar as used in wise and tagger, except you use
-        `expression=definition`. You will need to also create a
+        <code>expression=definition</code>. You will need to also create a
         [custom-views] section to display the data on the Sessions tab.
       </p>
       <p class="mb-0">
@@ -2455,8 +2472,8 @@ sample.md5=db:sample.md5;kind:lotermfield;friendly:Sample MD5;count:true;help:MD
         tagger plugins. Since Moloch 1.5.2 the easiest way is to use a
         [custom-views] section in the ini file. At viewer startup, a new
         section will be created for each entry. The format of the line is
-        `name=definition`. Viewer will sort all views by name when choosing
-        the order to display in.
+        <code>name=definition</code>. Viewer will sort all views by name when
+        choosing the order to display in.
       </p>
       <p class="mb-0">
         Field definition:
@@ -3292,7 +3309,8 @@ kekid2=Randomkekpassword2
       </h2>
       <p>
         Moloch can generate netflow for all sessions it saves SPI data for. Add
-        `netflow.so` to the `plugins=` line in the config file.
+        <code>netflow.so</code> to the <code>plugins=</code> line in the config
+        file.
       </p>
       <table class="table table-bordered table-sm table-striped">
         <thead>
@@ -3423,7 +3441,9 @@ kekid2=Randomkekpassword2
               REQUIRED
             </td>
             <td>
-              The full path to either the alert.json or eve.json file, make sure the `dropUser` or `dropGroup` can open the file
+              The full path to either the alert.json or eve.json file, make
+              sure the <code>dropUser</code> or <code>dropGroup</code> can open
+              the file
             </td>
           </tr>
           <tr>
