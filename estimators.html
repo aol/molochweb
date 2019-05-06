@@ -491,6 +491,7 @@
         $("#esMachines2-worst").text(sStr("host", esDaysWorst/(esDiskInput*(esDisks-2))));
       }
 
+      $('#viewport input,select').change(recalculate);
       recalculate();
     });
   </script>
