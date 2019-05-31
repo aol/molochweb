@@ -692,10 +692,16 @@ yum install devtoolset-7-toolchain</code></pre>
         </li>
       </ul>
       <p>
-        That said, the core team does not support or recommend it. Use the money
-        you are saving on a commercial product and go buy real certs. Wildcard
-        certs are now cheap and you can even go with free Lets Encrypt certs.
-        There may be folks on the Moloch slack workspace willing to help out.
+        Usually the easiest way is to add the self signed cert to the OS's list
+        of valid certificates or chains.  Googling is the best way to figure out
+        how to do this.  Viewer also supports a <code>caTrustFile </code> option.
+      </p>
+      <p>
+        The core Moloch team does not support or recommend self signed certs.
+        Use the money you are saving on a commercial product and go buy real
+        certs. Wildcard certs are now cheap and you can even go with free
+        Lets Encrypt certs.  There may be folks on the Moloch slack workspace
+        willing to help out.
       </p>
       <p>
         Both capture and viewer can run with <code>--insecure</code> to turn off
@@ -932,11 +938,13 @@ yum install devtoolset-7-toolchain</code></pre>
       <p>
         The SPI data and the PCAP data are not deleted at the same time.
         The PCAP data is deleted as the disk fills up on the capture machines,
-        <a href="#pcap-deletion">more info</a>.
+        <a href="#pcap-deletion">more info</a>.  PCAP deletion happens automatically
+        and nothing needs to be done.
         The SPI data is deleted when the
         <code>./db.pl expire</code>
         command is run, usually from cron during off peak. There is a sample in
-        the daily.sh script.
+        the daily.sh script. The SPI data deletion does NOT happen automatically
+        and a cron job must be set up.
       </p>
       <p>
         So deleting a PCAP file will NOT delete the SPI data, and deleting the
