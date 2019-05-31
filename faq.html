@@ -322,6 +322,13 @@
     </div>
   </div> <!-- /toc nav -->
 
+  <!-- toc expand/collapse -->
+  <div class="collapse-btn d-none d-sm-block"
+    onclick="toggleToc()">
+    <span class="fa fa-ellipsis-v">
+    </span>
+  </div> <!-- /toc expand/collapse -->
+
   <!-- faq container -->
   <div class="full-height-container">
 
@@ -3052,6 +3059,10 @@ ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></
   <script src="copyLink.js"></script>
 
   <script>
+    function toggleToc () {
+      $('#viewport').toggleClass('collapsed-toc');
+    }
+
     // page loaded
     $(function () {
       // load navbar and make faq link active

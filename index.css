@@ -283,7 +283,7 @@ body.full-height-body {
   bottom: 0;
   overflow-y: auto;
   position: absolute;
-  width: calc(100% - 20rem);
+  width: calc(100% - 22rem);
   height: calc(100% - 56px);
 }
 
@@ -295,7 +295,38 @@ body.full-height-body {
   position: absolute;
   word-break: break-word;
   height: calc(100% - 56px);
-  border-right: 1px solid #E5E5E5;
+}
+
+/* collapsed toc */
+.collapsed-toc .left-nav {
+  width: 0px;
+  height: 0px;
+}
+.collapsed-toc .collapse-btn {
+  left: 0;
+}
+.collapsed-toc .full-height-container {
+  left: 2rem;
+  width: calc(100% - 2rem);
+}
+
+/* left nav collapse btn */
+.collapse-btn {
+  left: 20rem;
+  bottom: 0;
+  cursor: pointer;
+  width: 1.3rem;
+  position: absolute;
+  height: calc(100% - 56px);
+  background-color: #eee;
+}
+.collapse-btn:hover {
+  background-color:#ddd;
+}
+.collapse-btn > .fa {
+  top: 50%;
+  left: 0.5rem;
+  position: absolute;
 }
 
 @media (max-width: 575.98px) {
