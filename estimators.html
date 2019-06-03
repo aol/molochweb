@@ -11,7 +11,7 @@
     gtag('js', new Date());
     gtag('config', 'UA-137788272-1');
   </script>
-  
+
   <title>Moloch FAQ</title>
 
   <!-- Required meta tags always come first -->
@@ -424,16 +424,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <!-- page functions -->
+  <script src="index.js"></script>
 
   <script>
-    // page loaded
-    $(function () {
-      // load navbar and make estimators link active
-      $('#navbar').load('navbar.html', () => {
-        $('#estimatorsLink').addClass('active');
-      });
-      // load footer
-      $('#footer').load('footer.html');
+    $(function () { // page loaded
+      addSharedHtml('#estimatorsLink');
 
       function sStr(str, size) {
         if (size <= 1) {

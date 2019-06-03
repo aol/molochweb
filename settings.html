@@ -185,6 +185,13 @@
     </div>
   </div> <!-- /toc nav -->
 
+  <!-- toc expand/collapse -->
+  <div class="collapse-btn d-none d-sm-block"
+    onclick="toggleToc()">
+    <span class="fa fa-angle-double-left">
+    </span>
+  </div> <!-- /toc expand/collapse -->
+
   <!-- settings container -->
   <div class="full-height-container">
 
@@ -3593,18 +3600,12 @@ rules:
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-  <!-- copy link function -->
-  <script src="copyLink.js"></script>
+  <!-- page functions -->
+  <script src="index.js"></script>
 
   <script>
-    // page loaded
-    $(function() {
-      // load navbar and make settings link active
-      $('#navbar').load('navbar.html', () => {
-        $('#settingsLink').addClass('active');
-      });
-      // load footer
-      $('#footer').load('footer.html');
+    $(function() { // page loaded
+      addSharedHtml('#settingsLink');
     });
   </script>
 

@@ -281,10 +281,12 @@ body.full-height-body {
 .full-height-container {
   right: 0;
   bottom: 0;
+  left: 21rem;
   overflow-y: auto;
   position: absolute;
-  width: calc(100% - 22rem);
+  width: calc(100% - 21rem);
   height: calc(100% - 56px);
+  transition: all 1s ease;
 }
 
 .left-nav {
@@ -295,6 +297,7 @@ body.full-height-body {
   position: absolute;
   word-break: break-word;
   height: calc(100% - 56px);
+  transition: width 1s ease;
 }
 
 /* collapsed toc */
@@ -306,8 +309,11 @@ body.full-height-body {
   left: 0;
 }
 .collapsed-toc .full-height-container {
-  left: 2rem;
-  width: calc(100% - 2rem);
+  left: 1rem;
+  width: calc(100% - 1rem);
+}
+.collapsed-toc .collapse-btn > .fa {
+  transform: rotate(180deg);
 }
 
 /* left nav collapse btn */
@@ -315,18 +321,20 @@ body.full-height-body {
   left: 20rem;
   bottom: 0;
   cursor: pointer;
-  width: 1.3rem;
+  width: 1rem;
   position: absolute;
   height: calc(100% - 56px);
   background-color: #eee;
+  transition: left 1s ease;
 }
 .collapse-btn:hover {
-  background-color:#ddd;
+  background-color: #ddd;
 }
 .collapse-btn > .fa {
   top: 50%;
-  left: 0.5rem;
+  left: 0.15rem;
   position: absolute;
+  transition: all 1s ease;
 }
 
 @media (max-width: 575.98px) {
