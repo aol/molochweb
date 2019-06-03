@@ -130,6 +130,11 @@
         How do I upgrade Elasticsearch?
       </a>
       <a class="nav-link nested"
+        href="#how-do-i-upgrade-to-es-7-x"
+        title="How do I upgrade to ES 7.x?">
+        How do I upgrade to ES 7.x?
+      </a>
+      <a class="nav-link nested"
         href="#how-do-i-upgrade-to-es-6-x"
         title="How do I upgrade to ES 6.x?">
         How do I upgrade to ES 6.x?
@@ -397,12 +402,15 @@
               2.0
             </td>
             <td>
-              6.x
+             6.7.0 or later 6.x, 7.0 (experimental)
             </td>
             <td>
+              <a href="#how-do-i-upgrade-to-es-7-x">
+                ES 7 instructions
+              </a>
             </td>
             <td>
-              Must already be on ES 6 before upgrading.  Suggest upgrading to 1.7 or 1.8 first.
+              Must already be on ES 6.7 before upgrading.  Suggest upgrading to Moloch 1.7 or 1.8 first.
             </td>
           </tr>
           <tr>
@@ -1153,6 +1161,93 @@ yum install devtoolset-7-toolchain</code></pre>
         <li>
           Start the new version back up:
           <pre><code>/data/moloch/bin/run_es.sh</code></pre>
+        </li>
+      </ul>
+
+      <h3 id="how-do-i-upgrade-to-es-7-x">
+        How do I upgrade to ES 7.x
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h3>
+      <p>
+        <strong>
+          ES 7.x is supported by Moloch 2.x only if ES 5.x was never used with data
+        </strong>
+      </p>
+      <p>
+        <strong>NOTE</strong> - If upgrading, you must FIRST upgrade to Moloch 1.5.
+      </p>
+      <p>
+        <strong>
+          Upgrading to ES 7 will REQUIRE downtime
+        </strong>
+      </p>
+      <p>
+        First outage: If you are NOT using Moloch DB version 62 (or later) you
+        must follow these steps while still using ES 6.x. To find what DB version
+        you are using, either run
+        <code>db.pl localhost:9200 info</code>
+        or mouse over the <span class="fa fa-info-circle"></span> in Moloch.
+      </p>
+      <ul>
+        <li>
+          Install Moloch &gt;= 2.0
+        </li>
+        <li>
+          Shutdown capture
+        </li>
+        <li>
+          run
+          <code>
+            ./db.pl
+            <a href="http://ESHOST:9200"
+              rel="nofollow">
+              http://ESHOST:9200
+            </a>
+            upgrade
+          </code>
+        </li>
+        <li>
+          Restart capture
+        </li>
+        <li>
+          Verify everything is working
+        </li>
+        <li>
+          Make sure you delete the old indices that db.pl complained about
+        </li>
+      </ul>
+      <p>
+        Second outage: Upgrade to ES 7
+      </p>
+      <ul>
+        <li>
+          Make sure you delete the old indices that db.pl complained about
+        </li>
+        <li>
+          Shutdown everything
+        </li>
+        <li>
+          Upgrade ES to 7.x
+        </li>
+        <li>
+          Start ES cluster
+        </li>
+        <li>
+          Wait for cluster to go GREEN, this will take
+          <strong>LONGER</strong>
+          then usual as ES upgrades things from 6.x to 7.x format.
+          <code>
+            curl
+            <a href="http://localhost:9200/_cat/health"
+              rel="nofollow">
+              http://localhost:9200/_cat/health
+            </a>
+          </code>
+        </li>
+        <li>
+          Start viewers and captures
         </li>
       </ul>
 
