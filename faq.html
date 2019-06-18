@@ -402,7 +402,7 @@
               2.0
             </td>
             <td>
-             6.7.0 or later 6.x, 7.0 (experimental)
+             6.7, 6.8, 7.0 (experimental)
             </td>
             <td>
               <a href="#how-do-i-upgrade-to-es-7-x">
@@ -410,7 +410,7 @@
               </a>
             </td>
             <td>
-              Must already be on ES 6.7 before upgrading.  Suggest upgrading to Moloch 1.7 or 1.8 first.
+              Must already be on ES 6.7 or 6.8 and Moloch 1.7 or 1.8 before upgrading to 2.0
             </td>
           </tr>
           <tr>
@@ -1184,7 +1184,7 @@ yum install devtoolset-7-toolchain</code></pre>
         </strong>
       </p>
       <p>
-        First outage: If you are NOT using Moloch DB version 62 (or later) you
+        First outage: If you are NOT using Moloch DB version 63 (or later) you
         must follow these steps while still using ES 6.x. To find what DB version
         you are using, either run
         <code>db.pl localhost:9200 info</code>
