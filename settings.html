@@ -3563,7 +3563,7 @@ rules:
     protocols:
     - tls
   ops:
-    _stopYara: 1
+    _dontCheckYara: 1
     _maxPacketsToSave: 10
 
 - name: "Dont save SPI sessions to ES with only 1 src packet"
