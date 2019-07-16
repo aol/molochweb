@@ -145,9 +145,9 @@
         How do I upgrade to ES 5.x?
       </a>
       <a class="nav-link nested"
-        href="#es-2-org-elasticsearch-common-breaker-circuitbreakingexception-fielddata-data-too-large"
-        title="ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large">
-        ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException: [FIELDDATA] Data too large
+        href="#version-conflict"
+        title="version conflict, current version [N] is higher or equal to the one provided [M]">
+        version conflict, current version [N] is higher or equal to the one provided [M]
       </a>
       <a class="nav-link nested"
         href="#recommended-elasticsearch-settings"
@@ -1462,39 +1462,16 @@ yum install devtoolset-7-toolchain</code></pre>
         </li>
       </ul>
 
-      <h3 id="es-2-org-elasticsearch-common-breaker-circuitbreakingexception-fielddata-data-too-large">
-        ES 2 - org.elasticsearch.common.breaker.CircuitBreakingException:
-        [FIELDDATA] Data too large
+      <h3 id="version-conflict">
+        version conflict, current version [N] is higher or equal to the one provided [M]
         <span class="fa fa-link small copy-link cursor-copy"
           onclick="copyLink(this, 'faq')">
         </span>
       </h3>
       <p>
-        This seems to happen with old indices that are upgraded from ES versions
-        before 2 to ES 2, because old indices didn’t use the
-        <code>doc_values</code> settings. Increasing the size of the fielddata
-        cache will fix the problem. Either:
-      </p>
-      <ul>
-        <li>
-          Edit your Elasticsearch.yml and add:
-          <pre><code>indices.breaker.fielddata.limit: 80%</code></pre>
-        </li>
-        <li>
-          Or run the command:
-          <pre><code>curl -XPUT localhost:9200/_cluster/settings -d '{
-  "persistent" : {
-    "indices.breaker.fielddata.limit" : "80%"
-  }
-}'</code></pre>
-        </li>
-      </ul>
-      <p>
-        If that doesn’t work, you can try increasing the heap size per node, but
-        don’t go over 31G. For more information, read
-        <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html"
-          rel="nofollow">
-          the heap sizing guide</a>.
+        This error usually happens when the capture process is trying to update the
+        stats data and falls behind.  If it happens regularly it may indicate
+        the elasticsearch process is having a hard time keeping up with indexing.
       </p>
 
       <h3 id="recommended-elasticsearch-settings">
