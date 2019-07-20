@@ -226,8 +226,8 @@
       </a>
       <a class="nav-link nested"
         href="#zero-byte-pcap-files"
-        title="Zero byte PCAP files">
-        Zero byte PCAP files
+        title="Zero or missing bytes PCAP files">
+        Zero or missing bytes PCAP files
       </a>
       <a class="nav-link nested"
         href="#can-i-virtualize-moloch-with-kvm-using-openvswitch"
@@ -2478,7 +2478,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       </p>
 
       <h3 id="zero-byte-pcap-files">
-        Zero byte PCAP files
+        Zero or missing bytes PCAP files
         <span class="fa fa-link small copy-link cursor-copy"
           onclick="copyLink(this, 'faq')">
         </span>
@@ -2488,15 +2488,17 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
         networks, but bad for low bandwidth networks. How much data is buffered
         is controlled with <code>pcapWriteSize</code>, which defaults to 262144
         bytes. An important thing to remember is the buffer is per thread, so set
-        <code>packetThreads</code> to 1 on low bandwidth networks. There is no
-        time limit on the buffer before Moloch 1.0, so you must wait until the
-        entire buffer is full before data will be written to disk.
+        <code>packetThreads</code> to 1 on low bandwidth networks.
+        A portion of the pcap that is buffered will be written after 10 seconds of no writes.
+        However it will still buffer the last pagesize bytes, usually 4096 bytes.
       </p>
       <p>
-        Starting with Moloch 1.0, we now write a portion of what is buffered
-        after 10 seconds of no writes. However it will still buffer the last
-        pagesize bytes, usually 4096 bytes.
+        An error that looks like
+        <code>ERROR - processSessionIdDisk - SESSIONID in file FILENAME couldn't read packet at FILEPOS packet # 0 of 2</code>
+        usually means that either the pcap is still being buffered and you need to wait for it to be written to disk or
+        that previously capture or the host crashed/restarted before the pcap could be written to disk.
       </p>
+
       <p>
         You can also end up with many zero byte pcap files if the disk is full,
         see
