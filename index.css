@@ -201,8 +201,8 @@ div.demo > h1.demo-small-screen {
 }
 
 /* purple text */
-.purp-text { color: #830B9C; }
-.dark-purp-text { color: #530763; }
+.purp-text { color: #830B9C !important; }
+.dark-purp-text { color: #530763 !important; }
 
 /* navbar owl image */
 .nav-link > img,
