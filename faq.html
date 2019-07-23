@@ -702,7 +702,7 @@ yum install devtoolset-7-toolchain</code></pre>
       <p>
         Usually the easiest way is to add the self signed cert to the OS's list
         of valid certificates or chains.  Googling is the best way to figure out
-        how to do this.  Viewer also supports a <code>caTrustFile </code> option.
+        how to do this.  Viewer also supports a <code>caTrustFile</code> option.
       </p>
       <p>
         The core Moloch team does not support or recommend self signed certs.
@@ -1942,11 +1942,11 @@ ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
           packetThreads and the PacketQ is overflowing error
         </h4>
         <p>
-          The packetThreads config option controls the number of threads processing
+          The <a href="/settings#basic-packetthreads">packetThreads</a> config option controls the number of threads processing
           the packets, not the number of threads reading the packets off the
           network card. You only need to change the value if you are getting the
-          <code>Packet Q is overflowing</code> error. The packetThreads option is
-          limited to 24 threads, but usually you only need a few.
+          <code>Packet Q is overflowing</code> error. The <a href="/settings#basic-packetthreads">packetThreads</a> option is
+          limited to 24 threads, but usually you only need a few.  Configuring too many packetThreads is actually worse for performance.
         </p>
         <p>
           To increase the number of threads the reader uses please see the
@@ -2355,7 +2355,8 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
         <li>
           Moloch picks a packet queue to send the packet to, if the packet queue
           is too busy it will drop the packet. Potentially increase increase
-          <code>packetThreads</code> or <code>maxPacketsInQueue</code> if too
+          <a href="/settings#basic-packetthreads">packetThreads</a> or
+          <a href="/settings#basic-maxpacketsinqueue">maxPacketsInQueue</a> if too
           many packets are being dropped here.
         </li>
         <li>
@@ -2370,23 +2371,24 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
           If this is the first packet of the session the packet queue will then
           check all the <code>dontSaveBPFs</code>, and if one matches it will
           save off the max number of packets to save for the session. This will
-          override the <code>maxPackets</code> config setting.
+          override the <a href="/settings#basic-maxpackets">maxPackets</a> config setting.
         </li>
         <li>
           If this is the first packet of the session AND no dontSaveBPFs matched,
           the packet queue will then check all the
-          <code>minPacketsSaveBPFs</code> and save off a min number of packets
-          that must be received.
+          <a href="/settings#basic-minpacketssavebpfs">minPacketsSaveBPFs</a>
+          and save off a min number of packets that must be received.
         </li>
         <li>
           Finally Moloch goes to save the packet, if it has already saved the max
           number of packets for the session (set by rules or
-          <code>dontSaveBPFs</code>) OR if there was another method (plugin) that
-          said stop saving packets for the session the packet won’t be saved.
+          <a href="/settings#basic-dontsavebpf">dontSaveBPFs</a>)
+          OR if there was another method (plugin) that said stop saving packets
+          for the session the packet won’t be saved.
         </li>
         <li>
           If the number of packets for the session is greater then
-          <code>maxPackets</code> the session will be saved, a new linked session
+          <a href="/settings#basic-maxpackets">maxPackets</a> the session will be saved, a new linked session
           will be started for future packets. The beforeMiddleSave and
           beforeBothSave rules will be executed before saving.
         </li>
@@ -2415,11 +2417,11 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
         PCAP deletion is actually handled by the viewer process, so make sure the
         viewer process is running on all capture boxes. The viewer process checks
         on startup and then every minute to see how much space is available, and
-        if it is below <code>freeSpaceG</code>, then it will start deleting the
+        if it is below <a href="/settings#basic-freespaceg">freeSpaceG</a>, then it will start deleting the
         oldest file.
       </p>
       <p>
-        <strong>Note</strong>: <code>freeSpaceG</code> can also be a percentage,
+        <strong>Note</strong>: <a href="/settings#basic-freespaceg">freeSpaceG</a> can also be a percentage,
         newer versions of Moloch use <code>freeSpaceG=5%</code> for the default.
         The viewer process will always leave at least 10 PCAP files on the disk,
         so make sure there is room for at least <code>maxFileSizeG * 10</code>
@@ -2430,7 +2432,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       </p>
       <ol>
         <li>
-          Make sure <code>freeSpaceG</code> is set correctly for the environment.
+          Make sure <a href="/settings#basic-freespaceg">freeSpaceG</a> is set correctly for the environment.
         </li>
         <li>
           Make sure there is free space where viewer is writing its logs.
@@ -2439,7 +2441,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
           Make sure viewer can reach Elasticsearch
         </li>
         <li>
-          Make sure that <code>dropUser</code> or <code>dropGroup</code> can
+          Make sure that <a href="/settings#basic-dropuser">dropUser</a> or <a href="/settings#basic-dropgroup">dropGroup</a> can
           actually delete files in the pcap directory and has read/execute
           permissions in all parent directories.
         </li>
@@ -2486,9 +2488,9 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <p>
         Moloch buffers writes to disk, which is great for high bandwidth
         networks, but bad for low bandwidth networks. How much data is buffered
-        is controlled with <code>pcapWriteSize</code>, which defaults to 262144
+        is controlled with <a href="/settings#advanced-pcapwritesize">pcapWriteSize</a>, which defaults to 262144
         bytes. An important thing to remember is the buffer is per thread, so set
-        <code>packetThreads</code> to 1 on low bandwidth networks.
+        <a href="/settings#basic-packetthreads">packetThreads</a> to 1 on low bandwidth networks.
         A portion of the pcap that is buffered will be written after 10 seconds of no writes.
         However it will still buffer the last pagesize bytes, usually 4096 bytes.
       </p>

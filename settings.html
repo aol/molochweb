@@ -604,6 +604,21 @@
             </td>
           </tr>
           <tr>
+            <td id="basic-maxpacketsinqueue">
+              maxPacketsInQueue
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              200000
+            </td>
+            <td>
+              How many packets per packet thread that can be waiting to be processed.
+              Moloch will stop dropping packets if the queue fills up.
+            </td>
+          </tr>
+          <tr>
             <td id="basic-maxstreams">
               maxStreams
               <span class="fa fa-link small copy-link cursor-copy"
