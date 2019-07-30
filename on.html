@@ -180,8 +180,47 @@
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">11:30</div>
-                  <div class="pl-3 flex-fill agenda-title">TBD</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">TBD</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Seeing the Forest From the Trees
+                    </div>
+                    <span class="agenda-description">
+                      What do albums, 8-track tapes, cassettes, CDs and mp3s
+                      have in common with network operational data? Network
+                      operational data has gone through the same
+                      “transformation”,
+                      <a class="agenda-description-more-btn cursor-pointer purp-text no-wrap"
+                        onclick="showMore(event)">
+                        ...more&nbsp;<span class="fa fa-caret-down"></span>
+                      </a>
+                      <span class="agenda-description-more-text"
+                        style="display:none;">
+                        namely, it’s the same data being
+                        delivered via the next generational transport systems
+                        (eg syslog, show commands, SNMP, Openconfig, streaming
+                        telemetry). While existing network data is adept at
+                        reporting binary conditions, (eg link up/down, bgp
+                        up/down, etc.), this existing data appears to be
+                        inadequate for determining more subtle network
+                        degradations or failures. Using real-life undetected
+                        network events as use cases, this talk suggests there’s
+                        an untapped high fidelity stream of network operational
+                        data that service providers are collectively overlooking,
+                        namely the processing of router control plane traffic.
+                        This talk  shows how the router control plane traffic is
+                        a haystack of needles and how we are augmenting Moloch
+                        to make it network domain aware.
+                      </span>
+                      <a class="agenda-description-less-btn cursor-pointer purp-text no-wrap"
+                        onclick="showLess(event)"
+                        style="display:none;">
+                        less&nbsp;<span class="fa fa-caret-up"></span>
+                      </a>
+                    </span>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>Brian Field</strong>
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
@@ -436,6 +475,18 @@
   <script src="index.js"></script>
 
   <script>
+    function showMore (event) {
+      $(event.target).toggle();
+      $(event.target).siblings('.agenda-description-less-btn').toggle();
+      $(event.target).siblings('.agenda-description-more-text').toggle();
+    }
+
+    function showLess (event) {
+      $(event.target).toggle();
+      $(event.target).siblings('.agenda-description-more-btn').toggle();
+      $(event.target).siblings('.agenda-description-more-text').toggle();
+    }
+
     $(function () { // page loaded
       addSharedHtml('#onLink');
 
