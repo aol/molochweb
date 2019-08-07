@@ -1,3 +1,7 @@
+---
+title: Downloads
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +41,11 @@
   <!-- custom index page styles -->
   <link rel="stylesheet" type="text/css" href="index.css">
 
+  <!-- parseXML function -->
+  <script src="downloads.js"></script>
+  <!-- page functions -->
+  <script src="index.js"></script>
+
 </head>
 
 <body id="viewport">
@@ -44,8 +53,7 @@
   <!-- container -->
   <div class="container-fluid downloads-content">
     <!-- navbar -->
-    <span id="navbar">
-    </span>
+    {%- include navbar.html -%}
 
     <!-- info btns -->
     <div class="row mb-4 mt-4">
@@ -206,17 +214,7 @@
   </div> <!-- /container -->
 
   <!-- footer -->
-  <span id="footer">
-  </span>
-
-  <!-- jQuery first, then Bootstrap JS. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-  <!-- parseXML function -->
-  <script src="downloads.js"></script>
-  <!-- page functions -->
-  <script src="index.js"></script>
+  {%- include footer.html -%}
 
   <script>
     let showMoreDownloads = false;
@@ -240,8 +238,6 @@
     }
 
     $(function () { // page loaded
-      addSharedHtml('#downloadsLink');
-
       function buildDownloadVersionRow (version, btnType) {
         let html = `<div class="row text-center mt-3">
                      <div class="col-lg-2 mb-2">

@@ -1,3 +1,7 @@
+---
+title: Estimators
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,14 +41,16 @@
   <!-- custom index page styles -->
   <link rel="stylesheet" type="text/css" href="index.css">
 
+  <!-- page functions -->
+  <script src="index.js"></script>
+
 </head>
 
 <body id="viewport">
 
   <div class="container">
     <!-- navbar -->
-    <span id="navbar">
-    </span>
+    {%- include navbar.html -%}
 
     <div class="row estimators-content">
       <div class="col-md-12">
@@ -417,20 +423,10 @@
   </div>
 
   <!-- footer -->
-  <span id="footer">
-  </span>
-
-  <!-- jQuery first, then Bootstrap JS. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-  <!-- page functions -->
-  <script src="index.js"></script>
+  {%- include footer.html -%}
 
   <script>
     $(function () { // page loaded
-      addSharedHtml('#estimatorsLink');
-
       function sStr(str, size) {
         if (size <= 1) {
           return "1 " + str;

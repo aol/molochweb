@@ -2,7 +2,7 @@
 .container-fluid.full-width-page {
   padding-left: 0;
   padding-right: 0;
-  margin-left: auto
+  margin-left: auto;
   margin-right: auto;
   overflow-x: hidden;
 }
