@@ -65,8 +65,17 @@
               </p>
               <p class="lead lead-lg text-center mt-4 purp-text">
                 <strong>
-                  Meet and learn from the developers and fellow Moloch users.
+                  Meet and learn from the creators, users, and contributors.
                 </strong>
+              </p>
+              <p class="lead lead-lg text-center mt-4">
+                Presentations will be applicable to all Moloch
+                experience levels.
+                <br>
+                Learn about new Moloch features, upcoming changes,
+                how to use and setup WISE, and how security professionals
+                deploy and use Moloch.  If your company has a network security
+                monitoring team as part of your “Blue Team” you’ll want to attend this event.
               </p>
               <p class="mt-5">
                 <a href="https://forms.gle/axUSFZ5pDkf5NxP6A"
@@ -132,15 +141,27 @@
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">9:45&nbsp;</div>
-                  <div class="pl-3 flex-fill agenda-title">Recent Changes &amp Upcoming Features</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">Andy &amp; Elyse</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Recent Changes &amp Upcoming Features
+                    </div>
+                    <span class="agenda-description">
+                      Since the last MolochON, many new features have been added
+                      to Moloch. We will review some of these features and demo
+                      how to use them. We will also discuss a few desired
+                      upcoming features and talk about the 2.0 release.
+                    </span>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>Andy &amp; Elyse</strong>
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">10:45</div>
-                  <div class="pl-3 flex-fill agenda-title">Anomalies Everywhere</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">Art</div>
+                  <div class="pl-3 flex-fill agenda-title">TBD</div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">TBD</div>
                 </div>
               </li>
               <li class="list-group-item">
@@ -159,15 +180,65 @@
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">11:30</div>
-                  <div class="pl-3 flex-fill agenda-title">TBD</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">TBD</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Seeing the Forest From the Trees
+                    </div>
+                    <span class="agenda-description">
+                      What do albums, 8-track tapes, cassettes, CDs and mp3s
+                      have in common with network operational data? Network
+                      operational data has gone through the same
+                      “transformation”,
+                      <a class="agenda-description-more-btn cursor-pointer purp-text no-wrap"
+                        onclick="showMore(event)">
+                        ...more&nbsp;<span class="fa fa-caret-down"></span>
+                      </a>
+                      <span class="agenda-description-more-text"
+                        style="display:none;">
+                        namely, it’s the same data being
+                        delivered via the next generational transport systems
+                        (eg syslog, show commands, SNMP, Openconfig, streaming
+                        telemetry). While existing network data is adept at
+                        reporting binary conditions, (eg link up/down, bgp
+                        up/down, etc.), this existing data appears to be
+                        inadequate for determining more subtle network
+                        degradations or failures. Using real-life undetected
+                        network events as use cases, this talk suggests there’s
+                        an untapped high fidelity stream of network operational
+                        data that service providers are collectively overlooking,
+                        namely the processing of router control plane traffic.
+                        This talk  shows how the router control plane traffic is
+                        a haystack of needles and how we are augmenting Moloch
+                        to make it network domain aware.
+                      </span>
+                      <a class="agenda-description-less-btn cursor-pointer purp-text no-wrap"
+                        onclick="showLess(event)"
+                        style="display:none;">
+                        less&nbsp;<span class="fa fa-caret-up"></span>
+                      </a>
+                    </span>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>Brian Field</strong>
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">12:00</div>
-                  <div class="pl-3 flex-fill agenda-title">Verizon Media Moloch Deployments</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">Andy</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Verizon Media Moloch Deployments
+                    </div>
+                    <span class="agenda-description">
+                      Learn about how we deploy Moloch at Verizon Media. Get
+                      useful information and best practices to get the most out
+                      of Moloch.
+                    </span>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>Andy</strong>
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
@@ -189,22 +260,40 @@
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">13:30</div>
-                  <div class="pl-3 flex-fill agenda-title">go-pear.phar</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">Elyse</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Rotten Pear
+                    </div>
+                    <span class="agenda-description">
+                      Walk through a real life scenario where our security
+                      analysts used Moloch to investigate a bad go-pear.phar
+                      download. Get an in depth example of our analysts' workflow
+                      and how Moloch can be used to find and examine badness on
+                      your network.
+                    </span>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>Elyse</strong>
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">13:45</div>
-                  <div class="pl-3 flex-fill agenda-title">TBD</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">TBD</div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex align-items-start justify-content-between">
-                  <div class="mr-auto purp-text">14:00</div>
-                  <div class="pl-3 flex-fill agenda-title">TBD</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">TBD</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Miscellaneous Musings on Making the Most out of Moloch
+                    </div>
+                    <span class="agenda-description">
+                      Ok, so you installed Moloch.  Now what?  This talk covers such
+                      topics as integrating internal data sources and third party tools,
+                      effective use of open source intelligence with WISE, optimizing
+                      traffic filters, and various elements of system administration.
+                    </span>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>Matt Carothers</strong>
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
@@ -217,8 +306,18 @@
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">14:30</div>
-                  <div class="pl-3 flex-fill agenda-title">Let's get WISE 2019!</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">Andy</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Let's get WISE 2019!
+                    </div>
+                    <span class="agenda-description">
+                      With Intelligence See Everything! Learn how to configure
+                      and use WISE to enhance Moloch.
+                    </span>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>Andy</strong>
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
@@ -244,8 +343,18 @@
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">16:15</div>
-                  <div class="pl-3 flex-fill agenda-title">Fire talks &amp; Brainstorming Future Features</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">All</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Fire talks &amp; Brainstorming Future Features
+                    </div>
+                    <span class="agenda-description">
+                      Let's open the floor to random discussions and start
+                      a dialog to discuss which features the community needs most!
+                    </span>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>All</strong>
+                  </div>
                 </div>
               </li>
               </li>
@@ -371,8 +480,54 @@
   <script src="index.js"></script>
 
   <script>
+    function showMore (event) {
+      $(event.target).toggle();
+      $(event.target).siblings('.agenda-description-less-btn').toggle();
+      $(event.target).siblings('.agenda-description-more-text').toggle();
+    }
+
+    function showLess (event) {
+      $(event.target).toggle();
+      $(event.target).siblings('.agenda-description-more-btn').toggle();
+      $(event.target).siblings('.agenda-description-more-text').toggle();
+    }
+
     $(function () { // page loaded
       addSharedHtml('#onLink');
+
+      let shiftKeyHold = false;
+
+      // watch for keyup events for this page
+      window.addEventListener('keyup', (event) => {
+        if (event.keyCode === 16) { // shift
+          shiftKeyHold = false;
+          return;
+        }
+
+        // quit if the user is not holding the shift key
+        if (!shiftKeyHold) { return; }
+
+        if (event.keyCode === 73) { // i
+          $('.agenda-description').toggle();
+        }
+      });
+
+      // watch for keydown events for this page
+      window.addEventListener('keydown', (event) => {
+        if (event.keyCode === 16) { // shift
+          shiftKeyHold = true;
+        }
+      });
+
+      // if the user clicks something, remove shift hold
+      window.addEventListener('mousedown', (event) => {
+        shiftKeyHold = false;
+      });
+
+      // if the user focus is not in the web page, remove shift hold
+      window.addEventListener('blur', (event) => {
+        shiftKeyHold = false;
+      });
     });
   </script>
 
