@@ -1943,10 +1943,11 @@ ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
         </h4>
         <p>
           The <a href="/settings#basic-packetthreads">packetThreads</a> config option controls the number of threads processing
-          the packets, not the number of threads reading the packets off the
-          network card. You only need to change the value if you are getting the
-          <code>Packet Q is overflowing</code> error. The <a href="/settings#basic-packetthreads">packetThreads</a> option is
-          limited to 24 threads, but usually you only need a few.  Configuring too many packetThreads is actually worse for performance.
+          the packets, not the number of threads reading the packets off the network card.
+          You only need to change the value if you are getting the <code>Packet Q is overflowing</code> error.
+          The <a href="/settings#basic-packetthreads">packetThreads</a> option is limited to 24 threads, but usually you only need a few.
+          Configuring too many packetThreads is actually worse for performance, please start with a lower number and slowly increase.
+          You can also change the size of the packet queue by increasing the <a href="/settings#basic-maxPacketsInQueue">maxPacketsInQueue</a> setting.
         </p>
         <p>
           To increase the number of threads the reader uses please see the
