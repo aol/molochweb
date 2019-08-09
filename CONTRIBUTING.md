@@ -1,4 +1,4 @@
-# Contributing to Moloch
+# Contributing to the Moloch website
 
 :sparkles: Glad to see you here! :sparkles:
 
@@ -12,11 +12,29 @@
 
 ### Where do I start? :traffic_light:
 
-First, checkout this repo and open the `index.html` page in your browser.
+First, checkout this repo!
 
-> **Note:** links will not work, so if you want to visit another page, you must enter it into the browser URL bar (e.g. `faq.html` or `estimators.html`)
+This site is created using Jekyll. Get started with Jekyll [here](https://jekyllrb.com/docs).
 
-**Then, edit the HTML/JS/CSS in your favorite editor!**
+Once you have jekyll and the bundler installed, run
+
+```
+bundle install
+```
+
+Then run
+
+```
+bundle exec jekyll serve
+```
+
+Once you have built the site and made it available on a local server, browse to the localhost site in your browser.
+
+```
+http://127.0.0.1:4000/
+```
+
+**Then, edit the HTML/JS/CSS/MD in your favorite editor!**
 
 ---
 
@@ -67,6 +85,52 @@ Feature requests are tracked as [GitHub Issues](https://guides.github.com/featur
 ### Style Guide
 
 This site uses the [Bootstrap](https://getbootstrap.com/) toolkit for all its style and layout. It's a good idea to get familiar with this toolkit before contributing.
+
+#### Wiki Pages
+The Wiki pages are created using Jekyll and kramdown. Get started with Jekyll [here](https://jekyllrb.com/docs).
+Check out kramdown syntax [here](https://kramdown.gettalong.org/syntax.html).
+
+There are some things to consider when adding a new wiki page:
+
+1. Start every new wiki page with this content:
+
+```
+---
+title: New Awesome Page Title
+layout: wiki
+permalink: "/awesomepage"
+---
+```
+
+**Note:** Make sure the permalink is unique.
+
+2. Want a table of contents? Use this scaffolding around your content:
+
+```
+- TOC
+{:toc}
+{: .left-nav .d-none .d-sm-block .pt-3 .with-footer .wiki-toc }
+
+<div class="full-height-container with-footer pt-3 pr-2 pl-2 pb-3" markdown="1">
+  content goes here
+</div>
+```
+
+**Info:** Want to exclude a section from your table of contents? Just add `{: .no_toc}` under the heading you want to exclude. There must be a newline after it!
+
+3. Just want a full page of wiki information? Use this scaffolding around your content:
+
+```
+<div class="full-height-and-width-container with-footer p-3" markdown="1">
+  content goes here
+</div>
+```
+
+4. Lastly, you must add it to the wiki home page (`wiki/home.md`)! Like so:
+
+```
+- [New Awesome Page Title](awesomepage)
+```
 
 #### CSS Styles
 

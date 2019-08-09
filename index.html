@@ -1,3 +1,7 @@
+---
+title: Home
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,14 +41,16 @@
   <!-- custom index page styles -->
   <link rel="stylesheet" type="text/css" href="index.css">
 
+  <!-- download js to display some downloads -->
+  <script src="downloads.js"></script>
+
 </head>
 
 <body id="viewport">
 
   <div class="container-fluid full-width-page">
     <!-- navbar -->
-    <span id="navbar">
-    </span>
+    {%- include navbar.html -%}
 
     <!-- home -->
     <div id="home"
@@ -442,7 +448,7 @@
     </div> <!-- /screenshots -->
 
     <!-- downloads -->
-    <a id="downloads"
+    <a id="download"
       class="anchor">
     </a>
     <div class="purp-background pt-5 angle-background">
@@ -668,25 +674,12 @@
   </div> <!-- /container -->
 
   <!-- footer -->
-  <span id="footer">
-  </span>
-
-  <!-- jQuery first, then Bootstrap JS. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-
-  <script src="downloads.js"></script>
+  {%- include footer.html -%}
 
   <script>
     // page loaded
     $(function () {
-      // load navbar and make home link active
-      $('#navbar').load('navbar.html', () => {
-        $('#homeLink').addClass('active');
-      });
-      // load footer
-      $('#footer').load('footer.html');
+      $('#homeLink').addClass('active');
 
       $('[data-toggle="tooltip"]').tooltip();
 
