@@ -21,6 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   let Moloch do the grunt work for you!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://molo.ch" # the base hostname & protocol for your site, e.g. http://example.com
+include: ['_wiki']
 
 # Build settings
 markdown: kramdown

@@ -1,8 +1,14 @@
+---
+title: API
+layout: wiki
+permalink: "/api"
+---
+
 - TOC
 {:toc}
-{: .left-nav .d-none .d-sm-block .pt-4}
+{: .left-nav .d-none .d-sm-block .pt-3 .with-footer .wiki-toc }
 
-<div class="full-height-container" markdown="1">
+<div class="full-height-container with-footer pt-3 pr-2 pl-2 pb-3" markdown="1">
 
 # Viewer API
 
@@ -10,7 +16,7 @@
 {: .purp-text }
 
 **Note:** Many of the API endpoints require a db field name, which is not the same as what you would use in a search expression.
-The easiest way to see database field names is to click the owl -> click the fields label on left -> click display the database fields.
+The easiest way to see database field names is to click the owl within Moloch -> click the fields label on left -> click display the database fields.
 
 
 ## /fields
@@ -82,6 +88,7 @@ Return a list of files that moloch knows about.
 
 ### Parameters
 {: .no_toc }
+
 Name | Type | Description
 -----|------|---------------
 iDisplayLength|integer| < 0.12 - The number of items to return (Default: 500, Max: 10000)
@@ -98,6 +105,7 @@ Retrieve the session data in json format
 
 ### Parameters
 {: .no_toc }
+
 Name | Type | Description
 -----|------|---------------
 date|integer|The number of hours of data to return, -1 means all data
@@ -123,6 +131,7 @@ Retrieve the session data in csv format
 
 ### Parameters
 {: .no_toc }
+
 Same as /sessions.json
 
 ---
@@ -133,6 +142,7 @@ Retrieve the raw session data in pcap format
 
 ### Parameters
 {: .no_toc }
+
 Name | Type | Description
 -----|------|---------------
 date|integer|The number of hours of data to return, -1 means all data
@@ -157,6 +167,7 @@ Retrieve the spigraph data in json format
 
 ### Parameters
 {: .no_toc }
+
 Name | Type | Description
 -----|------|---------------
 date|integer|The number of hours of data to return, -1 means all data
@@ -177,6 +188,7 @@ Retrieve the spiview data in json format
 
 ### Parameters
 {: .no_toc }
+
 Name | Type | Description
 -----|------|---------------
 date|integer|The number of hours of data to return, -1 means all data
@@ -196,6 +208,7 @@ Retrieve the unique data for a field in text format
 
 ### Parameters
 {: .no_toc }
+
 Name | Type | Description
 -----|------|---------------
 date|integer|The number of hours of data to return, -1 means all data

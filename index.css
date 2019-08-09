@@ -220,6 +220,17 @@ footer.footer {
   border-top: 1px solid #E5E5E5;
 }
 
+body.wiki-body footer.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+body.wiki-body .footer-owl {
+  position: absolute;
+  bottom: 37px;
+}
+
 /* move the image up so the owl is sitting on the border */
 img.footer-owl {
   margin-bottom: -2px;
@@ -289,6 +300,16 @@ body.full-height-body {
   transition: all 1s ease;
 }
 
+.full-height-and-width-container {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  position: absolute;
+  height: calc(100% - 56px);
+  transition: all 1s ease;
+}
+
 .left-nav {
   left: 0;
   bottom: 0;
@@ -298,6 +319,12 @@ body.full-height-body {
   word-break: break-word;
   height: calc(100% - 56px);
   transition: width 1s ease;
+}
+
+.with-footer {
+  top: 50px !important;
+  bottom: 50px !important;
+  height: calc(100% - 85px) !important;
 }
 
 /* collapsed toc */
@@ -379,4 +406,25 @@ body.full-height-body {
 .full-height-container h3[id]:hover > span.copy-link,
 .full-height-container td[id]:hover > span.copy-link {
   visibility: visible;
+}
+
+/* wiki tocs */
+.wiki-toc {
+  padding-left: 10px;
+}
+
+.wiki-toc, .wiki-toc ul {
+  list-style: none;
+}
+
+.wiki-toc > li > ul > li {
+  margin-left: -15px;
+}
+
+.wiki-toc > li > a {
+  font-weight: bold;
+}
+
+.wiki-toc a:hover {
+  text-decoration: none;
 }
