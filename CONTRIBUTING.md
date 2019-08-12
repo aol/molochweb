@@ -42,7 +42,7 @@ http://127.0.0.1:4000/
 
 #### Documentation! :page_with_curl:
 
-The FAQs, wikis, and page styles are important. Please help improve and add to them.
+The FAQs, docs, and page styles are important. Please help improve and add to them.
 
 #### Bugs :bug: :beetle: :ant:
 
@@ -86,13 +86,13 @@ Feature requests are tracked as [GitHub Issues](https://guides.github.com/featur
 
 This site uses the [Bootstrap](https://getbootstrap.com/) toolkit for all its style and layout. It's a good idea to get familiar with this toolkit before contributing.
 
-#### Wiki Pages
-The Wiki pages are created using Jekyll and kramdown. Get started with Jekyll [here](https://jekyllrb.com/docs).
+#### Docs Pages
+The Docs pages are created using Jekyll and kramdown. Get started with Jekyll [here](https://jekyllrb.com/docs).
 Check out kramdown syntax [here](https://kramdown.gettalong.org/syntax.html).
 
-There are some things to consider when adding a new wiki page:
+There are some things to consider when adding a new doc page:
 
-1. Start every new wiki page with this content:
+1. Start every new doc page with this content:
 
 ```
 ---
@@ -111,6 +111,12 @@ permalink: "/awesomepage"
 {:toc}
 {: .left-nav .d-none .d-sm-block .pt-3 .with-footer .wiki-toc }
 
+<div class="collapse-btn d-none d-sm-block"
+  onclick="toggleToc()">
+  <span class="fa fa-angle-double-left">
+  </span>
+</div>
+
 <div class="full-height-container with-footer pt-3 pr-2 pl-2 pb-3" markdown="1">
   content goes here
 </div>
@@ -118,7 +124,7 @@ permalink: "/awesomepage"
 
 **Info:** Want to exclude a section from your table of contents? Just add `{: .no_toc}` under the heading you want to exclude. There must be a newline after it!
 
-3. Just want a full page of wiki information? Use this scaffolding around your content:
+3. Just want a full page of information? Use this scaffolding around your content:
 
 ```
 <div class="full-height-and-width-container with-footer p-3" markdown="1">
@@ -126,7 +132,7 @@ permalink: "/awesomepage"
 </div>
 ```
 
-4. Lastly, you must add it to the wiki home page (`wiki/home.md`)! Like so:
+4. Lastly, you must add it to the docs home page (`_wiki/home.md`)! Like so:
 
 ```
 - [New Awesome Page Title](awesomepage)

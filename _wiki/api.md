@@ -8,6 +8,12 @@ permalink: "/api"
 {:toc}
 {: .left-nav .d-none .d-sm-block .pt-3 .with-footer .wiki-toc }
 
+<div class="collapse-btn d-none d-sm-block"
+  onclick="toggleToc()">
+  <span class="fa fa-angle-double-left">
+  </span>
+</div>
+
 <div class="full-height-container with-footer pt-3 pr-2 pl-2 pb-3" markdown="1">
 
 # Viewer API

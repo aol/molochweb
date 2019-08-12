@@ -366,7 +366,7 @@ title: FAQ
         system with meta data parsing and searching, then Moloch may be
         your answer! Moloch allows you complete control of deployment
         and architecture. There are
-        <a href="https://github.com/aol/moloch/wiki/Other-FPC-Systems">
+        <a href="otherfpc">
           other FPC systems
         </a>
         available.
@@ -1037,13 +1037,11 @@ yum install devtoolset-7-toolchain</code></pre>
       <p>
         If these don’t help, you need to add more nodes or reduce the number of
         sessions being monitored. You can reduce the number of sessions with
-        <a href="./Settings#packetdropips">
-          packet-drop-ips
-        </a>
+        <a href="settings#packet-drop-ips">
+          packet-drop-ips</a>
         or bpf filters or
-        <a href="./RulesFormat">
-          rules files
-        </a>
+        <a href="rulesformat">
+          rules files</a>
         for example.
       </p>
 
@@ -1209,8 +1207,7 @@ yum install devtoolset-7-toolchain</code></pre>
             ./db.pl
             <a href="http://ESHOST:9200"
               rel="nofollow">
-              http://ESHOST:9200
-            </a>
+              http://ESHOST:9200</a>
             upgrade
           </code>
         </li>
@@ -1248,8 +1245,7 @@ yum install devtoolset-7-toolchain</code></pre>
             curl
             <a href="http://localhost:9200/_cat/health"
               rel="nofollow">
-              http://localhost:9200/_cat/health
-            </a>
+              http://localhost:9200/_cat/health</a>
           </code>
         </li>
         <li>
@@ -1304,8 +1300,7 @@ yum install devtoolset-7-toolchain</code></pre>
             ./db.pl
             <a href="http://ESHOST:9200"
               rel="nofollow">
-              http://ESHOST:9200
-            </a>
+              http://ESHOST:9200</a>
             upgrade
           </code>
         </li>
@@ -1421,8 +1416,7 @@ yum install devtoolset-7-toolchain</code></pre>
             ./db.pl
             <a href="http://ESHOST:9200"
               rel="nofollow">
-              http://ESHOST:9200
-            </a>
+              http://ESHOST:9200</a>
             upgrade
           </code>
         </li>
@@ -1509,8 +1503,7 @@ yum install devtoolset-7-toolchain</code></pre>
             ./db.pl
             <a href="http://localhost:9200"
               rel="nofollow">
-              http://localhost:9200
-            </a>
+              http://localhost:9200</a>
             unflood-stage _all
           </code>
           to clear the error, once you adjust the settings and/or delete some
@@ -1695,7 +1688,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
       <p>
         We are big fans of using Network Packet Brokers. If there is one piece of
         advice we can give medium or large Moloch deployments — use a NPB. See
-        <a href="https://github.com/aol/moloch/wiki/NPB.pptx">
+        <a href="/assets/MolochON2017NPB.pptx">
           MolochON 2017 NPB Preso
         </a>
       </p>
@@ -1793,11 +1786,11 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
         on the number of CPUs available to Moloch and what else the machine is
         doing. Many times the limiting factor can be the speed of the disks and
         RAID system. See
-        <a href="https://github.com/aol/moloch/wiki/Architecture">
+        <a href="architecture">
           Architecture</a>
         and
-        <a href="https://github.com/aol/moloch/wiki/Multiple-Host-HOWTO">
-          Multiple-Host-HOWTO</a>
+        <a href="multihost">
+          Multiple Host</a>
         for more information. Moloch allows multiple threads to be used to
         process the packets.
       </p>
@@ -2316,7 +2309,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
         </li>
         <li>
           Using
-          <a href="https://github.com/aol/moloch/wiki/RulesFormat">
+          <a href="rulesformat">
             Rules</a>
           it is possible to control if the packets are written to disk or the
           SPI data is sent to Elasticsearch
@@ -2695,7 +2688,7 @@ viewUrl=http://node2.fqdn</code></pre>
         Moloch will not be used, however Moloch will still do the authorization.
         Moloch will use a username that the reverse proxy passes to Moloch as a
         HTTP header for settings and authorization. See the
-        <a href="https://github.com/aol/moloch/wiki/Architecture">
+        <a href="architecture">
           architecture</a>
         page for diagrams. While operators will use the proxy to reach the Moloch
         viewer, the viewer processes still need direct access to each other.

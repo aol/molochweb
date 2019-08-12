@@ -221,6 +221,7 @@ footer.footer {
 }
 
 body.wiki-body footer.footer {
+  background: white;
   position: absolute;
   left: 0;
   right: 0;

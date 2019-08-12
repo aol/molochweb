@@ -8,6 +8,12 @@ permalink: "/wise"
 {:toc}
 {: .left-nav .d-none .d-sm-block .pt-3 .with-footer .wiki-toc }
 
+<div class="collapse-btn d-none d-sm-block"
+  onclick="toggleToc()">
+  <span class="fa fa-angle-double-left">
+  </span>
+</div>
+
 <div class="full-height-container with-footer pt-3 pr-2 pl-2 pb-3" markdown="1">
 
 # WISE
@@ -450,7 +456,7 @@ esHost|REQUIRED|The elasticsearch connection string, usually host:port
 {: .table .table-striped .table-sm .mb-4 }
 
 ### right-click
-This source monitors configured files for right-click actions to send to all the viewer instances that connect to this WISE Server. Each file needs to have its own section, with the section name starting with `right-click:`. The format of the monitored files is the same as https://github.com/aol/moloch/wiki/Settings#rightclick  WISE will auto reload the right click files if they change.
+This source monitors configured files for right-click actions to send to all the viewer instances that connect to this WISE Server. Each file needs to have its own section, with the section name starting with `right-click:`. The format of the monitored files is the same as [WISE](settings#wise). It will auto reload the right click files if they change.
 
 Create a `[right-click:UNIQUENAME]` section to configure
 {: .mb-0}
