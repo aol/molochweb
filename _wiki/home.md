@@ -1,7 +1,7 @@
 ---
 title: Wiki Home
 layout: wiki
-permalink: "/wikihome"
+permalink: "/docshome"
 ---
 
 <div class="full-height-and-width-container with-footer p-3" markdown="1">
@@ -10,9 +10,10 @@ permalink: "/wikihome"
 
 - [FAQ](faq)
 - [Settings](settings)
-- [Articles About Moloch](articles)
+- [Articles and Presentations About Moloch](articles)
 - [Multiple Host](multihost)
 - [Other FPC Systems](otherfpc)
+- [Architecture](architecture)
 
 #### Capture
 - [Rules Format](rulesformat)
@@ -29,7 +30,6 @@ permalink: "/wikihome"
 #### WISE
 - [WISE](wise)
 - [Adding New WISE Sources](wisesources)
-
 
 ---
 
