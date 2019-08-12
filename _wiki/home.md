@@ -29,7 +29,6 @@ permalink: "/wikihome"
 - [Articles About Moloch](articles)
 - [Elasticsearch SSL](esssl)
 - [Multiple Host](multihost)
-- [OSX Build](osxbuild)
 - [Other FPC Systems](otherfpc)
 - [Rules Format](rulesformat)
 - [S3](s3)
