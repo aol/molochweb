@@ -6,39 +6,34 @@ permalink: "/wikihome"
 
 <div class="full-height-and-width-container with-footer p-3" markdown="1">
 
-# Welcome to the Moloch Wiki!
-
----
-
-#### Please join [Slack](https://slackinvite.molo.ch) for help
-
-#### Submit bugs to [GitHub](https://github.com/aol/moloch/issues)
-
-#### Try the Moloch [demo](https://demo.molo.ch/?date=-1) instance!
-   - username: **moloch**  
-   - password: **moloch**
-
----
-
-### Wiki Pages
+#### General
 
 - [FAQ](faq)
 - [Settings](settings)
-- [Viewer API](api)
-- [Adding New WISE Sources](wisesources)
 - [Articles About Moloch](articles)
-- [Elasticsearch SSL](esssl)
 - [Multiple Host](multihost)
 - [Other FPC Systems](otherfpc)
+
+#### Capture
 - [Rules Format](rulesformat)
 - [S3](s3)
 - [Tagger Format](taggerformat)
 - [Tagger Plugin](tagger)
+
+#### Viewer
+- [Viewer API](api)
+
+#### Elasticsearch
+- [Elasticsearch SSL](esssl)
+
+#### WISE
 - [WISE](wise)
+- [Adding New WISE Sources](wisesources)
+
 
 ---
 
-### Want to contribute to this wiki?
+### Want to contribute to our documentation?
 
 Check out our [contributing](https://github.com/aol/molochweb/blob/master/CONTRIBUTING.md) file for more information.
 
