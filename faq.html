@@ -1216,7 +1216,10 @@ yum install devtoolset-7-toolchain</code></pre>
         or mouse over the <span class="fa fa-info-circle"></span> in Moloch.
       </p>
       <p>
-        Second: Now you need to upgrade from ES 6 to ES 7. There are two options:
+        Second: Make sure your config files are ready for ES 7.  You MUST add a <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.3/discovery-settings.html#initial_master_nodes">cluster.initial_master_nodes</a> and there may be other required changes.
+      </p>
+      <p>
+        Third: Now you need to upgrade from ES 6 to ES 7. There are two options:
         <ol>
           <li>
             Upgrading to ES 7 if using ES 6.8.2 can be done with a rolling upgrade.  Follow Elastic's <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.3/rolling-upgrades.html">instructions</a> for best results.  You do NOT need to stop capture/viewer, but after the rolling upgrade is finish you may want to restart capture everywhere.
