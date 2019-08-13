@@ -1,5 +1,5 @@
 ---
-title: Wiki Home
+title: Docs Home
 layout: wiki
 permalink: "/docshome"
 ---
@@ -10,16 +10,16 @@ permalink: "/docshome"
 
 - [FAQ](faq)
 - [Settings](settings)
+- [Moloch Architecture Designs](architecture)
 - [Articles and Presentations About Moloch](articles)
-- [Multiple Host](multihost)
+- [Moving from single host to multiple hosts](multihost)
 - [Other FPC Systems](otherfpc)
-- [Architecture](architecture)
 
 #### Capture
 - [Rules Format](rulesformat)
-- [S3](s3)
 - [Tagger Format](taggerformat)
 - [Tagger Plugin](tagger)
+- [S3 PCAP Storage](s3)
 
 #### Viewer
 - [Viewer API](api)
@@ -28,8 +28,8 @@ permalink: "/docshome"
 - [Elasticsearch SSL](esssl)
 
 #### WISE
-- [WISE](wise)
-- [Adding New WISE Sources](wisesources)
+- [All about WISE](wise)
+- [Building new WISE sources](wisesources)
 
 ---
 

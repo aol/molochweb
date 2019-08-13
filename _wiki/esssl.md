@@ -10,71 +10,80 @@ permalink: /esssl
 
 ---
 
-Moloch 0.14.1, and later, now supports connecting to Elasticsearch using SSL. So far we've only used [search-guard-ssl](https://github.com/floragunncom/search-guard-ssl) but these instructions should apply to other solutions. You should still use iptables, there is someone on your network, you just don't know it :).
+Moloch supports connecting to Elasticsearch using TLS.  We've tested with both [search-guard](https://search-guard.com) and [elasticsearch](https://www.elastic.co/guide/en/elastic-stack-overview/current/ssl-tls.html), but these instructions should apply to other solutions.  You should still use iptables, there is someone on your network, you just don't know it :).
 
 **Try this on a test cluster first!**
 
-* First, visit https://github.com/floragunncom/search-guard-ssl/wiki and find which versions of ES are supported.
-* Install the required version of ES everywhere and get Moloch working with normal http
-* Create the certs required
-  * Simple way: Pay for a REAL single cert and submit SANs for all the nodes (and possible future nodes!)  Now you just have 1 cert to deal with. FTW!!!
-  * Harder way but free: https://github.com/floragunncom/search-guard-ssl/wiki/Generate-Keystores
-* Create a p12 file (you can do jks files, but keytool is insane)
+
+## Elasticsearch implementation
+
+* First make sure you are using ES 6.8/7.1 or later for the free version
+* We recommend you get the ES cluster and Moloch working before enabling TLS
+* Create the certs required, we recommend creating a single wildcard cert
+* Here is a sample config for your elasticsearch.yml
+  * It assumes the private key is the file es.key with no password and public key es.cert
+  * It turns off user authentication
+  * It disables monitoring
 
 ```
-openssl pkcs12 -export -out es.p12 -inkey key.pem -in cert.pem -passout "pass:changeit"
+xpack.monitoring.enabled: false
+xpack.security.enabled: true
+xpack.security.dls_fls.enabled: false
+
+xpack.security.transport:
+  ssl.enabled: true
+  ssl.verification_mode: certificate
+  ssl.key: es.key
+  ssl.certificate: es.cert
+
+xpack.security.http:
+  ssl.enabled: true
+  ssl.verification_mode: certificate
+  ssl.key: es.key
+  ssl.certificate: es.cert
+
+xpack.security.authc:
+  anonymous:
+    username: anonymous
+    roles: superuser
+    authz_exception: true
 ```
 
-* Copy the p12 (or jks) file into the same directory as elasticsearch.yml on ALL the elasticsearch boxes
-* Install the seaerch-guard-ssl plugin
+* Do a full cluster restart
+* Change your Moloch config.ini files for everything to use https
+* See https://www.elastic.co/guide/en/elastic-stack-overview/current/ssl-tls.html for more information
+
+
+## Searchguard implementation
+
+* We recommend you get the ES cluster and Moloch working before enabling TLS
+* Visit https://docs.search-guard.com/latest/search-guard-versions and select the proper ES version and search guard version
+* Here is a sample config for your elasticsearch.yml
+  * It assumes the private key is the file es.key with no password and public key es.cert
+  * It turns off all search guard features except for tls, for example user authentication
 
 ```
-bin/plugin install com.floragunn/search-guard-ssl/<version>
-```
-
-* Add the following to your elasticsearch.yml (See https://github.com/floragunncom/search-guard-ssl/blob/master/searchguard-ssl-config-template.yml for more info)
-
-```
+searchguard.ssl_only: true
 # NODE2NODE
-
 searchguard.ssl.transport.enabled: true
-searchguard.ssl.transport.keystore_type: PKCS12
-searchguard.ssl.transport.keystore_filepath: es.p12
-searchguard.ssl.transport.keystore_password: changeit
-
-searchguard.ssl.transport.truststore_type: PKCS12
-searchguard.ssl.transport.truststore_filepath: es.p12
-searchguard.ssl.transport.truststore_password: changeit
-searchguard.ssl.transport.enforce_hostname_verification: true
-searchguard.ssl.transport.resolve_hostname: true
+searchguard.ssl.transport.pemkey_filepath: es.key
+searchguard.ssl.transport.pemcert_filepath: es.cert
+searchguard.ssl.transport.pemtrustedcas_filepath: es.cert
 
 # HTTP
-
 searchguard.ssl.http.enabled: true
-searchguard.ssl.http.keystore_type: PKCS12
-searchguard.ssl.http.keystore_filepath: es.p12
-searchguard.ssl.http.keystore_password: changeit
-#searchguard.ssl.http.clientauth_mode: REQUIRE
-searchguard.ssl.http.truststore_type: PKCS12
-searchguard.ssl.http.truststore_filepath: es.p12
-searchguard.ssl.http.truststore_password: changeit
+searchguard.ssl.http.pemkey_filepath: es.key
+searchguard.ssl.http.pemcert_filepath: es.cert
+searchguard.ssl.http.pemtrustedcas_filepath: es.cert
 ```
 
-* Restart elasticsearch
+* Do a full cluster restart
 * Change your Moloch config.ini files for everything to use https
-
-
-```
-elasticsearch = https://HOST:PORT
-```
-
-* Restart the Moloch viewer and the Moloch capture everywhere
-* $$$ Profit $$$
 
 ---
 
 ##### Notes:
-* When using curl you may need to add the ```--tlsv1.1``` option
+* When using curl you may need to add the ```--tlsv1.1``` option on older machines
 * On any host where db.pl runs you'll need to install the ```perl-Crypt-SSLeay``` package
 * Currently Moloch doesn't support client auth. **You should still use iptables!**
 
