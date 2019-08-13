@@ -419,7 +419,7 @@ title: FAQ
               <a href="#how_do_i_upgrade_to_moloch_2"> Moloch 2.0 instructions </a>
             </td>
             <td>
-              Must already be on ES 6.7 or 6.8 and Moloch 1.7 or 1.8  (ES 6.8.2 and Moloch 1.8.0 recommended) before upgrading to 2.0
+              Must already be on ES 6.7 or 6.8 and Moloch 1.7 or 1.8  (ES <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-oss-6-8-2">6.8.2</a> and Moloch 1.8.0 recommended) before upgrading to 2.0
             </td>
           </tr>
           <tr>
@@ -866,7 +866,7 @@ yum install devtoolset-7-toolchain</code></pre>
       </p>
       <ul>
         <li>You must be using Moloch 1.7 or 1.8 (Moloch 1.8.0 recommended) BEFORE trying to upgrade to Moloch 2.0</li>
-        <li>You must be using Elasticsearch 6.7 or 6.8 (Elasticsearch 6.8.2 recommended) BEFORE trying to upgrade to Moloch 2.0</li>
+        <li>You must be using Elasticsearch 6.7 or 6.8 (Elasticsearch <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-oss-6-8-2">6.8.2</a> recommended) BEFORE trying to upgrade to Moloch 2.0</li>
         <li>Install Moloch &gt;= 2.0 without restarting captures/viewers</li>
         <li>Shutdown captures</li>
         <li> run <code> ./db.pl <a href="http://ESHOST:9200" rel="nofollow"> http://ESHOST:9200</a> upgrade</code></li>
@@ -1222,7 +1222,7 @@ yum install devtoolset-7-toolchain</code></pre>
         Third: Now you need to upgrade from ES 6 to ES 7. There are two options:
         <ol>
           <li>
-            Upgrading to ES 7 if using ES 6.8.2 can be done with a rolling upgrade.  Follow Elastic's <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.3/rolling-upgrades.html">instructions</a> for best results.  You do NOT need to stop capture/viewer, but after the rolling upgrade is finish you may want to restart capture everywhere.
+            Upgrading to ES 7 if using ES <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-oss-6-8-2">6.8.2</a> can be done with a rolling upgrade.  Follow Elastic's <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.3/rolling-upgrades.html">instructions</a> for best results.  You do NOT need to stop capture/viewer, but after the rolling upgrade is finish you may want to restart capture everywhere.
           </li>
           <li>
             If not using ES 6.8.2, or if you would prefer to do a full restart follow the instructions below
