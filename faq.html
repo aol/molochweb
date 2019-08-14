@@ -1208,18 +1208,23 @@ yum install devtoolset-7-toolchain</code></pre>
           Upgrading to ES 7 MAY REQUIRE downtime
         </strong>
       </p>
-      <p>
-        First: If you are NOT using Moloch DB version 63 (or later) you
-        must follow these <a href="/faq#how_do_i_upgrade_to_moloch_2">instructions</a> while still using ES 6.x and upgrade to Moloch 2.0. To find what DB version
-        you are using, either run
-        <code>db.pl localhost:9200 info</code>
-        or mouse over the <span class="fa fa-info-circle"></span> in Moloch.
-      </p>
-      <p>
-        Second: Make sure your config files are ready for ES 7.  You MUST add a <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.3/discovery-settings.html#initial_master_nodes">cluster.initial_master_nodes</a> and there may be other required changes.
-      </p>
-      <p>
-        Third: Now you need to upgrade from ES 6 to ES 7. There are two options:
+      <ol type="I">
+        <li>
+          If you are NOT using Moloch DB version 63 (or later) you
+          must follow these <a href="/faq#how_do_i_upgrade_to_moloch_2">instructions</a> while still using ES 6.x and upgrade to Moloch 2.0. To find what DB version
+          you are using, either run
+          <code>db.pl localhost:9200 info</code>
+          or mouse over the <span class="fa fa-info-circle"></span> in Moloch.
+        </li>
+        <li>
+          Make sure your config files are ready for ES 7.  We do not provide sample configs, but here are some things to look out for:
+          <ul>
+            <li>You MUST add a <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.3/discovery-settings.html#initial_master_nodes">cluster.initial_master_nodes</a> and there may be other required discovery changes.</li>
+            <li>If you have more then 1000 shards per node you must set <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/misc-cluster.html">cluster.max_shards_per_node</a>
+          </ul>
+        </li>
+        <li>
+         Now you need to upgrade from ES 6 to ES 7. There are two options:
         <ol>
           <li>
             Upgrading to ES 7 if using ES <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-oss-6-8-2">6.8.2</a> can be done with a rolling upgrade.  Follow Elastic's <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.3/rolling-upgrades.html">instructions</a> for best results.  You do NOT need to stop capture/viewer, but after the rolling upgrade is finish you may want to restart capture everywhere.
@@ -1251,7 +1256,8 @@ yum install devtoolset-7-toolchain</code></pre>
             </ul>
           </li>
         </ol>
-      </p>
+        </li>
+      </ol>
 
       <h3 id="how-do-i-upgrade-to-es-6-x">
         How do I upgrade to ES 6.x
