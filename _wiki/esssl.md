@@ -80,9 +80,12 @@ searchguard.ssl.http.pemtrustedcas_filepath: es.cert
 * Do a full cluster restart
 * Change your Moloch config.ini files for everything to use https
 
+
 ---
 
 ##### Notes:
+
+* Moloch 2.0 supports using client auth with Elasticsearch SSL.  You will need to set the the <a href="/settings#esclientkey">esClientKey</a> and <a href="/settings#esclientcert">esClientCert</a> settings.
 * When using curl you may need to add the ```--tlsv1.1``` option on older machines
 * On any host where db.pl runs you'll need to install the ```perl-Crypt-SSLeay``` package
 * Currently Moloch doesn't support client auth. **You should still use iptables!**

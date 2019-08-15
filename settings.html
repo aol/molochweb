@@ -392,6 +392,27 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="esclientcert">esClientCert<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>EMPTY</td>
+            <td>
+              (Since 2.0) The public key file to use for tls client authentication with elasticsearch.  Must also set esClientKey.
+            </td>
+          </tr>
+          <tr>
+            <td id="esclientkey">esClientKey<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>EMPTY</td>
+            <td>
+              (Since 2.0) The private key file to use for tls client authentication with elasticsearch.  Must also set esClientCert.
+            </td>
+          </tr>
+          <tr>
+            <td id="esclientkey">esClientKeyPass<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>EMPTY</td>
+            <td>
+              (Since 2.0) The password for the esClientKey setting.
+            </td>
+          </tr>
+          <tr>
             <td id="freespaceg">
               freeSpaceG
               <span class="fa fa-link small copy-link cursor-copy"
@@ -399,7 +420,7 @@ title: Settings
               </span>
             </td>
             <td>
-              5% (&gt;= v0.12)<br>100 (&lt; v0.12)
+              5%
             </td>
             <td>
               Delete pcap files when free space is lower then this. This does
@@ -519,8 +540,7 @@ title: Settings
               EMPTY
             </td>
             <td>
-              Semicolon ';' separated list of interfaces to listen on for live
-              traffic. (Prior to 0.14 only 1 interface is allowed)
+              Semicolon ';' separated list of interfaces to listen on for live traffic.
             </td>
           </tr>
           <tr>
@@ -539,18 +559,12 @@ title: Settings
             </td>
           </tr>
           <tr>
-            <td id="magicmode">
-              magicMode
-              <span class="fa fa-link small copy-link cursor-copy"
-                onclick="copyLink(this, 'settings')">
-              </span>
+            <td id="magicmode">magicMode<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              both (since 1.5.0) or libmagic (before 1.5.0)
             </td>
             <td>
-              both (since 1.5.0) libmagic (0.16.1)
-            </td>
-            <td>
-              (since 0.16.1) libfile can be VERY slow. Less accurate "magicing"
-              is available for http/smtp bodies:
+              libfile can be VERY slow. Less accurate "magicing" is available for http/smtp bodies:
               <ul class="mb-0">
                 <li>libmagic - normal libmagic</li>
                 <li>libmagicnotext - libmagic, but turns off text checks</li>
@@ -650,7 +664,7 @@ title: Settings
               &nbsp;
             </td>
             <td>
-              (since 0.14.2) Semicolon ';' separated list of bpf filters which
+              Semicolon ';' separated list of bpf filters which
               when matched for a session have their SPI data NOT saved to
               Elasticsearch. PCAP data is still saved however. It is possible
               to specify the number of min packets required for SPI to be saved
@@ -702,13 +716,13 @@ title: Settings
               </span>
             </td>
             <td>
-              Value of password secret
+              Value of passwordSecret
             </td>
             <td>
               The server-to-server shared key. It must be set in the [default]
               section of the config file, and all viewers in the moloch cluster
               must have the same value. It can be, and should be changed
-              periodically. Since 0.18.3.
+              periodically.
             </td>
           </tr>
           <tr>
@@ -722,16 +736,11 @@ title: Settings
               EMPTY
             </td>
             <td>
-              Server-to-server and password hash secret - Must be in [default]
-              section of the config file, and all viewers in the moloch cluster
-              must have the same value. Since elasticsearch is wide open by
-              default, we encrypt the stored password hashes with this so a
-              malicious person can't insert a working new account. It is also
-              used for secure server-to-server communication if serverSecret is
-              not set, if using 0.18.3 or later please set serverSecret also to
-              a different value. Don't set if you do not want user
-              authentication. Changing the value will make all previously
-              stored passwords no longer work.
+              Password hash secret - Must be in [default] section of the config file, and all viewers in the moloch cluster must have the same value.
+              Since elasticsearch is wide open by default, we encrypt the stored password hashes with this so a malicious person can't insert a working new account.
+              It is also used for secure server-to-server communication if serverSecret is not set a different value.
+              Don't set if you do not want user authentication.
+              Changing the value will make all previously stored passwords no longer work.
             </td>
           </tr>
           <tr>
@@ -880,7 +889,7 @@ title: Settings
               EMPTY
             </td>
             <td>
-              (Since 0.14.2) When set, this strftime template is appended to
+              When set, this strftime template is appended to
               pcapDir and allows multiple directories to be created based on
               time.
             </td>
@@ -1025,7 +1034,7 @@ title: Settings
               EMPTY
             </td>
             <td>
-              (Since 0.19) A semicolon separated list of files that contain
+              A semicolon separated list of files that contain
               rules. These rules match against fields set and can set other
               fields or meta data about the sessions. See
               <a class="no-decoration"
@@ -1346,6 +1355,15 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="catrustfile">caTrustFile<span class="fa fa-link small copy-link cursor-copy"onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              Empty
+            </td>
+            <td>
+              Optional file with PEM encoded certificates to use when validating certs.
+            </td>
+          </tr>
+          <tr>
             <td id="compresses">
               compressES
               <span class="fa fa-link small copy-link cursor-copy"
@@ -1388,6 +1406,14 @@ title: Settings
             </td>
             <td>
               Number of seconds before we force a flush to Elasticsearch
+            </td>
+          </tr>
+          <tr><td id="enablepacketlen">enablePacketLen<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              FALSE (2.0 and later), TRUE (before 2.0)
+            </td>
+            <td>
+              (Since 2.0) Index all the packet lengths in elasticsearch
             </td>
           </tr>
           <tr>
@@ -1519,6 +1545,14 @@ title: Settings
               node is considered local.
             </td>
           </tr>
+          <tr><td id="ja3strings">ja3Strings<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              FALSE
+            </td>
+            <td>
+              (Since 2.0) Index the raw JA3 strings before hashing them
+            </td>
+          </tr>
           <tr>
             <td id="maxesconns">
               maxESConns
@@ -1560,7 +1594,6 @@ title: Settings
             <td>
               If moloch exceeds this amount of memory it will log an error and
               send itself a SIGSEGV that should produce a core file.
-              Since 0.20.0
             </td>
           </tr>
           <tr>
@@ -1590,7 +1623,7 @@ title: Settings
             </td>
             <td>
               Regexp to control which filenames are processed when using the -R
-              option to moloch-capture. Since 0.11.3
+              option to moloch-capture.
             </td>
           </tr>
           <tr>
@@ -1618,7 +1651,7 @@ title: Settings
               libpcap
             </td>
             <td>
-              Specify how packets are read from network cards (since 0.14.0):
+              Specify how packets are read from network cards:
               <ul class="mb-0">
                 <li>
                   libpcap = Use libpcap
@@ -1631,12 +1664,10 @@ title: Settings
                   daq = Use daq, requires rootPlugins=reader-daq.so
                 </li>
                 <li>
-                  snf = Use Myricom snf, requires rootPlugins=reader-snf.so,
-                  Since 0.15.1
+                  snf = Use Myricom snf, requires rootPlugins=reader-snf.so
                 </li>
                 <li>
-                  tpacketv3 = Use linux tpacketv3 (afpacket) interface,
-                  Since 0.16.1
+                  tpacketv3 = Use linux tpacketv3 (afpacket) interface
                 </li>
               </ul>
             </td>
@@ -1698,7 +1729,7 @@ title: Settings
             <td>
               It is possible for multiple Moloch clusters to live inside the
               same Elasticsearch cluster by giving each Moloch cluster a
-              different prefix value. (Added 0.11.3)
+              different prefix value.
             </td>
           </tr>
           <tr>
@@ -1755,7 +1786,7 @@ title: Settings
               16384
             </td>
             <td>
-              (Since 0.18.2) The maximum size of a packet Moloch will read off
+              The maximum size of a packet Moloch will read off
               the interface. This can be changed to fix the "Moloch requires
               full packet captures" error. It is recommend that instead of
               changing this value that all the card "offline" features are
@@ -1793,7 +1824,7 @@ title: Settings
             <td>
               It is possible for multiple Moloch clusters to share the same
               users table, so that the same accounts and settings work across
-              all clusters. (Added 0.11.3)
+              all clusters.
             </td>
           </tr>
           <tr>
@@ -1838,6 +1869,14 @@ title: Settings
               (Since 1.5.0) Always query all indices instead of trying to
               calculate which ones. Use this if searching across that use
               different rotateIndex values.
+            </td>
+          </tr>
+          <tr><td id="uploadfilesizelimit">uploadFileSizeLimit<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              (Since 2.0) If set, the max size of pcap files that can be uploaded from the UI
             </td>
           </tr>
         </tbody>
@@ -1898,6 +1937,14 @@ title: Settings
             <td>
               The number of threads used to read packets from each interface. These threads take the packets from the AF packet interface and place them into the packet queues.
             </td>
+          <tr><td id="tpacketv3clusterid">tpacketv3ClusterId<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              0
+            </td>
+            <td>
+              (Since 2.0) The cluster id for use with PACKET_FANOUT
+            </td>
+          </tr>
           </tr>
         </tbody>
       </table>
@@ -2116,18 +2163,28 @@ tpacketv3NumThreads=2</pre>
               The data ring size to use, 0 means use the SNF default
             </td>
           </tr>
-          <tr>
-            <td id="snfflags">
-              snfFlags
-              <span class="fa fa-link small copy-link cursor-copy"
-                onclick="copyLink(this, 'settings')">
-              </span>
-            </td>
+          <tr><td id="snfflags">snfFlags<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
             <td>
               -1
             </td>
             <td>
               Controls process-sharing (1), port aggregation (2), and packet duplication (3). (Default value uses SNF_FLAGS environment variable)
+            </td>
+          </tr>
+          <tr><td id="snfnumprocs">snfNumProcs<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              1
+            </td>
+            <td>
+              (Since 2.0) The numer of capture processes listening on the shared interface
+            </td>
+          </tr>
+          <tr><td id="snfprocnum">snfProcNum<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              0
+            </td>
+            <td>
+              (Since 2.0) Which capture process this is if using a shared interface
             </td>
           </tr>
         </tbody>
@@ -2914,12 +2971,10 @@ x-priority=type:integer</code></pre>
         </span>
       </h2>
       <p>
-        Starting with Moloch 0.11.4 it is possible to configure right click
-        actions on any SPI data fields. Currently the only actions supported
-        are url opening actions, but other action types will be added in the
-        future. Right click actions can be added based on either the field name
-        or the category of the data. They can be added either in the
-        configuration file or by enabled WISE data sources.
+        It is possible to configure right click actions on any SPI data fields.
+        Currently the only actions supported are url opening actions, but other action types will be added in the future.
+        Right click actions can be added based on either the field name or the category of the data.
+        They can be added either in the configuration file or by enabled WISE data sources.
       </p>
       <p class="mb-0">
         Configuration File Sample:
@@ -3219,7 +3274,7 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
           onclick="copyLink(this, 'settings')">
         </span>
       </h2>
-      <p>(Since 0.16.1) This section allows you to specify ips or cidrs to drop
+      <p>This section allows you to specify ips or cidrs to drop
         from being processed. This is different from a bpf filter since the
         packets will actually reach moloch-capture (and counted) but won't be
         fully processed. However if you have many ranges/ips to drop it can be
@@ -3239,9 +3294,8 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
         PCAP at Rest Encryption
       </h2>
       <p>
-        (Since version 0.17.0, 1.5.3 recommended) Moloch provides support for
-        PCAP at rest encodings. Two forms of encodings are presently
-        supported: "aes-256-ctr" and "xor-2048". Please note that xor-2048
+        Moloch provides support for PCAP at rest encodings. Two forms of encodings
+        are currently supported: "aes-256-ctr" and "xor-2048". Please note that xor-2048
         does not provide the same level of protection as aes-256-ctr.
       </p>
       <p>
@@ -3436,7 +3490,7 @@ kekid2=Randomkekpassword2
         </span>
       </h2>
       <p>
-        Since 1.5 Moloch can enrich sessions with Suricata alerts. Suricata and
+        Moloch can enrich sessions with Suricata alerts. Suricata and
         Moloch must be running on the same machine and looking at the same
         traffic for the plugin to work. Sessions that have been enriched will
         have several new fields, all starting with suricata, and will be
@@ -3543,7 +3597,7 @@ suricataAlertFile=/nids/suricata/eve.json</code></pre>
         </span>
       </h1>
       <p>
-        Sample config items for max performance with 0.16.1 or higher. Most of
+        Sample config items for max performance. Most of
         the defaults are fine. Reading
         <a class="no-decoration"
           href="faq#why-am-i-dropping-packets">
