@@ -868,9 +868,9 @@ yum install devtoolset-7-toolchain</code></pre>
         <li>You must be using Moloch 1.7 or 1.8 (Moloch 1.8.0 recommended) BEFORE trying to upgrade to Moloch 2.0</li>
         <li>You must be using Elasticsearch 6.7 or 6.8 (Elasticsearch <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-oss-6-8-2">6.8.2</a> recommended) BEFORE trying to upgrade to Moloch 2.0</li>
         <li>Install Moloch &gt;= 2.0 without restarting captures/viewers</li>
-        <li>Optional: run <code> ./db.pl <a href="http://ESHOST:9200" rel="nofollow"> http://ESHOST:9200</a> backup pre20 </code> to backup all administrative indices.
+        <li>Optional: run <code> ./db.pl http://ESHOST:9200 backup pre20 </code> to backup all administrative indices.
         <li>Shutdown captures</li>
-        <li> run <code> ./db.pl <a href="http://ESHOST:9200" rel="nofollow"> http://ESHOST:9200</a> upgrade</code></li>
+        <li> run <code> ./db.pl http://ESHOST:9200 upgrade</code></li>
         <li>Restart captures</li>
         <li>Verify everything is working</li>
       </ul>
@@ -1281,13 +1281,7 @@ yum install devtoolset-7-toolchain</code></pre>
         </li>
         <li>
           run
-          <code>
-            ./db.pl
-            <a href="http://ESHOST:9200"
-              rel="nofollow">
-              http://ESHOST:9200</a>
-            upgrade
-          </code>
+          <code> ./db.pl http://ESHOST:9200 upgrade </code>
         </li>
         <li>
           Restart capture
@@ -1386,13 +1380,7 @@ yum install devtoolset-7-toolchain</code></pre>
         </li>
         <li>
           Run
-          <code>
-            ./db.pl
-            <a href="http://ESHOST:9200"
-              rel="nofollow">
-              http://ESHOST:9200</a>
-            upgrade
-          </code>
+          <code> ./db.pl http://ESHOST:9200 upgrade </code>
         </li>
         <li>
           <strong>
