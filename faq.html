@@ -539,22 +539,11 @@ yum install devtoolset-7-toolchain</code></pre>
         </li>
         <li>
           Check that the db has been initialized with
-          <code>/data/moloch/db/db.pl
-            <a href="http://localhost:9200"
-              rel="nofollow">
-              http://localhost:9200
-            </a>
-            info
-          </code>
+          <code>/data/moloch/db/db.pl http://localhost:9200 info</code>
         </li>
         <li>
           Check that viewer is reachable by visiting
-          <code>
-            <a href="http://viewerhostname:8005"
-              rel="nofollow">
-              http://viewerhostname:8005
-            </a>
-          </code>
+          <code>http://viewerhostname:8005</code>
           from your browser
           <ol type="a">
             <li>
@@ -783,14 +772,7 @@ yum install devtoolset-7-toolchain</code></pre>
         </li>
         <li>
           Run
-          <code>
-            db.pl
-            <a href="http://localhost:9200"
-              rel="nofollow">
-              http://localhost:9200
-            </a>
-            upgrade
-          </code>
+          <code>db.pl http://localhost:9200 upgrade</code>
           once
         </li>
         <li>
@@ -1455,13 +1437,7 @@ yum install devtoolset-7-toolchain</code></pre>
           with these settings is an error that has
           <code>FORBIDDEN/12/index read-only / allow delete</code> in it. You can
           use
-          <code>
-            ./db.pl
-            <a href="http://localhost:9200"
-              rel="nofollow">
-              http://localhost:9200</a>
-            unflood-stage _all
-          </code>
+          <code> ./db.pl http://localhost:9200 unflood-stage _all </code>
           to clear the error, once you adjust the settings and/or delete some
           data.
           <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html"
