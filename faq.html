@@ -860,7 +860,7 @@ yum install devtoolset-7-toolchain</code></pre>
 
       <p>
         Upgrading to Moloch 2.0 is a multistep process that requires an outage.
-        An outage is required because all the captures must be stopped before upgrading the database so there are no schema issues.
+        An outage is required because all the captures must be stopped before upgrading the database so there are no schema issues or corruption.
         Most of the administrative indices will have new version numbers after this upgrade, so that elasticsearch knows they were created with 6.7 or 6.8.
         This is very important when upgrading to ES 7.x later.
       </p>
@@ -868,6 +868,7 @@ yum install devtoolset-7-toolchain</code></pre>
         <li>You must be using Moloch 1.7 or 1.8 (Moloch 1.8.0 recommended) BEFORE trying to upgrade to Moloch 2.0</li>
         <li>You must be using Elasticsearch 6.7 or 6.8 (Elasticsearch <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-oss-6-8-2">6.8.2</a> recommended) BEFORE trying to upgrade to Moloch 2.0</li>
         <li>Install Moloch &gt;= 2.0 without restarting captures/viewers</li>
+        <li>Optional: run <code> ./db.pl <a href="http://ESHOST:9200" rel="nofollow"> http://ESHOST:9200</a> backup pre20 </code> to backup all administrative indices.
         <li>Shutdown captures</li>
         <li> run <code> ./db.pl <a href="http://ESHOST:9200" rel="nofollow"> http://ESHOST:9200</a> upgrade</code></li>
         <li>Restart captures</li>
