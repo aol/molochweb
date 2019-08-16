@@ -879,7 +879,7 @@ yum install devtoolset-7-toolchain</code></pre>
       <p>The answer, of course, is "it depends". Factors include:</p>
       <ul>
         <li>
-          How much memory each box has<
+          How much memory each box has
         </li>
         <li>
           How many days you want to store meta data (SPI data) for
@@ -888,7 +888,7 @@ yum install devtoolset-7-toolchain</code></pre>
           How fast the disks are
         </li>
         <li>
-          What percentage of the traffic is HTTP
+          What percentage of the traffic is HTTP/DNS
         </li>
         <li>
           The average transfer rate of all the interfaces
@@ -908,11 +908,6 @@ yum install devtoolset-7-toolchain</code></pre>
       </p>
       <ul>
         <li>
-          1Gbps of network traffic requires ~300GB of disk a day. For example,
-          to store 14 days of 2.5Gbps average traffic you need 14*2.5*300 or
-          ~10TB of disk space.
-        </li>
-        <li>
           SPI data is usually kept longer then PCAP data. For example, you may
           store PCAP for a week but SPI data for a month.
         </li>
@@ -931,16 +926,17 @@ yum install devtoolset-7-toolchain</code></pre>
           and half the memory to disk cache.
         </li>
         <li>
-          Use version 5 of Elasticsearch or later.
+          Use version 6 of Elasticsearch or later.
+        </li>
+        <li>
+          A quick disk requirement estimate is 5% of the PCAP storage, if storing for the same amount of time.
+        </li>
+        <li>
+          If you have large machines, they you can run multiple nodes per MACHINE.
         </li>
       </ul>
       <p>
-        If you have large machines, they you can run multiple nodes per MACHINE.
-        We have some
-        <a href="estimators">
-          estimators
-        </a>
-        that may help.
+        We have some <a href="estimators"> estimators </a> that may help.
       </p>
       <p>
         The good news is that it is easy to add new nodes in the future, so feel
@@ -957,15 +953,14 @@ yum install devtoolset-7-toolchain</code></pre>
         </span>
       </h3>
       <p>
-        The SPI data and the PCAP data are not deleted at the same time.
+        The SPI data in Elasticsearch and the PCAP data are not deleted at the same time.
         The PCAP data is deleted as the disk fills up on the capture machines,
         <a href="#pcap-deletion">more info</a>.  PCAP deletion happens automatically
         and nothing needs to be done.
-        The SPI data is deleted when the
-        <code>./db.pl expire</code>
+        The SPI data is deleted when the <code>./db.pl expire</code>
         command is run, usually from cron during off peak. There is a sample in
         the daily.sh script. The SPI data deletion does NOT happen automatically
-        and a cron job must be set up.
+        and a cron job MUST be set up.
       </p>
       <p>
         So deleting a PCAP file will NOT delete the SPI data, and deleting the
@@ -973,9 +968,8 @@ yum install devtoolset-7-toolchain</code></pre>
       </p>
       <p>
         The UI does have commands to delete and scrub individual sessions, but
-        the user must have the
-        <code>Remove Data</code>
-        ability on the users tab. Usually this is used for things you don’t want
+        the user must have the <code>Remove Data</code>
+        ability on the users tab. Usually this feature is used for things you don’t want
         operators to see, such as bad images.
       </p>
 
@@ -1007,7 +1001,7 @@ yum install devtoolset-7-toolchain</code></pre>
           a 64G machine only run 1 Elasticsearch node on the machine.
         </li>
         <li>
-          Make sure swap is turned off on Elasticsearch machines.
+          Make sure swap is turned off or swappiness is 0 on Elasticsearch machines.
         </li>
         <li>
           If you are running multiple Elasticsearch nodes make sure the disks can
@@ -1893,7 +1887,7 @@ ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
           Disk
         </h4>
         <p>
-          Make sure swap has been disabled, or at the very least, isn’t writing to
+          Make sure swap has been disabled, swappiness is 0, or at the very least, isn’t writing to
           the disk being used for PCAP.
         </p>
         <p>
