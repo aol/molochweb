@@ -1113,11 +1113,11 @@ yum install devtoolset-7-toolchain</code></pre>
         actually <strong>need</strong> replication.
       </p>
       <p>
-        To change future days (since 0.14.1):
+        To change future days
         <pre><code>db/db.pl &lt;ESHOST:ESPORT&gt; upgrade --replicas 1</code></pre>
       </p>
       <p>
-        To change past days, but not the current day (since 0.14.1):
+        To change past days, but not the current day
         <pre><code>db/db.pl &lt;ESHOST:ESPORT&gt; expire &lt;type&gt; &lt;num&gt; --replicas 1</code></pre>
       </p>
       <p>
@@ -1566,18 +1566,22 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
       <ul>
         <li>
           CASE: There are many 4RU boxes out there. If space is an issue, there
-          are more expensive 2RU that still hold over 20 drives (examples
+          are more expensive 2RU boxes that hold over 20 drives (examples
           <a href="https://www.hpe.com/us/en/product-catalog/servers/proliant-servers/pip.hpe-apollo-4200-gen9-server.8261831.html"
             rel="nofollow">
             HPE Apollo 4200
           </a>
-          or
+          ,
           <a href="https://www.supermicro.com/products/system/2U/6028/SSG-6028R-E1CR24L.cfm"
             rel="nofollow">
-            Supermicro 6028R-E1CR24L</a>)
+            Supermicro 6028R-E1CR24L</a>
+          or
+          <a href="https://www.dell.com/en-us/work/shop/povw/poweredge-r740xd2"
+            rel="nofollow">
+            Dell R740XD2</a>)
         </li>
         <li>
-          MEMORY: 64GB to 96GB
+          MEMORY: 64GB to 96GB (or more if running other tools)
         </li>
         <li>
           OS DISKS: We like RAID 1 small drives. SSDs are nice but not required.
@@ -1650,22 +1654,19 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
           goes out the same tool port)
         </li>
         <li>
-          MPLS/VLAN/VPN stripped (optional - some tools don’t like all the
-          headers)
+          MPLS/VLAN/VPN stripped (optional - some tools don’t like all the headers)
         </li>
         <li>
           Tool link detection and fail over
         </li>
         <li>
-          Automation capability (can you use ansible/apis or are you stuck using
-          a web ui)
+          Automation capability (can you use ansible/apis or are you stuck using a web ui)
         </li>
         <li>
           Enough ports to support future tap and tool growth
         </li>
         <li>
-          If the features desired require an extra (expensive?) component and/or
-          license
+          If the features desired require an extra (expensive?) component and/or license
         </li>
       </ul>
       <p>
@@ -1721,8 +1722,10 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
         process the packets.
       </p>
       <p>
-        To test the RAID device use:
+        To test the local RAID device use:
         <pre><code>dd bs=256k count=50000 if=/dev/zero of=/THE_MOLOCH_PCAP_DIR/test oflag=direct</code></pre>
+        To test a NAS leave off the oflag=direct and make sure you test with at least 3x the amount of memory so cache isn't a factor use:
+        <pre><code>dd bs=256k count=150000 if=/dev/zero of=/THE_MOLOCH_PCAP_DIR/test</code></pre>
       </p>
       <p>
         This is the MAX disk performance. Run several times if desired and take
@@ -1731,9 +1734,6 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
         drop packets during a future rebuild, ~60% is a better value. Remember
         that most network numbers will be in bits while the disk performance will
         be in bytes, so you’ll need to adjust the values before comparing.
-      </p>
-      <p>
-        Prior to version 0.14 the recommended assumption was 1.5Gbps.
       </p>
 
       <h3 id="moloch_requires_full_packet_captures_error">
@@ -2074,19 +2074,16 @@ ethtool -K eth0 rx off tx off gs off tso off gso off</code></pre>
         </span>
       </h3>
       <p>
-        Versions since 0.14.2 support a semicolon ';' separated list of
-        interfaces to listen on for live traffic.
+      The <strong>easy way</strong> is using the <a href="/settings#interface">interface</a> setting in your config.ini.
+      It supports a semicolon ';' separated list of interfaces to listen on for live traffic.
       </p>
       <p>
-        Versions prior 0.14.2 require multiple <code>moloch-capture</code>
-        processes, since a capture process will only monitor a single interface.
-        To monitor multiple interfaces on a single machine, you will need
-        multiple capture processes.
+      The <strong>hard way</strong>, you can also have multiple <code>moloch-capture</code> processes,.
       </p>
       <ul>
         <li>
-          Since, by default, Moloch uses the unqualified hostname as the name of
-          the Moloch node, you’ll need to come up with a naming scheme. Appending
+          Moloch by default uses the unqualified hostname as the name of
+          the Moloch node, so you’ll need to come up with a naming scheme. Appending
           a, b, c, …​ or the interface number to the hostname are possible methods.
         </li>
         <li>
@@ -2889,8 +2886,7 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
           <li>
             The remote machine doesn’t return a FQDN from the
             <code>hostname</code> command AND the viewer machine can’t resolve
-            just the hostname. Before version 0.14.1 the <code>domainname</code>
-            command was ignore. To fix this, do ONE of the following:
+            just the hostname. To fix this, do ONE of the following:
             <ol type="a">
               <li>
                 Make it so the remote machines returns a FQDN
