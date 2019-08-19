@@ -166,15 +166,42 @@ title: MolochON
               <li class="list-group-item">
                 <div class="d-flex align-items-start justify-content-between">
                   <div class="mr-auto purp-text">10:45</div>
-                  <div class="pl-3 flex-fill agenda-title">TBD</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">TBD</div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="d-flex align-items-start justify-content-between">
-                  <div class="mr-auto purp-text">11:00</div>
-                  <div class="pl-3 flex-fill agenda-title">TBD</div>
-                  <div class="pl-3 flex-fill mr-n1 text-right">TBD</div>
+                  <div class="pl-3 flex-fill">
+                    <div class="agenda-title">
+                      Using Moloch to Write Better Network Detections
+                    </div>
+                    <span class="agenda-description">
+                      Signature based network detections are only as good as
+                      the signatures used to inspect network traffic. Analysts
+                      commonly will write network signatures for IDS/IPS engines
+                      such as Suricata, based off of a single malware sample
+                      or PCAP.
+                      <a class="agenda-description-more-btn cursor-pointer purp-text no-wrap"
+                        onclick="showMore(event)">
+                        ...more&nbsp;<span class="fa fa-caret-down"></span>
+                      </a>
+                      <span class="agenda-description-more-text"
+                        style="display:none;">
+                        This, unfortunately, can lead to false positivesor
+                        arguably worse: false negatives during traffic
+                        analysis. By leveraging Moloch to cluster PCAPs from
+                        multiple, sometimes hundreds of unique sandbox runs for
+                        the same family of malware, it allows us to obtain a
+                        better understanding of what is or isn't unique in
+                        traffic. Based off this we can write better stronger
+                        detections that can outlast basic variance in traffic
+                        patterns, updates in malware C2 protocol, and spot gaps
+                        in detection.
+                      </span>
+                      <a class="agenda-description-less-btn cursor-pointer purp-text no-wrap"
+                        onclick="showLess(event)"
+                        style="display:none;">
+                        less&nbsp;<span class="fa fa-caret-up"></span>
+                      </a>
+                  </div>
+                  <div class="pl-3 flex-fill mr-n1 text-right">
+                    <strong>Jack Mott & Jason Williams</strong>
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
