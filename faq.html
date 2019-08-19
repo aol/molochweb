@@ -271,11 +271,6 @@ title: FAQ
         What browsers are supported?
       </a>
       <a class="nav-link nested"
-        href="#viewer-doesn-t-run-after-upgrading-node-js"
-        title="Viewer doesn’t run after upgrading Node.js">
-        Viewer doesn’t run after upgrading Node.js
-      </a>
-      <a class="nav-link nested"
         href="#error-getaddrinfo-eaddrinfo"
         title="Error: getaddrinfo EADDRINFO">
         Error: getaddrinfo EADDRINFO
@@ -397,6 +392,9 @@ title: FAQ
               Moloch Version
             </th>
             <th>
+              Min upgrade from
+            </th>
+            <th>
               ES Versions
             </th>
             <th>
@@ -413,18 +411,24 @@ title: FAQ
               2.0
             </td>
             <td>
+              1.7.0 (1.8.0 recomended)
+            </td>
+            <td>
              6.7, 6.8, 7.0 (experimental)
             </td>
             <td>
               <a href="#how_do_i_upgrade_to_moloch_2"> Moloch 2.0 instructions </a>
             </td>
             <td>
-              Must already be on ES 6.7 or 6.8 and Moloch 1.7 or 1.8  (ES <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-oss-6-8-2">6.8.2</a> and Moloch 1.8.0 recommended) before upgrading to 2.0
+              Must already be on ES 6.7 or 6.8 (ES <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-oss-6-8-2">6.8.2</a> recommended) before upgrading to 2.0
             </td>
           </tr>
           <tr>
             <td>
               1.8
+            </td>
+            <td>
+              1.0.0 (1.1.x recommended)
             </td>
             <td>
               5.x or 6.x
@@ -435,13 +439,15 @@ title: FAQ
               </a>
             </td>
             <td>
-              Must have finished the 1.x reindexing, stop captures for best
-              results
+              Must have finished the 1.x reindexing, stop captures for best results
             </td>
           </tr>
           <tr>
             <td>
               1.1.1
+            </td>
+            <td>
+            0.20.2 (0.50.1 recommended)
             </td>
             <td>
               5.x or 6.x (new only)
@@ -458,6 +464,9 @@ title: FAQ
           <tr>
             <td>
               0.20.2
+            </td>
+            <td>
+              0.18.1 (0.20.2 recomended)
             </td>
             <td>
               2.4, 5.x
@@ -539,11 +548,11 @@ yum install devtoolset-7-toolchain</code></pre>
         </li>
         <li>
           Check that the db has been initialized with
-          <code>/data/moloch/db/db.pl http://localhost:9200 info</code>
+          <code>/data/moloch/db/db.pl http://ESHOST:9200 info</code>
         </li>
         <li>
           Check that viewer is reachable by visiting
-          <code>http://viewerhostname:8005</code>
+          <code>http://moloch-viewer.hostname:8005</code>
           from your browser
           <ol type="a">
             <li>
@@ -570,13 +579,7 @@ yum install devtoolset-7-toolchain</code></pre>
         <li>
           Check that the stats page shows the capture nodes you are expecting,
           visit
-          <code>
-            <a href="http://viewer.host.name:8005/stats"
-              rel="nofollow">
-              http://viewer.host.name:8005/stats
-            </a>
-          </code>
-          in your browser.
+          <code>http://moloch-viewer.hostname:8005/stats</code> in your browser.
           <ol type="a">
             <li>
               Make sure the nodes are showing packets being received
@@ -771,9 +774,7 @@ yum install devtoolset-7-toolchain</code></pre>
           nodes which will download the new mmdb style maxmind files
         </li>
         <li>
-          Run
-          <code>db.pl http://localhost:9200 upgrade</code>
-          once
+          Run <code>db.pl http://ESHOST:9200 upgrade</code> once
         </li>
         <li>
           Start wise, then capture, then viewers.
@@ -1166,7 +1167,7 @@ yum install devtoolset-7-toolchain</code></pre>
           If you are NOT using Moloch DB version 63 (or later) you
           must follow these <a href="/faq#how_do_i_upgrade_to_moloch_2">instructions</a> while still using ES 6.x and upgrade to Moloch 2.0. To find what DB version
           you are using, either run
-          <code>db.pl localhost:9200 info</code>
+          <code>db.pl http://ESHOST:9200 info</code>
           or mouse over the <span class="fa fa-info-circle"></span> in Moloch.
         </li>
         <li>
@@ -1245,7 +1246,7 @@ yum install devtoolset-7-toolchain</code></pre>
         First outage: If you are NOT using Moloch DB version 51 (or later) you
         must follow these steps while still using ES 5.x. To find what DB version
         you are using, either run
-        <code>db.pl localhost:9200 info</code>
+        <code>db.pl http://ESHOST:9200 info</code>
         or mouse over the <span class="fa fa-info-circle"></span> in Moloch.
       </p>
       <ul>
@@ -1337,7 +1338,7 @@ yum install devtoolset-7-toolchain</code></pre>
       <p>
         First outage: If you are NOT using Moloch DB version 34 (or later) you
         must follow these steps while still using ES 2.4. To find what DB version
-        you are using, either run <code>db.pl localhost:9200 info</code>
+        you are using, either run <code>db.pl http://ESHOST:9200 info</code>
         or mouse over the <span class="fa fa-info-circle"></span> in Moloch.
       </p>
       <ul>
@@ -1431,7 +1432,7 @@ yum install devtoolset-7-toolchain</code></pre>
           with these settings is an error that has
           <code>FORBIDDEN/12/index read-only / allow delete</code> in it. You can
           use
-          <code> ./db.pl http://localhost:9200 unflood-stage _all </code>
+          <code> ./db.pl http://ESHOST:9200 unflood-stage _all </code>
           to clear the error, once you adjust the settings and/or delete some
           data.
           <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html"
@@ -2535,21 +2536,6 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
       <p>
         Development and testing is done mostly with Chrome on a Mac, so it gets
         the most attention.
-      </p>
-
-      <h3 id="viewer-doesn-t-run-after-upgrading-node-js">
-        Viewer doesn’t run after upgrading Node.js
-        <span class="fa fa-link small copy-link cursor-copy"
-          onclick="copyLink(this, 'faq')">
-        </span>
-      </h3>
-      <p>
-        The packages that viewer depends on must be reinstalled after upgrading
-        Node.js on a machine.
-        <pre><code>cd /data/moloch/viewer
-mv node_modules node_modules.save
-npm cache clean
-npm install</code></pre>
       </p>
 
       <h3 id="error-getaddrinfo-eaddrinfo">
