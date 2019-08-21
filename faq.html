@@ -940,11 +940,9 @@ yum install devtoolset-7-toolchain</code></pre>
         We have some <a href="estimators"> estimators </a> that may help.
       </p>
       <p>
-        The good news is that it is easy to add new nodes in the future, so feel
-        free to start with less nodes. As a temporary fix to capacity problems,
-        you can reduce the number of days of meta data that are stored. Just use
-        the Elasticsearch head interface to delete the oldest
-        <code>sessions-*</code> index.
+        The good news is that it is easy to add new nodes in the future, so feel free to start with less nodes.
+        As a temporary fix to capacity problems, you can reduce the number of days of meta data that are stored.
+        You can use the Moloch ES Indices tab to delete the oldest <code>sessions2</code> index.
       </p>
 
       <h3 id="data-never-gets-deleted">
@@ -1710,7 +1708,7 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
         </span>
       </h3>
       <p>
-        On simple commodity hardware, it is easy to get 3Gbps or more, depending
+        On basic commodity hardware, it is easy to get 3Gbps or more, depending
         on the number of CPUs available to Moloch and what else the machine is
         doing. Many times the limiting factor can be the speed of the disks and
         RAID system. See
