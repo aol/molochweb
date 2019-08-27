@@ -1,7 +1,7 @@
 ---
 title: Docs Home
 layout: wiki
-permalink: "/docshome"
+permalink: "/learn"
 ---
 
 <div class="full-height-and-width-container with-footer p-3" markdown="1">
