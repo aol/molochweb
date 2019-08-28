@@ -1776,6 +1776,38 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="simpleencoding">
+              simpleEncoding
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Moloch support <a href="#pcap-at-rest-encryption">PCAP at Rest Encryption</a>.
+            </td>
+          </tr>
+          <tr>
+            <td id="simplemaxq">
+              simpleMaxQ
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              1000
+            </td>
+            <td>
+              (since 2.0.1) The maximum number of disk queue entries per capture node.
+              Once this limit is hit packets will not be saved to disk until the
+              disk queue falls below the threshold.
+              The packets will still be processed, and sessions will be tagged with pcap-disk-overload
+              that had packets dropped.
+            </td>
+          </tr>
+          <tr>
             <td id="snaplen">
               snapLen
               <span class="fa fa-link small copy-link cursor-copy"
