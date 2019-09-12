@@ -100,6 +100,10 @@ title: FAQ
         title="How do I upgrade to Moloch 2.0">
         How do I upgrade to Moloch 2.0
       </a>
+      <a class="nav-link nested"
+        href="#moloch_design_principles"
+        title="Moloch Design Principles">
+        Moloch Design Principles
       <a href="#elasticsearch"
         class="nav-link"
         title="Elasticsearch">
@@ -859,7 +863,56 @@ yum install devtoolset-7-toolchain</code></pre>
       </ul>
       <p>
       After verifying 2.0 is working fine while still using Elasticsearch 6, you can upgrade to Elasticsearch 7 using these <a href="#how-do-i-upgrade-to-es-7-x">instructions</a>.
-        </p>
+      </p>
+
+      <h3 id="moloch_design_principles">
+        Moloch Design Principles
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h3>
+
+      <p>
+        A work in progress of the Moloch design goals and non goals.  When working on new features or changes we compare them against this list if they are part of our charter or not.
+      </p>
+      <table class="table table-sm table-bordered">
+        <tr>
+          <td><strong>Full Packet Capture</strong></td>
+          <td>
+            Moloch's fundamental goal is to provide full packet capture of IP packets with fast meta data searching and easy retrieval of packets.
+            We are exploring adding support for other ethernet and non tcp/udp/icmp IP packets.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Large Scale</strong></td>
+          <td>
+            Moloch needs to support large scale deployments of 100Gbps or more.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Sessions</strong></td>
+          <td>
+            Moloch groups packets into sessions when appropriate.
+            Sessions allow for less data to be stored in elasticsearch which leads to less meta data to store and search through.
+            The full packets are still stored to disk.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Useful Meta Data</strong></td>
+          <td>
+            Our goal is not to fully decode every packet or every protocol.
+            We are not trying to replace wireshark, tshark or many other tools out there that do a much better job
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Not a IDS/NIDS/NSM or alerting mechanism</strong></td>
+          <td>
+            Moloch isn't trying to replace an IDS like Suricata or a NSM like Zeek.  
+            You will still need to run tools in parallel to Moloch that handle these important tasks.
+            Moloch does have some basic alert features based on meta data it collects.
+          </td>
+        </tr>
+      </table>
       <!-- /general -->
 
       <!-- elasticsearch -->
