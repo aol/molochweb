@@ -3147,6 +3147,17 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
             </td>
           </tr>
           <tr>
+            <td id="url-sub-uctext">
+              %UCTEXT%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The text clicked on, upper-cased
+            </td>
+          </tr>
+          <tr>
             <td id="url-sub-url">
               %URL%
               <span class="fa fa-link small copy-link cursor-copy"
@@ -3154,7 +3165,7 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
               </span>
             </td>
             <td>
-              An URL extracted from the text clicked on
+              A URL extracted from the text clicked on
             </td>
           </tr>
           <tr>
@@ -3165,7 +3176,7 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
               </span>
             </td>
             <td>
-              A hostname extracted from the text clicked on. Sometimes the same as %TEXT% sometimes a subset.
+              A hostname extracted from the text clicked on. Sometimes the same as %TEXT%, sometimes a subset.
             </td>
           </tr>
           <tr>
@@ -3177,6 +3188,94 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
             </td>
             <td>
               The first regex group match
+            </td>
+          </tr>
+          <tr>
+            <td id="url-sub-expression">
+              %EXPRESSION%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The search expression, URI encoded
+            </td>
+          </tr>
+          <tr>
+            <td id="url-sub-date">
+              %DATE%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The search date/time range, eg., <code>startTime=1567447943&stopTime=1569607943</code> (UNIX seconds) for a custom date range or <code>date=336</code> (hours) for times relative to now
+            </td>
+          </tr>
+          <tr>
+            <td id="url-sub-isostart">
+              %ISOSTART%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The beginning of the search date/time range, ISO_8601 formatted
+            </td>
+          </tr>
+          <tr>
+            <td id="url-sub-isostop">
+              %ISOSTOP%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The end of the search date/time range, ISO_8601 formatted
+            </td>
+          </tr>
+          <tr>
+            <td id="url-sub-field">
+              %FIELD%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The field name as it would be referenced in a Moloch search expression
+            </td>
+          </tr>
+          <tr>
+            <td id="url-sub-dbfield">
+              %DBFIELD%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The field name as referenced in the underlying Elasticsearch database
+            </td>
+          </tr>
+          <tr>
+            <td id="url-sub-node">
+              %NODE%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The name of the capture node
+            </td>
+          </tr>
+          <tr>
+            <td id="url-sub-sessionid">
+              %ID%
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              The session ID
             </td>
           </tr>
         </tbody>
