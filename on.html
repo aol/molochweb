@@ -604,15 +604,23 @@ title: MolochON
 
   <script>
     function showMore (event) {
-      $(event.target).toggle();
-      $(event.target).siblings('.agenda-description-less-btn').toggle();
-      $(event.target).siblings('.agenda-description-more-text').toggle();
+      let target = event.target;
+      if (event.target.tagName === 'SPAN') {
+        target = event.target.parentElement;
+      }
+      $(target).toggle();
+      $(target).siblings('.agenda-description-less-btn').toggle();
+      $(target).siblings('.agenda-description-more-text').toggle();
     }
 
     function showLess (event) {
-      $(event.target).toggle();
-      $(event.target).siblings('.agenda-description-more-btn').toggle();
-      $(event.target).siblings('.agenda-description-more-text').toggle();
+      let target = event.target;
+      if (event.target.tagName === 'SPAN') {
+        target = event.target.parentElement;
+      }
+      $(target).toggle();
+      $(target).siblings('.agenda-description-more-btn').toggle();
+      $(target).siblings('.agenda-description-more-text').toggle();
     }
 
     $(function () { // page loaded
