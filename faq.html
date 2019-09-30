@@ -713,7 +713,8 @@ yum install devtoolset-7-toolchain</code></pre>
       </p>
       <p>
         Both capture and viewer can run with <code>--insecure</code> to turn off
-        cert checking.
+        cert checking.  You will need to add this option to the startup command for
+        both capture, viewer.  For example <code>/etc/systemd/system/molochcapture.conf</code>.
       </p>
 
       <h3 id="how_do_i_upgrade_to_moloch_1">
