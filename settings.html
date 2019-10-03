@@ -2255,9 +2255,6 @@ tpacketv3NumThreads=2</pre>
             <td>
               S3 Region to send data to
             </td>
-            <td>
-              &nbsp;
-            </td>
           </tr>
           <tr>
             <td id="s3buckt">
@@ -2313,6 +2310,34 @@ tpacketv3NumThreads=2</pre>
             </td>
             <td>
               Should traffic be compressed before sending
+            </td>
+          </tr>
+          <tr>
+            <td id="s3writegzip">
+              s3WriteGzip
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              FALSE
+            </td>
+            <td>
+              Should the PCAP files be stored on S3 in gzipped form
+            </td>
+          </tr>
+          <tr>
+            <td id="s3storageclass">
+              s3StorageClass
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              STANDARD
+            </td>
+            <td>
+              The S3 storage class to use&emdash;this has pricing implications
             </td>
           </tr>
           <tr>
