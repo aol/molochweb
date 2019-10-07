@@ -14,13 +14,27 @@ permalink: /articles
 
 ---
 
+## 2019
+
+### MolochON 2019
+
+* [Recent Changes & Upcoming Features](/assets/MolochON2019RecentChanges.pdf)
+  * Presentation recording coming soon...
+* [WISE 2019](/assets/MolochON2019WISE.pdf)
+  * Presentation recording coming soon...
+* [Verizon Media Deployments](/assets/MolochON2019VMDeployment.pdf)
+  * Presentation recording coming soon...
+* [Leveraging Zeek Logs with Filebeat and Logstash](/assets/MolochON2019ZeekLogstashMalcolm.pdf) - by Seth Grover
+
+---
+
 ## 2018
 
 ### MolochON 2018
 
 * [Recent Changes & Upcoming Features](/assets/MolochON2018RecentChanges.pdf)
   * [Presentation Recording](https://www.youtube.com/watch?v=iEdJ35h9JJg)
-* [Moloch on KVM and AWS Environments](/assets/MolchON2018VirtualizedAndAWS.pdf)
+* [Moloch on KVM and AWS Environments](/assets/MolochON2018VirtualizedAndAWS.pdf)
 * [WISE 2018](/assets/MolochON2018WISE.pdf)
   * [Presentation Recording](https://www.youtube.com/watch?v=IqNssmG-OPk)
 * [Elastic - Architectural Best Practices](/assets/MolochON2018Elastic.pdf)
