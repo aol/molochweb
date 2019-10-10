@@ -25,7 +25,7 @@ permalink: /articles
 * [Verizon Media Deployments](/assets/MolochON2019VMDeployment.pdf)
   * Presentation recording coming soon...
 * [Leveraging Zeek Logs with Filebeat and Logstash](/assets/MolochON2019ZeekLogstashMalcolm.pdf) - by Seth Grover
-* [More Data is Good, Good Data is Better](/asset/MolochON2019GoodDataBetter.pdf) - Brian Field
+* [More Data is Good, Good Data is Better](/assets/MolochON2019GoodDataBetter.pdf) - Brian Field
 
 ---
 
