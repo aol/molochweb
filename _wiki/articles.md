@@ -26,6 +26,7 @@ permalink: /articles
   * Presentation recording coming soon...
 * [Leveraging Zeek Logs with Filebeat and Logstash](/assets/MolochON2019ZeekLogstashMalcolm.pdf) - by Seth Grover
 * [More Data is Good, Good Data is Better](/assets/MolochON2019GoodDataBetter.pdf) - Brian Field
+* [Moloch & Amazon VPC Traffic Mirrors](/assets/MolochON2019NubevaAWSMirroring.pdf) - Erik Freeland
 
 ---
 
