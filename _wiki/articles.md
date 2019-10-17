@@ -19,11 +19,13 @@ permalink: /articles
 ### MolochON 2019
 
 * [Recent Changes & Upcoming Features](/assets/MolochON2019RecentChanges.pdf)
-  * Presentation recording coming soon...
+  * [Presentation Recording](https://www.youtube.com/watch?v=Ae8g8swkG1I)
 * [WISE 2019](/assets/MolochON2019WISE.pdf)
-  * Presentation recording coming soon...
+  * [Presentation Recording](https://www.youtube.com/watch?v=UOD9YLjXtLA)
 * [Verizon Media Deployments](/assets/MolochON2019VMDeployment.pdf)
-  * Presentation recording coming soon...
+  * [Presentation Recording](https://www.youtube.com/watch?v=1CvLf8rA7YQ)
+* Rotten Pear
+  * [Presentation Recording](https://www.youtube.com/watch?v=7R7gVKIkK4k)
 * [Leveraging Zeek Logs with Filebeat and Logstash](/assets/MolochON2019ZeekLogstashMalcolm.pdf) - by Seth Grover
 * [More Data is Good, Good Data is Better](/assets/MolochON2019GoodDataBetter.pdf) - Brian Field
 * [Moloch & Amazon VPC Traffic Mirrors](/assets/MolochON2019NubevaAWSMirroring.pdf) - Erik Freeland
