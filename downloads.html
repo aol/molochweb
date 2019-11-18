@@ -243,6 +243,7 @@ title: Downloads
 
     $(function () { // page loaded
       function buildDownloadVersionRow (version, btnType) {
+
         let html = `<div class="row text-center mt-3">
                      <div class="col-lg-2 mb-2">
                        <div><strong>${version.title}</strong></div>
@@ -252,6 +253,9 @@ title: Downloads
         let downloads = version.downloads;
         for (let i = 0, len = downloads.length; i < len; ++i) {
           let download = downloads[i];
+
+          if (!download.title) { continue; }
+
           html += `<div class="col-lg-2 mb-2">
                      <a href="${download.url}" class="btn ${btnType}">
                        ${download.title}
@@ -265,6 +269,8 @@ title: Downloads
       }
 
       function setupPage (versions, nightlies, commities, sortedVersions) {
+        // TODO ECR remove
+        console.log('sorted version', commities);
         let mainDownloadsHtml = '', moreDownloadsHtml = '';
 
         let nightlyDownloadsHtml = buildDownloadVersionRow(nightlies, 'btn-outline-danger');
