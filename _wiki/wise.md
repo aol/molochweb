@@ -343,7 +343,7 @@ type=ip
 keyColumn=theip
 format=json
 #Asset field already exist, use field asset for value. extra field is new, use field extra for value
-fields=field:asset;shortcut:asset\nfield:extra;kind:lotermfield;count:true;friendly:extra;db:extra;help:Help for Extra;shortcut:extra\n
+fields=field:asset;shortcut:asset\nfield:extra;kind:lotermfield;count:true;utf8:true;friendly:extra;db:extra;help:Help for Extra;shortcut:extra\n
 ```
 
 The JSON File

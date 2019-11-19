@@ -48,10 +48,10 @@ It is also possible to create NEW fields inside the tagger file. These new field
 {: .mb-0 }
 
 ```
-#field:whatever.str;kind:lotermfield;count:true;friendly:A String;db:whatever.str-term;help:Help for String;shortcut:0
+#field:whatever.str;kind:lotermfield;utf8:true;count:true;friendly:A String;db:whatever.str-term;help:Help for String;shortcut:0
 #field:whatever.int;kind:integer;count:true;friendly:A Integer;db:whatever.dbint;help:Help for integer;shortcut:1
 #field:tags;shortcut:2
-10.0.0.1;0=string;1=1;2=atag
+10.0.0.1;0=string σειρά;1=1;2=atag
 10.0.0.2;tags=canstillusefullname
 10.0.0.3
 ```
@@ -100,6 +100,7 @@ db | REQUIRED | The DB field name, prior to Moloch 1.x MUST end with -term for t
 group | Before first dot in field or general | Field category
 help | fieldname | Help to describe more information about the field
 shortcut | NONE | Used when loading file
+utf8 | false | When true, the data in this file is treated as utf-8. You probably want this when the field data is textual.
 {: .table .table-striped .table-sm .mb-4 }
 
 ##### Valid values for "kind" (data type)
