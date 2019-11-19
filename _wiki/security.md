@@ -6,14 +6,14 @@ permalink: "/security"
 
 <div class="full-height-and-width-container with-footer p-3" markdown="1">
 
-# Reporting Security Bugs
+# Reporting Security Issues
 
 The Moloch project takes security very seriously, but any complex software project is going to have some vulnerabilities.
 Please submit any security issues to our HackerOne project (coming soon) or moloch.security@verizonmedia.com, please use [github issues](https://github.com/aol/moloch/issues) or slack for non security issues.
 
 
 ## Scope
-Examples of items in scope
+Examples of security items in scope
 
 * Stored XSS
 * Buffer overflow
@@ -21,7 +21,7 @@ Examples of items in scope
 * Bypassing forced expressions (excluding when a sessionId is known)
 
 ## Out of Scope
-Examples of items that are out of scope and maybe should be submitted to our [github issues](https://github.com/aol/moloch/issues) page
+Examples of security items that are out of scope and maybe should be submitted to our [github issues](https://github.com/aol/moloch/issues) page
 
 * Crash on startup from bad config settings
 * Accessing a session using the Moloch sessionId
@@ -42,18 +42,17 @@ Security Issues that are known and are either not fixable or a known limitation 
 {:class="table table-bordered"}
 | Vulnerability | Date | First | Last |
 | ------------- |-------------| ----- | ----- |
-| API doesn't enforce permissions for all end points | 2019/11/19 | 1.0.0 | 2.0.1 |
+| API doesn't enforce permissions correctly for some end points | 2019/11/19 | 1.0.0 | 2.0.1 |
 | rXSS for many UI endpoints on errors | 2019/11/19 | 0.0.0  | 2.0.1 |
 | sXSS | 2019/11/19 | 1.5.0 | 2.0.1 |
-| Long config vars cause capture array out of bounds| 2019/11/19 | 0.0.0  | 2.0.1 |
-| Capture Hash Table DOS | 2019/11/19 | 0.0.0 | 2.0.1 |
+| Long config vars cause capture OOB reads/writes| 2019/11/19 | 0.0.0  | 2.0.1 |
+| Capture hashtable DOS | 2019/11/19 | 0.0.0 | 2.0.1 |
 | Capture Socks/SSH parser OOB reads | 2019/11/19 |  0.9.0  | 2.0.1 |
-| Several APIS vulnerable to CSRF | 2019/11/19 | 1.0.0  | 2.0.1 |
-| Notifier token exposure using API to non admins| 2019/11/19 | 1.7.0 | 2.0.1 |
-| Packet Hunt detail exposure using API to non admins| 2019/11/19 | 1.6.0 | 2.0.1 |
+| Several APIs are vulnerable to CSRF | 2019/11/19 | 1.0.0  | 2.0.1 |
+| Notifier token exposed using API to non admins| 2019/11/19 | 1.7.0 | 2.0.1 |
+| Packet Hunt details exposed using API to non admins| 2019/11/19 | 1.6.0 | 2.0.1 |
 | Oracle Padding Attacks | 2019/11/19 | 0.6.0 | 2.0.1 |
 | rXSS | 2019/01/17 | 1.0.0  | 1.6.2 |
-
 
 
 </div>
