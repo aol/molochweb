@@ -256,8 +256,9 @@ title: Downloads
         for (let i = 0, len = downloads.length; i < len; ++i) {
           let download = downloads[i];
 
-          // this check depends on ubuntu 14.04 being index 2 for Moloch
-          // version 2.0.1 and earlier
+          // this check depends on Ubuntu 14.04 or Centos 8 being index 2
+          // Ubunut 14.04 for 2.0.1 and earlier
+          // Centos8 for 2.1.0 and later
           let osIndex = osList.indexOf(download.title);
           if (osIndex !== i) {
             html += '<div class="col-lg-2 mb-2"></div>';
