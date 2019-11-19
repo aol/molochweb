@@ -243,18 +243,26 @@ title: Downloads
 
     $(function () { // page loaded
       function buildDownloadVersionRow (version, btnType) {
-
         let html = `<div class="row text-center mt-3">
                      <div class="col-lg-2 mb-2">
                        <div><strong>${version.title}</strong></div>
                        <div class="time"><small>${version.modified}</small></div>
                      </div>`;
 
+        const osList = [ 'Centos 6', 'Centos 7', 'Centos 8', 'Ubuntu 16.04', 'Ubuntu 18.04' ];
+
         let downloads = version.downloads;
+
         for (let i = 0, len = downloads.length; i < len; ++i) {
           let download = downloads[i];
 
-          if (!download.title) { continue; }
+          // this check depends on ubuntu 14.04 being index 2 for Moloch
+          // version 2.0.1 and earlier
+          let osIndex = osList.indexOf(download.title);
+          if (osIndex !== i) {
+            html += '<div class="col-lg-2 mb-2"></div>';
+            continue;
+          }
 
           html += `<div class="col-lg-2 mb-2">
                      <a href="${download.url}" class="btn ${btnType}">
@@ -269,8 +277,6 @@ title: Downloads
       }
 
       function setupPage (versions, nightlies, commities, sortedVersions) {
-        // TODO ECR remove
-        console.log('sorted version', commities);
         let mainDownloadsHtml = '', moreDownloadsHtml = '';
 
         let nightlyDownloadsHtml = buildDownloadVersionRow(nightlies, 'btn-outline-danger');

@@ -23,9 +23,6 @@ function parseXML (xml) {
       let osTitle = os.replace('-', ' ');
       osTitle = osTitle.charAt(0).toUpperCase() + osTitle.slice(1);
 
-      // exclude ubuntu 14
-      if (osTitle === 'Ubuntu 14.04') { continue; }
-
       let download = {
         url  : `https://files.molo.ch/${key}`,
         title: osTitle
@@ -62,6 +59,8 @@ function parseXML (xml) {
         ubuntu16: 'Ubuntu 16.04',
         ubuntu18: 'Ubuntu 18.04'
       }[os];
+
+      if (!osTitle) { continue; }
 
       let download = {
         url  : `https://files.molo.ch/${key}`,
