@@ -10,6 +10,7 @@ permalink: "/learn"
 
 - [FAQ](faq)
 - [Settings](settings)
+- [Security](security)
 - [Moloch Architecture Designs](architecture)
 - [Articles and Presentations About Moloch](articles)
 - [Moving from single host to multiple hosts](multihost)

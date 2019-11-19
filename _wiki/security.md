@@ -15,7 +15,8 @@ Please submit any security issues to our HackerOne project (coming soon) or molo
 ## Scope
 Examples of items in scope
 
-* stored XSS
+* Stored XSS
+* Buffer overflow
 * UI/API permission checking
 * Bypassing forced expressions (excluding when a sessionId is known)
 
@@ -24,7 +25,8 @@ Examples of items that are out of scope and maybe should be submitted to our [gi
 
 * Crash on startup from bad config settings
 * Accessing a session using the Moloch sessionId
-* Admins configuring bad/dangerous URLs in notifiers, parliament
+* Viewing the results of another user's hunt
+* Admins configuring bad/dangerous URLs in notifiers or clusters in parliament
 * Using md5 for security indicators
 * Auth brute force or http-digest weeknesses
 
