@@ -1923,7 +1923,7 @@ title: Settings
       </h3>
       <p>
         Tpacketv3 is the preferred reader for moloch and can be used on most
-        3.x kernels. Configure moloch-capture to use tpacketv3 as the reader
+        3.x or later kernels. Configure moloch-capture to use tpacketv3 as the reader
         method with <code>pcapReadMethod=tpacketv3</code> in your configuration
         file. This is also know as afpacket.
       </p>
@@ -2588,6 +2588,34 @@ tpacketv3NumThreads=2</pre>
             </td>
             <td>
               Category for SPI view
+            </td>
+          </tr>
+          <tr>
+            <td id="fields-nolinked">
+              nolinked
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 2.1.0) Set to true for linked sessions to have independent values for this field
+            </td>
+          </tr>
+          <tr>
+            <td id="fields-noutf8">
+              noutf8
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 2.1.1) Set to true for the field to be 8 bit instead of utf8
             </td>
           </tr>
           <tr>
