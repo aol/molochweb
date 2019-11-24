@@ -408,7 +408,7 @@ title: FAQ
         <tbody>
           <tr>
             <td>
-              2.0
+              2.0, 2.1
             </td>
             <td>
               1.7.0 (1.8.0 recomended)
@@ -1510,6 +1510,16 @@ cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
 cluster.routing.allocation.node_concurrent_recoveries: 5
 cluster.routing.allocation.node_initial_primaries_recoveries: 5
 indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
+
+        <h4 id="logging">
+          Logging
+        </h4>
+        <p>
+          By default elasticsearch has logging set to debug level in log4j2.properties.
+          For busy clusters change this to info level to lower CPU and disk usage.
+        </p>
+        <pre><code>
+logger.action.level = info</code></pre>
       </div>
       <!-- /elasticsearch -->
 
