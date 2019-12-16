@@ -1813,10 +1813,10 @@ title: Settings
             </td>
             <td>
               (since 2.0.1) The maximum number of disk queue entries per capture node.
-              Once this limit is hit packets will not be saved to disk until the
-              disk queue falls below the threshold.
-              The packets will still be processed, and sessions will be tagged with pcap-disk-overload
-              that had packets dropped.
+              Once this limit is hit, packets will not be saved to disk until the disk queue falls below the threshold.
+              The packets will still be processed, so all meta data is still extracted.
+              Sessions that have packets not written to disk will be tagged with pcap-disk-overload.
+              Increasing this value will use more memory when there is disk congestion.
             </td>
           </tr>
           <tr>
