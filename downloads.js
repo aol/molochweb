@@ -63,7 +63,7 @@ function parseXML (xml) {
       if (!osTitle) { continue; }
 
       let download = {
-        url  : `https://files.molo.ch/${key}`,
+        url  : `https://s3.amazonaws.com/files.molo.ch/${key}`,
         title: osTitle
       };
 
