@@ -47,17 +47,26 @@ function parseXML (xml) {
         downloads[uniqueVers].downloads.push(download);
       }
     } else if (key.startsWith('moloch-master')) {
-      let keyArr = key.split(key[13]);
-      let os = keyArr[1];
-      let time   = new Date(file.find('LastModified').text());
+      const keyArr = key.split(key[13]);
+      const os = keyArr[1];
+      let time = new Date(file.find('LastModified').text());
       time = `${time.getFullYear()}-${('0'+(time.getMonth()+1)).slice(-2)}-${('0'+time.getDate()).slice(-2)} ${('0'+time.getHours()).slice(-2)}:${('0'+time.getMinutes()).slice(-2)}:${('0'+time.getSeconds()).slice(-2)}`;
 
-      let osTitle = {centos6: 'Centos 6', centos7: 'Centos 7', ubuntu14: 'Ubuntu 14.04', ubuntu16: 'Ubuntu 16.04', ubuntu18: 'Ubuntu 18.04'}[os];
+      const osTitle = {
+        centos6: 'Centos 6',
+        centos7: 'Centos 7',
+        centos8: 'Centos 8',
+        ubuntu16: 'Ubuntu 16.04',
+        ubuntu18: 'Ubuntu 18.04'
+      }[os];
+
+      if (!osTitle) { continue; }
 
       let download = {
-        url  : `https://files.molo.ch/${key}`,
+        url  : `https://s3.amazonaws.com/files.molo.ch/${key}`,
         title: osTitle
       };
+
       commities.modified = time;
       commities.downloads.push(download);
     }

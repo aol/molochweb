@@ -408,13 +408,13 @@ title: FAQ
         <tbody>
           <tr>
             <td>
-              2.0
+              2.0, 2.1
             </td>
             <td>
               1.7.0 (1.8.0 recomended)
             </td>
             <td>
-             6.7, 6.8, 7.0 (experimental)
+             6.7, 6.8, 7.1+
             </td>
             <td>
               <a href="#how_do_i_upgrade_to_moloch_2"> Moloch 2.0 instructions </a>
@@ -496,17 +496,17 @@ title: FAQ
         installed for packet performance increases and better afpacket support.
         A large amount of development is done on Mac OS X 10.14 using MacPorts,
         however, it has never been tested in a production setting. :)
-        Moloch is no longer supported on 32 bit machines.
+        Moloch is NOT supported on 32 bit machines.
       </p>
       <p>
-        The following OSes should work out of the box:
+        The following OSes should work out of the box for compiling yourself:
       </p>
       <ul>
         <li>
-          CentOS 7
+          CentOS/RHEL 7
         </li>
         <li>
-          Ubuntu 14.04, 16.04, 18.04
+          Ubuntu 16.04, 18.04
         </li>
         <li>
           FreeBSD 9
@@ -521,7 +521,7 @@ title: FAQ
       </p>
       <ul>
         <li>
-          CentOS 6 -
+          CentOS/RHEL 6 -
           <a href="https://wiki.centos.org/AdditionalResources/Repositories/SCL"
             rel="nofollow">
             https://wiki.centos.org/AdditionalResources/Repositories/SCL
@@ -1510,6 +1510,16 @@ cluster.routing.allocation.disk.watermark.flood_stage: 100gb</code></pre>
 cluster.routing.allocation.node_concurrent_recoveries: 5
 cluster.routing.allocation.node_initial_primaries_recoveries: 5
 indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
+
+        <h4 id="logging">
+          Logging
+        </h4>
+        <p>
+          By default elasticsearch has logging set to debug level in log4j2.properties.
+          For busy clusters change this to info level to lower CPU and disk usage.
+        </p>
+        <pre><code>
+logger.action.level = info</code></pre>
       </div>
       <!-- /elasticsearch -->
 

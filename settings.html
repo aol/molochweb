@@ -392,6 +392,19 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="esadminusers">
+              esAdminUsers
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>EMPTY</td>
+            <td>
+              A comma separated list of users that are allowed to use the ES Admin stats tab.
+              This tab allows the user to change several of the ES settings from the UI.
+            </td>
+          </tr>
+          <tr>
             <td id="esclientcert">esClientCert<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
             <td>EMPTY</td>
             <td>
@@ -1800,10 +1813,10 @@ title: Settings
             </td>
             <td>
               (since 2.0.1) The maximum number of disk queue entries per capture node.
-              Once this limit is hit packets will not be saved to disk until the
-              disk queue falls below the threshold.
-              The packets will still be processed, and sessions will be tagged with pcap-disk-overload
-              that had packets dropped.
+              Once this limit is hit, packets will not be saved to disk until the disk queue falls below the threshold.
+              The packets will still be processed, so all meta data is still extracted.
+              Sessions that have packets not written to disk will be tagged with pcap-disk-overload.
+              Increasing this value will use more memory when there is disk congestion.
             </td>
           </tr>
           <tr>
@@ -1923,7 +1936,7 @@ title: Settings
       </h3>
       <p>
         Tpacketv3 is the preferred reader for moloch and can be used on most
-        3.x kernels. Configure moloch-capture to use tpacketv3 as the reader
+        3.x or later kernels. Configure moloch-capture to use tpacketv3 as the reader
         method with <code>pcapReadMethod=tpacketv3</code> in your configuration
         file. This is also know as afpacket.
       </p>
@@ -2602,6 +2615,34 @@ tpacketv3NumThreads=2</pre>
             </td>
             <td>
               Category for SPI view
+            </td>
+          </tr>
+          <tr>
+            <td id="fields-nolinked">
+              nolinked
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 2.1.0) Set to true for linked sessions to have independent values for this field
+            </td>
+          </tr>
+          <tr>
+            <td id="fields-noutf8">
+              noutf8
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              false
+            </td>
+            <td>
+              (Since 2.1.1) Set to true for the field to be 8 bit instead of utf8
             </td>
           </tr>
           <tr>

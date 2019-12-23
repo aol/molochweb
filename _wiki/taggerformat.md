@@ -100,6 +100,8 @@ db | REQUIRED | The DB field name, prior to Moloch 1.x MUST end with -term for t
 group | Before first dot in field or general | Field category
 help | fieldname | Help to describe more information about the field
 shortcut | NONE | Used when loading file
+nolinked | false | (Since 2.0.1) When true, the data in this field will not be set on linked sessions
+noutf8 | false | (Since 2.1.1) When true, the data in this field is not treated as utf-8 automatically
 {: .table .table-striped .table-sm .mb-4 }
 
 ##### Valid values for "kind" (data type)
