@@ -9,7 +9,7 @@ permalink: "/security"
 # Reporting Security Issues
 
 The Moloch project takes security very seriously, but any complex software project is going to have some vulnerabilities.
-Please submit any security issues to our HackerOne project (coming soon) or moloch.security@verizonmedia.com, please use [github issues](https://github.com/aol/moloch/issues) or slack for non security issues.
+Please submit any security issues to [HackerOne](https://hackerone.com/verizonmedia) or moloch.security@verizonmedia.com, please use [github issues](https://github.com/aol/moloch/issues) or slack for non security issues.
 
 
 ## Scope
