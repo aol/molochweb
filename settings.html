@@ -485,10 +485,13 @@ title: Settings
               </span>
             </td>
             <td>
-              /data/moloch/etc/GeoLite2-ASN.mmdb
+              /usr/share/GeoIP/GeoLite2-ASN.mmdb;/data/moloch/etc/GeoLite2-ASN.mmdb<br>
+              (Pre 2.2) /data/moloch/etc/GeoLite2-ASN.mmdb
             </td>
             <td>
-              (&gt;= 1.0) Path to the maxmind geoip ASN file.
+              A Maxmind account is required to use this feature.  We recommend installing and setting up the geoipupdate program included with most Linux releases.<br>
+              (Since 2.2) Semicolon ';' separated list of maxmind geoip country files.  The first file found will be used.  If no files are found a warning will be issued.  To disable warning set to a blank string.<br>
+              (Since 1.0) Path to the maxmind geoip ASN file.
               <a class="no-decoration"
                 href="https://updates.maxmind.com/app/update_secure?edition_id=GeoLite2-ASN"
                 rel="nofollow">Download free version</a>
@@ -502,10 +505,13 @@ title: Settings
               </span>
             </td>
             <td>
-              /data/moloch/etc/GeoLite2-Country.mmdb
+              /usr/share/GeoIP/GeoLite2-Country.mmdb;/data/moloch/etc/GeoLite2-Country.mmdb<br>
+              (Pre 2.2)/data/moloch/etc/GeoLite2-Country.mmdb
             </td>
             <td>
-              (&gt;= 1.0) Path to the maxmind geoip country file.
+              A Maxmind account is required to use this feature.  We recommend installing and setting up the geoipupdate program included with most Linux releases.<br>
+              (Since 2.2) Semicolon ';' separated list of maxmind geoip country files.  The first file found will be used.  If no files are found a warning will be issued.  To disable warning set to a blank string.<br>
+              (Since 1.0) Path to the maxmind geoip country file.
               <a class="no-decoration"
                 href="https://updates.maxmind.com/app/update_secure?edition_id=GeoLite2-Country"
                 rel="nofollow">Download free version</a>
