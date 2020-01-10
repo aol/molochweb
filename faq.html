@@ -245,6 +245,11 @@ title: FAQ
         title="Can I virtualize Moloch with KVM using OpenVswitch?">
         Can I virtualize Moloch with KVM using OpenVswitch?
       </a>
+      <a class="nav-link nested"
+        href="#maxmind"
+        title="Installing MaxMind Geo free database files">
+        Installing MaxMind Geo free database files
+      </a>
       <a href="#viewer"
         class="nav-link"
         title="Viewer">
@@ -406,6 +411,23 @@ title: FAQ
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td>
+              2.2+
+            </td>
+            <td>
+              1.7.0 (1.8.0 recomended)
+            </td>
+            <td>
+              6.8 (6.8.6+ recommended), 7.1+ (7.5.1+ recommended)
+            </td>
+            <td>
+              <a href="#how_do_i_upgrade_to_moloch_2"> Moloch 2.0 instructions </a>
+            </td>
+            <td>
+              Must already be on 6.8.x or 7.1+ before upgrading to 2.2
+            </td>
+          </tr>
           <tr>
             <td>
               2.0, 2.1
@@ -2457,6 +2479,32 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
           rel="nofollow">
           https://www.rivy.org/2013/03/configure-a-mirror-port-on-open-vswitch/</a>.
       </p>
+
+      <h3 id="maxmind">
+        Installing MaxMind Geo free database files
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h3>
+      <p>
+        Maxmind <a href="https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/">recently changed</a> you download their free database files.
+        You now need to signup for an account and setup the geoipupdate program.
+        If using a version of Moloch before 2.2, you will need to edit your config.ini file and update the geolite paths.
+      </p>
+      <p>
+      Instructions:
+        <ol>
+          <li><a href="https://www.maxmind.com/en/geolite2/signup">Sign up for a MaxMind account</a> (no purchase required)</li>
+          <li>Wait for MaxMind email and set your password</li>
+          <li>Install the geoipupdate tool, pay attention to version installed, for many distributions you can just do a <code>yum install geoipupdate</code> or <code>apt-get install geoipupdate</code></li>
+          <li>Create a <a href="https://www.maxmind.com/en/accounts/current/license-key">license key</a></li>
+          <li>Use the MaxMind feature to generate a config file for you, usually you will replace </code>/etc/GeoIP.conf</code> with this file</li>
+          <li>Run <code>geoipupdate</code> as root and see if it works</li>
+          <li>If you are using Moloch before 2.2, update your /data/moloch/etc/config.ini file so that geoLite2Country is now <code>/usr/share/GeoIP/GeoLite2-Country.mmdb</code> and geoLite2ASN is now <code>/usr/share/GeoIP/GeoLite2-ASN.mmdb</code></li>
+          <li>Restart moloch capture</li>
+        </ol>
+      </p>
+
       <!-- /capture -->
 
       <!-- viewer -->
