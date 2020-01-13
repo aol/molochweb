@@ -165,6 +165,11 @@ title: FAQ
         title="Recommended Elasticsearch Settings">
         Recommended Elasticsearch Settings
       </a>
+      <a class="nav-link nested"
+        href="#ilm"
+        title="Using ILM with Molcoh">
+        Using ILM with Moloch
+      </a>
       <a href="#capture"
         class="nav-link"
         title="Capture">
@@ -1543,6 +1548,35 @@ indices.recovery.max_bytes_per_sec: "400mb"</code></pre>
         <pre><code>
 logger.action.level = info</code></pre>
       </div>
+
+      <h3 id="ilm">
+        Using ILM with Moloch
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h3>
+      <p>
+        ILM is included in the free "basic" Elasticsearch license, so it is not part of the Elasticsearch OSS distribution.
+        Moloch does NOT currently support the auto rollover feature of ILM.
+        However since Moloch 2.2 you can easily use ILM to handle moving indices from hot to warm, force merge, and delete actions.
+        We recommend only using ILM with newer versions (7.2+) of Elasticsearch.
+        Once ILM is enabled you no longer have to use the <code>db.pl expire</code> cron job, but should occasionally run <code>db.pl optimize-admin</code>.
+      </p>
+      <p>
+        There are four important steps to have ILM work correctly with Moloch.
+        <ol>
+          <li>Create the molochsessions and molochhistory ILM polices.  This can be done easily with kibana or we recommend <code>db.pl ilm</code> command.</li>
+          <li>Assign the molochsessions and molochhistory ILM polices to all the existing indices.  Kibana or <code>db.pl ilm</code> can perform this action.</li>
+          <li>Change the Moloch templates to use the ILM polices for NEW indices.  You'll need to rerun <code>db.pl upgrade ... --ilm</code> and add the <code>--ilm</code> to the command</li>
+          <li>Replace the previous <code>db.pl expire</code> cron job with <code>db.pl optimize-admin</code></li>
+        </ol>
+      </p>
+      <p>
+        So for example to create new policies that keeps 30 weeks of history, 90 days of SPI data, with 1 replica, and optimizes all indices older than 25 hours you would run:
+        <code>./db.pl http://localhost:9200 ilm 25h 90d --history 30 --replicas 1</code>
+        You would then need to run upgrade with all the arguments you usually used plus --ilm:
+        <code>./db.pl http://localhost:9200 upgrade --replicas 1 --shards 5 --ilm</code>
+      </p>
       <!-- /elasticsearch -->
 
       <!-- capture -->
@@ -2487,7 +2521,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
         </span>
       </h3>
       <p>
-        Maxmind <a href="https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/">recently changed</a> how you download their free database files.
+        MaxMind <a href="https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/">recently changed</a> how you download their free database files.
         You now need to signup for an account and setup the geoipupdate program.
         If using a version of Moloch before 2.2, you will need to edit your config.ini file and update the geolite paths.
       </p>
