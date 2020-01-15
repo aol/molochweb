@@ -2532,6 +2532,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
           <li>Wait for MaxMind email and set your password</li>
           <li>Install the geoipupdate tool, pay attention to version installed, for many distributions you can just do a <code>yum install geoipupdate</code> or <code>apt-get install geoipupdate</code></li>
           <li>Create a <a href="https://www.maxmind.com/en/accounts/current/license-key">license key</a></li>
+          <li>Select Yes when asked "Will this key be used for GeoIP Update?" and select the version you have</li>
           <li>Use the MaxMind feature to generate a config file for you, usually you will replace </code>/etc/GeoIP.conf</code> with this file</li>
           <li>Run <code>geoipupdate</code> as root and see if it works</li>
           <li>If you are using Moloch before 2.2, update your /data/moloch/etc/config.ini file so that geoLite2Country is now <code>/usr/share/GeoIP/GeoLite2-Country.mmdb</code> and geoLite2ASN is now <code>/usr/share/GeoIP/GeoLite2-ASN.mmdb</code></li>
