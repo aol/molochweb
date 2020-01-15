@@ -1922,7 +1922,25 @@ title: Settings
               different rotateIndex values.
             </td>
           </tr>
-          <tr><td id="uploadfilesizelimit">uploadFileSizeLimit<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+          <tr>
+          <tr>
+            <td id="uploadcommand">uploadCommand<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              If set uploads from the UI are allowed.  An upload saves the file and runs capture on it, so its better to just run capture instead of using upload if you can.
+              Example setting would be <code>/data/moloch/bin/moloch-capture --copy -n {NODE} -r {TMPFILE} -c {CONFIG} {TAGS}</code>.  <br> 
+              The following templated values will be filled in for you:
+              <ul>
+                <li>NODE - The node name of the viewer that received the upload</li>
+                <li>TMPFILE - The tmp file name uploaded to</li>
+                <li>CONFIG - The config file path used to start viewer</li>
+                <li>TAGS - The tags set with the upload</li>
+              </ul>
+            </td>
+          </tr>
+            <td id="uploadfilesizelimit">uploadFileSizeLimit<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
             <td>
               EMPTY
             </td>
