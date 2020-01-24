@@ -630,19 +630,22 @@ yum install devtoolset-7-toolchain</code></pre>
           data to search." but the stats tab shows packets are being captured:
           <ol type="a">
             <li>
-              Moloch only writes records when a session has ended, it will take
+              Live capture Moloch only writes records when a session has ended, it will take
                several minutes for session to show up after a fresh start, see
                <code>/data/moloch/etc/config.ini</code> to shorten the timeouts
             </li>
             <li>
-              Verify your time frame for search covers the data (try switching
-              to ALL)
+              Elasticsearch will only refresh the indices once a minute with the default Moloch config,
+              force a refresh with <code>curl http://localhost:9200/_refresh</code>
+            </li>
+            <li>
+              Verify your time frame for search covers the data (try switching to ALL)
             </li>
             <li>
               Check that you don’t have a view set
             </li>
             <li>
-              Check that your user doesn’t have a forced expression set
+              Check that your user doesn’t have a forced expression set, might need to ask your Moloch admin
             </li>
           </ol>
         </li>
