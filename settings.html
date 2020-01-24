@@ -183,6 +183,11 @@ title: Settings
         title="Tagger">
         Tagger
       </a>
+      <a class="nav-link nested"
+        href="#lua"
+        title="Lua">
+        Lua
+      </a>
       <a href="#high-performance-settings"
         class="nav-link"
         title="High Performance Settings">
@@ -290,7 +295,21 @@ title: Settings
             </td>
           </tr>
           <tr>
-            <td id="dontsavebpf">
+            <td id="cronqueries">
+              cronQueries
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              FALSE
+            </td>
+            <td>
+              Set on 1 viewer node per cluster, this viewer node will perform all the cron queries for the cluster.
+            </td>
+          </tr>
+          <tr>
+            <td id="dontsavebpfs">
               dontSaveBPFs
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
@@ -392,6 +411,21 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="elasticsearchtimeout">
+              elasticsearchTimeout
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              300
+            </td>
+            <td>
+              Approximate timeout for most viewer requests to elasticsearch.
+              Elasticsearch will automatically cancel any request after this expires.
+            </td>
+          </tr>
+          <tr>
             <td id="esadminusers">
               esAdminUsers
               <span class="fa fa-link small copy-link cursor-copy"
@@ -419,7 +453,7 @@ title: Settings
             </td>
           </tr>
           <tr>
-            <td id="esclientkey">esClientKeyPass<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
+            <td id="esclientkeypass">esClientKeyPass<span class="fa fa-link small copy-link cursor-copy" onclick="copyLink(this, 'settings')"></span></td>
             <td>EMPTY</td>
             <td>
               (Since 2.0) The password for the esClientKey setting.
@@ -852,8 +886,8 @@ title: Settings
             </td>
           </tr>
           <tr>
-            <td id="parsehttpresponseheaderall">
-              parseHTTPRequestHeaderAll
+            <td id="parsehttpheaderrequestall">
+              parseHTTPHeaderRequestAll
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
               </span>
@@ -867,8 +901,8 @@ title: Settings
             </td>
           </tr>
           <tr>
-            <td id="parsehttpresponseheaderall">
-              parseHTTPResponseHeaderAll
+            <td id="parsehttpheaderresponseall">
+              parseHTTPHeaderResponseAll
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
               </span>
@@ -1105,6 +1139,20 @@ title: Settings
               Specify the max number of indices we calculate spidata for.
               Elasticsearch will blow up if we allow the spiData to search too
               many indices.
+            </td>
+          </tr>
+          <tr>
+            <td id="supportsha256">
+              supportSha256
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              FALSE
+            </td>
+            <td>
+              Generate Sha256 hashes along side of md5 hashes content.
             </td>
           </tr>
           <tr>
@@ -1413,6 +1461,20 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="dbeshealthcheck">
+              dbEsHealthCheck
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              TRUE
+            </td>
+            <td>
+              Perform an Elasticsearch health check every 30 seconds and report on slowness or if not green.  For big clusters this should be disabled.
+            </td>
+          </tr>
+          <tr>
             <td id="dbflushtimeout">
               dbFlushTimeout
               <span class="fa fa-link small copy-link cursor-copy"
@@ -1451,6 +1513,34 @@ title: Settings
               with gre use <code>tags=/gre-(.*)\\.pcap%gretest-\\1</code>.
               Notice two backslashes are required everywhere you want one
               because of ini formating.
+            </td>
+          </tr>
+          <tr>
+            <td id="fragstimeout">
+              fragsTimeout
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              480
+            </td>
+            <td>
+              Number of seconds to keep around an ip fragment and try an reassemble it
+            </td>
+          </tr>
+          <tr>
+            <td id="hstsheader">
+              hstsHeader
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              FALSE
+            </td>
+            <td>
+              From viewer, return a hsts header on responses
             </td>
           </tr>
           <tr>
@@ -1600,6 +1690,34 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="maxfreeoutputbuffers">
+              maxFreeOutputBuffers
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              50
+            </td>
+            <td>
+              For capture, the max number of free output buffers we keep around before returning them to the OS
+            </td>
+          </tr>
+          <tr>
+            <td id="maxfrags">
+              maxFrags
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              10000
+            </td>
+            <td>
+              Max number of ip fragment packets to save and try and match at once
+            </td>
+          </tr>
+          <tr>
             <td id="maxmempercentage">
               maxMemPercentage
               <span class="fa fa-link small copy-link cursor-copy"
@@ -1615,6 +1733,34 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="maxreqbody">
+              maxReqBody
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              256
+            </td>
+            <td>
+              For HTTP requests, store this many bytes in the http.requestBody field.  Can be disabled by setting to 0.
+            </td>
+          </tr>
+          <tr>
+            <td id="reqbodyonlyutf8">
+              reqBodyOnlyUtf8
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              TRUE
+            </td>
+            <td>
+              Only store request bodies that are utf8
+            </td>
+          </tr>
+          <tr>
             <td id="maxtcpoutoforderpackets">
               maxTcpOutOfOrderPackets
               <span class="fa fa-link small copy-link cursor-copy"
@@ -1627,6 +1773,22 @@ title: Settings
             <td>
               (Since 1.5.0) Max number of tcp packets to track while trying to
               reassemble the TCP stream
+            </td>
+          </tr>
+          <tr>
+            <td id="offlinedispatchafter">
+              offlineDispatchAfter
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              pre 2.1 - 5000 (unchangable)<br>
+              2.1,2.2 - 1000<br>
+              2.3 - 2500<br>
+            </td>
+            <td>
+              How many packets to read from offline pcap files at once.
             </td>
           </tr>
           <tr>
@@ -2297,7 +2459,7 @@ tpacketv3NumThreads=2</pre>
             </td>
           </tr>
           <tr>
-            <td id="s3buckt">
+            <td id="s3bucket">
               s3Bucket
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
@@ -2378,6 +2540,20 @@ tpacketv3NumThreads=2</pre>
             </td>
             <td>
               (Since 2.1) The S3 storage class to use&emdash;this has pricing implications
+            </td>
+          </tr>
+          <tr>
+            <td id="s3pathaccessstyle">
+              s3PathAccessStyle
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              TRUE if there is a period in the bucket name.
+            </td>
+            <td>
+              (Since 2.1) If true use s3.amazonaws.com/s3Bucket if false use s3Bucket.s3.amazonaws.com
             </td>
           </tr>
           <tr>
@@ -2464,8 +2640,8 @@ tpacketv3NumThreads=2</pre>
             </td>
           </tr>
           <tr>
-            <td id="logeventxpackets">
-              logEventXPackets
+            <td id="logeveryxpackets">
+              logEveryXPackets
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
               </span>
@@ -2892,7 +3068,7 @@ multiESNodes = escluster1.example.com:9200,prefix:PREFIX;escluster2.example.com:
         </thead>
         <tbody>
           <tr>
-            <td id="multiviewer-multiex">
+            <td id="multies">
               multiES
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
@@ -2906,7 +3082,7 @@ multiESNodes = escluster1.example.com:9200,prefix:PREFIX;escluster2.example.com:
             </td>
           </tr>
           <tr>
-            <td id="multiviewer-multiesport">
+            <td id="multiesport">
               multiESPort
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
@@ -2920,7 +3096,7 @@ multiESNodes = escluster1.example.com:9200,prefix:PREFIX;escluster2.example.com:
             </td>
           </tr>
           <tr>
-            <td id="multiviewer-multieshost">
+            <td id="multieshost">
               multiESHost
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
@@ -2934,7 +3110,7 @@ multiESNodes = escluster1.example.com:9200,prefix:PREFIX;escluster2.example.com:
             </td>
           </tr>
           <tr>
-            <td id="multiviewer-multiesnodes">
+            <td id="multiesnodes">
               multiESNodes
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
@@ -3824,6 +4000,51 @@ suricataAlertFile=/nids/suricata/eve.json</code></pre>
           Tagger Format page</a>
       </p>
       <!-- /Tagger -->
+      <!-- Lua -->
+      <h2 id="lua">
+        Lua
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        See the
+        <a class="no-decoration"
+          href="lua">
+          Lua page</a>
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="luafiles">
+              luaFiles
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              The Lua Files to load
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /Lua -->
       <!-- /Plugins -->
 
       <!-- High Performance Settings -->
@@ -3868,6 +4089,7 @@ packetThreads=5
 # Increase the size of ES messages and compress them for lower traffic rates
 dbBulkSize=4000000
 compressES=true
+dbEsHealthCheck=false
 
 # Set to number of packets a second, if still overflowing try 400k
 maxPacketsInQueue = 300000
