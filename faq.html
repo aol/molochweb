@@ -330,6 +330,16 @@ title: FAQ
         title="Sample Apache Config">
         Sample Apache Config
       </a>
+      <a href="#wise"
+        class="nav-link"
+        title="WISE">
+        WISE
+      </a>
+      <a class="nav-link nested"
+        href="#wise-is-not-working"
+        title="WISE is not working">
+        WISE is not working
+      </a>
       <a href="#molochweb"
         class="nav-link"
         title="Molo.ch">
@@ -3101,6 +3111,52 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
 ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></pre>
       </p>
       <!-- /parliament -->
+
+      <!-- wise -->
+      <br>
+      <h1 id="wise"
+        class="border-bottom">
+        WISE
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h1>
+
+      <h3 id="wise-is-not-working">
+        WISE is not working
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h3>
+      <p>
+        Here is the common check list:
+      </p>
+      <ol>
+        <li>
+          Check that WISE is running
+          <pre><code>curl http://localhost:8081/fields</code></pre>
+          You should see a list of fields that wise knows about.
+        </li>
+        <li>
+          Check in your config.ini file you've added
+          <ul>
+            <li> <code>wise.so</code> to the <code>plugins</code> line.</li>
+            <li> <code>wise.js</code> to the <code>viewerPlugins</code> line</li>
+            <li> <code>wiseURL</code> has been set, or the older <code>wiseHost</code> and <code>wisePort</code></li>
+          </ul>
+        </li>
+        <li>
+          Check that from the capture/viewer hosts you can reach the viewer hosts and there are no ACL issues.
+          <pre><code>curl http://WISEHOST:8081/fields</code></pre> 
+        </li>
+        <li>
+          Restart <code>moloch-capture</code> after adding a
+          <code>--debug</code> option may print out useful information what is
+          wrong.  Look to make sure that wise is being called with the correct URL.
+          Verify that the plugins,wiseHost,wiseURL setting is what you actually think it is.
+        </li>
+      </ol>
+      <!-- /wise -->
 
       <!-- molo.ch -->
       <br>
