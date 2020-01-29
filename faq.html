@@ -255,6 +255,11 @@ title: FAQ
         title="Installing MaxMind Geo free database files">
         Installing MaxMind Geo free database files
       </a>
+      <a class="nav-link nested"
+        href="#loglines"
+        title="What do these log lines mean">
+        What do these log lines mean?
+      </a>
       <a href="#viewer"
         class="nav-link"
         title="Viewer">
@@ -2554,6 +2559,79 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
           <li>If you are using Moloch before 2.2, update your /data/moloch/etc/config.ini file so that geoLite2Country is now <code>/usr/share/GeoIP/GeoLite2-Country.mmdb</code> and geoLite2ASN is now <code>/usr/share/GeoIP/GeoLite2-ASN.mmdb</code></li>
           <li>Restart moloch capture</li>
         </ol>
+      </p>
+
+      <h3 id="loglines">
+        What do these log lines mean?
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h3>
+      <p>
+      Moloch logs alot of information for debugging purposes.
+      Much of this information is for bug reports, but can also be used to figure out what is going on.
+      You may need to use <code>--debug</code> to enable these msgs.
+      </p>
+      <p>
+      <h4 id="log-http-response">
+        HTTP Responses
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h4>
+      <pre><code>Jan 01 01:01:01 http.c:369 moloch_http_curlm_check_multi_info(): 8000/30 ASYNC 200 http://eshost:9200/_bulk 250342/5439 14ms 12345ms</code></pre>
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr><td>Jan 01 01:01:01</td><td>Date</td></tr>
+          <tr><td>http.c:369</td><td>File Name:Line Number</td></tr>
+          <tr><td>moloch_http_curlm_check_multi_info</td><td>Function Name</td></tr>
+          <tr><td>8000/30</td><td>8000 queued requests to server<br>30 connections to server</td></tr>
+          <tr><td>ASYNC</td><td>Asynchronous request, SYNC for Syncrhonous request</td></tr>
+          <tr><td>200</td><td>HTTP status code</td></tr>
+          <tr><td>http://eshost:9200/_bulk</td><td>Requested URL</td></tr>
+          <tr><td>250032/5439</td><td>250342 bytes uploaded (CURLINFO_SIZE_UPLOAD)<br>5439 bytes downloaded (CURLINFO_SIZE_DOWNLOAD)</td></tr>
+          <tr><td>14ms</td><td>14ms to connect to server (CURLINFO_CONNECT_TIME)</td></tr>
+          <tr><td>12345ms</td><td>12345ms total request time (CURLINFO_TOTAL_TIME)</td></tr>
+        </tbody>
+      </table>
+      </p>
+
+      <p>
+      <h4 id="log-packets">
+        Periodic Packet Progress 
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'faq')">
+        </span>
+      </h4>
+      <pre><code>Jan 01 01:01:01 packet.c:1185 moloch_packet_log(): packets: 3911000000 current sessions: 41771/45251 oldest: 0 - recv: 4028852297 drop: 123 (0.00) queue: 1 disk: 2 packet: 3 close: 4 ns: 5 frags: 0/1988 pstats: 4132185901/1/2/3/4/5</code></pre>
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr><td>Jan 01 01:01:01</td><td>Date</td></tr>
+          <tr><td>packet.c:1185</td><td>File Name:Line Number</td></tr>
+          <tr><td>moloch_packet_log</td><td>Function Name</td></tr>
+          <tr><td>packets: 3911000000</td><td>3911000000 packets are going to be processed by the packet queues.  These packets have made it past corrupt checks, packet-drop-ips checks, and are ones we most likely understand.</td></tr>
+          <tr><td>current session: 41771/45251</td><td>41771 monitored sessions of the current session type (usually tcp)<br>45251 monitored sessions total</td></tr>
+          <tr><td>oldest: 0</td><td>In the current session type queue, the oldest session should be idled out in 0 seconds</td></tr>
+          <tr><td>recv: 4028852297</td><td>4028852297 packets have been received by the interface since process start, as reported by the reader's stats api</td></tr>
+          <tr><td>drop: 123</td><td>123 packets have been dropped by the interface, as reported by the reader's stats api</td></tr>
+          <tr><td>(0.00)</td><td>0.00% packets have been dropped by the interface, as reported by the reader's stats api</td></tr>
+          <tr><td>queue: 1</td><td>1 bulk request is waiting to be sent to the ES servers, each bulk request may hold multiple sessions</td></tr>
+          <tr><td>disk: 2</td><td>2 disk buffers writes are outstanding, each buffer will hold multiple packets</td></tr>
+          <tr><td>packet: 3</td><td>3 packets are waiting to be processed in all the packet queues</td></tr>
+          <tr><td>close: 4</td><td>4 tcp sessions have been marked for closing (RST/FIN), waiting on last few packets</td></tr>
+          <tr><td>ns: 5</td><td>5 sessions are ready to be saved but there is a plugin that is doing async work, such as wise</td></tr>
+          <tr><td>frags: 0/1988</td><td>always 0<br>1988 current ip frags waiting to be matched</td></tr>
+          <tr><td>pstats: 4132185901/1/2/3/4/5</td>
+            <td>4132185901 packets successfully sent to a packet queue<br>
+              1 packet dropped because of packet-drop-ips config<br>
+              2 packets dropped because the packet queues were overloaded<br>
+              3 packets dropped because they were corrupt<br>
+              4 packets dropped because how to process was unknown to us<br>
+              5 packets dropped because of ipport rules
+            </td>
+          </tr>
+        </tbody>
+      </table>
       </p>
 
       <!-- /capture -->
