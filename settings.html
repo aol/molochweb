@@ -1171,6 +1171,25 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="tcphealthcheckport">
+              tcpHealthCheckPort
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              480
+            </td>
+            <td>
+              Make the capture module listen on a TCP port
+              for health checks, for example when capture is behind
+              a load balancer.
+              Capture will accept TCP connections to this port
+              and immediately close them.
+              Requires plugins=tcphealthcheck.so
+            </td>
+          </tr>
+          <tr>
             <td id="tcpsavetimeout">
               tcpSaveTimeout
               <span class="fa fa-link small copy-link cursor-copy"
