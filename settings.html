@@ -188,6 +188,11 @@ title: Settings
         title="Lua">
         Lua
       </a>
+      <a class="nav-link nested"
+        href="#tcphealthcheck"
+        title="TCP Health Check">
+        TCP Health Check
+      </a>
       <a href="#high-performance-settings"
         class="nav-link"
         title="High Performance Settings">
@@ -4060,6 +4065,64 @@ suricataAlertFile=/nids/suricata/eve.json</code></pre>
         </tbody>
       </table>
       <!-- /Lua -->
+      <!-- TCPHealthCheck -->
+      <h2 id="tcphealthcheck">
+        TCP Health Check
+        <span class="fa fa-link small copy-link cursor-copy"
+          onclick="copyLink(this, 'settings')">
+        </span>
+      </h2>
+      <p>
+        TCP Health Check plugin enables 
+        the capture module to listen on
+        a specific TCP port and immediately
+        close accepted connections. This is useful
+        to keep load balancer health checks informed
+        about the capture module working properly.
+        One specific use case is
+        <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/target-group-health-checks.html">
+          Health Checks for Target Groups
+        </a>
+        in AWS
+        Network Load Balancer.
+      </p>
+      <p>
+        Add <code>tcphealthcheck.so</code> to the <code>plugins=</code> line in the
+        config file.
+      </p>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>
+              Setting
+            </th>
+            <th>
+              Default
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="tcphealthcheckport">
+              tcpHealthCheckPort
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Make the capture module listen on this TCP port
+              for health checks.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- /TCPHealthCheck -->
       <!-- /Plugins -->
 
       <!-- High Performance Settings -->
