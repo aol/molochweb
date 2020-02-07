@@ -2664,6 +2664,23 @@ tpacketv3NumThreads=2</pre>
               Expiration days for S3 stored PCAP files. Expired PCAP files will be deleted.
             </td>
           </tr>
+          <tr>
+            <td id="s3host">
+              s3Host
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              none
+            </td>
+            <td>
+              Override the default endpoint URL for the specified Bucket and Region. This is only
+              used if you want to use a third party s3 server, like a
+              <a href="https://min.io/">MinIO</a> or <a href="http://pithos.io/">pithos</a>
+              instance.
+            </td>
+          </tr>
         </tbody>
       </table>
       <!-- /writer s3 settings -->
