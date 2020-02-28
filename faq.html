@@ -534,10 +534,8 @@ title: FAQ
         <a href="downloads">
           downloads page
         </a>
-        Our deployment is on Centos 7 with the elrepo 4.x kernel
-        installed for packet performance increases and better afpacket support.
-        A large amount of development is done on Mac OS X 10.14 using MacPorts,
-        however, it has never been tested in a production setting. :)
+        Our deployment is on Centos 7 with the elrepo 4.x kernel installed for packet performance increases and better afpacket support.
+        A large amount of development is done on Mac OS X 10.15 using MacPorts or Homebrew, however, it has never been tested in a production setting. :)
         Moloch is NOT supported on 32 bit machines.
       </p>
       <p>
@@ -559,20 +557,6 @@ title: FAQ
         <li>
           FreeBSD 10.0 (wiseService doesn’t work, but the wise plugin
           does), 10.3 is known NOT to compile currently.
-        </li>
-      </ul>
-      <p>
-        The following OSes should work after installing gcc/g++ 4.8 yourself.
-      </p>
-      <ul>
-        <li>
-          CentOS/RHEL 6 -
-          <a href="https://wiki.centos.org/AdditionalResources/Repositories/SCL"
-            rel="nofollow">
-            https://wiki.centos.org/AdditionalResources/Repositories/SCL
-          </a>
-          <pre><code>yum install centos-release-scl
-yum install devtoolset-7-toolchain</code></pre>
         </li>
       </ul>
 
@@ -601,8 +585,7 @@ yum install devtoolset-7-toolchain</code></pre>
           from your browser
           <ol type="a">
             <li>
-              If it doesn’t render, looks strange or warns of an old browser,
-              use a newer
+              If it doesn’t render, looks strange or warns of an old browser, use a newer
               <a href="#what-browsers-are-supported">
                 supported browser
               </a>
@@ -610,21 +593,14 @@ yum install devtoolset-7-toolchain</code></pre>
           </ol>
         </li>
         <li>
-          Check for errors in
-          <code>/data/moloch/logs/viewer.log</code>
-          and that viewer is running with
-          <code>pgrep -lf viewer</code>
+          Check for errors in <code>/data/moloch/logs/viewer.log</code> and that viewer is running with <code>pgrep -lf viewer</code>
         </li>
         <li>
-          Check for errors in
-          <code>/data/moloch/logs/capture.log</code>
-          and that capture is running with
-          <code>pgrep -lf capture</code>
+          Check for errors in <code>/data/moloch/logs/capture.log</code> and that capture is running with <code>pgrep -lf capture</code>
         </li>
         <li>
-          Check that the stats page shows the capture nodes you are expecting,
-          visit
-          <code>http://moloch-viewer.hostname:8005/stats</code> in your browser.
+          Check that the stats page shows the capture nodes you are expecting, visit
+          <code>http://moloch-viewer.hostname:8005/stats?statsTab=1</code> in your browser.
           <ol type="a">
             <li>
               Make sure the nodes are showing packets being received
@@ -635,13 +611,11 @@ yum install devtoolset-7-toolchain</code></pre>
           </ol>
         </li>
         <li>
-          Verify that there is no
-          <code>bpf=</code> in
-          <code>/data/moloch/etc/config.ini</code>
-          that is dropping all the traffic
+          Disable any <code>bpf=</code> in <code>/data/moloch/etc/config.ini</code>, if that fixes the issue read
+          <a href="#dontsavebpfs-doesn-t-work">BPF FAQ answer</a>
         </li>
         <li>
-          If viewer in the browser has "Oh no, Moloch is empty! There is no
+          If the browser has "Oh no, Moloch is empty! There is no
           data to search." but the stats tab shows packets are being captured:
           <ol type="a">
             <li>
@@ -651,7 +625,7 @@ yum install devtoolset-7-toolchain</code></pre>
             </li>
             <li>
               Elasticsearch will only refresh the indices once a minute with the default Moloch config,
-              force a refresh with <code>curl http://localhost:9200/_refresh</code>
+              force a refresh with <code>curl http://ESHOST:9200/_refresh</code>
             </li>
             <li>
               Verify your time frame for search covers the data (try switching to ALL)
