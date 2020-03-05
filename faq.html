@@ -2789,22 +2789,18 @@ ProxyPassReverse /moloch/ https://localhost:8005/</code></pre>
           Edit Moloch’s <code>config.ini</code>
           <ul>
             <li>
-              Create a new section for the Moloch proxy, you will use
-              <code>-n sectionname</code> so viewer uses that section
+              Create a new section for the Moloch proxy, you will use <code>-n sectionname</code> so viewer uses that section
             </li>
             <li>
-              Set <code>userNameHeader</code> to the
-              <strong>lower case</strong> version of the header Apache is
-              setting.
+              Set <code>userNameHeader</code> to the <strong>lower case</strong> version of the header Apache is setting. NOTE - the
+              userNameHeader setting is only needed on viewers that apache talks to, don't set on all of them.
             </li>
             <li>
-              Set the <code>webBasePath</code> to the ProxyPath location used
-              above. All other sections should <strong>NOT</strong> have a
-              <code>webBasePath</code>.
+              Set the <code>webBasePath</code> to the ProxyPath location used above.
+              All other sections should <strong>NOT</strong> have a <code>webBasePath</code>.
             </li>
             <li>
-              Add a <code>viewHost</code>, so externals can’t just set the
-              <code>userNameHeader</code> and access Moloch with no auth:
+              Add a <code>viewHost=localhost</code>, so externals can’t just set the <code>userNameHeader</code> and access Moloch with no auth:
               <pre><code>[moloch-proxy]
 userNameHeader=moloch_user
 webBasePath = /moloch/
@@ -2814,14 +2810,15 @@ viewHost = localhost</code></pre>
           </ul>
         </li>
         <li>
-          Start the <code>moloch-proxy</code> viewer, so for this example you
-          would need <code>-n moloch-proxy</code>
+          Start the <code>moloch-proxy</code> viewer, so for this example you would need <code>-n moloch-proxy</code>
         </li>
         <li>
-          To prevent the users from going directly to Moloch in the future,
-          scramble their passwords. You might want to leave an admin user that
-          doesn’t use the Apache auth. Or you can temporarily add one with the
-          <code>addUser.js</code> script.
+          To prevent the users from going directly to Moloch in the future, scramble their passwords.
+          You might want to leave an admin user that doesn’t use the Apache auth.
+          Or you can temporarily add one with the <code>addUser.js</code> script.
+        </li>
+        <li>
+          If experiencing issues, try running viewer with --debug
         </li>
       </ul>
 

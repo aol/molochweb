@@ -1274,12 +1274,12 @@ title: Settings
               EMPTY
             </td>
             <td>
-              Header to use for determining the username to check in the
-              database for instead of using http digest. Use this if you have
-              apache or something else doing the auth. The
-              Web Auth Header checkbox must be set for user. The
-              userNameHeader m should be the lower case version of the header
-              apache is setting
+              Header to use for determining the username to check in the database for instead of using http digest.
+              Use this if you have apache or something else doing the auth.
+              The Web Auth Header checkbox must be set for user.
+              The userNameHeader setting should be the lower case version of the header apache is setting.
+              ONLY set this header on the viewer the reverse proxy is talking to, it doesn't need to be set on every viewer.
+              It is recommended you set viewHost to localhost when using this setting, or use iptables, otherwise a hacker can just send this header.
             </td>
           </tr>
           <tr>
