@@ -2450,14 +2450,20 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
         </span>
       </h3>
       <p>
-        Turns out BPF filters are tricky. :) When the network is using vlans,
-        then at compile time, BPFs need to know that fact. So instead of a nice
-        simple <code>dontSaveBPFs=tcp port 443:10</code> use something like
-        <code>dontSaveBPFs=tcp port 443 or (vlan and tcp port 443):10</code>.
-        Basically <code>FILTER or (vlan and FILTER)</code>. Information from
-        <a href="http://www.christian-rossow.de/articles/tcpdump_filter_mixed_tagged_and_untagged_VLAN_traffic.php"
-          rel="nofollow">
-          here</a>.
+        There are several common reasons dontSaveBPFs might not work for you.
+      </p>
+      <ol>
+        <li>Make sure you've spelled it dontSaveBPFs, case matters</li>
+        <li>Make sure you've placed dontSaveBPFs in the correct section, you can verify by adding a <code>--debug</code> to capture when starting and looking at the output</li>
+        <li> Turns out BPF filters are tricky. :)
+             When the network is using vlans, then at compile time, BPFs need to know that fact.
+             So instead of a nice simple <code>dontSaveBPFs=tcp port 443:10</code> use something like <code>dontSaveBPFs=tcp port 443 or (vlan and tcp port 443):10</code>.
+             Basically <code>FILTER or (vlan and FILTER)</code>. Information from <a href="http://www.christian-rossow.de/articles/tcpdump_filter_mixed_tagged_and_untagged_VLAN_traffic.php" rel="nofollow"> here</a>.
+        </li>
+      </ol>
+      <p>
+        If still having issues, you might just try out a <a href="rulesformat">Moloch Rules</a> file.
+        Moloch converts dontSaveBPFs into a rule for you behind the scenes.
       </p>
 
       <h3 id="zero-byte-pcap-files">
@@ -2572,7 +2578,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
 
       <p>
       <h4 id="log-packets">
-        Periodic Packet Progress 
+        Periodic Packet Progress
         <span class="fa fa-link small copy-link cursor-copy"
           onclick="copyLink(this, 'faq')">
         </span>
@@ -3196,7 +3202,7 @@ ProxyPass        /parliament/ http://localhost:8008/parliament/ retry=0</code></
         </li>
         <li>
           Check that from the capture/viewer hosts you can reach the viewer hosts and there are no ACL issues.
-          <pre><code>curl http://WISEHOST:8081/fields</code></pre> 
+          <pre><code>curl http://WISEHOST:8081/fields</code></pre>
         </li>
         <li>
           Restart <code>moloch-capture</code> after adding a
