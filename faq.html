@@ -2460,6 +2460,7 @@ ${TDIR}/bin/moloch-capture -n moloch-m01b -c ${TDIR}/etc/config.ini &gt; ${TDIR}
              So instead of a nice simple <code>dontSaveBPFs=tcp port 443:10</code> use something like <code>dontSaveBPFs=tcp port 443 or (vlan and tcp port 443):10</code>.
              Basically <code>FILTER or (vlan and FILTER)</code>. Information from <a href="http://www.christian-rossow.de/articles/tcpdump_filter_mixed_tagged_and_untagged_VLAN_traffic.php" rel="nofollow"> here</a>.
         </li>
+        <li>Try testing your filter manually with tcpdump, you should only see the traffic you want to drop. So something like <code>tcpdump -i INTERFACE tcp port 443</code> for example.</li>
       </ol>
       <p>
         If still having issues, you might just try out a <a href="rulesformat">Moloch Rules</a> file.
