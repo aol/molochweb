@@ -1282,6 +1282,73 @@ title: Settings
               It is recommended you set viewHost to localhost when using this setting, or use iptables, otherwise a hacker can just send this header.
             </td>
           </tr>
+                      <tr>
+            <td id="requiredauthheader">
+              requiredAuthHeader
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              Used for allowing an external system like LDAP or Active Directory to
+              manage user provisioning and activation/deactivation.  It is assumed that the 
+              header contains a list of user roles (like active directory groups)
+              which are inspected against the value in <code>requiredAuthHeaderVal</code> (see below)
+              to verify that the user is in the appropriate group (ie. "MolochUsers").  If
+              so, the user is authorized to use the system, and if an account does not
+              already exist for them in the moloch user store,
+              it is created (see <code>userAutoCreateTmpl</code>)
+            </td>
+          </tr>
+          <tr>
+            <td id="requiredauthheaderval">
+              requiredAuthHeaderVal
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              See <code>requiredAuthHeader</code> for more information.
+            </td>
+          </tr>
+            <tr>
+            <td id="userautocreatetmpl">
+              userAutoCreateTmpl
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              When using <code>requiredAuthHeader</code> to externalize provisioning
+              of users to a system like LDAP/AD, this configuration parameter is used
+              to define the JSON structure used to automatically create a moloch user
+              in the moloch users database if one does not exist.  The user will only
+              be created if the <code>requiredAuthHeader</code> includes the expected
+              value in <code>requiredAuthHeaderVal</code>, and is not automatically deleted
+              if the auth headers are not present.  Values can be populated into
+              the creation JSON to dynamically populate fields into the user database, 
+              which are passed in as HTTP headers along with the user and auth headers.
+              The example value below creates a user with a userId pulled from the 
+              <code>http_auth_http_user</code> HTTP header with a name pulled from
+              the <code>http_auth_mail</code> user header.  It is expected that these
+              headers are passed in from an apache (or similar) instance that fronts
+              the moloch viewer as described in the documentation supporting <code>userNameHeader</code>
+              <code>
+                {"userId": "${this.http_auth_http_user}", "userName": "${this.http_auth_mail}", 
+                "enabled": true, "webEnabled": true, "headerAuthEnabled": true, 
+                "emailSearch": true, "createEnabled": false, "removeEnabled": false, "packetSearch": true }
+              </code>
+            </td>
+          </tr>
           <tr>
             <td id="viewerplugins">
               viewerPlugins
