@@ -1551,11 +1551,13 @@ logger.action.level = info</code></pre>
         </span>
       </h3>
       <p>
-        ILM is included in the free "basic" Elasticsearch license, so it is not part of the Elasticsearch OSS distribution.
-        Moloch does NOT currently support the auto rollover feature of ILM.
-        However since Moloch 2.2 you can easily use ILM to handle moving indices from hot to warm, force merge, and delete actions.
-        We recommend only using ILM with newer versions (7.2+) of Elasticsearch.
+        Since Moloch 2.2 you can easily use ILM to handle moving indices from hot to warm, force merge, and delete actions.
+        We recommend only using ILM with newer versions (7.2+) of Elasticsearch, since older versions did have some issues.
         Once ILM is enabled you no longer have to use the <code>db.pl expire</code> cron job, but should occasionally run <code>db.pl optimize-admin</code>.
+      </p>
+      <p>
+        ILM is only included in the free "basic" Elasticsearch license, so it is not part of the Elasticsearch OSS distribution, so you may need to upgrade.
+        Moloch does NOT currently support the auto rollover feature of ILM for performance reasons when searching.
       </p>
       <p>
         There are four important steps to have ILM work correctly with Moloch.
