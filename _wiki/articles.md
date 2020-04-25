@@ -38,10 +38,10 @@ permalink: /articles
 
 * [Recent Changes & Upcoming Features](/assets/MolochON2018RecentChanges.pdf)
   * [Presentation Recording](https://www.youtube.com/watch?v=iEdJ35h9JJg)
-* [Moloch on KVM and AWS Environments](/assets/MolochON2018VirtualizedAndAWS.pdf)
+* [Moloch on KVM and AWS Environments](/assets/MolochOn2018VirtualizedAndAWS.pdf)
 * [WISE 2018](/assets/MolochON2018WISE.pdf)
   * [Presentation Recording](https://www.youtube.com/watch?v=IqNssmG-OPk)
-* [Elastic - Architectural Best Practices](/assets/MolochON2018Elastic.pdf)
+* [Elastic - Architectural Best Practices](/assets/MolochON2018Elastic.pptx)
 * [Oath Deployments](/assets/MolochON2018OathDeployment.pdf)
   * [Presentation Recording](https://www.youtube.com/watch?v=lGzjMAcoAXs)
 
@@ -70,7 +70,7 @@ permalink: /articles
 
 ### Elasticsearch Meetup
 
-* [Using Elasticsearch to Power Network Forensics](ESMeetup2014Moloch.pptx)
+* [Using Elasticsearch to Power Network Forensics](/assets/ESMeetup2014Moloch.pptx)
 
 ---
 
