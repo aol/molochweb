@@ -2890,7 +2890,7 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
       </p>
       <p>
         Now you need to start up both the <code>multies.js</code> program and
-        <code>viewer.js</code> with the same config file AND <code>-n allnode</code>. 
+        <code>viewer.js</code> with the same config file AND <code>-n allnode</code>.
         All other viewer settings, including <code>webBasePath</code> can still be used.
       </p>
       <p>By default, the users table comes from the first cluster listed in
@@ -2964,47 +2964,44 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
           </li>
           <li>
             Each <code>moloch-capture</code> writes a stats record every few
-            seconds that has the mapping from the nodename to the FDQN
+            seconds that has the mapping from the nodename to the FDQN.
+            It is possible to override the FDQN with the <code>--host</code> option to capture.
           </li>
+          <li>
+            <
           <li>
             Each SPI record has a nodename in it.
           </li>
         </ol>
         <p>
-          When pcap is retrieved from the viewer it looks up the nodename
-          associated with the record.
+          When pcap is retrieved from a viewer it uses the nodename associated with the SPI record to find which capture host to connect to.
         </p>
         <ol>
           <li>
             Each <code>moloch-viewer</code> process gets a nodename, either by
-            the <code>-n</code> command line option or evertying in front of the
+            the <code>-n</code> command line option or everything in front of the
             first period of the hostname.
           </li>
           <li>
-            If the SPI nodename is the same as the <code>moloch-viewer</code>
+            If the SPI record nodename is the same as the <code>moloch-viewer</code>
             nodename it can be processed locally, STOP HERE. This is the common
-            case with one capture process per capture node.
+            case with one moloch node.
           </li>
           <li>
             If the <code>stats[nodename].hostname</code> is the same as the
             <code>moloch-viewer</code>’s hostname (exact match) then it can be
-            processed locally, STOP HERE. Remember this is written by capture
-            above. This is the common case with multiple capture processes per
-            capture node.
+            processed locally, STOP HERE.
+            Remember this is written by capture above, either the FQDN or <code>--host</code>.
+            This is the common case with multiple capture processes per capture node.
           </li>
           <li>
             If we make it here, the pcap data isn’t local and it must be proxied.
           </li>
           <li>
-            If <code>--host</code> was used on the capture node, use that.
+            If there is a <code>viewUrl</code> set in the <code>[nodename]</code> section, use that.
           </li>
           <li>
-            If there is a <code>viewUrl</code> set in the <code>[nodename]</code>
-            section, use that.
-          </li>
-          <li>
-            If there is a viewUrl set in the <code>[default]</code> section, use
-            that.
+            If there is a viewUrl set in the <code>[default]</code> section, use that.
           </li>
           <li>
             Use
@@ -3043,6 +3040,9 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
             <code>hostname</code> command AND the viewer machine can’t resolve
             just the hostname. To fix this, do ONE of the following:
             <ol type="a">
+              <li>
+                Use the <code>--host</code> option to moloch-capture and restart capture
+              </li>
               <li>
                 Make it so the remote machines returns a FQDN
                 (<code>hostname "fullname"</code> as root and edit
@@ -3093,12 +3093,10 @@ multiESNodes = es-cluster1.example.com:9200;es-cluster2.example.com:9200
                 Change your mind :)
               </li>
               <li>
-                Reuse the same node name as previously with a <code>-n</code>
-                option
+                Reuse the same node name as previously with a <code>-n</code> option
               </li>
               <li>
-                Use the <code>viewUrl</code> for that old nodename that points
-                to the new host.
+                Use the <code>viewUrl</code> for that old nodename that points to the new host.
               </li>
             </ol>
           </li>
