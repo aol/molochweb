@@ -48,24 +48,28 @@ These are the sample configs we used for this POC.
 ## How to setup a vlan interface - /etc/sysconfig/network-scripts/ifcfg-eth1.4000
 
 ```
+{% raw %}
 DEVICE={{visibility_interface}}.4000
 BOOTPROTO=none
 ONBOOT=yes
 NM_CONTROLLED=no
 VLAN=yes
+{% endraw %}
 ```
 
 ## Setup client side openvpn 
 
 ```
+{% raw %}
 #!/bin/sh
 openvpn --mktun --dev tap1
 ifconfig tap1 up
 ifconfig tap1 mtu 2048
 brctl addbr br1
 brctl addif br1 tap1
-brctl addif br1 {{visibility_interface}}.4000
+brctl addif br1 \{{visibility_interface}}.4000
 ifconfig br1 up
+{% endraw %}
 ```
 
 ## Client side /etc/openvpn/client/tap1.conf
@@ -74,6 +78,7 @@ We decided to use tcp/tls to connect to the tls visibility server and we used pu
 For a real deployment you might not want to use public certs.
 
 ```
+{% raw %}
 verb 3
 dev tap1
 remote {{openvpn_remote}}
@@ -90,6 +95,7 @@ persist-tun
 persist-key
 
 link-mtu 2048
+{% endraw %}
 ```
 
 ## Server side /etc/openvpn/server/tap1.conf
@@ -97,6 +103,7 @@ link-mtu 2048
 Because we are using public certs we set verify-x509-name.
 
 ```
+{% raw %}
 verb 3
 mode server
 dev tap1
@@ -118,6 +125,7 @@ persist-key
 verify-x509-name {{openvpn_verify_name}}
 
 ping 30
+{% endraw %}
 ```
 
 </div>
