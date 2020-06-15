@@ -1,0 +1,118 @@
+---
+title: Break TLS Proof of concept
+layout: wiki
+permalink: /break-tls-poc
+---
+
+<div class="full-height-and-width-container with-footer p-3" markdown="1">
+
+# Break TLS Proof of concept
+
+We've been interested in breaking TLS for certain types of traffic and sending thru our visibility stack for a while now.
+Here is a proof of concept we've put together to meet a few requirements.
+
+Requirements:
+* Not require new hardware
+* Only break certain TLS connections
+* Allow the traffic to flow thru our visibility stack
+* Don't want to run multiple of each tool on each box.
+
+Solution:
+* Use the SRX that we already have. The SRX does NOT modify the 5 tuple of the decrypted traffic, so if tools get both the decrypted and normal version of the traffic they may become confused.
+* The SRX can be configure to only break certain TLS connections, we've chosen to do "uncategorised"
+* We are NOT pushing out new roots to folks, so they will actually get a browser warning knowing that session is being proxied
+
+![Break TLS POC](/assets/break-tls-poc.png)
+
+
+1. The SRX will send traffic to the NPB that it has decrypted. The NPB will still receive traffic normally from the SPAN port
+2. The NPB will add a vlan tag (4000 in our POC) to traffic coming in on the connection to the SRX
+3. The NPB will forward both the normal traffic and the decrypted traffic to the local visibility hosts
+4. The local visibility host will need to change configs to ignore vlan 4000. This may mean you can't use afpacket
+5. The local visibility host has a openvpn tunnel to a centralized visibility host. On the local host we created a eth1.4000 interface and then bridged that interface to the openvpn tap1 interface.
+6. The central tls visibility host has all its tools listening on tap1 interface
+
+Pros:
+* The decrypted traffic can be stored more securely on a central box with difference access controls
+* Don't have to setup a second set of tools on each box
+
+Cons:
+* Might have been easier to setup a vm or something on each visibility host
+* Moloch and other tools can't show you which site the traffic came from using the visibility hostname
+* Need to configure npb or tools to ignore the traffic from local hosts to central visibility hosts or you will process again
+
+# Sample Configs
+
+## How to setup a vlan interface
+
+```
+DEVICE={{visibility_interface}}.4000
+BOOTPROTO=none
+ONBOOT=yes
+NM_CONTROLLED=no
+VLAN=yes
+```
+
+## Setup client side openvpn 
+
+```
+#!/bin/sh
+openvpn --mktun --dev tap1
+ifconfig tap1 up
+ifconfig tap1 mtu 2048
+brctl addbr br1
+brctl addif br1 tap1
+brctl addif br1 {{visibility_interface}}.4000
+ifconfig br1 up
+```
+
+## Client side /etc/openvpn/client/tap1.conf
+
+We decided to use tcp/tls to connect to the tls visibility server and we used public certs since every host already had one.
+
+```
+verb 3
+dev tap1
+remote {{openvpn_remote}}
+cipher AES-256-CBC
+port 443
+
+tls-client
+ca /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+cert {{openvpn_cert}}
+key {{openvpn_key}}
+
+proto tcp-client
+persist-tun
+persist-key
+
+link-mtu 2048
+```
+
+## Server side /etc/openvpn/server/tap1.conf
+
+```
+verb 3
+mode server
+dev tap1
+cipher AES-256-CBC
+port 443
+
+tls-server
+dh dh2048.pem
+ca /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+cert {{openvpn_cert}}
+key {{openvpn_key}}
+duplicate-cn
+
+proto tcp-server
+# user nobody
+# group nobody
+persist-tun
+persist-key
+verify-x509-name {{openvpn_verify_name}}
+
+ping 30
+```
+
+</div>
