@@ -48,7 +48,15 @@ Other Solutions:
 
 # Sample Configs
 
-These are the sample configs we used for this POC.
+These are the configs we used for this POC.
+
+You'll notice that there are no routes/iptables setup anywhere, and there shouldn't be.
+Remember, we are using openvpn to just forward our mirrored traffic from one host to another for processing.
+The traffic gets to the VPN tap1 interface because of the bridge that just copies everything from eth1.4000 to tap1 on the local machine.
+
+In this POC for the VPN we are using TCP and not UDP.
+We don't need to worry about traffic retransmits from using TCP because this is a mirror of the real traffic.
+We should probably do more testing on TCP vs UDP for this use case.
 
 ## How to setup a vlan interface - /etc/sysconfig/network-scripts/ifcfg-eth1.4000
 
