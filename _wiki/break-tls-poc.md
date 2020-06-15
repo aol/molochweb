@@ -67,7 +67,7 @@ ifconfig tap1 up
 ifconfig tap1 mtu 2048
 brctl addbr br1
 brctl addif br1 tap1
-brctl addif br1 \{{visibility_interface}}.4000
+brctl addif br1 {{visibility_interface}}.4000
 ifconfig br1 up
 {% endraw %}
 ```
