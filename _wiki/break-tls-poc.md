@@ -19,8 +19,8 @@ Requirements:
 
 Solution:
 * Use the SRX that we already have. The SRX does NOT modify the 5 tuple of the decrypted traffic, so if tools get both the decrypted and normal version of the traffic they may become confused.
-* The SRX can be configure to only break certain TLS connections, we've chosen to do "uncategorised"
-* We are NOT pushing out new roots to folks, so they will actually get a browser warning knowing that session is being proxied
+* The SRX can be configure to only break certain TLS connections, for the POC we configured a few sites to break by hostname, but the SRX supports categories and other methods.
+* We did NOT push out new roots to folks. If they visit one of the configure sites, the browser will warn you that it is insecure.
 
 ![Break TLS POC](/assets/break-tls-poc.png)
 
@@ -40,6 +40,10 @@ Cons:
 * Might have been easier to setup a vm or something on each visibility host
 * Moloch and other tools can't show you which site the traffic came from using the visibility hostname
 * Need to configure npb or tools to ignore the traffic from local hosts to central visibility hosts or you will process again
+
+Other Solutions:
+* Setup different machines in each location for normal vs decrypted traffic
+* Connection multiple interfaces on current machines to NPB for normal vs decrypted traffic instead of using vlan
 
 # Sample Configs
 
