@@ -43,7 +43,9 @@ Cons:
 
 # Sample Configs
 
-## How to setup a vlan interface
+These are the sample configs we used for this POC.
+
+## How to setup a vlan interface - /etc/sysconfig/network-scripts/ifcfg-eth1.4000
 
 ```
 DEVICE={{visibility_interface}}.4000
@@ -69,6 +71,7 @@ ifconfig br1 up
 ## Client side /etc/openvpn/client/tap1.conf
 
 We decided to use tcp/tls to connect to the tls visibility server and we used public certs since every host already had one.
+For a real deployment you might not want to use public certs.
 
 ```
 verb 3
@@ -90,6 +93,8 @@ link-mtu 2048
 ```
 
 ## Server side /etc/openvpn/server/tap1.conf
+
+Because we are using public certs we set verify-x509-name.
 
 ```
 verb 3
