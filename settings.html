@@ -3492,8 +3492,8 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
             </td>
           </tr>
           <tr>
-            <td id="right-click-key">
-              actionType=
+            <td id="right-click-actionType">
+              actionType
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
               </span>
@@ -3506,14 +3506,14 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
             </td>
           </tr>
           <tr>
-            <td id="right-click-key">
-              func=
+            <td id="right-click-func">
+              func
               <span class="fa fa-link small copy-link cursor-copy"
                 onclick="copyLink(this, 'settings')">
               </span>
             </td>
             <td>
-              A function body that will feed into new Function() and returns a right click action formatted as an object.
+              A javascript function body (feeds into new Function()) that returns a right click action formatted as an object.
               This is the recommended way if you need to omit the url from an action and can be used
               to place plain text in the menu.
               Value is not calculated so one of the keys in the returned action object must be "value" if you want to show name:value pair in the menu (but not req).
