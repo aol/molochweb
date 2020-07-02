@@ -57,7 +57,8 @@ function parseXML (xml) {
         centos7: 'Centos 7',
         centos8: 'Centos 8',
         ubuntu16: 'Ubuntu 16.04',
-        ubuntu18: 'Ubuntu 18.04'
+        ubuntu18: 'Ubuntu 18.04',
+        ubuntu20: 'Ubuntu 20.04'
       }[os];
 
       if (!osTitle) { continue; }

@@ -238,14 +238,12 @@ title: Downloads
     }
 
     $(function () { // page loaded
-      function buildDownloadVersionRow (version, btnType) {
+      function buildDownloadVersionRow (version, btnType, osList) {
         let html = `<div class="row text-center mt-3">
                      <div class="col-lg-2 mb-2">
                        <div><strong>${version.title}</strong></div>
                        <div class="time"><small>${version.modified}</small></div>
                      </div>`;
-
-        const osList = [ 'Centos 6', 'Centos 7', 'Centos 8', 'Ubuntu 16.04', 'Ubuntu 18.04' ];
 
         let downloads = version.downloads;
 
@@ -276,33 +274,32 @@ title: Downloads
       function setupPage (versions, nightlies, commities, sortedVersions) {
         let mainDownloadsHtml = '', moreDownloadsHtml = '';
 
-        let nightlyDownloadsHtml = buildDownloadVersionRow(nightlies, 'btn-outline-danger');
-        let commitDownloadsHtml = buildDownloadVersionRow(commities, 'btn-outline-danger');
+        const osList = [ 'Centos 6', 'Centos 7', 'Centos 8', 'Ubuntu 16.04', 'Ubuntu 18.04' ];
+        const osCommitList = [ 'Centos 7', 'Centos 8', 'Ubuntu 16.04', 'Ubuntu 18.04', 'Ubuntu 20.04' ];
+
+        let commitDownloadsHtml = buildDownloadVersionRow(commities, 'btn-outline-danger', osCommitList);
 
         for (let v = 0, vlen = sortedVersions.length; v < vlen; ++v) {
           if (versions.hasOwnProperty(sortedVersions[v])) {
             let version = versions[sortedVersions[v]];
             let btnType = v === 0 ? 'btn-primary' : 'btn-outline-primary';
-            let html = buildDownloadVersionRow(version, btnType);
+            let html = buildDownloadVersionRow(version, btnType, osList);
 
             if (v < 3)  { mainDownloadsHtml += html; }
             else        { moreDownloadsHtml += html; }
           }
         }
 
-
         $('.show-more-downloads').show();
         $('.commit-downloads-container').show();
         $('.main-downloads').append(mainDownloadsHtml);
         $('.more-downloads').prepend(moreDownloadsHtml);
-        $('.nightly-downloads').append(nightlyDownloadsHtml);
         $('.commit-downloads').append(commitDownloadsHtml);
       }
 
       function setupError() {
         $('.downloads-error').show();
         $('.loading-downloads').hide();
-        $('.nightly-downloads').hide();
         $('.commit-downloads-container').hide();
         $('.show-more-downloads-btn').hide();
         $('.show-more-downloads').hide();
