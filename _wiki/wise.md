@@ -123,7 +123,7 @@ excludeDomains|EMPTY|Semicolon separated list of modified glob patterns to exclu
 excludeEmails|EMPTY|Semicolon separated list of modified glob patterns to exclude in lookups
 cacheAgeMin|60|Number of minutes items in the cache for this source are valid for. Ignored for sources that use internal data, such as file sources.
 onlyIPs|EMPTY|If set, only ips that match the semicolon separated list of IPs or CIDRs will be looked up
-fields|EMPTY|A "\n" separated list of fields that this source will add. Some wise sources automatically set for you. See [Tagger Format](taggerforamt) for more information on the parts of a field entry.
+fields|EMPTY|A "\n" separated list of fields that this source will add. Some wise sources automatically set for you. See [Tagger Format](taggerformat) for more information on the parts of a field entry.
 view|EMPTY|The view to show in session detail when opening up a session with unique fields. The value for view can either be written in simplified format or in more powerful jade format. For the jade format [Tagger Format](taggerformat) for more information except everything has to be on one line, so replace newlines with \n. Simple format looks like `require:[toplevel db name];title:[title string];fields:[field1],[field2],[fieldN]`
 {: .table .table-striped .table-sm .mb-4 }
 
