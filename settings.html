@@ -1294,7 +1294,7 @@ title: Settings
             </td>
             <td>
               Used for allowing an external system like LDAP or Active Directory to
-              manage user provisioning and activation/deactivation.  It is assumed that the 
+              manage user provisioning and activation/deactivation.  It is assumed that the
               header contains a list of user roles (like active directory groups)
               which are inspected against the value in <code>requiredAuthHeaderVal</code> (see below)
               to verify that the user is in the appropriate group (ie. "MolochUsers").  If
@@ -1335,16 +1335,16 @@ title: Settings
               be created if the <code>requiredAuthHeader</code> includes the expected
               value in <code>requiredAuthHeaderVal</code>, and is not automatically deleted
               if the auth headers are not present.  Values can be populated into
-              the creation JSON to dynamically populate fields into the user database, 
+              the creation JSON to dynamically populate fields into the user database,
               which are passed in as HTTP headers along with the user and auth headers.
-              The example value below creates a user with a userId pulled from the 
+              The example value below creates a user with a userId pulled from the
               <code>http_auth_http_user</code> HTTP header with a name pulled from
               the <code>http_auth_mail</code> user header.  It is expected that these
               headers are passed in from an apache (or similar) instance that fronts
               the moloch viewer as described in the documentation supporting <code>userNameHeader</code>
               <code>
-                {"userId": "${this.http_auth_http_user}", "userName": "${this.http_auth_mail}", 
-                "enabled": true, "webEnabled": true, "headerAuthEnabled": true, 
+                {"userId": "${this.http_auth_http_user}", "userName": "${this.http_auth_mail}",
+                "enabled": true, "webEnabled": true, "headerAuthEnabled": true,
                 "emailSearch": true, "createEnabled": false, "removeEnabled": false, "packetSearch": true }
               </code>
             </td>
@@ -3454,7 +3454,6 @@ x-priority=type:integer</code></pre>
       </h2>
       <p>
         It is possible to configure right click actions on any SPI data fields.
-        Currently the only actions supported are url opening actions, but other action types will be added in the future.
         Right click actions can be added based on either the field name or the category of the data.
         They can be added either in the configuration file or by enabled WISE data sources.
       </p>
@@ -3490,6 +3489,35 @@ VTURL=url:https://www.virustotal.com/latest-scan/%URL%;name:Virus Total URL;cate
             <td>
               The key must be unique and is also used as the right click menu
               name if the name field is missing
+            </td>
+          </tr>
+          <tr>
+            <td id="right-click-actionType">
+              actionType
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              Needs a url. Supported actionTypes:
+              <ul class="mb-0">
+                <li>fetch: Information will be fetched and displayed in the rightclick menu for 5 seconds</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td id="right-click-func">
+              func
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              A javascript function body (feeds into new Function()) that returns a right click action formatted as an object.
+              This is the recommended way if you need to omit the url from an action and can be used
+              to place plain text in the menu.
+              Value is not calculated so one of the keys in the returned action object must be "value" if you want to show name:value pair in the menu (but not req).
+              Formatting substitutions will also be ignored.
             </td>
           </tr>
           <tr>
