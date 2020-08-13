@@ -25,7 +25,7 @@ Rules files allow you to specify actions to perform when criteria are met with c
 * fields - what fields to check
 * bpf - A bpf expression
 
-Sample rule that will drop all tls packets after the first 12 packets
+Sample rule that will drop all tls packets after the first 20 packets
 {: .mb-0 }
 
 ```
@@ -38,7 +38,7 @@ rules:
       protocols:
       - tls
     ops:
-      _maxPacketsToSave: 12
+      _maxPacketsToSave: 20
 ```
 
 ---
@@ -92,7 +92,7 @@ The operations are a map of the fields to set in the session. There are some spe
 {: .mb-0 }
 
 * `_dontSaveSPI: 1`                 - Don't save SPI data for session
-* `_maxPacketsToSave: 12`           - Don't save more then 12 packets
+* `_maxPacketsToSave: 20`           - Don't save more then 20 packets
 * `_minPacketsBeforeSavingSPI: 33`  - Don't save SPI data unless 33 many packets have been sent/received
 * `_dropByDst: 5`                  - (Since 1.5) drop all traffic to dst ip:port for 5 minutes. This is good for dropping traffic that is going to the cloud and has shifting ips.
 * `_dropBySrc: 10`                  - (Since 1.5) drop all traffic from src ip:port for 10 minutes. You probably almost never want to use this.
