@@ -240,30 +240,30 @@ title: Downloads
     $(function () { // page loaded
       function buildDownloadVersionRow (version, btnType, osList) {
         let html = `<div class="row text-center mt-3">
-                     <div class="col-lg-2 mb-2">
+                     <div class="col-lg-2 mb-3">
                        <div><strong>${version.title}</strong></div>
                        <div class="time"><small>${version.modified}</small></div>
                      </div>`;
 
         let downloads = version.downloads;
 
-        for (let i = 0, len = downloads.length; i < len; ++i) {
-          let download = downloads[i];
-
-          // this check depends on Ubuntu 14.04 or Centos 8 being index 2
-          // Ubunut 14.04 for 2.0.1 and earlier
-          // Centos8 for 2.1.0 and later
-          let osIndex = osList.indexOf(download.title);
-          if (osIndex !== i) {
-            html += '<div class="col-lg-2 mb-2"></div>';
-            continue;
+        let i, d;
+        for (i = 0, len = osList.length; i < len; ++i) {
+          for (d = 0; d < downloads.length; d++) {
+            if (downloads[d].title === osList[i]) {
+              let download = downloads[d];
+              html += `<div class="col-lg-1 mb-1">
+                         <a href="${download.url}" class="btn ${btnType}">
+                           ${download.title}
+                         </a>
+                       </div>`;
+              break;
+            }
           }
 
-          html += `<div class="col-lg-2 mb-2">
-                     <a href="${download.url}" class="btn ${btnType}">
-                       ${download.title}
-                     </a>
-                   </div>`;
+          if (d === downloads.length) {
+            html += '<div class="col-lg-1 mb-1"></div>';
+          }
         }
 
         html += '</div>';
@@ -274,7 +274,7 @@ title: Downloads
       function setupPage (versions, nightlies, commities, sortedVersions) {
         let mainDownloadsHtml = '', moreDownloadsHtml = '';
 
-        const osList = [ 'Centos 6', 'Centos 7', 'Centos 8', 'Ubuntu 16.04', 'Ubuntu 18.04' ];
+        const osList = [ 'Centos 6', 'Centos 7', 'Centos 8', 'Ubuntu 16.04', 'Ubuntu 18.04', 'Ubuntu 20.04' ];
         const osCommitList = [ 'Centos 7', 'Centos 8', 'Ubuntu 16.04', 'Ubuntu 18.04', 'Ubuntu 20.04' ];
 
         let commitDownloadsHtml = buildDownloadVersionRow(commities, 'btn-outline-danger', osCommitList);
