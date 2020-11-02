@@ -285,6 +285,56 @@ title: Settings
             </td>
           </tr>
           <tr>
+            <td id="businessDayStart">
+              businessDayStart
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              If both businessDayStart and businessDayEnd are set, it displays a
+              colored background on the sessions timeline graph during business hours.
+              Values are in hours from midnight UTC. For example: 9am EST would be 13.
+            </td>
+          </tr>
+          <tr>
+            <td id="businessDayEnd">
+              businessDayEnd
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              EMPTY
+            </td>
+            <td>
+              If both businessDayStart and businessDayEnd are set, it displays a
+              colored background on the sessions timeline graph during business hours.
+              Values are in hours from midnight UTC. For example: 5pm EST would be 21.
+            </td>
+          </tr>
+          <tr>
+            <td id="businessDays">
+              businessDays
+              <span class="fa fa-link small copy-link cursor-copy"
+                onclick="copyLink(this, 'settings')">
+              </span>
+            </td>
+            <td>
+              1,2,3,4,5
+            </td>
+            <td>
+              Displays a colored background on the sessions timeline graph on
+              only these days. businessDayStart and businessDayEnd must be set
+              for these to be of use. Values are comma separted list of days of
+              the week as numbers. The week starts at Sunday = 0 and ends on
+              Saturday = 6. For example: Monday through Friday would be 1,2,3,4,5
+            </td>
+          </tr>
+          <tr>
             <td id="certfile">
               certFile
               <span class="fa fa-link small copy-link cursor-copy"
